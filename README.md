@@ -33,6 +33,15 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
   <img style='width: 600px' src="/Images/Sponza2Bounce.png"></img>
 </div>
 
+## Physics with terrain and B-Splines
+
+<div style='float: center'>
+  <img style='width: 600px' src="/Images/Physics40kBalls2.png"></img>
+</div>
+<div style='float: center'>
+  <img style='width: 600px' src="/Images/PhysicsBSplines.png"></img>
+</div>
+
 # Installation
 
 Requires windows 64-bit and openGL version 4.5+
