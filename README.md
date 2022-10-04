@@ -4,7 +4,7 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
 
 Engine Features
 
-Deferred renderer\n
+##Deferred renderer
  *SSAO
  *SMAA
  *Bloom
@@ -15,6 +15,6 @@ Deferred renderer\n
  *HDR + Tonemapping
  *GBuffer + ABuffer
  
-Custom Physics engine
+##Custom Physics engine
  *Rotational physics and friction for rigid bodies
  *Heightmap and Convex Hull collision
