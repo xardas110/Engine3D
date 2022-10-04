@@ -6,15 +6,15 @@ Engine Features
 
 ## Deferred renderer
  - SSAO
- *SMAA
- *Bloom
- *Global Illumination
- *Depth of field
- *Volumetric Lighting
- *Volumetric Clouds
- *HDR + Tonemapping
- *GBuffer + ABuffer
+ - SMAA
+ - Bloom
+ - Global Illumination
+ - Depth of field
+ - Volumetric Lighting
+ - Volumetric Clouds
+ - HDR + Tonemapping
+ - GBuffer + ABuffer
  
 ## Custom Physics engine
- *Rotational physics and friction for rigid bodies
- *Heightmap and Convex Hull collision
+ - Rotational physics and friction for rigid bodies
+ - Heightmap and Convex Hull collision
