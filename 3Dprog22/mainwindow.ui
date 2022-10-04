@@ -1435,39 +1435,12 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Dark">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>31</red>
-                <green>31</green>
-                <blue>31</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="Mid">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>175</red>
-                <green>175</green>
-                <blue>175</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Text">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
                 <red>255</red>
                 <green>255</green>
                 <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="BrightText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>255</red>
-                <green>51</green>
-                <blue>51</blue>
                </color>
               </brush>
              </colorrole>
@@ -1516,24 +1489,6 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Link">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>122</green>
-                <blue>244</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="LinkVisited">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>165</red>
-                <green>122</green>
-                <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="AlternateBase">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1549,24 +1504,6 @@ QProgressBar::chunk
                 <red>0</red>
                 <green>0</green>
                 <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipBase">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>17</red>
-                <green>17</green>
-                <blue>17</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>218</red>
-                <green>218</green>
-                <blue>218</blue>
                </color>
               </brush>
              </colorrole>
@@ -1599,39 +1536,12 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Dark">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>31</red>
-                <green>31</green>
-                <blue>31</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="Mid">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>175</red>
-                <green>175</green>
-                <blue>175</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Text">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
                 <red>255</red>
                 <green>255</green>
                 <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="BrightText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>255</red>
-                <green>51</green>
-                <blue>51</blue>
                </color>
               </brush>
              </colorrole>
@@ -1680,24 +1590,6 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Link">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>122</green>
-                <blue>244</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="LinkVisited">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>165</red>
-                <green>122</green>
-                <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="AlternateBase">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1713,24 +1605,6 @@ QProgressBar::chunk
                 <red>0</red>
                 <green>0</green>
                 <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipBase">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>17</red>
-                <green>17</green>
-                <blue>17</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>218</red>
-                <green>218</green>
-                <blue>218</blue>
                </color>
               </brush>
              </colorrole>
@@ -1763,39 +1637,12 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Dark">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>31</red>
-                <green>31</green>
-                <blue>31</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="Mid">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>175</red>
-                <green>175</green>
-                <blue>175</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="Text">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
                 <red>255</red>
                 <green>255</green>
                 <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="BrightText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>255</red>
-                <green>51</green>
-                <blue>51</blue>
                </color>
               </brush>
              </colorrole>
@@ -1844,24 +1691,6 @@ QProgressBar::chunk
                </color>
               </brush>
              </colorrole>
-             <colorrole role="Link">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>0</red>
-                <green>122</green>
-                <blue>244</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="LinkVisited">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>165</red>
-                <green>122</green>
-                <blue>255</blue>
-               </color>
-              </brush>
-             </colorrole>
              <colorrole role="AlternateBase">
               <brush brushstyle="SolidPattern">
                <color alpha="255">
@@ -1877,24 +1706,6 @@ QProgressBar::chunk
                 <red>0</red>
                 <green>0</green>
                 <blue>0</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipBase">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>17</red>
-                <green>17</green>
-                <blue>17</blue>
-               </color>
-              </brush>
-             </colorrole>
-             <colorrole role="ToolTipText">
-              <brush brushstyle="SolidPattern">
-               <color alpha="255">
-                <red>218</red>
-                <green>218</green>
-                <blue>218</blue>
                </color>
               </brush>
              </colorrole>
@@ -2429,8 +2240,8 @@ QProgressBar::chunk
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>478</width>
-               <height>512</height>
+               <width>484</width>
+               <height>533</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout">
@@ -3006,8 +2817,8 @@ QProgressBar::chunk
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>440</width>
-                      <height>240</height>
+                      <width>458</width>
+                      <height>206</height>
                      </rect>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -3210,8 +3021,8 @@ QProgressBar::chunk
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>460</width>
-                   <height>274</height>
+                   <width>472</width>
+                   <height>234</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_25">
@@ -3361,8 +3172,8 @@ QProgressBar::chunk
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>444</width>
-                   <height>1911</height>
+                   <width>456</width>
+                   <height>1899</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_67">
@@ -4426,8 +4237,8 @@ QProgressBar::chunk
                   <rect>
                    <x>0</x>
                    <y>0</y>
-                   <width>444</width>
-                   <height>3760</height>
+                   <width>456</width>
+                   <height>3697</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="verticalLayout_15">
@@ -4494,13 +4305,6 @@ QProgressBar::chunk
                       </widget>
                      </item>
                     </layout>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="CollapseButton" name="toolButton">
-                    <property name="text">
-                     <string>...</string>
-                    </property>
                    </widget>
                   </item>
                   <item>
@@ -5813,13 +5617,6 @@ QProgressBar::chunk
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>CollapseButton</class>
-   <extends>QToolButton</extends>
-   <header>collapsebutton.h</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
