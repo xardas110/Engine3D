@@ -92,8 +92,6 @@ void VISM2::UpdateEditor(World* world, float deltatime)
         ClearBalls();
         SpawnBalls(true);
     }
-
-    ImGui::Checkbox("Enable Multithreading(32 threads)", &world->physicsSystem->bSimulateThreaded);
     
     if (ImGui::Button("Clear Balls"))
     {
@@ -103,6 +101,8 @@ void VISM2::UpdateEditor(World* world, float deltatime)
     ImGui::Checkbox("Draw Octree", &bDrawOctreeLeafs);
     ImGui::Checkbox("Draw bounding boxes", &bDrawBoundingBoxes);
     ImGui::Checkbox("Draw Convex Hulls", &bDrawConvexHulls);
+
+    ImGui::Checkbox("Enable Multithreading(32 threads)", &world->physicsSystem->bSimulateThreaded);
 
     if (bDrawOctreeLeafs) world->physicsSystem->GetOctree()->DrawLeafBounds();
     if (bDrawBoundingBoxes) world->physicsSystem->DrawBoundingBoxes();
