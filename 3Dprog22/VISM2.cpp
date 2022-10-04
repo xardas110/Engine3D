@@ -14,7 +14,7 @@ void VISM2::Create(World* world)
     this->world = world;
     world->LoadRenderConfig("../3Dprog22/VISM2RenderConfig.json");
     world->GetRenderCamera()->SetCameraPosition(glm::vec3(0.f, 400.f, 0.f));
-    world->GetRenderCamera()->SetFar(5000.f);
+    world->GetRenderCamera()->SetFar(3000.f);
     CreateWater(world);
 }
 
