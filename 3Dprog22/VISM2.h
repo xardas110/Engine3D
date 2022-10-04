@@ -27,6 +27,8 @@ private:
 	entt::entity terrainHighRes;
 	entt::entity terrainLowRes;
 
+	bool bShowWifreframe{ false };
+
 	entt::entity CreateTerrain(class World* world, const std::string& jsonPath);
 };
 

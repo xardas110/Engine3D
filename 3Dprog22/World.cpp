@@ -571,6 +571,11 @@ void World::DeleteEntity(entt::entity id)
     entityForDeletion.emplace_back(id);
 }
 
+void World::DeleteEntityInstant(entt::entity id)
+{
+    entRegistry.destroy(id);
+}
+
 void World::DeleteEntities(std::initializer_list<std::string> stringFlags)
 {
     entRegistry.each(

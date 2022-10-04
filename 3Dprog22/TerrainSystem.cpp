@@ -293,13 +293,14 @@ void TerrainSystem::Render(World* world, entt::registry& registry)
 {
     auto* renderEngine = RenderEngine::Get();
 
+    if (bShowWireframe) renderEngine->EnableWireframe();
+
     renderEngine->SetCulling(GL_FRONT);
     renderEngine->EnableDepthTest();
     renderEngine->SetDepthMask(GL_TRUE);
     //will only support 1 dirlight
     DirLight dirlight;
     world->GetDirectionalLight(dirlight);
-    //renderEngine->EnableWireframe();
     auto group = registry.group<TerrainComponent, TransformComponent>();
     for (auto entity : group)
     {
@@ -369,7 +370,7 @@ void TerrainSystem::Render(World* world, entt::registry& registry)
             renderEngine->DrawArrays(GL_PATCHES, meshPatch.vao, 0, 16);
         }
     }
-   // renderEngine->DisableWireframe();
+    if (bShowWireframe) renderEngine->DisableWireframe();
 }
 
 void TerrainSystem::InitNormalBuffers(World* world, entt::registry& registry)
@@ -545,5 +546,5 @@ void TerrainSystem::DeleteTerrain(World* world, entt::entity entity)
         tm->DeleteTexture(terrain.materials[i].displacementmap);
     }
 
-    world->DeleteEntity(entity);
+    world->DeleteEntityInstant(entity);
 }

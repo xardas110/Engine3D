@@ -67,7 +67,7 @@ struct ShadowGridBindings
 	int heightmap;
 	int scaleY;
 };
-
+/*Currently only 1 terrain supported, can easily be extended*/
 class TerrainSystem
 {
 	friend class World;
@@ -103,6 +103,8 @@ class TerrainSystem
 	Mesh meshPatch;
 
 public:
+	bool bShowWireframe = false;
+
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, const std::string& configJsonPath);
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, Texture& heightmap, const std::string& configJsonPath);
 

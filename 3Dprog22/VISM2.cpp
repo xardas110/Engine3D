@@ -34,6 +34,8 @@ void VISM2::UpdateEditor(World* world, float deltatime)
 {
     ImGui::Begin("VISM2 Oppgaver");
     ImGui::Text("Task 2.5 - Visualize terrain");
+    ImGui::Checkbox("Terrain Wireframe", &bShowWifreframe);
+    world->terrainSystem.bShowWireframe = bShowWifreframe;
     if (ImGui::Button("Create HighRes terrain"))
     {
         world->DeleteTerrain(terrainLowRes);
@@ -48,7 +50,6 @@ void VISM2::UpdateEditor(World* world, float deltatime)
 
         terrainLowRes = CreateTerrain(world, "../3Dprog22/VISM2TerrainLowRes.json");
     }
-
 
     ImGui::End();
 }

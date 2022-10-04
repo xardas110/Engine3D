@@ -165,6 +165,7 @@ public:
 	bool GetDirectionalLight(DirLight& outDirlight);
 
 	void DeleteEntity(entt::entity id);
+	void DeleteEntityInstant(entt::entity id);
 
 	void DeleteEntities(std::initializer_list<std::string> stringFlags);
 
