@@ -29,8 +29,8 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
 ## Sponza GI 0vs2 bounces
 
 <div style='float: center'>
-  <img style='width: 600px' src="/Images/Sponza0Bounce.png"></img>
+  <img style='width: 800px' src="/Images/Sponza0Bounce.png"></img>
 </div>
 <div style='float: center'>
-  <img style='width: 600px' src="/Images/Sponza2Bounce.png"></img>
+  <img style='width: 800px' src="/Images/Sponza2Bounce.png"></img>
 </div>
