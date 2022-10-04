@@ -299,7 +299,7 @@ void TerrainSystem::Render(World* world, entt::registry& registry)
     //will only support 1 dirlight
     DirLight dirlight;
     world->GetDirectionalLight(dirlight);
-    renderEngine->EnableWireframe();
+    //renderEngine->EnableWireframe();
     auto group = registry.group<TerrainComponent, TransformComponent>();
     for (auto entity : group)
     {
@@ -369,7 +369,7 @@ void TerrainSystem::Render(World* world, entt::registry& registry)
             renderEngine->DrawArrays(GL_PATCHES, meshPatch.vao, 0, 16);
         }
     }
-    renderEngine->DisableWireframe();
+   // renderEngine->DisableWireframe();
 }
 
 void TerrainSystem::InitNormalBuffers(World* world, entt::registry& registry)
