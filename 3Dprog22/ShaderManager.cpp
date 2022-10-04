@@ -22,209 +22,209 @@ ShaderManager::ShaderManager()
     //Loading all shaders here, might change it later, right now its convinient.
 
     LoadShader(ShaderType::Standard, 
-        "../3dProg22/plainshader.vert", 
-        "../3dProg22/plainshader.frag");
+        "./plainshader.vert", 
+        "./plainshader.frag");
 
     LoadShader(ShaderType::Skybox, 
-        "../3dProg22/Shaders/Sky/Skybox/SkyBox.vert", 
-        "../3dProg22/Shaders/Sky/Skybox/SkyBox.frag");
+        "./Shaders/Sky/Skybox/SkyBox.vert", 
+        "./Shaders/Sky/Skybox/SkyBox.frag");
 
     LoadShader(ShaderType::DefaultDebug,
-        "../3dProg22/Shaders/Debug/DefaultDebug.vert",
-        "../3dProg22/Shaders/Debug/DefaultDebug.frag");
+        "./Shaders/Debug/DefaultDebug.vert",
+        "./Shaders/Debug/DefaultDebug.frag");
 
     LoadShader(ShaderType::Sun, 
-        "../3dProg22/Shaders/Sky/Sun/Sun.vert", 
-        "../3dProg22/Shaders/Sky/Sun/Sun.frag");
+        "./Shaders/Sky/Sun/Sun.vert", 
+        "./Shaders/Sky/Sun/Sun.frag");
 
     LoadShader(ShaderType::LensFlare, 
-        "../3dProg22/Shaders/Sky/Lens Flare/LensFlare.vert", 
-        "../3dProg22/Shaders/Sky/Lens Flare/LensFlare.frag");
+        "./Shaders/Sky/Lens Flare/LensFlare.vert", 
+        "./Shaders/Sky/Lens Flare/LensFlare.frag");
 
     Shader volumetric = LoadShader(ShaderType::VolumetricLight, 
-        "../3dProg22/Shaders/PostProcess/VolumetricLight/VolumetricLight.vert", 
-        "../3dProg22/Shaders/PostProcess/VolumetricLight/VolumetricLight.frag");
+        "./Shaders/PostProcess/VolumetricLight/VolumetricLight.vert", 
+        "./Shaders/PostProcess/VolumetricLight/VolumetricLight.frag");
 
     Shader dithering = LoadShader(ShaderType::DitheringFilter,
-        "../3dProg22/Shaders/Filters/Dithering/Dithering.vert",
-        "../3dProg22/Shaders/Filters/Dithering/Dithering.frag");
+        "./Shaders/Filters/Dithering/Dithering.vert",
+        "./Shaders/Filters/Dithering/Dithering.frag");
 
     Shader skyDome = LoadShader(
         ShaderType::SkyDome, 
-        "../3dProg22/Shaders/Sky/SkyDome/SkyDome.vert", 
-        "../3dProg22/Shaders/Sky/SkyDome/SkyDome.frag");
+        "./Shaders/Sky/SkyDome/SkyDome.vert", 
+        "./Shaders/Sky/SkyDome/SkyDome.frag");
 
     Shader standardForward =  LoadShader(ShaderType::StandardTextured, 
-        "../3dProg22/Shaders/StandardForward.vert", 
-        "../3dProg22/Shaders/StandardForward.frag");
+        "./Shaders/StandardForward.vert", 
+        "./Shaders/StandardForward.frag");
 
     LoadShader(ShaderType::Debug, 
-        "../3dProg22/Shaders/Debug.vert", 
-        "../3dProg22/Shaders/Debug.frag");
+        "./Shaders/Debug.vert", 
+        "./Shaders/Debug.frag");
 
     LoadShader(ShaderType::SkeletalMesh, 
-        "../3dProg22/Shaders/SkeletalMesh.vert", 
-        "../3dProg22/Shaders/StandardForward.frag");
+        "./Shaders/SkeletalMesh.vert", 
+        "./Shaders/StandardForward.frag");
 
     Shader dldp = LoadShader(ShaderType::DirectionalLightDepthPass,
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMap.vert",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMap.frag",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMap.geom");
+        "./Shaders/ShadowPass/DirLight/ShadowMap.vert",
+        "./Shaders/ShadowPass/DirLight/ShadowMap.frag",
+        "./Shaders/ShadowPass/DirLight/ShadowMap.geom");
 
     Shader dldpSM = LoadShader(ShaderType::DirectionalLightDepthPassSM,
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMapSM.vert",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMap.frag",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMap.geom");
+        "./Shaders/ShadowPass/DirLight/ShadowMapSM.vert",
+        "./Shaders/ShadowPass/DirLight/ShadowMap.frag",
+        "./Shaders/ShadowPass/DirLight/ShadowMap.geom");
 
     Shader forwardInstancedSM = LoadShader(ShaderType::ForwardInstancedSM,
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMapInstanced.vert",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMapInstanced.frag",
-        "../3dProg22/Shaders/ShadowPass/DirLight/ShadowMapInstanced.geom");
+        "./Shaders/ShadowPass/DirLight/ShadowMapInstanced.vert",
+        "./Shaders/ShadowPass/DirLight/ShadowMapInstanced.frag",
+        "./Shaders/ShadowPass/DirLight/ShadowMapInstanced.geom");
 
     Shader vegetationSM = LoadShader(ShaderType::VegetationSM,
-        "../3dProg22/Shaders/ShadowPass/DirLight/Vegetation.vert",
-        "../3dProg22/Shaders/ShadowPass/DirLight/Vegetation.frag",
-        "../3dProg22/Shaders/ShadowPass/DirLight/Vegetation.geom");
+        "./Shaders/ShadowPass/DirLight/Vegetation.vert",
+        "./Shaders/ShadowPass/DirLight/Vegetation.frag",
+        "./Shaders/ShadowPass/DirLight/Vegetation.geom");
 
    Shader terrain = LoadShader(ShaderType::Terrain,
-        "../3dProg22/Shaders/Terrain/Terrain.vert",
-        "../3dProg22/Shaders/Terrain/Terrain.frag",
-        "../3dProg22/Shaders/Terrain/Terrain.geom",
-        "../3dProg22/Shaders/Terrain/Terrain.tese",
-        "../3dProg22/Shaders/Terrain/Terrain.tesc");
+        "./Shaders/Terrain/Terrain.vert",
+        "./Shaders/Terrain/Terrain.frag",
+        "./Shaders/Terrain/Terrain.geom",
+        "./Shaders/Terrain/Terrain.tese",
+        "./Shaders/Terrain/Terrain.tesc");
 
    Shader terrainSG = LoadShader(ShaderType::TerrainShadowGrid,
-       "../3dProg22/Shaders/ShadowGrid/Terrain/TerrainSG.vert",
-       "../3dProg22/Shaders/ShadowGrid/Terrain/TerrainSG.frag",
-       "../3dProg22/Shaders/ShadowGrid/Terrain/TerrainSG.geom",
-       "../3dProg22/Shaders/ShadowGrid/Terrain/TerrainSG.tese",
-       "../3dProg22/Shaders/ShadowGrid/Terrain/TerrainSG.tesc");
+       "./Shaders/ShadowGrid/Terrain/TerrainSG.vert",
+       "./Shaders/ShadowGrid/Terrain/TerrainSG.frag",
+       "./Shaders/ShadowGrid/Terrain/TerrainSG.geom",
+       "./Shaders/ShadowGrid/Terrain/TerrainSG.tese",
+       "./Shaders/ShadowGrid/Terrain/TerrainSG.tesc");
 
    Shader terrainSM = LoadShader(ShaderType::TerrainShadowMap,
-       "../3dProg22/Shaders/ShadowPass/DirLight/Terrain/TerrainSP.vert",
-       "../3dProg22/Shaders/ShadowPass/DirLight/Terrain/TerrainSP.frag",
-       "../3dProg22/Shaders/ShadowPass/DirLight/Terrain/TerrainSP.geom",
-       "../3dProg22/Shaders/ShadowPass/DirLight/Terrain/TerrainSP.tese",
-       "../3dProg22/Shaders/ShadowPass/DirLight/Terrain/TerrainSP.tesc");
+       "./Shaders/ShadowPass/DirLight/Terrain/TerrainSP.vert",
+       "./Shaders/ShadowPass/DirLight/Terrain/TerrainSP.frag",
+       "./Shaders/ShadowPass/DirLight/Terrain/TerrainSP.geom",
+       "./Shaders/ShadowPass/DirLight/Terrain/TerrainSP.tese",
+       "./Shaders/ShadowPass/DirLight/Terrain/TerrainSP.tesc");
 
     LoadShader(ShaderType::TerrainNormalCompute,
-        "../3dProg22/Shaders/Terrain/TerrainNormal.comp");
+        "./Shaders/Terrain/TerrainNormal.comp");
 
     LoadShader(ShaderType::TerrainSplatCompute,
-        "../3dProg22/Shaders/Terrain/TerrainSplat.comp");
+        "./Shaders/Terrain/TerrainSplat.comp");
 
     Shader forwardInstanced = LoadShader(ShaderType::ForwardInstanced, 
-        "../3dProg22/Shaders/ForwardInstanced/ForwardInstanced.vert", 
-        "../3dProg22/Shaders/ForwardInstanced/ForwardInstanced.frag");
+        "./Shaders/ForwardInstanced/ForwardInstanced.vert", 
+        "./Shaders/ForwardInstanced/ForwardInstanced.frag");
 
     Shader vegetation = LoadShader(ShaderType::Vegetation, 
-        "../3dProg22/Shaders/Vegetation/Vegetation.vert", 
-        "../3dProg22/Shaders/vegetation/Vegetation.frag");
+        "./Shaders/Vegetation/Vegetation.vert", 
+        "./Shaders/vegetation/Vegetation.frag");
 
     Shader vegetationSG = LoadShader(ShaderType::VegetationSG,
-        "../3dProg22/Shaders/ShadowGrid/Vegetation/VegetationSG.vert",
-        "../3dProg22/Shaders/ShadowGrid/Vegetation/VegetationSG.frag",
-        "../3dProg22/Shaders/ShadowGrid/Vegetation/VegetationSG.geom");
+        "./Shaders/ShadowGrid/Vegetation/VegetationSG.vert",
+        "./Shaders/ShadowGrid/Vegetation/VegetationSG.frag",
+        "./Shaders/ShadowGrid/Vegetation/VegetationSG.geom");
 
     Shader particle = LoadShader(ShaderType::Particle, 
-        "../3dProg22/Shaders/Particle/Particle.vert",
-        "../3dProg22/Shaders/Particle/Particle.frag");
+        "./Shaders/Particle/Particle.vert",
+        "./Shaders/Particle/Particle.frag");
 
     Shader deferredStandard = LoadShader(ShaderType::DeferredStandard,
-        "../3dProg22/Shaders/DeferredShaders/StandardDeferred/StandardDeferred.vert",
-        "../3dProg22/Shaders/DeferredShaders/StandardDeferred/StandardDeferred.frag");
+        "./Shaders/DeferredShaders/StandardDeferred/StandardDeferred.vert",
+        "./Shaders/DeferredShaders/StandardDeferred/StandardDeferred.frag");
 
     Shader lightPass = LoadShader(ShaderType::DeferredLightPass,
-        "../3dProg22/Shaders/DeferredShaders/LightPass/LightPass.vert",
-        "../3dProg22/Shaders/DeferredShaders/LightPass/LightPass.frag");
+        "./Shaders/DeferredShaders/LightPass/LightPass.vert",
+        "./Shaders/DeferredShaders/LightPass/LightPass.frag");
 
     Shader HDR = LoadShader(ShaderType::HDR,
-        "../3dProg22/Shaders/HDR/HDR.vert",
-        "../3dProg22/Shaders/HDR/HDR.frag");
+        "./Shaders/HDR/HDR.vert",
+        "./Shaders/HDR/HDR.frag");
 
     Shader wbClear = LoadShader(ShaderType::WBClearCompute,
-        "../3dProg22/Shaders/WeightedBlend/WeightedBlendClear.comp");
+        "./Shaders/WeightedBlend/WeightedBlendClear.comp");
 
     Shader bilateral = LoadShader(ShaderType::Bilateral,
-        "../3dProg22/Shaders/Filters/Bilateral/Bilateral.vert",
-        "../3dProg22/Shaders/Filters/Bilateral/Bilateral.frag");
+        "./Shaders/Filters/Bilateral/Bilateral.vert",
+        "./Shaders/Filters/Bilateral/Bilateral.frag");
 
     Shader bilateralCompute = LoadShader(ShaderType::BilateralCompute,
-        "../3dProg22/Shaders/Filters/Bilateral/Bilateral.comp");
+        "./Shaders/Filters/Bilateral/Bilateral.comp");
 
     Shader SMAA = LoadShader(ShaderType::SMAA,
-        "../3dProg22/Shaders/Filters/SMAA/SMAA.vert",
-        "../3dProg22/Shaders/Filters/SMAA/SMAA.frag");
+        "./Shaders/Filters/SMAA/SMAA.vert",
+        "./Shaders/Filters/SMAA/SMAA.frag");
 
     Shader blur = LoadShader(ShaderType::Blur,
-        "../3dProg22/Shaders/Filters/Blur/Blur.vert",
-        "../3dProg22/Shaders/Filters/Blur/Blur.frag");
+        "./Shaders/Filters/Blur/Blur.vert",
+        "./Shaders/Filters/Blur/Blur.frag");
 
     Shader fog = LoadShader(ShaderType::Fog,
-        "../3dProg22/Shaders/PostProcess/Fog/Fog.vert",
-        "../3dProg22/Shaders/PostProcess/Fog/Fog.frag");
+        "./Shaders/PostProcess/Fog/Fog.vert",
+        "./Shaders/PostProcess/Fog/Fog.frag");
 
     Shader ssao = LoadShader(ShaderType::SSAO,
-        "../3dProg22/Shaders/PostProcess/SSAO/SSAO.vert",
-        "../3dProg22/Shaders/PostProcess/SSAO/SSAO.frag");
+        "./Shaders/PostProcess/SSAO/SSAO.vert",
+        "./Shaders/PostProcess/SSAO/SSAO.frag");
 
     Shader gaussianBlur = LoadShader(ShaderType::GaussianBlur,
-        "../3dProg22/Shaders/Filters/GaussianBlur/GaussianBlur.vert",
-        "../3dProg22/Shaders/Filters/GaussianBlur/GaussianBlur.frag");
+        "./Shaders/Filters/GaussianBlur/GaussianBlur.vert",
+        "./Shaders/Filters/GaussianBlur/GaussianBlur.frag");
         
     Shader dof = LoadShader(ShaderType::DoF,
-        "../3dProg22/Shaders/DoF/DoF.vert",
-        "../3dProg22/Shaders/DoF/DoF.frag");
+        "./Shaders/DoF/DoF.vert",
+        "./Shaders/DoF/DoF.frag");
 
     Shader text = LoadShader(ShaderType::Text,
-        "../3dProg22/Shaders/Text/Text.vert",
-        "../3dProg22/Shaders/Text/Text.frag");
+        "./Shaders/Text/Text.vert",
+        "./Shaders/Text/Text.frag");
 
     Shader perlinWorley3D = LoadShader(ShaderType::PerlinWorley3D, 
-        "../3dProg22/Shaders/Noise/perlinWorley3D.comp");
+        "./Shaders/Noise/perlinWorley3D.comp");
 
     Shader worley3D = LoadShader(ShaderType::Worley3D, 
-        "../3dProg22/Shaders/Noise/worley3D.comp");
+        "./Shaders/Noise/worley3D.comp");
 
     Shader weather = LoadShader(ShaderType::Weather, 
-        "../3dProg22/Shaders/Volumetric Clouds/weather.comp");
+        "./Shaders/Volumetric Clouds/weather.comp");
 
     Shader vc = LoadShader(ShaderType::VolumetricClouds, 
-        "../3dProg22/Shaders/PostProcess/VolumetricClouds/VolumetricClouds.vert",
-        "../3dProg22/Shaders/PostProcess/VolumetricClouds/VolumetricClouds.frag");
+        "./Shaders/PostProcess/VolumetricClouds/VolumetricClouds.vert",
+        "./Shaders/PostProcess/VolumetricClouds/VolumetricClouds.frag");
 
     Shader voxel = LoadShader(ShaderType::Voxel,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/Voxelize.vert",
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/Voxelize.frag",
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/Voxelize.geom");
+        "./Shaders/VoxelConeTracing/Voxelize/Voxelize.vert",
+        "./Shaders/VoxelConeTracing/Voxelize/Voxelize.frag",
+        "./Shaders/VoxelConeTracing/Voxelize/Voxelize.geom");
 
     Shader voxelClear = LoadShader(ShaderType::VoxelClear,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelClear.comp");
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelClear.comp");
 
     Shader voxelDisplay2 = LoadShader(ShaderType::VoxelDisplay2,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelDisplay2.vert",
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelDisplay2.frag");
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelDisplay2.vert",
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelDisplay2.frag");
 
     Shader voxelConeTrace = LoadShader(ShaderType::VoxelConeTrace,
-        "../3dProg22/Shaders/VoxelConeTracing/VoxelConeTrace/VoxelConeTrace.vert",
-        "../3dProg22/Shaders/VoxelConeTracing/VoxelConeTrace/VoxelConeTrace.frag");
+        "./Shaders/VoxelConeTracing/VoxelConeTrace/VoxelConeTrace.vert",
+        "./Shaders/VoxelConeTracing/VoxelConeTrace/VoxelConeTrace.frag");
 
     Shader voxelMip = LoadShader(ShaderType::VoxelMip,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelMip.comp");
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelMip.comp");
     Shader voxelAnisoMip = LoadShader(ShaderType::VoxelAnisoMip,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelAnisoMip.comp");
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelAnisoMip.comp");
     Shader voxelAnisoMipMips = LoadShader(ShaderType::VoxelAnisoMipMips,
-        "../3dProg22/Shaders/VoxelConeTracing/Voxelize/VoxelAnisoMipMips.comp");
+        "./Shaders/VoxelConeTracing/Voxelize/VoxelAnisoMipMips.comp");
 
     Shader voxelRadiance = LoadShader(ShaderType::VoxelRadiance,
-        "../3dProg22/Shaders/VoxelConeTracing/VoxelRadiance/VoxelRadiance.comp");
+        "./Shaders/VoxelConeTracing/VoxelRadiance/VoxelRadiance.comp");
 
     Shader voxelFirstBounce = LoadShader(ShaderType::VoxelFirstBounce,
-        "../3dProg22/Shaders/VoxelConeTracing/VoxelRadiance/VoxelFirstBounce.comp");
+        "./Shaders/VoxelConeTracing/VoxelRadiance/VoxelFirstBounce.comp");
 
     LoadShader(ShaderType::Water,
-        "../3dProg22/Shaders/Water/Water.vert",
-        "../3dProg22/Shaders/Water/Water.frag");
+        "./Shaders/Water/Water.vert",
+        "./Shaders/Water/Water.frag");
 
     //shadow bindings
     uboManager.BindShaderToBlock(dldpSM.shaderId, 0, "CSMMatrices");
