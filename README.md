@@ -49,4 +49,6 @@ This project runs on visual studio 2017+
 
 1. Download and install QT 6.x+ with MSVC 
 2. Install QT VS Tools extension. (Open visual studio->Extensions->Manage Extensions->Install QT VS Tools)
-3. Build in Release 64 bit (Associated dll files are inside 3dprog22/Libs if needed)
+3. QT VS Tools will ask you to selct a qt version. The version is located in C:/qt/qt6.x/msvc2016_64/bin/qcmake
+4. Try to build the project in visual studio, if it asks you to select a qt version then go to project properties->QT project settings->QT installation->Select qt version 6.x
+5. Build in Release 64 bit (Associated dll files are inside 3dprog22/Libs if needed)
