@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include "Components.h"
 #include "Water.h"
+#include "logger.h"
 
 VISM2::~VISM2()
 {
@@ -103,6 +104,31 @@ void VISM2::UpdateEditor(World* world, float deltatime)
     ImGui::Checkbox("Draw Convex Hulls", &bDrawConvexHulls);
 
     ImGui::Checkbox("Enable Multithreading(32 threads)", &world->physicsSystem->bSimulateThreaded);
+
+    ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing(); ImGui::Spacing();
+    
+    
+    static float axis[3] { 1250, 1250, 1250};
+    static bool changeDir;
+    if (ImGui::Button("Set Camera Postion"))
+    {
+        glm::vec3 newPos = glm::vec3{ axis[0], axis[1], axis[2] };
+        world->GetRenderCamera()->SetCameraPosition(newPos);
+        if (changeDir == true)
+        {
+            glm::vec3 newDir = glm::normalize(glm::vec3{ 0.f } - newPos);
+            Logger::getInstance()->logText("\nCalculated dir : (" + std::to_string(newDir.x) + ", " + std::to_string(newDir.y) + ", " + std::to_string(newDir.z) + ")", LogType::HIGHLIGHT);
+            //float pitch = asin(newDir.y);
+            //float yaw = asin(newDir.x / (cos(pitch)+FLT_EPSILON));
+            //world->GetRenderCamera()->SetCameraDirection(yaw, pitch);
+
+            glm::vec3 oldDir = world->GetRenderCamera()->GetDirection();
+            Logger::getInstance()->logText("Current Dir: (" + std::to_string(oldDir.x) + ", " + std::to_string(oldDir.y) + ", " + std::to_string(oldDir.z) + ")", LogType::HIGHLIGHT);
+        }
+    }
+    ImGui::SameLine();
+    ImGui::InputFloat3("(x,y,z)", &axis[0]);
+    ImGui::Checkbox("Look towards center on position update?", &changeDir);
 
     if (bDrawOctreeLeafs) world->physicsSystem->GetOctree()->DrawLeafBounds();
     if (bDrawBoundingBoxes) world->physicsSystem->DrawBoundingBoxes();
