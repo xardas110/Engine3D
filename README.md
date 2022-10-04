@@ -21,9 +21,6 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
 
 
 ## Grass Scene
-
-![img](/Images/Grass Scene.png)
-
 <div style='float: center'>
   <img style='width: 600px' src="/Images/Grass Scene.png"></img>
 </div>
