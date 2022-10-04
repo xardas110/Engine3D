@@ -2,8 +2,6 @@
  
 Engine3D is an all purpose engine created for learning purposes during the 3D-Programming semester. 
 
-Engine Features
-
 ## Deferred renderer
  - SSAO
  - SMAA
