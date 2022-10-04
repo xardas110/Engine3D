@@ -105,5 +105,7 @@ class TerrainSystem
 public:
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, const std::string& configJsonPath);
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, Texture& heightmap, const std::string& configJsonPath);
+
+	void DeleteTerrain(class World* world, entt::entity entity);
 };
 

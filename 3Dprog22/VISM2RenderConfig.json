@@ -30,7 +30,7 @@
   },
   "volumetricClouds": {
     "enabled": true,
-    "coverage": 0.70,
+    "coverage": 0.50,
     "speed": 400.0,
     "crispiness": 40.0,
     "curliness": 0.1,
@@ -38,7 +38,7 @@
   },
   "fog": {
     "enabled": true,
-    "sight": 0.5
+    "sight": 0.8
   },
   "shadows": {
     "enabled": true,

@@ -179,7 +179,7 @@ bool TextureManager::LoadTexture(const std::string& texturePath, Texture& outTex
 {
     if (GetTexture(texturePath, outTexture))
     {
-        //std::cout << "Successfully loaded a texture that already exists: " << texturePath << std::endl;
+        std::cout << "Successfully loaded a texture that already exists: " << texturePath << std::endl;
         return true;
     }
 
@@ -446,6 +446,24 @@ bool TextureManager::DeleteTexture(const std::string& name)
 
     textureMap.erase(name);
     return true;
+}
+
+bool TextureManager::DeleteTexture(const Texture& texture)
+{
+    initializeOpenGLFunctions();
+    for (auto it = textureMap.begin(); it != textureMap.end(); ++it)
+    {
+        std::cout << "Looping for texture deletion" << it->first << std::endl;
+        if (it->second.textureID == texture.textureID)
+        {
+            std::cout << "Texture found: " << texture.textureID << std::endl;
+            glDeleteTextures(1, &texture.textureID);
+            textureMap.erase(it);
+            return true;
+        }
+    }
+
+    return false;
 }
 
 bool TextureManager::GetTexture(const std::string& texturePath, Texture& outTexture)

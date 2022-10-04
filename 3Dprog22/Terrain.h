@@ -62,8 +62,6 @@ public:
 	std::vector<float> slopeBuffer;
 	std::vector<glm::vec3> normalBuffer;
 private:
-
-
 	Texture heightMap;
 	Texture normalMap;
 	Texture splatMap;

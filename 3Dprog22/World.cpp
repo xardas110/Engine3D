@@ -92,8 +92,6 @@ void World::OnInit(Camera* renderCamera)
     InitScripts();
     pathFindingSystem.Init(this, entRegistry);
 
-    StartGameMode(3);
-  
     physicsSystem->Init();
 
     bSplineSystem.Init(this, entRegistry);
@@ -256,6 +254,11 @@ entt::entity World::CreateTerrain(const std::string& configJsonPath)
 entt::entity World::CreateTerrain(Texture& heightmap, const std::string& configJsonPath)
 {
     return terrainSystem.CreateTerrain(this, entRegistry, heightmap, configJsonPath);
+}
+
+void World::DeleteTerrain(entt::entity entity)
+{
+    terrainSystem.DeleteTerrain(this, entity);
 }
 
 void World::InitScripts()

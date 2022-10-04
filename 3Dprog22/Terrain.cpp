@@ -1,6 +1,7 @@
 #include "Terrain.h"
 #include "World.h"
 #include "Debug.h"
+#include "RenderEngine.h"
 
 int Terrain::gridSize = 8;
 
@@ -13,7 +14,11 @@ Terrain::Terrain(const std::string& jsonConfigPath)
 	LoadConfig(jsonConfigPath);
 }
 
-Terrain::~Terrain() {}
+Terrain::~Terrain() 
+{
+	auto* re = RenderEngine::Get();
+	/*World owns heightmap, splat and normal, check world to delete them*/
+}
 
 void Terrain::Init()
 {		

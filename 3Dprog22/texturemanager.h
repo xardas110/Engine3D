@@ -68,7 +68,7 @@ public:
 	bool CreateLazTexture(const std::string& lazPath, Texture& outTexture);
 
 	bool DeleteTexture(const std::string& name);
-
+	bool DeleteTexture(const Texture& texture);
 	/// <summary>
 	/// Checks if a cubemap with the same texture paths exists
 	/// </summary>

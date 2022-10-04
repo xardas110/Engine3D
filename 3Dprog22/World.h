@@ -213,6 +213,8 @@ public:
 	entt::entity CreateTerrain(const std::string& configJsonPath);
 	entt::entity CreateTerrain(Texture& heightmap, const std::string& configJsonPath);
 
+	void DeleteTerrain(entt::entity entity);
+
 	static size_t nameVal;
 	static size_t GetNextNameVal();
 

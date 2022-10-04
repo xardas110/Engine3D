@@ -1,13 +1,13 @@
 {
   "scaleY": 1135.0,
   "scaleXZ": 4096.0,
-  "bEnableTess": false,
+  "bEnableTess": true,
   "tessellationFactor": 500,
   "tessellationSlope": 2.0,
   "tessellationShift": 0.3,
   "normalStrength": 60.0,
   "tessellationRange": 400,
-  "heightmapPath": "../3Dprog22/Assets/Maps/HeightFields/HDR_4k_256_SMOOTHERED_30.hdr",
+  "heightmapPath": "../3Dprog22/Assets/Maps/HeightFields/HDR_4k_1K.hdr",
   "LOD_Range": [
     3000,
     2000,

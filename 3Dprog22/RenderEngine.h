@@ -117,6 +117,8 @@ public:
 	bool DeleteFBO(const std::string& name);
 	bool DeleteTexture(const std::string& name);
 
+	bool DeleteTexture(const Texture& texture);
+
 	/*Creates or changes a texture from the bound texture*/
 	bool CreateTexture2D(Texture& outTexture, unsigned internalFormat, unsigned format, unsigned width, unsigned height, unsigned type, unsigned border = 0, unsigned level = 0, const void* pixels = nullptr);
 

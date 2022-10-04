@@ -376,6 +376,13 @@ bool RenderEngine::DeleteTexture(const std::string& name)
     return textureManager.DeleteTexture(name);
 }
 
+bool RenderEngine::DeleteTexture(const Texture& texture)
+{
+    glDeleteTextures(1, &texture.textureID);
+    textureManager.DeleteTexture(texture);
+    return true;
+}
+
 bool RenderEngine::CreateTexture2D(Texture& outTexture, unsigned internalFormat, unsigned format, unsigned width, unsigned height, unsigned type, unsigned border, unsigned level, const void* pixels)
 {
     if (!outTexture.IsValid())

@@ -4164,9 +4164,6 @@
     <None Include="Shaders\Common\RenderSettings.frag">
       <Filter>Resources\Common</Filter>
     </None>
-    <None Include="VISM2Terrain.json">
-      <Filter>src\GameMode\VISM2 Mappe</Filter>
-    </None>
     <None Include="VISM2RenderConfig.json">
       <Filter>src\GameMode\VISM2 Mappe</Filter>
     </None>
@@ -4184,6 +4181,12 @@
     </None>
     <None Include="Shaders\Water\Water.vert">
       <Filter>Resources\Water</Filter>
+    </None>
+    <None Include="VISM2TerrainLowRes.json">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
+    </None>
+    <None Include="VISM2TerrainHighRes.json">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

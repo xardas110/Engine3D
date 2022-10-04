@@ -498,7 +498,8 @@ entt::entity TerrainSystem::CreateTerrain(World* world, entt::registry& registry
         std::cout << "failed to load TerrainSplatmap" << std::endl;
     }
 
-    for (size_t i = 0; i < 3; i++)
+    terrain.numMaterials = 3;
+    for (size_t i = 0; i < terrain.numMaterials; i++)
     {
         textureManager->LoadTexture(terrain.config.terrainMaterialConfig[i].diffusePath, terrain.GetMaterial(i).diffusemap, Texture::Types::Diffuse, 9987, 9729, false);
         textureManager->LoadTexture(terrain.config.terrainMaterialConfig[i].normalPath, terrain.GetMaterial(i).normalmap, Texture::Types::Normals, 9987, 9729, false);
@@ -513,4 +514,36 @@ entt::entity TerrainSystem::CreateTerrain(World* world, entt::registry& registry
 
     Init(world, registry);
     return terrainEnt.GetEntityId();
+}
+
+void TerrainSystem::DeleteTerrain(World* world, entt::entity entity)
+{
+    Entity terr(entity, world);
+
+    if (!terr.IsValid()) return;
+
+    if (!terr.HasComponent<TerrainComponent>()) return;
+
+    auto& terrain = terr.GetComponent<TerrainComponent>().terrain;
+
+    auto* tm = world->GetTextureManager();
+
+    tm->DeleteTexture(terrain.config.heightmapPath);
+    tm->DeleteTexture("TerrainNormalmap");
+    tm->DeleteTexture("TerrainSplatmap");
+
+    std::cout << "Terrain num mat " << terrain.numMaterials << std::endl;
+
+    for (size_t i = 0; i < 3; i++)
+    {
+        std::cout << "Deleting texture" << i << std::endl;
+        tm->DeleteTexture(terrain.materials[i].diffusemap);
+        tm->DeleteTexture(terrain.materials[i].normalmap);
+        tm->DeleteTexture(terrain.materials[i].ambientmap);
+        tm->DeleteTexture(terrain.materials[i].roughnessmap);
+        tm->DeleteTexture(terrain.materials[i].specularmap);
+        tm->DeleteTexture(terrain.materials[i].displacementmap);
+    }
+
+    world->DeleteEntity(entity);
 }

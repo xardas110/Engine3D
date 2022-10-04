@@ -55,6 +55,9 @@ void Editor::PostWorldInit()
     InitRenderSettings();
     InitRenderConfigGUI();
     InitGameModeUI();
+
+    ui->gmCB->setCurrentIndex(5);
+    world->StartGameMode(ui->gmCB->currentIndex());
 }
 
 void Editor::HideComponents() const

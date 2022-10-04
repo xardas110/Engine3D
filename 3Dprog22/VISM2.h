@@ -24,13 +24,10 @@ class VISM2 : public GameMode
 	virtual void OnKeyPress(QKeyEvent* event) override;
 
 private:
+	entt::entity terrainHighRes;
+	entt::entity terrainLowRes;
 
-	entt::entity prosjektTekst;
-
-	void CreateTerrain(class World* world);
-	void CreateParticle(class World* world);
-	void CreateDebugLineExample();
-	void CreateTextExample(class World* world);
+	entt::entity CreateTerrain(class World* world, const std::string& jsonPath);
 };
 
 

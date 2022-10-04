@@ -1471,7 +1471,8 @@
     <None Include="up.dae" />
     <None Include="Assets\Models\IronMan\v1_0_IronManRigged.max" />
     <None Include="VISM2RenderConfig.json" />
-    <None Include="VISM2Terrain.json" />
+    <None Include="VISM2TerrainHighRes.json" />
+    <None Include="VISM2TerrainLowRes.json" />
     <None Include="walk" />
     <None Include="walk.dae" />
     <None Include="Assets\Textures\wall.jpg" />
