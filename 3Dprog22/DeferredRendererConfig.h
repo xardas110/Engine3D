@@ -62,7 +62,7 @@ struct DeferredRendererConfig
 		float cloudDensity{ 0.002f };
 		
 		float earthRadius{ 600000.f };
-		float atmosphereInnerRadius{ 1000.f };
+		float atmosphereInnerRadius{ 2000.f };
 		float atmosphereOuterRadius{ 20000.f };
 
 		bool bExpensive{ true };

@@ -106,6 +106,7 @@ void BSplineSystem::THUpdate(int thIndex)
 			auto& bSpline = view.get<BSplines>(view[i]);
 			auto& trans = registry->get<TransformComponent>(view[i]);
 			auto pos = trans.GetPosition();
+			if (!bSpline.bSimulate) continue;
 			bSpline.AddPoint(pos);
 			bSpline.GetSegments(lines[thIndex]);
 		}	

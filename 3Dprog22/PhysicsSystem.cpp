@@ -255,7 +255,7 @@ void PhysicsSystem::ApplyForces(float deltatime)
 
 		glm::vec3 gravityImpulse = gravity * body.GetMass() * deltatime;
 		body.ApplyLinearImpulse(gravityImpulse);
-		body.ApplyLinearImpulse(windImpulse);
+		body.ApplyLinearImpulse(externalImpulse * deltatime);
 	}
 }
 
@@ -370,6 +370,11 @@ void PhysicsSystem::ResolveHeightmapCollisions(Collideable& collideable, entt::e
 			staticBody.SetPos((tri.a + tri.b + tri.c) * 0.33f);
 			if (IntersectSphereTriangle(mNp.mSpheres[collideable.shapeIndex], tri, contact))
 			{
+				if (entA.HasComponent<BSplines>())
+				{
+					entA.GetComponent<BSplines>().bSimulate = true;
+				}
+
 				ResolveCollision(bodyComp->body, staticBody, contact);
 			}
 		}

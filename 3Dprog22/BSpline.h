@@ -41,6 +41,7 @@ private:
 struct BSplines
 {
 	std::array<BSpline, MAX_BSPLINES> splines; int currentIndex = 0; bool bFilled = false;
+	bool bSimulate = false;
 
 	void AddPoint(glm::vec3& pt);
 	void GetSegments(std::vector<BSplineSegment>& outSegments);

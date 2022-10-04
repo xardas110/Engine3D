@@ -78,7 +78,7 @@ public:
 
 	void SetCastShadowOnPhysicBalls(bool bCast);
 
-	glm::vec3 windImpulse{ 0.f, 0.f, 0.f };
+	glm::vec3 externalImpulse{ 0.f, 0.f, 0.f };
 private:
 	glm::vec3 gravity = glm::vec3(0.f, -9.81f, 0.f);
 

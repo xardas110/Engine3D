@@ -11,7 +11,7 @@ class VISM2 : public GameMode
 	~VISM2();
 
 	virtual void Create(class World* world) override;
-
+	void		 CreateWater(class World* world);
 	virtual void BeginPlay(class World* world) override;
 
 	virtual void EndPlay(class World* world) override;
@@ -24,8 +24,8 @@ class VISM2 : public GameMode
 
 	virtual void OnKeyPress(QKeyEvent* event) override;
 
-	void SpawnBall(const glm::vec3& pos, bool bHighres = true);
-	void SpawnBalls();
+	void SpawnBall(const glm::vec3& pos, bool bHighres = true, bool bAddSpline = false);
+	void SpawnBalls(bool bAddSpline = false);
 	void ClearBalls();
 private:
 	class World* world;
