@@ -4,7 +4,7 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
 
 Engine Features
 
-Deferred renderer
+Deferred renderer\n
  *SSAO
  *SMAA
  *Bloom
