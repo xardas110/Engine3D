@@ -1,0 +1,158 @@
+#version 460 core
+
+layout (local_size_x = 8, local_size_y = 8, local_size_z = 8) in;
+
+layout(binding = 0, rgba8) uniform readonly image3D voxelAlbedo;
+layout(binding = 1, rgba8) uniform image3D voxelNormal;
+layout(binding = 2, rgba8) uniform writeonly image3D voxelRadiance;
+
+#include "../../common/camera.frag"
+
+#define MAX_CASCADES 4
+
+struct VoxelGPUData
+{
+	vec4 gridCenter;
+	vec4 gridSize;
+	ivec4 dims;
+	mat4 projX, projY, projZ;
+};
+
+struct Cascade
+{
+	mat4 cascadeProjection;
+	float cascadeOffsetX;
+	float cascadeOffsetY;
+	float cascadeScaleX;
+	float cascadeScaleY;
+};
+
+struct DirLight {
+	vec3 ambient;
+	float pad1;
+	vec3 diffuse;
+	float pad2;
+	vec3 specular;	
+	float pad3;
+	vec3 direction;
+	float itensity;
+};
+
+layout (std140, binding=0) uniform CSMMatrices
+{
+	mat4 toShadowSpaceMat;
+	Cascade cascades[MAX_CASCADES];
+};
+
+layout (std140, binding=1) uniform DirlightUBO
+{
+	DirLight dirlight;
+};
+
+layout (std140, binding=6) uniform VoxelData
+{
+	VoxelGPUData voxelData;
+};
+
+uniform sampler2DArray shadowMaps;
+
+
+const float voxelScale = 1.f / voxelData.gridSize.x;
+const float voxelSize = 1.;
+const vec3 minPoint = voxelData.gridCenter.xyz - (vec3(voxelData.gridSize.xyz) / 2.);
+
+float GetShadowSimple(in vec3 fragPos)
+{
+	vec4 vs = view * vec4(fragPos, 1.f);
+	int level = 3; float depth = abs(vs.z);
+	for (int i = 0; i< MAX_CASCADES; i++) 
+	{
+		if (depth < cascades[i].cascadeOffsetX)
+		{
+			level = i;
+			break;
+		}
+	}
+	vs = cascades[level].cascadeProjection *  vec4(fragPos, 1.f);
+
+	vec3 UVD = vec3(
+		vs.x,
+		vs.y,
+		vs.z);
+	UVD.xyz = UVD.xyz * 0.5f + 0.5f;
+
+	float fragDepth = UVD.z - 0.0005f;
+ 
+	return texture(shadowMaps, vec3(UVD.xy, level)).r > fragDepth ? 1.f : 0.00f;
+}
+
+vec3 BRDF(DirLight light, vec3 normal, vec3 albedo)
+{
+    float nDotL = 0.0f;
+
+    vec3 weight = normal * normal;
+    // calculate directional normal attenuation
+    float rDotL = dot(vec3(1.0, 0.0, 0.0), -light.direction);
+    float uDotL = dot(vec3(0.0, 1.0, 0.0), -light.direction);
+    float fDotL = dot(vec3(0.0, 0.0, 1.0), -light.direction);
+
+    rDotL = normal.x > 0.0 ? max(rDotL, 0.0) : max(-rDotL, 0.0);
+    uDotL = normal.y > 0.0 ? max(uDotL, 0.0) : max(-uDotL, 0.0);
+    fDotL = normal.z > 0.0 ? max(fDotL, 0.0) : max(-fDotL, 0.0);
+    // voxel shading average from all front sides
+    nDotL = rDotL * weight.x + uDotL * weight.y + fDotL * weight.z;
+
+    return light.diffuse * albedo * nDotL;
+}
+
+vec3 EncodeNormal(vec3 normal)
+{
+    return normal * 0.5f + vec3(0.5f);
+}
+
+vec3 DecodeNormal(vec3 normal)
+{
+    return normal * 2.0f - vec3(1.0f);
+}
+
+vec3 VoxelToWorld(ivec3 pos)
+{
+    vec3 result = vec3(pos);
+    result *= voxelSize;
+
+    return result + minPoint;
+}
+
+vec3 WorldToVoxel(vec3 position)
+{
+    vec3 voxelPos = position - minPoint;
+    return voxelPos * voxelScale;
+}
+
+void main(void)
+{
+	ivec3 pixel = ivec3(gl_GlobalInvocationID);
+
+	vec4 albedo = imageLoad(voxelAlbedo, pixel);
+
+	if (albedo.a < 0.00001f) return;
+
+	albedo.a = 0.f;
+
+	vec3 baseNormal = imageLoad(voxelNormal, pixel).rgb;
+	vec3 normal = normalize(DecodeNormal(baseNormal));
+
+	if (any(greaterThan(albedo.rgb, vec3(0.f))))
+	{
+		vec3 fragPos = VoxelToWorld(pixel);
+		albedo.rgb = BRDF(dirlight, normal, albedo.rgb);
+
+		float voxelWorldSize = 1.0 /  (voxelScale * voxelData.gridSize.x);
+		vec3 position = fragPos + normal * voxelWorldSize;
+		albedo.rgb *= GetShadowSimple(position);
+	}
+
+	albedo.a = 1.f;
+
+	imageStore(voxelRadiance, pixel, albedo);
+}

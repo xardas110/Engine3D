@@ -1,0 +1,10 @@
+{
+  "maxLodLevels": 4,
+  "quality": 0,
+
+  "assets": [
+    {
+      "path": "../3Dprog22/Assets/Vegetation/Rock1/Rock1.obj"
+    }
+  ]
+}

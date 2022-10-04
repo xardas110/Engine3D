@@ -1,0 +1,45 @@
+{
+
+  "scaleY": 600.0,
+  "scaleXZ": 6000.0,
+  "bEnableTess": true,
+  "tessellationFactor": 600,
+  "tessellationSlope": 1.8,
+  "tessellationShift": 0.1,
+  "normalStrength": 60.0,
+  "TBN_Range": 200,
+  "heightmapPath": "../3Dprog22/Assets/Maps/HeightFields/hm0.bmp",
+  "LOD_Range": [
+    1750,
+    874,
+    386,
+    192,
+    100,
+    50,
+    0,
+    0
+  ],
+  "materials": [
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain/grass0_DIF.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain/grass0_NRM.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain/grass0_DISP.jpg",
+      "heightScaling": 1.0,
+      "horizontalScaling": 200.0
+    },
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain/Ground_17_DIF.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain/Ground_17_NRM.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain/Ground_17_DISP.jpg",
+      "heightScaling": 0.8,
+      "horizontalScaling": 400.0
+    },
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain/Ground_21_DIF.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain/Ground_21_NRM.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain/Ground_21_DISP.jpg",
+      "heightScaling": 2.0,
+      "horizontalScaling": 200.0
+    }
+  ]
+}

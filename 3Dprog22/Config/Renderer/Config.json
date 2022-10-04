@@ -1,0 +1,70 @@
+{
+  "dof": {
+    "enabled": true,
+    "focusScale": 17.0,
+    "uFar": 8.0,
+    "radScale": 0.5,
+    "maxBlurSize": 5.0
+  },
+  "bloom": {
+    "enabled": true,
+    "threshold": [ 0.2126, 0.7152, 0.0722 ]
+  },
+  "SSAO": {
+    "enabled": true,
+    "radius": 2.0,
+    "bias": 2.5
+  },
+  "sky": {
+    "topColor": [ 0.10, 0.30, 1.00 ],
+    "botColor": [ 0.65, 0.85, 1.00 ]
+  },
+  "globalIllumination": {
+    "enabled": false
+  },
+  "volumetricLight": {
+    "enabled": true,
+    "numRays": 50,
+    "scattering": 0.45,
+    "sunColor": [ 1.4, 1.4, 1.1 ]
+  },
+  "volumetricClouds": {
+    "enabled": true,
+    "coverage": 0.40,
+    "speed": 900.0,
+    "crispiness": 40.0,
+    "curliness": 0.1,
+    "density": 0.002
+  },
+  "fog": {
+    "enabled": false,
+    "sight": 0.4
+  },
+  "shadows": {
+    "enabled": true,
+    "resolution": 4096
+  },
+  "contactShadows": {
+    "enabled": false
+  },
+  "SMAA": {
+    "enabled": true
+  },
+  "SSAA": {
+    "enabled": false
+  },
+  "dirlight": {
+    "ambient": [ 0.05, 0.05, 0.05 ],
+    "diffuse": [ 1.0, 1.0, 1.0 ],
+    "specular": [ 1.0, 1.0, 1.0 ],
+    "direction": [ 1.0, 1.0, 1.0 ],
+    "itensity": 1.5
+  },
+  "vegetation": {
+    "enabled": true,
+    "LODRanges": [ 100, 300, 500, 700, 800 ]
+  },
+  "instancedMesh": {
+    "LODRanges": [ 100, 300, 500, 700 ]
+  }
+}

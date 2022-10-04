@@ -1,0 +1,31 @@
+#version 460 core
+
+layout(local_size_x = 32, local_size_y = 32) in;
+
+#define AB_BUFFER_WIDTH 3840
+#define AB_BUFFER_HEIGHT 2160
+
+#define BUFFER_SIZE AB_BUFFER_WIDTH * AB_BUFFER_HEIGHT
+
+struct Fragment //Max 16 bytes
+{
+	vec4 accum; 
+	vec4 reveal;
+};
+
+layout(std430, binding = 5) buffer AlphaBuffer
+{
+	Fragment alphaNode[];
+};
+
+
+void main()
+{
+	ivec2 xy = ivec2(gl_GlobalInvocationID.xy);
+
+	int index = xy.y * AB_BUFFER_WIDTH + xy.x;
+	alphaNode[index].accum = vec4(0.f, 0.f, 0.f, 0.f);
+	alphaNode[index].reveal = vec4(1.f, 0.f, 2.f, 0.f);
+
+	//ClearAlphaFragment(xy);
+}

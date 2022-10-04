@@ -1,0 +1,294 @@
+{
+  "paths": [
+    "../3Dprog22/Assets/Models/StoneWall/StoneWall.obj",
+    "../3Dprog22/Assets/Models/SpaceCraft/E 45 Aircraft_obj.obj",
+    "../3Dprog22/Assets/Models/Sphere/Sphere.obj",
+    "../3Dprog22/Assets/Models/SpaceCraft/E 45 Aircraft_obj.obj",
+    "../3Dprog22/Assets/Models/statue/statue.obj",
+    "../3Dprog22/Assets/Models/Tree2/Lod0.obj",
+    "../3Dprog22/Assets/Models/Tree2/Lod1.obj",
+    "../3Dprog22/Assets/Models/Tree2/Lod2.obj",
+    "../3Dprog22/Assets/Models/Tree2/Lod3.obj",
+    "./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var1/Var1_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var1/Var1_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var1/Var1_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var1/Var1_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var1/Var1_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var2/Var2_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var2/Var2_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var2/Var2_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var2/Var2_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var2/Var2_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var3/Var3_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var3/Var3_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var3/Var3_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var3/Var3_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var3/Var3_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var4/Var4_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var4/Var4_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var4/Var4_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var4/Var4_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var4/Var4_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var5/Var5_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var5/Var5_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var5/Var5_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var5/Var5_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var5/Var5_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var6/Var6_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var6/Var6_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var6/Var6_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var6/Var6_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var6/Var6_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var7/Var7_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var7/Var7_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var7/Var7_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var7/Var7_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var7/Var7_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var8/Var8_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var8/Var8_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var8/Var8_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var8/Var8_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var8/Var8_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var9/Var9_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var9/Var9_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var9/Var9_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var9/Var9_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var9/Var9_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var10/Var10_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var10/Var10_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var10/Var10_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var10/Var10_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var10/Var10_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var11/Var11_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var11/Var11_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var11/Var11_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var11/Var11_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var11/Var11_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var12/Var12_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var12/Var12_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var12/Var12_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var12/Var12_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var12/Var12_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var13/Var13_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var13/Var13_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var13/Var13_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var13/Var13_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var13/Var13_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var14/Var14_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var14/Var14_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var14/Var14_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var14/Var14_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var14/Var14_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var15/Var15_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var15/Var15_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var15/Var15_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var15/Var15_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var15/Var15_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var16/Var16_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var16/Var16_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var16/Var16_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var16/Var16_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var16/Var16_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var17/Var17_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var17/Var17_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var17/Var17_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var17/Var17_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var17/Var17_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var18/Var18_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var18/Var18_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var18/Var18_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var18/Var18_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var18/Var18_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var19/Var19_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var19/Var19_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var19/Var19_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var19/Var19_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var19/Var19_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var20/Var20_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var20/Var20_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var20/Var20_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var20/Var20_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Grass3/Var20/Var20_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var1/Var1_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var1/Var1_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var1/Var1_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var1/Var1_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var1/Var1_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var2/Var2_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var2/Var2_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var2/Var2_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var2/Var2_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var2/Var2_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var3/Var3_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var3/Var3_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var3/Var3_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var3/Var3_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var3/Var3_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var4/Var4_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var4/Var4_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var4/Var4_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var4/Var4_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var4/Var4_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var5/Var5_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var5/Var5_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var5/Var5_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var5/Var5_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var5/Var5_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var6/Var6_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var6/Var6_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var6/Var6_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var6/Var6_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var6/Var6_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var7/Var7_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var7/Var7_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var7/Var7_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var7/Var7_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var7/Var7_LOD4.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var8/Var8_LOD0.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var8/Var8_LOD1.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var8/Var8_LOD2.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var8/Var8_LOD3.fbx",
+
+    "../3Dprog22/Assets/Vegetation/Perennials/Var8/Var8_LOD4.fbx"
+  ]
+}

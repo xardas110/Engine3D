@@ -1,0 +1,53 @@
+{
+  "scaleY": 200.0,
+  "scaleXZ": 3000.0,
+  "bEnableTess": true,
+  "tessellationFactor": 500,
+  "tessellationSlope": 2.0,
+  "tessellationShift": 0.3,
+  "normalStrength": 60.0,
+  "tessellationRange": 400,
+  "heightmapPath": "../3Dprog22/Assets/Maps/HeightFields/hm0.bmp",
+  "LOD_Range": [
+    1280,
+    512,
+    256,
+    128,
+    64,
+    0,
+    0,
+    0
+  ],
+  "materials": [
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_Albedo.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_Normal.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_Displacement.jpg",
+      "aoPath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_AO.jpg",
+      "specularPath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_Specular.jpg",
+      "roughnessPath": "../3Dprog22/Assets/Textures/Terrain2/GrassWild2/vbnlde3n_2K_Roughness.jpg",
+      "heightScaling": 5.0,
+      "horizontalScaling": 30.0
+    },
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_Albedo.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_Normal.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_Displacement.jpg",
+      "aoPath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_AO.jpg",
+      "specularPath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_Specular.jpg",
+      "roughnessPath": "../3Dprog22/Assets/Textures/Terrain2/GroundForest1/ufordjrlw_2K_Roughness.jpg",
+      "heightScaling": 5.0,
+      "horizontalScaling": 30.0
+    },
+    {
+      "diffusePath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_Albedo.jpg",
+      "normalPath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_Normal.jpg",
+      "displacementPath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_Displacement.jpg",
+      "aoPath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_AO.jpg",
+      "specularPath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_Specular.jpg",
+      "roughnessPath": "../3Dprog22/Assets/Textures/Terrain2/RockSmooth2/sbbiyvp_2K_Roughness.jpg",
+      "heightScaling": 5.0,
+      "horizontalScaling": 30.0
+    }
+  ]
+}

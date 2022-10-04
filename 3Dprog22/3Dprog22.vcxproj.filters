@@ -1,0 +1,4205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{acc90754-6cf0-460b-a7d8-4fb4aa0d1c8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Components">
+      <UniqueIdentifier>{8000159d-7cc5-4244-a63a-04c6f61cf448}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\World">
+      <UniqueIdentifier>{2c068745-6bce-4787-983a-f8c5d4e1e94d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ECS">
+      <UniqueIdentifier>{d43b10e8-9a8a-41e9-9c94-e760b49dfebd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Math">
+      <UniqueIdentifier>{0ad6b13a-30c6-47b6-b533-f35ecb2e98fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Math\GLM">
+      <UniqueIdentifier>{7b437354-edcf-4dc3-aa5f-c296fb04868f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Camera">
+      <UniqueIdentifier>{20b62a07-9f1d-4e4f-82dc-aa4676e2c1ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL">
+      <UniqueIdentifier>{12622a7f-a544-4643-bda2-2029e682e2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Texture Manager">
+      <UniqueIdentifier>{8c628324-5a92-42f9-a232-1f4f0cc1a006}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Window">
+      <UniqueIdentifier>{de28923c-1a78-4b7d-945b-68d7164f7f92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh">
+      <UniqueIdentifier>{21849d3d-5eb2-478b-a230-5c773ad5c5cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Console">
+      <UniqueIdentifier>{d9396e15-41b6-437c-98fb-e1f52a35ac25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh\Meshes">
+      <UniqueIdentifier>{02b01f93-a23e-47b0-9ef9-ac446f5e0b1e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Material">
+      <UniqueIdentifier>{ddec2da2-7760-48b7-b6a5-17e3c8feec5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Shader Manager">
+      <UniqueIdentifier>{f32f3b75-5602-43c5-99eb-b79c92931d95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer">
+      <UniqueIdentifier>{02d5f68a-ec84-4826-bed1-94dd4d069fc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics Engine">
+      <UniqueIdentifier>{0be30acc-d1fd-476a-b934-683842a794d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Debug">
+      <UniqueIdentifier>{525d6643-691c-4810-8281-0a71940cd199}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Json">
+      <UniqueIdentifier>{5f95a3d6-f9dc-454e-ab3b-0d8a7d3200b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{310037ea-5aa5-431d-9e6a-a58f06160504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\StandardForward">
+      <UniqueIdentifier>{3a08fa58-ac9d-4f25-ae02-f8a8f69314cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Shadow Map">
+      <UniqueIdentifier>{c3a31269-aac7-44b1-8e1b-f37bb87911c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\ShadowPass">
+      <UniqueIdentifier>{dcd69be7-8c73-4cf4-b124-c47b0662aabf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GlobalTypeDefs">
+      <UniqueIdentifier>{4d4f4476-70b2-491f-8411-d419fdb3d269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Meth">
+      <UniqueIdentifier>{5636b6e1-98f0-48d8-bb97-1abbed0fc53d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Shader Manager\ShaderParamters">
+      <UniqueIdentifier>{5556aa1d-071b-4309-8b74-6d071d9a05ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Character">
+      <UniqueIdentifier>{0e9da03f-5ab5-4807-9841-80a2b72ed4a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\UBO">
+      <UniqueIdentifier>{cee58bf9-fbf2-4b3a-99c3-6018398fd741}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\FBO">
+      <UniqueIdentifier>{11e5f49d-8210-4190-8a40-ec4c6b40587c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Common">
+      <UniqueIdentifier>{4d9fb3be-5a78-49b4-a5b4-4901bc3c39f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Common\Components">
+      <UniqueIdentifier>{242eb11a-1f47-41b0-8779-cb8041ca88b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Terrain">
+      <UniqueIdentifier>{65601188-b21a-4465-9fc3-aa360e5ee3bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Terrain">
+      <UniqueIdentifier>{2b3bad81-199d-4466-9b67-9330e4f4b1cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Vegetation">
+      <UniqueIdentifier>{4d918457-f475-4c5b-9ce9-f06676948129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh\Static Mesh">
+      <UniqueIdentifier>{1e93b7aa-06b1-4f72-badf-78dc00a0289f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh\Shared">
+      <UniqueIdentifier>{563a8e39-5783-4854-b2b3-9955fed3486e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh\Skeletal Mesh">
+      <UniqueIdentifier>{c0c8a339-be9f-4e09-a520-f3e84122dff2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ThreadPool">
+      <UniqueIdentifier>{b57b39f7-4a72-46cc-a453-62077b26acef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Trophy">
+      <UniqueIdentifier>{ecf073a0-0013-4471-9063-549013758aae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky">
+      <UniqueIdentifier>{39028bc0-bea7-4ddf-8eb5-9e04deac4eb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky\Skybox">
+      <UniqueIdentifier>{c099c062-1da5-48fe-8db2-87350679494d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Sky">
+      <UniqueIdentifier>{fee698c1-d040-4d16-a33a-989d39a5fac0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Sky\Skybox">
+      <UniqueIdentifier>{2fd76134-95cd-47fe-84cf-5449833cdf97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Sky\Sun">
+      <UniqueIdentifier>{48a35eaf-0cd9-405d-9c30-664afcf06a54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky\Sun">
+      <UniqueIdentifier>{1c4037e6-748f-4637-b7ae-e16182b72313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky\Lens Flare">
+      <UniqueIdentifier>{3dfaa408-0a4c-445e-83a0-15add1e6fcd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Sky\Lens Flare">
+      <UniqueIdentifier>{c4df2f02-35d8-45cd-8348-6829a436bfe6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Audio">
+      <UniqueIdentifier>{27b22989-ad42-4dc2-835b-45f5a018515c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Mesh\Static Mesh Instanced">
+      <UniqueIdentifier>{c6e0602e-5833-4a9c-a8f4-e04ac263c6c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\StandardInstanced">
+      <UniqueIdentifier>{480b1e9c-8d91-4753-a1bd-722dd6ea69d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\SSBO">
+      <UniqueIdentifier>{359b43dc-73a3-4b96-bb88-71a9156be79d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Vegetation">
+      <UniqueIdentifier>{6ba0269a-b75b-4b26-be84-5168b20e7acd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Particles">
+      <UniqueIdentifier>{d6de3d48-40f7-44ac-9ea6-51626c801110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Particle">
+      <UniqueIdentifier>{44b5011e-4b49-4d78-ab44-51b9b84f8b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky\Dirlight">
+      <UniqueIdentifier>{effa08f4-e89b-4583-b7aa-fb53a396225c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\HDR">
+      <UniqueIdentifier>{da361243-4781-4a56-b778-8a16103b4d92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\HDR">
+      <UniqueIdentifier>{5442aa9e-a7a7-4cb2-a985-cd170d2d78c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Sky\Skydome">
+      <UniqueIdentifier>{eab547f7-d457-45d2-9812-c43387ae1003}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Sky\SkyDome">
+      <UniqueIdentifier>{253539a9-f646-41ca-acc9-c10c6d405275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\PostProcess">
+      <UniqueIdentifier>{b34a894d-96e9-4607-8fde-4815ad3f8d14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters">
+      <UniqueIdentifier>{cf1c16fd-e8a7-4074-abc9-d799e58ccb1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters\Dithering">
+      <UniqueIdentifier>{dfd00b32-c014-4277-a46e-6a5e0dc3db06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\PostProcess">
+      <UniqueIdentifier>{e120d32d-0e5a-4a16-8335-6a110eeaa6b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters\Bilateral">
+      <UniqueIdentifier>{3b78ded3-0e26-4c58-8d93-200dfaf84e88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters\SMAA">
+      <UniqueIdentifier>{de552c50-6278-41f0-a4d4-684bf432f247}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\PostProcess\VolumetricLight">
+      <UniqueIdentifier>{d31beb85-0d24-4a81-8bba-c9ed2ead5911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\PostProcess\Fog">
+      <UniqueIdentifier>{53ff8248-fdc1-4780-a880-3a09971a8376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Static Shadow Grid">
+      <UniqueIdentifier>{7a48dde5-d80c-46bd-817a-7b3a9d8fa8be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Static Shadow Grid\Terrain">
+      <UniqueIdentifier>{cba51c4b-c946-433b-b7fe-5ed84c54772d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\ShadowPass\Terrain">
+      <UniqueIdentifier>{8cf7dcbf-c72a-498b-bcd3-87b14c4634d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Static Shadow Grid\Vegetation">
+      <UniqueIdentifier>{a0a36ec7-3be3-4f03-a770-6f8b0a5dc6ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\LightPass">
+      <UniqueIdentifier>{d86da99d-9682-4a14-bd7f-f454651f8520}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\GBuffer">
+      <UniqueIdentifier>{32776adb-661f-4f9e-b72b-73dfc751403e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\PostProcess\VolumetricLight">
+      <UniqueIdentifier>{2a62deea-9988-41f6-8c22-dce6043be456}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters">
+      <UniqueIdentifier>{47d6bf04-fb2d-4d09-a170-0dad9dbe72cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Dithering">
+      <UniqueIdentifier>{ac2d889c-62ca-42fc-842f-dc7247893d0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Bilateral">
+      <UniqueIdentifier>{63ae08a3-44ff-4cfa-a0ae-710d377b5586}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Sampling">
+      <UniqueIdentifier>{3c318e20-096a-4de1-9106-35ba38960ea2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Sampling\SMAA">
+      <UniqueIdentifier>{923370a0-8142-4778-91d8-e7ba4330ef1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\PostProcess\SSAO">
+      <UniqueIdentifier>{44fb94c6-6b74-4b35-a8e1-111a316274fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\PostProcess\SSAO">
+      <UniqueIdentifier>{33584644-5f34-41a3-9581-60a700161e59}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Blur">
+      <UniqueIdentifier>{65177449-e25d-41d3-a9cf-946e04f9416b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters\Blur">
+      <UniqueIdentifier>{5935a37e-51d8-43c0-922f-96b0b15a5c70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Filters\Gaussian blur">
+      <UniqueIdentifier>{a8e83029-f60e-4399-966b-e951ef240a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Filters\GaussianBlur">
+      <UniqueIdentifier>{5360f525-df6c-4f0a-be97-944054fb501d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Bloom">
+      <UniqueIdentifier>{b5ddcb2c-6c00-4924-be7e-b8182c2f3885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\DoF">
+      <UniqueIdentifier>{2095de08-7b86-4b7c-a4a9-b2f382e7e62b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\DoF">
+      <UniqueIdentifier>{e2c30b80-7436-45b7-9bd7-5f9fae02bb23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\PUBO">
+      <UniqueIdentifier>{fc29ef23-0d11-4ee8-9432-6113d5f1eb40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\ACBO">
+      <UniqueIdentifier>{7f4ab3a8-6444-46d0-8a69-ff70638e6def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\ABuffer">
+      <UniqueIdentifier>{7acae819-304e-4fe9-a338-f629a339efc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Common">
+      <UniqueIdentifier>{76d21035-e3cc-43ac-858f-2c02c301321f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Text">
+      <UniqueIdentifier>{e3504a09-4852-448f-bdcf-195e7ed8a160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Text">
+      <UniqueIdentifier>{b567c34e-d442-461e-978f-f3d61c00c1b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode">
+      <UniqueIdentifier>{190c56ba-b191-41b6-ad07-8d6a123acffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\PathFinding">
+      <UniqueIdentifier>{1a7b9007-afd8-4fa5-bc9a-fe02da992619}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\BinaryNode">
+      <UniqueIdentifier>{9537a26d-9f5a-40a3-a4cd-a779706f1e7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\StaticMeshList">
+      <UniqueIdentifier>{bc6fc4dd-c5c4-45e6-a81e-ed8f46f749f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Config">
+      <UniqueIdentifier>{e5bed0cb-6050-4576-8b43-4dd451f93b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\Noise">
+      <UniqueIdentifier>{47ad0b1d-17ef-4f89-b196-ec80c71e39a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Noise">
+      <UniqueIdentifier>{1a7d80af-0de5-4b20-89bc-60ddb97b827d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\VolumetricClouds">
+      <UniqueIdentifier>{ea0559be-407d-45a8-ac27-ac3899238179}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Common\Collision">
+      <UniqueIdentifier>{2280cfdd-1542-420c-8fcf-460d5bae53f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\PostProcess\VolumetricClouds">
+      <UniqueIdentifier>{0f2126a9-0fe3-42df-b388-fca7d858e71e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\PostProcess\VolumetricClouds">
+      <UniqueIdentifier>{2a30419e-67d9-4d81-8858-c9dacaa5ff24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode\Sponza">
+      <UniqueIdentifier>{0ca7971e-4bdf-4360-8b88-d05f38d222c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\VoxelConeTracing">
+      <UniqueIdentifier>{a5b7567f-21c5-4bc1-9a07-968a3b31fc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\OpenGL\Renderer\VoxelConeTracing">
+      <UniqueIdentifier>{ca13792a-2401-4c2e-8a8a-3de5b25d7a3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\VoxelConeTracing\Injection">
+      <UniqueIdentifier>{0fced9d0-7e82-4175-921f-8e294bf8b0b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\LightPass">
+      <UniqueIdentifier>{69287607-4a8d-49a1-90a4-bf39f652317d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Math\Alpha Mesh">
+      <UniqueIdentifier>{1e1bf1ee-9a0e-499c-ae26-0ad6d4ec2731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Editor">
+      <UniqueIdentifier>{a7c416ae-1e24-4d2e-b98a-93ab8e4a761f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\WeightedBlend">
+      <UniqueIdentifier>{5b9fe02e-90bb-4776-bd6f-2d99bc535ba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode\Eksamen">
+      <UniqueIdentifier>{56cade31-159d-477a-a225-400b0735f6ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode\Grass World">
+      <UniqueIdentifier>{49ac6999-cd17-4d3f-b1fb-da10f7ed15de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode\Physics World">
+      <UniqueIdentifier>{5e03b6e4-a522-466a-9e87-e3c9d647e307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\GameMode\VISM2 Mappe">
+      <UniqueIdentifier>{99c01215-e10e-410e-8f28-0a8a503d5b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Common\DistanceFog">
+      <UniqueIdentifier>{9d27984f-09a4-48af-8059-2a621f7b594d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics Engine\Geometry">
+      <UniqueIdentifier>{fce4bba9-62df-4147-94ee-bfba38bab6cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics Engine\Collision">
+      <UniqueIdentifier>{54fc47a0-4eab-4b45-9506-1c899a410757}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics Engine\Physics">
+      <UniqueIdentifier>{dac0b24b-4079-491f-b18e-b78c1f095cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{a451b785-f39c-4017-aa5f-6d3ea63ff5fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\ImGui">
+      <UniqueIdentifier>{79819963-a558-4870-bd0b-4cd498d1701d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Physics Engine\Math">
+      <UniqueIdentifier>{c1471061-b387-4d9c-bf46-bcf9bde3bdd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Curves">
+      <UniqueIdentifier>{6ee88e22-1c07-40b8-80a9-14941fac6b27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Debug">
+      <UniqueIdentifier>{209c4e50-ea42-427c-ab87-e3f34e90cc67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Water">
+      <UniqueIdentifier>{5662f70f-0045-4d42-9e20-96cb1455ec9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Water">
+      <UniqueIdentifier>{20a1343c-e879-48d0-b720-b9448acb888d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="World.cpp">
+      <Filter>src\World</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>src\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="skybox.cpp">
+      <Filter>src\Sky\Skybox</Filter>
+    </ClCompile>
+    <ClCompile Include="texturemanager.cpp">
+      <Filter>src\OpenGL\Texture Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>src\OpenGL\Shader Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>src\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="renderwindow.cpp">
+      <Filter>src\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>src\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="editor.cpp">
+      <Filter>src\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>src\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="lissajous.cpp">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="trianglesurface.cpp">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="visualcube.cpp">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="visualobject.cpp">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager.cpp">
+      <Filter>src\OpenGL\Shader Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Json.cpp">
+      <Filter>src\Json</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldSerializer.cpp">
+      <Filter>src\World</Filter>
+    </ClCompile>
+    <ClCompile Include="CascadedShadowMaps.cpp">
+      <Filter>src\Shadow Map</Filter>
+    </ClCompile>
+    <ClCompile Include="UBOManager.cpp">
+      <Filter>src\OpenGL\UBO</Filter>
+    </ClCompile>
+    <ClCompile Include="PointGenerator.cpp">
+      <Filter>src\Meth</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>src\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameBufferManager.cpp">
+      <Filter>src\OpenGL\FBO</Filter>
+    </ClCompile>
+    <ClCompile Include="AiCharacter.cpp">
+      <Filter>src\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainNode.cpp">
+      <Filter>src\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainConfig.cpp">
+      <Filter>src\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>src\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainSystem.cpp">
+      <Filter>src\Terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderEngine.cpp">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="VegetationSystem.cpp">
+      <Filter>src\Vegetation</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshManager.cpp">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMesh.cpp">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshManager.cpp">
+      <Filter>src\Mesh\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="vertex.cpp">
+      <Filter>src\Mesh\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalMeshManager.cpp">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalMesh.cpp">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationHelper.cpp">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshSystem.cpp">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPoolx.cpp">
+      <Filter>src\ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="AlphaPassSystem.cpp">
+      <Filter>src\Math\Alpha Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="SkeletalMeshSystem.cpp">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClCompile>
+    <ClCompile Include="Trophy.cpp">
+      <Filter>src\Trophy</Filter>
+    </ClCompile>
+    <ClCompile Include="SkySystem.cpp">
+      <Filter>src\Sky</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioSystem.cpp">
+      <Filter>src\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>src\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="WavFileReader.cpp">
+      <Filter>src\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="AudioData.cpp">
+      <Filter>src\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticMeshInstancedSystem.cpp">
+      <Filter>src\Mesh\Static Mesh Instanced</Filter>
+    </ClCompile>
+    <ClCompile Include="SSBOManager.cpp">
+      <Filter>src\OpenGL\SSBO</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialManager.cpp">
+      <Filter>src\Material</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>src\Particles</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderDebugger.cpp">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredRenderer.cpp">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraSystem.cpp">
+      <Filter>src\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="SMAASystem.cpp">
+      <Filter>src\OpenGL\Renderer\Filters\Sampling\SMAA</Filter>
+    </ClCompile>
+    <ClCompile Include="BilateralSystem.cpp">
+      <Filter>src\OpenGL\Renderer\Filters\Bilateral</Filter>
+    </ClCompile>
+    <ClCompile Include="DitheringSystem.cpp">
+      <Filter>src\OpenGL\Renderer\Filters\Dithering</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumetricLightSystem.cpp">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricLight</Filter>
+    </ClCompile>
+    <ClCompile Include="FogSystem.cpp">
+      <Filter>src\OpenGL\Renderer\PostProcess\Fog</Filter>
+    </ClCompile>
+    <ClCompile Include="LightPassSystem.cpp">
+      <Filter>src\OpenGL\Renderer\LightPass</Filter>
+    </ClCompile>
+    <ClCompile Include="GBufferSystem.cpp">
+      <Filter>src\OpenGL\Renderer\GBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="HDRSystem.cpp">
+      <Filter>src\OpenGL\Renderer\HDR</Filter>
+    </ClCompile>
+    <ClCompile Include="SSAOSystem.cpp">
+      <Filter>src\OpenGL\Renderer\PostProcess\SSAO</Filter>
+    </ClCompile>
+    <ClCompile Include="BlurSystem.cpp">
+      <Filter>src\OpenGL\Renderer\Filters\Blur</Filter>
+    </ClCompile>
+    <ClCompile Include="GaussianBlurSystem.cpp">
+      <Filter>src\OpenGL\Renderer\Filters\Gaussian blur</Filter>
+    </ClCompile>
+    <ClCompile Include="BloomSystem.cpp">
+      <Filter>src\OpenGL\Renderer\Bloom</Filter>
+    </ClCompile>
+    <ClCompile Include="DoFSystem.cpp">
+      <Filter>src\OpenGL\Renderer\DoF</Filter>
+    </ClCompile>
+    <ClCompile Include="OITSystem.cpp">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="BillboardSystem.cpp">
+      <Filter>src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>src\Text</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMode.cpp">
+      <Filter>src\GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="BezierFunction.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeEdge.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeGrid.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="Path.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinding.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="BinaryNode.cpp">
+      <Filter>src\BinaryNode</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFindingSystem.cpp">
+      <Filter>src\PathFinding</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredRendererConfig.cpp">
+      <Filter>src\OpenGL\Renderer\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinNoise.cpp">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClCompile>
+    <ClCompile Include="PerlinWorley3D.cpp">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClCompile>
+    <ClCompile Include="VolumetricClouds.cpp">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricClouds</Filter>
+    </ClCompile>
+    <ClCompile Include="Worley3D.cpp">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClCompile>
+    <ClCompile Include="Weather.cpp">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricClouds</Filter>
+    </ClCompile>
+    <ClCompile Include="Sponza.cpp">
+      <Filter>src\GameMode\Sponza</Filter>
+    </ClCompile>
+    <ClCompile Include="VoxelConeTracing.cpp">
+      <Filter>src\OpenGL\Renderer\VoxelConeTracing</Filter>
+    </ClCompile>
+    <ClCompile Include="WeightedBlendSystem.cpp">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="EksamenGameMode.cpp">
+      <Filter>src\GameMode\Eksamen</Filter>
+    </ClCompile>
+    <ClCompile Include="GrassGameMode.cpp">
+      <Filter>src\GameMode\Grass World</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsGameMode.cpp">
+      <Filter>src\GameMode\Physics World</Filter>
+    </ClCompile>
+    <ClCompile Include="VISM2.cpp">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="RigidBody.cpp">
+      <Filter>src\Physics Engine\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicsSystem.cpp">
+      <Filter>src\Physics Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="ConvexHull.cpp">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionUtility.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="EPA.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="GJK.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="BoundingVolumes.cpp">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="Octree.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\imgui.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\imgui_draw.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\imgui_tables.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\ImGuiRenderer.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\QtImGui.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\ImGui\imgui_widgets.cpp">
+      <Filter>External\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="MathSolvers.cpp">
+      <Filter>src\Physics Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Constraint.cpp">
+      <Filter>src\Physics Engine\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstraintManifold.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionHeightmap.cpp">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="BSpline.cpp">
+      <Filter>src\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="BSplineSystem.cpp">
+      <Filter>src\Curves</Filter>
+    </ClCompile>
+    <ClCompile Include="WaterSystem.cpp">
+      <Filter>src\Water</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\glm\detail\_features.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\_fixes.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\_noise.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\_swizzle.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\_swizzle_func.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\_vectorize.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\associated_min_max.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\associated_min_max.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\bit.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\bit.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\bitfield.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\bitfield.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\closest_point.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\closest_point.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_encoding.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_encoding.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\color_space.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_space.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\color_space.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_space.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_space_YCoCg.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\color_space_YCoCg.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\common.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\compatibility.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\compatibility.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\component_wise.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\component_wise.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\compute_common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\compute_vector_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\constants.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\constants.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\dual_quaternion.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\dual_quaternion.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\easing.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\easing.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\epsilon.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\epsilon.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\euler_angles.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\euler_angles.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\exponential.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\exponential.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\extend.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\extend.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\extended_min_max.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\extended_min_max.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\exterior_product.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\exterior_product.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_exponential.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_exponential.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_square_root.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_square_root.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_trigonometry.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\fast_trigonometry.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\float_notmalize.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="(default)\CMakeFiles\ShowIncludes\foo.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_common_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_exponential.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_exponential_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_geometric.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_geometric_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_integer.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_integer_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_matrix.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_matrix_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_packing.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_packing_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_trigonometric.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_trigonometric_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_vector_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\func_vector_relational_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\functions.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\functions.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\fwd.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\geometric.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\geometric.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\glm.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\gradient_paint.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\gradient_paint.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\handed_coordinate_space.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\handed_coordinate_space.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\hash.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\hash.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\integer.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\integer.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\integer.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\intersect.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\intersect.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\io.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\io.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\log_base.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\log_base.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\mat4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\matrix.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\matrix.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_access.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_access.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_clip_space.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_clip_space.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_cross_product.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_cross_product.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_decompose.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_decompose.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double2x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double3x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_double4x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_factorisation.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_factorisation.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float2x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float3x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_float4x4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int2x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int3x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_int4x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_interpolation.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_interpolation.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_inverse.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_inverse.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_major_storage.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_major_storage.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_operation.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_operation.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_projection.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_projection.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_query.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_query.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_transform.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_transform.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_transform.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\matrix_transform.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_transform_2d.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\matrix_transform_2d.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint2x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint3x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\matrix_uint4x4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\mixed_product.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\mixed_product.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\neon.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\noise.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\noise.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\norm.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\norm.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\normal.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\normal.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\normalize_dot.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\normalize_dot.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\number_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\number_precision.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\optimum_pow.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\optimum_pow.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\orthonormalize.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\orthonormalize.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\packing.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\packing.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\packing.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\packing.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\perpendicular.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\perpendicular.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\platform.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\polar_coordinates.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\polar_coordinates.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\projection.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\projection.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\qualifier.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\quaternion.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\quaternion.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\quaternion.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\quaternion.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_common_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_double.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_double_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_exponential.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_exponential.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_float.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_float_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_geometric.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_geometric.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\quaternion_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_transform.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_transform.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_trigonometric.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\quaternion_trigonometric.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\random.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\random.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\range.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\raw_data.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\raw_data.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\reciprocal.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\rotate_normalized_axis.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\rotate_normalized_axis.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\rotate_vector.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\rotate_vector.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\round.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\round.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_constants.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_constants.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_int_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_integer.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\scalar_multiplication.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_packing.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_packing.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\scalar_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\scalar_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_uint_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_ulp.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\scalar_ulp.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\setup.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\spline.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\spline.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\std_based_type.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\std_based_type.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\string_cast.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\string_cast.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\texture.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\texture.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\transform.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\transform.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\transform2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\transform2.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\trigonometric.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\trigonometric.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\type_aligned.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\type_aligned.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\type_aligned.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_float.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_half.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_half.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x2.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x3.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat2x4.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x2.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x3.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat3x4.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x2.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x3.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x4.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_mat4x4_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\type_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\type_precision.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\type_ptr.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\type_ptr.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_quat.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_quat.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_quat_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\type_trait.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\type_trait.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec1.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec2.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec3.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec4.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\detail\type_vec4_simd.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\ulp.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\ulp.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\vec_swizzle.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtc\vec1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\vec2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\vec3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\vec4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\vector_angle.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\vector_angle.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool1_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_bool4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_common.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_common.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double1_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_double4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float1_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float2_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float3_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_float4_precision.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int1_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_int4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_integer.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_integer.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_packing.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_packing.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\vector_query.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\vector_query.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\simd\vector_relational.h">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\vector_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_relational.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_relational.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint1.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint1_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint2.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint2_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint3.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint3_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint4.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_uint4_sized.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_ulp.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\ext\vector_ulp.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\wrap.hpp">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\gtx\wrap.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\glm\out\build\x64-Debug">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="HelperMath.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="skybox.h">
+      <Filter>src\Sky\Skybox</Filter>
+    </ClInclude>
+    <ClInclude Include="texturemanager.h">
+      <Filter>src\OpenGL\Texture Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>src\OpenGL\Shader Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>src\OpenGL\Texture Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>src\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="editor.h">
+      <Filter>src\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>src\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="CMD.h">
+      <Filter>src\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="lissajous.h">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="trianglesurface.h">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="visualcube.h">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="visualobject.h">
+      <Filter>src\Mesh\Meshes</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>src\OpenGL\Texture Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>src\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager.h">
+      <Filter>src\OpenGL\Shader Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuProfiler.h">
+      <Filter>src\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>src\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Json.h">
+      <Filter>src\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldSerializer.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Components.h">
+      <Filter>src\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CascadedShadowMaps.h">
+      <Filter>src\Shadow Map</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalTypeDefs.h">
+      <Filter>src\GlobalTypeDefs</Filter>
+    </ClInclude>
+    <ClInclude Include="UBO.h">
+      <Filter>src\OpenGL\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="UBOManager.h">
+      <Filter>src\OpenGL\UBO</Filter>
+    </ClInclude>
+    <ClInclude Include="PointGenerator.h">
+      <Filter>src\Meth</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderParameters.h">
+      <Filter>src\OpenGL\Shader Manager\ShaderParamters</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>src\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBuffer.h">
+      <Filter>src\OpenGL\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameBufferManager.h">
+      <Filter>src\OpenGL\FBO</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>src\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="AiCharacter.h">
+      <Filter>src\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules.h">
+      <Filter>src\World</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Common\Components\CommonComponents.h">
+      <Filter>src\Common\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainNode.h">
+      <Filter>src\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainConfig.h">
+      <Filter>src\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>src\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainSystem.h">
+      <Filter>src\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderEngine.h">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="VegetationSystem.h">
+      <Filter>src\Vegetation</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshManager.h">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMesh.h">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>src\Mesh\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshManager.h">
+      <Filter>src\Mesh\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>src\Mesh\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalMeshManager.h">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalMesh.h">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationHelper.h">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshSystem.h">
+      <Filter>src\Mesh\Static Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPoolx.h">
+      <Filter>src\ThreadPool</Filter>
+    </ClInclude>
+    <ClInclude Include="AlphaMesh.h">
+      <Filter>src\Math\Alpha Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="AlphaPassSystem.h">
+      <Filter>src\Math\Alpha Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="SkeletalMeshSystem.h">
+      <Filter>src\Mesh\Skeletal Mesh</Filter>
+    </ClInclude>
+    <ClInclude Include="Trophy.h">
+      <Filter>src\Trophy</Filter>
+    </ClInclude>
+    <ClInclude Include="SkySystem.h">
+      <Filter>src\Sky</Filter>
+    </ClInclude>
+    <ClInclude Include="Sun.h">
+      <Filter>src\Sky\Sun</Filter>
+    </ClInclude>
+    <ClInclude Include="LensFlare.h">
+      <Filter>src\Sky\Lens Flare</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioData.h">
+      <Filter>src\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioSystem.h">
+      <Filter>src\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>src\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="WavFileReader.h">
+      <Filter>src\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshInstanced.h">
+      <Filter>src\Mesh\Static Mesh Instanced</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticMeshInstancedSystem.h">
+      <Filter>src\Mesh\Static Mesh Instanced</Filter>
+    </ClInclude>
+    <ClInclude Include="SSBO.h">
+      <Filter>src\OpenGL\SSBO</Filter>
+    </ClInclude>
+    <ClInclude Include="SSBOManager.h">
+      <Filter>src\OpenGL\SSBO</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialManager.h">
+      <Filter>src\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="Vegetation.h">
+      <Filter>src\Vegetation</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>src\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>src\Particles</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderDebugger.h">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredRenderer.h">
+      <Filter>src\OpenGL\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectionalLight.h">
+      <Filter>src\Sky\Dirlight</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraSystem.h">
+      <Filter>src\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="GBuffer.h">
+      <Filter>src\OpenGL\Renderer\GBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="HDR.h">
+      <Filter>src\OpenGL\Renderer\HDR</Filter>
+    </ClInclude>
+    <ClInclude Include="Skydome.h">
+      <Filter>src\Sky\Skydome</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumetricLighting.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricLight</Filter>
+    </ClInclude>
+    <ClInclude Include="Dithering.h">
+      <Filter>src\OpenGL\Renderer\Filters\Dithering</Filter>
+    </ClInclude>
+    <ClInclude Include="Bilatreral.h">
+      <Filter>src\OpenGL\Renderer\Filters\Bilateral</Filter>
+    </ClInclude>
+    <ClInclude Include="SMAA.h">
+      <Filter>src\OpenGL\Renderer\Filters\Sampling\SMAA</Filter>
+    </ClInclude>
+    <ClInclude Include="SMAASystem.h">
+      <Filter>src\OpenGL\Renderer\Filters\Sampling\SMAA</Filter>
+    </ClInclude>
+    <ClInclude Include="BilateralSystem.h">
+      <Filter>src\OpenGL\Renderer\Filters\Bilateral</Filter>
+    </ClInclude>
+    <ClInclude Include="DitheringSystem.h">
+      <Filter>src\OpenGL\Renderer\Filters\Dithering</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumetricLightSystem.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricLight</Filter>
+    </ClInclude>
+    <ClInclude Include="FogSystem.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\Fog</Filter>
+    </ClInclude>
+    <ClInclude Include="Fog.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\Fog</Filter>
+    </ClInclude>
+    <ClInclude Include="LightPassSystem.h">
+      <Filter>src\OpenGL\Renderer\LightPass</Filter>
+    </ClInclude>
+    <ClInclude Include="GBufferSystem.h">
+      <Filter>src\OpenGL\Renderer\GBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="HDRSystem.h">
+      <Filter>src\OpenGL\Renderer\HDR</Filter>
+    </ClInclude>
+    <ClInclude Include="LightPass.h">
+      <Filter>src\OpenGL\Renderer\LightPass</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAOSystem.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="SSAO.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\SSAO</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurSystem.h">
+      <Filter>src\OpenGL\Renderer\Filters\Blur</Filter>
+    </ClInclude>
+    <ClInclude Include="Blur.h">
+      <Filter>src\OpenGL\Renderer\Filters\Blur</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianBlurSystem.h">
+      <Filter>src\OpenGL\Renderer\Filters\Gaussian blur</Filter>
+    </ClInclude>
+    <ClInclude Include="GaussianBlur.h">
+      <Filter>src\OpenGL\Renderer\Filters\Gaussian blur</Filter>
+    </ClInclude>
+    <ClInclude Include="BloomSystem.h">
+      <Filter>src\OpenGL\Renderer\Bloom</Filter>
+    </ClInclude>
+    <ClInclude Include="Bloom.h">
+      <Filter>src\OpenGL\Renderer\Bloom</Filter>
+    </ClInclude>
+    <ClInclude Include="DoFSystem.h">
+      <Filter>src\OpenGL\Renderer\DoF</Filter>
+    </ClInclude>
+    <ClInclude Include="DoF.h">
+      <Filter>src\OpenGL\Renderer\DoF</Filter>
+    </ClInclude>
+    <ClInclude Include="OITSystem.h">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="PUBO.h">
+      <Filter>src\OpenGL\PUBO</Filter>
+    </ClInclude>
+    <ClInclude Include="ACBO.h">
+      <Filter>src\OpenGL\ACBO</Filter>
+    </ClInclude>
+    <ClInclude Include="ABuffer.h">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="BillboardSystem.h">
+      <Filter>src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMode.h">
+      <Filter>src\GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="BezierFunction.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeEdge.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeGrid.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Path.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinding.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="BinaryNode.h">
+      <Filter>src\BinaryNode</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFindingSystem.h">
+      <Filter>src\PathFinding</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredRendererConfig.h">
+      <Filter>src\OpenGL\Renderer\Config</Filter>
+    </ClInclude>
+    <ClInclude Include="PerlinNoise.h">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="PerlinWorley3D.h">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="VolumetricClouds.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricClouds</Filter>
+    </ClInclude>
+    <ClInclude Include="Worley3D.h">
+      <Filter>src\OpenGL\Renderer\Noise</Filter>
+    </ClInclude>
+    <ClInclude Include="Weather.h">
+      <Filter>src\OpenGL\Renderer\PostProcess\VolumetricClouds</Filter>
+    </ClInclude>
+    <ClInclude Include="Sponza.h">
+      <Filter>src\GameMode\Sponza</Filter>
+    </ClInclude>
+    <ClInclude Include="VoxelConeTracing.h">
+      <Filter>src\OpenGL\Renderer\VoxelConeTracing</Filter>
+    </ClInclude>
+    <ClInclude Include="AlphaBuffer.h">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="WeightedBlendSystem.h">
+      <Filter>src\OpenGL\Renderer\ABuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="EksamenGameMode.h">
+      <Filter>src\GameMode\Eksamen</Filter>
+    </ClInclude>
+    <ClInclude Include="GrassGameMode.h">
+      <Filter>src\GameMode\Grass World</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsGameMode.h">
+      <Filter>src\GameMode\Physics World</Filter>
+    </ClInclude>
+    <ClInclude Include="VISM2.h">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
+    </ClInclude>
+    <ClInclude Include="ConvexHull.h">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Segment.h">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="RigidBody.h">
+      <Filter>src\Physics Engine\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicsSystem.h">
+      <Filter>src\Physics Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionUtility.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactManifold.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="EPA.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="GJK.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingVolumes.h">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="Octree.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imconfig.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imgui.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imgui_internal.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\ImGuiRenderer.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imstb_rectpack.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imstb_textedit.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\imstb_truetype.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ImGui\QtImGui.h">
+      <Filter>External\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="MathSolvers.h">
+      <Filter>src\Physics Engine\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Constraint.h">
+      <Filter>src\Physics Engine\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstraintManifold.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionHeightmap.h">
+      <Filter>src\Physics Engine\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>src\Physics Engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="BSpline.h">
+      <Filter>src\Curves</Filter>
+    </ClInclude>
+    <ClInclude Include="BSplineSystem.h">
+      <Filter>src\Curves</Filter>
+    </ClInclude>
+    <ClInclude Include="Water.h">
+      <Filter>src\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterSystem.h">
+      <Filter>src\Water</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="debug\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="release\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="(2).dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(3).dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(4).dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(5).dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="180">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="2.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\AncientPolygonMasonryScoria_basecolor.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\alissa\textures\Arissa_DIFF_diffuse.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\alissa\textures\Arissa_NM_normal.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\alissa\textures\Arissa_SPEC_specular.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\alissa\animations\ArmsHipHopDance.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\Boxing.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeCCompiler.cmake">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CompilerIdC\CMakeCCompilerId.exe">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeCXXCompiler.cmake">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CompilerIdCXX\CMakeCXXCompilerId.exe">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeCache.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeDetermineCompilerABI_C.bin">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeDetermineCompilerABI_CXX.bin">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\CMakeOutput.log">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeRCCompiler.cmake">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\3.18.20081302-MSVC_2\CMakeSystem.cmake">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Demo\Scripts\Camera_control.cs">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\Char3.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\Char3.mtl">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\textures\Char3_Body_Diffuse.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\textures\Char3_Body_Gloss.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\textures\Char3_Body_Normal.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\textures\Char3_Body_Opacity.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\textures\Char3_Body_Specular.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\Char4.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\DefaultWhite.bmp">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Demo\Demo_scene.unity">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Directx9.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Maps\HeightFields\HM.RAW">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\animations\HipHopDancing.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\animations\Idle.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\IronMan\IronMan.mtl">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\LICENSE.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\Testing\Temporary\LastTest.log">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\textures\MAW_diffuse.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\textures\MAW_glow.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\textures\MAW_normal.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Medium_Blue_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_Local_Stars\Textures\Medium_Blue_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Medium_Blue_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae_No_Stars\Textures\Medium_Blue_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Medium_Blue_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Blue_Nebulae\Textures\Medium_Blue_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Medium_Fiery_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_Local_Stars\Textures\Medium_Fiery_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Medium_Fiery_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae_No_Stars\Textures\Medium_Fiery_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Medium_Fiery_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Fiery_Nebulae\Textures\Medium_Fiery_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Medium_Mixed_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_Local_Stars\Textures\Medium_Mixed_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Medium_Mixed_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae_No_Stars\Textures\Medium_Mixed_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Medium_Mixed_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Mixed_Nebulae\Textures\Medium_Mixed_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Medium_Monochrome_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_Local_Stars\Textures\Medium_Monochrome_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Medium_Monochrome_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae_No_Stars\Textures\Medium_Monochrome_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Medium_Monochrome_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Medium_Monochrome_Nebulae\Textures\Medium_Monochrome_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Mona_Lisa.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\textures\Nightshade_diffuse.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\textures\Nightshade_glow.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\textures\Nightshade_normal.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\textures\Nightshade_specular.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Rich_Blue_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_Local_Stars\Textures\Rich_Blue_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Rich_Blue_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae_No_Stars\Textures\Rich_Blue_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Rich_Blue_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Blue_Nebulae\Textures\Rich_Blue_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Rich_Fiery_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_Local_Stars\Textures\Rich_Fiery_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Rich_Fiery_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae_No_Stars\Textures\Rich_Fiery_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Rich_Fiery_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Fiery_Nebulae\Textures\Rich_Fiery_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Rich_Mixed_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Rich_Mixed_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_No_Stars\Textures\Rich_Mixed_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Rich_Mixed_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae\Textures\Rich_Mixed_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Rich_Monochrome_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_Local_Stars\Textures\Rich_Monochrome_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Rich_Monochrome_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae_No_Stars\Textures\Rich_Monochrome_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Rich_Monochrome_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Monochrome_Nebulae\Textures\Rich_Monochrome_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\animations\Running.fbx">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Demo\Scripts\Skybox_rotator.cs">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\animations\SnakeHipHopDance.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Sparse_Blue_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_Local_Stars\Textures\Sparse_Blue_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Sparse_Blue_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae_No_Stars\Textures\Sparse_Blue_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Sparse_Blue_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Blue_Nebulae\Textures\Sparse_Blue_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Sparse_Fiery_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_Local_Stars\Textures\Sparse_Fiery_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Sparse_Fiery_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae_No_Stars\Textures\Sparse_Fiery_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Sparse_Fiery_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Fiery_Nebulae\Textures\Sparse_Fiery_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Sparse_Mixed_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_Local_Stars\Textures\Sparse_Mixed_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Sparse_Mixed_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae_No_Stars\Textures\Sparse_Mixed_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Sparse_Mixed_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Mixed_Nebulae\Textures\Sparse_Mixed_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Sparse_Monochrome_Nebulae_Local_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_Local_Stars\Textures\Sparse_Monochrome_Nebulae_Local_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Sparse_Monochrome_Nebulae_No_Stars_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae_No_Stars\Textures\Sparse_Monochrome_Nebulae_No_Stars_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Sparse_Monochrome_Nebulae_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Sparse_Monochrome_Nebulae\Textures\Sparse_Monochrome_Nebulae_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Starfield_And_Haze_Monochrome_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze_Monochrome\Textures\Starfield_And_Haze_Monochrome_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Starfield_And_Haze_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Starfield_And_Haze_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_And_Haze\Textures\Starfield_And_Haze_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Starfield_And_Haze\Textures\Starfield_And_Haze_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Starfield_Only_Monochrome_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only_Monochrome\Textures\Starfield_Only_Monochrome_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Starfield_Only_Skybox.mat">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_down.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Starfield_Only\Textures\Starfield_Only_up.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\Stone.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\TargetDirectories.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Maps\HeightFields\Testing.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\VSInheritEnvironments.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\alissa\alissa.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="and">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\arm_dif.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\arm_showroom_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\arm_showroom_spec.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="attack">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="attack.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\awesomeface.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\back.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\back.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="block">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="block.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\body_dif.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\body_showroom_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\body_showroom_spec.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\bottom.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\bottom.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\build.ninja">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\.cmake\api\v1\reply\cache-v2-d553a5b5a87bb58ae14d.json">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="casting">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="casting.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\cmake.check_cache">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\.cmake\api\v1\reply\cmakeFiles-v1-a227c4214d890b83c525.json">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\cmake_install.cmake">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\.cmake\api\v1\reply\codemodel-v2-98c925ab97f0409fa339.json">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\container.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\container2.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\container2_specular.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="crouch">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="crouch.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="crouching">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="crouching.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="death">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="death.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\earth.dds">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\front.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\front.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\glass.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\glass_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\glass_dif.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\grace-new.hdr">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\grace-new.hdr.txt">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\grass.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Maps\Textures\grass_field.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\hand_dif.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\hand_showroom_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\hand_showroom_spec.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\helmet_diff.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\helmet_showroom_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\helmet_showroom_spec.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="idle">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="idle.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="impact">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="impact.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\.cmake\api\v1\reply\index-2021-09-29T17-28-54-0754.json">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="jump">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="jump.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="kick.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\left.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\left.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\leg_dif.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\leg_showroom_ddn.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\leg_showroom_spec.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\textures\maria_specular.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\maw\maw.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\nanosuit.blend">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nanosuit\nanosuit.mtl">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\nightshade\nightshade.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Maps\HeightFields\output.r16">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="plainshader.frag">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="plainshader.vert">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\planks.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\planks2.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\planks3.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="power">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\.cmake\api\v1\query\client-MicrosoftVS\query.json">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\right.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\right.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="(default)\CMakeFiles\rules.ninja">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="run">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="run.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\sheath">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\sheathsword1.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="shield">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox2.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="slash">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="slash.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Demo\Image\space_skyboxes_logo.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="strafe">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="strafe.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\Char3\sword">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="sword">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Maps\HeightFields\terrain0-16bbp-257x257.raw">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\skybox\top.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\4K_Space_Skyboxes\Materials\Rich_Mixed_Nebulae_Local_Stars\Textures\top.png">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="turn">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="turn.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="up.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Models\IronMan\v1_0_IronManRigged.max">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="walk">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="walk.dae">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Assets\Textures\wall.jpg">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Include\glm\out\build\x64-Debug">
+      <Filter>Distribution Files</Filter>
+    </None>
+    <None Include="Shaders\Debug.frag">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="Shaders\Debug.vert">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="Shaders\StandardForward.frag">
+      <Filter>Resources\StandardForward</Filter>
+    </None>
+    <None Include="Shaders\SkeletalMesh.vert">
+      <Filter>Resources\StandardForward</Filter>
+    </None>
+    <None Include="Shaders\StandardForward.vert">
+      <Filter>Resources\StandardForward</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMap.frag">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMap.geom">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMap.vert">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMapSM.vert">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\Terrain\Terrain.frag">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\Terrain.geom">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\Terrain.vert">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\Terrain.tesc">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\Terrain.tese">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\TerrainNormal.comp">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Terrain\TerrainSplat.comp">
+      <Filter>Resources\Terrain</Filter>
+    </None>
+    <None Include="Config\Terrain\TerrainDefault.json">
+      <Filter>src\Terrain</Filter>
+    </None>
+    <None Include="Config\Terrain\Terrain1.json">
+      <Filter>src\Terrain</Filter>
+    </None>
+    <None Include="Shaders\Skybox.frag">
+      <Filter>Resources\Sky\Skybox</Filter>
+    </None>
+    <None Include="Shaders\Skybox.vert">
+      <Filter>Resources\Sky\Skybox</Filter>
+    </None>
+    <None Include="Shaders\Sky\Sun\Sun.frag">
+      <Filter>Resources\Sky\Sun</Filter>
+    </None>
+    <None Include="Shaders\Sky\Sun\Sun.vert">
+      <Filter>Resources\Sky\Sun</Filter>
+    </None>
+    <None Include="Shaders\Sky\Lens Flare\LensFlare.frag">
+      <Filter>Resources\Sky\Lens Flare</Filter>
+    </None>
+    <None Include="Shaders\Sky\Lens Flare\LensFlare.vert">
+      <Filter>Resources\Sky\Lens Flare</Filter>
+    </None>
+    <None Include="Shaders\ForwardInstanced\ForwardInstanced.frag">
+      <Filter>Resources\StandardInstanced</Filter>
+    </None>
+    <None Include="Shaders\ForwardInstanced\ForwardInstanced.vert">
+      <Filter>Resources\StandardInstanced</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMapInstanced.vert">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMapInstanced.frag">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\ShadowMapInstanced.geom">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Vegetation.frag">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Vegetation.geom">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Vegetation.vert">
+      <Filter>Resources\ShadowPass</Filter>
+    </None>
+    <None Include="Shaders\Vegetation\Vegetation.frag">
+      <Filter>Resources\Vegetation</Filter>
+    </None>
+    <None Include="Shaders\Vegetation\Vegetation.vert">
+      <Filter>Resources\Vegetation</Filter>
+    </None>
+    <None Include="Shaders\Particle\Particle.frag">
+      <Filter>Resources\Particle</Filter>
+    </None>
+    <None Include="Shaders\Particle\Particle.vert">
+      <Filter>Resources\Particle</Filter>
+    </None>
+    <None Include="Shaders\DeferredShaders\LightPass\LightPass.frag">
+      <Filter>Resources\LightPass</Filter>
+    </None>
+    <None Include="Shaders\DeferredShaders\LightPass\LightPass.vert">
+      <Filter>Resources\LightPass</Filter>
+    </None>
+    <None Include="Shaders\HDR\HDR.frag">
+      <Filter>Resources\HDR</Filter>
+    </None>
+    <None Include="Shaders\HDR\HDR.vert">
+      <Filter>Resources\HDR</Filter>
+    </None>
+    <None Include="Shaders\Sky\SkyDome\SkyDome.frag">
+      <Filter>Resources\Sky\SkyDome</Filter>
+    </None>
+    <None Include="Shaders\Sky\SkyDome\SkyDome.vert">
+      <Filter>Resources\Sky\SkyDome</Filter>
+    </None>
+    <None Include="Shaders\Filters\Dithering\Dithering.frag">
+      <Filter>Resources\Filters\Dithering</Filter>
+    </None>
+    <None Include="Shaders\Filters\Dithering\Dithering.vert">
+      <Filter>Resources\Filters\Dithering</Filter>
+    </None>
+    <None Include="Shaders\Filters\Bilateral\Bilateral.frag">
+      <Filter>Resources\Filters\Bilateral</Filter>
+    </None>
+    <None Include="Shaders\Filters\Bilateral\Bilateral.vert">
+      <Filter>Resources\Filters\Bilateral</Filter>
+    </None>
+    <None Include="Shaders\Filters\SMAA\SMAA.frag">
+      <Filter>Resources\Filters\SMAA</Filter>
+    </None>
+    <None Include="Shaders\Filters\SMAA\SMAA.vert">
+      <Filter>Resources\Filters\SMAA</Filter>
+    </None>
+    <None Include="Shaders\Filters\Bilateral\Bilateral.comp">
+      <Filter>Resources\Filters\Bilateral</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\VolumetricLight\VolumetricLight.frag">
+      <Filter>Resources\PostProcess\VolumetricLight</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\VolumetricLight\VolumetricLight.vert">
+      <Filter>Resources\PostProcess\VolumetricLight</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Terrain\TerrainSG.frag">
+      <Filter>Resources\Static Shadow Grid\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Terrain\TerrainSG.geom">
+      <Filter>Resources\Static Shadow Grid\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Terrain\TerrainSG.vert">
+      <Filter>Resources\Static Shadow Grid\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Terrain\TerrainSG.tesc">
+      <Filter>Resources\Static Shadow Grid\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Terrain\TerrainSG.tese">
+      <Filter>Resources\Static Shadow Grid\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Terrain\TerrainSP.frag">
+      <Filter>Resources\ShadowPass\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Terrain\TerrainSP.geom">
+      <Filter>Resources\ShadowPass\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Terrain\TerrainSP.tesc">
+      <Filter>Resources\ShadowPass\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Terrain\TerrainSP.tese">
+      <Filter>Resources\ShadowPass\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowPass\DirLight\Terrain\TerrainSP.vert">
+      <Filter>Resources\ShadowPass\Terrain</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Vegetation\VegetationSG.frag">
+      <Filter>Resources\Static Shadow Grid\Vegetation</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Vegetation\VegetationSG.geom">
+      <Filter>Resources\Static Shadow Grid\Vegetation</Filter>
+    </None>
+    <None Include="Shaders\ShadowGrid\Vegetation\VegetationSG.vert">
+      <Filter>Resources\Static Shadow Grid\Vegetation</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\SSAO\SSAO.frag">
+      <Filter>Resources\PostProcess\SSAO</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\SSAO\SSAO.vert">
+      <Filter>Resources\PostProcess\SSAO</Filter>
+    </None>
+    <None Include="Shaders\Filters\Blur\Blur.frag">
+      <Filter>Resources\Filters\Blur</Filter>
+    </None>
+    <None Include="Shaders\Filters\Blur\Blur.vert">
+      <Filter>Resources\Filters\Blur</Filter>
+    </None>
+    <None Include="Shaders\Filters\GaussianBlur\GaussianBlur.frag">
+      <Filter>Resources\Filters\GaussianBlur</Filter>
+    </None>
+    <None Include="Shaders\Filters\GaussianBlur\GaussianBlur.vert">
+      <Filter>Resources\Filters\GaussianBlur</Filter>
+    </None>
+    <None Include="Shaders\DoF\DoF.frag">
+      <Filter>Resources\DoF</Filter>
+    </None>
+    <None Include="Shaders\DoF\DoF.vert">
+      <Filter>Resources\DoF</Filter>
+    </None>
+    <None Include="Shaders\Common\Packing.glsl">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\PBR.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Text\Text.frag">
+      <Filter>Resources\Text</Filter>
+    </None>
+    <None Include="Shaders\Text\Text.vert">
+      <Filter>Resources\Text</Filter>
+    </None>
+    <None Include="Assets\Paths.json">
+      <Filter>src\StaticMeshList</Filter>
+    </None>
+    <None Include="Config\Renderer\Config.json">
+      <Filter>src\OpenGL\Renderer\Config</Filter>
+    </None>
+    <None Include="Shaders\Noise\perlinWorley3D.comp">
+      <Filter>Resources\Noise</Filter>
+    </None>
+    <None Include="Shaders\Noise\worley3D.comp">
+      <Filter>Resources\Noise</Filter>
+    </None>
+    <None Include="Shaders\Volumetric Clouds\weather.comp">
+      <Filter>Resources\VolumetricClouds</Filter>
+    </None>
+    <None Include="Shaders\Common\RaycastUtility.frag">
+      <Filter>Resources\Common\Collision</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\VolumetricClouds\VolumetricClouds.frag">
+      <Filter>Resources\PostProcess\VolumetricClouds</Filter>
+    </None>
+    <None Include="Shaders\PostProcess\VolumetricClouds\VolumetricClouds.vert">
+      <Filter>Resources\PostProcess\VolumetricClouds</Filter>
+    </None>
+    <None Include="Config\Renderer\ConfigSponza.json">
+      <Filter>src\GameMode\Sponza</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelClear.comp">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\Voxelize.frag">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\Voxelize.geom">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\Voxelize.vert">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelMip.comp">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelDisplay2.frag">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelDisplay2.vert">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\VoxelConeTrace\VoxelConeTrace.frag">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\VoxelConeTrace\VoxelConeTrace.vert">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelAnisoMip.comp">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\Voxelize\VoxelAnisoMipMips.comp">
+      <Filter>Resources\VoxelConeTracing</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\VoxelRadiance\VoxelFirstBounce.comp">
+      <Filter>Resources\VoxelConeTracing\Injection</Filter>
+    </None>
+    <None Include="Shaders\VoxelConeTracing\VoxelRadiance\VoxelRadiance.comp">
+      <Filter>Resources\VoxelConeTracing\Injection</Filter>
+    </None>
+    <None Include="Shaders\Common\GBuffer.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\ShaderModel.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\ShaderModelDefines.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\ErrorColorDefines.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\DistanceFog\DistanceFog.frag">
+      <Filter>Resources\Common\DistanceFog</Filter>
+    </None>
+    <None Include="Shaders\Common\DirectionalLight.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\CSM.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\WeightedBlend\WeightedBlendClear.comp">
+      <Filter>Resources\WeightedBlend</Filter>
+    </None>
+    <None Include="Shaders\WeightedBlend\WeightedBlend.frag">
+      <Filter>Resources\WeightedBlend</Filter>
+    </None>
+    <None Include="Shaders\Common\ABuffer.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\MeshSettings.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\Camera.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="Shaders\Common\RenderSettings.frag">
+      <Filter>Resources\Common</Filter>
+    </None>
+    <None Include="VISM2Terrain.json">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
+    </None>
+    <None Include="VISM2RenderConfig.json">
+      <Filter>src\GameMode\VISM2 Mappe</Filter>
+    </None>
+    <None Include="PhysicsWorldConfig.json">
+      <Filter>src\GameMode\Physics World</Filter>
+    </None>
+    <None Include="Shaders\Debug\DefaultDebug.frag">
+      <Filter>Resources\Debug</Filter>
+    </None>
+    <None Include="Shaders\Debug\DefaultDebug.vert">
+      <Filter>Resources\Debug</Filter>
+    </None>
+    <None Include="Shaders\Water\Water.frag">
+      <Filter>Resources\Water</Filter>
+    </None>
+    <None Include="Shaders\Water\Water.vert">
+      <Filter>Resources\Water</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="mainwindow.h">
+      <Filter>src\Window</Filter>
+    </QtMoc>
+    <QtMoc Include="renderwindow.h">
+      <Filter>src\Window</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\glm\gtc\reciprocal.inl">
+      <Filter>src\Math\GLM</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="3Dprog22.rc" />
+  </ItemGroup>
+</Project>

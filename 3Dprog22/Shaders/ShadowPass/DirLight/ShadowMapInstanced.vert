@@ -1,0 +1,24 @@
+#version 460 core
+
+layout (location = 0) in vec3 aPos;
+layout (location = 2) in vec2 aTexCoords;
+
+#define MAX_INSTANCES 300000
+
+uniform int instanceOffset;
+
+layout (std430, binding=4) buffer instancedMatrices2
+{
+	mat4 instanceMat[MAX_INSTANCES];
+};
+
+	out vec2 TexCoords_GS;
+
+void main()
+{
+	TexCoords_GS = aTexCoords;
+
+	mat4 model = instanceMat[instanceOffset + gl_InstanceID];
+
+	gl_Position = model * vec4(aPos, 1.f);	
+}

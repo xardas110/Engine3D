@@ -1,0 +1,53 @@
+{
+  "dof": {
+    "enabled": true,
+    "focusScale": 15.0,
+    "uFar": 10.0
+  },
+  "bloom": {
+    "enabled": true,
+    "threshold": [ 0.10, 0.75, 0.07 ]
+  },
+  "SSAO": {
+    "enabled": true,
+    "radius": 2.5,
+    "bias": 1.5
+  },
+  "volumetricLight": {
+    "enabled": true,
+    "numRays": 100,
+    "scattering": 0.3,
+    "sunColor": [ 1.7, 1.6, 0.5 ]
+  },
+  "fog": {
+    "enabled": true,
+    "sight": 0.35
+  },
+  "shadows": {
+    "enabled": true,
+    "resolution": 4096
+  },
+  "ContactShadows": {
+    "enabled": false
+  },
+  "SMAA": {
+    "enabled": true
+  },
+  "SSAA": {
+    "enabled": false
+  },
+  "dirlight": {
+    "ambient": [ 0.4, 0.4, 0.4 ],
+    "diffuse": [ 1.0, 1.0, 1.0 ],
+    "specular": [ 1.0, 1.0, 1.0 ],
+    "direction": [ 1.0, 1.0, 1.0 ],
+    "itensity": 2.0
+  },
+  "vegetation": {
+    "enabled": true,
+    "LODRanges": [ 100, 300, 500, 700, 800 ]
+  },
+  "instancedMesh": {
+    "LODRanges": [100, 300, 500, 700]
+  }
+}
