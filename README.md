@@ -47,6 +47,6 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
 Requires windows 64-bit and openGL version 4.5+
 This project runs on visual studio 2017+
 
-1. Download and install QT 6.x+ with MSCV 
+1. Download and install QT 6.x+ with MSVC 
 2. Install QT VS Tools extension. (Open visual studio->Extensions->Manage Extensions->Install QT VS Tools)
 3. Build in Release 64 bit (Associated dll files are inside 3dprog22/Libs if needed)
