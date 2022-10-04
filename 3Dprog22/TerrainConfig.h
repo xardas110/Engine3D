@@ -28,7 +28,6 @@ struct TerrainConfig
 	int N;
 
 	bool bEnableTess;
-	bool bShowHeightLines = false;
 
 	int lod_range[8];
 	int lod_morphin_area[8];

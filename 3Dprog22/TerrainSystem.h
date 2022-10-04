@@ -104,6 +104,7 @@ class TerrainSystem
 
 public:
 	bool bShowWireframe = false;
+	bool bShowHeightlines = false;
 
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, const std::string& configJsonPath);
 	entt::entity CreateTerrain(class World* world, entt::registry& registry, Texture& heightmap, const std::string& configJsonPath);

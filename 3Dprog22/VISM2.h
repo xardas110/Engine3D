@@ -4,6 +4,7 @@
 #include "AudioData.h"
 #include "Include/entt/entt.hpp"
 #include "GameMode.h"
+#include <vector>
 
 class VISM2 : public GameMode
 {
@@ -23,11 +24,26 @@ class VISM2 : public GameMode
 
 	virtual void OnKeyPress(QKeyEvent* event) override;
 
+	void SpawnBall(const glm::vec3& pos, bool bHighres = true);
+	void SpawnBalls();
+	void ClearBalls();
 private:
+	class World* world;
+
+	int nextNameId = 0;
+
+	int numBallsX = 50;
+	int numBallsZ = 50;
+	int ballSpacing = 20;
+
 	entt::entity terrainHighRes;
 	entt::entity terrainLowRes;
 
-	bool bShowWifreframe{ false };
+	std::vector<entt::entity> balls;
+
+	bool bDrawOctreeLeafs = false;
+	bool bDrawBoundingBoxes = false;
+	bool bDrawConvexHulls = false;
 
 	entt::entity CreateTerrain(class World* world, const std::string& jsonPath);
 };

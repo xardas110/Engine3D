@@ -313,7 +313,7 @@ void TerrainSystem::Render(World* world, entt::registry& registry)
         renderEngine->BindShader(terrainShader);
         renderEngine->SetMat4(tBindings.worldMatrix, transformComponent.GetTransform());
         renderEngine->SetInt(tBindings.bEnableTess, terrain.config.bEnableTess);
-        renderEngine->SetInt(tBindings.bShowHeightLines, terrain.config.bShowHeightLines);
+        renderEngine->SetInt(tBindings.bShowHeightLines, bShowHeightlines);
         renderEngine->SetFloat(tBindings.scaleY, terrain.config.scaleY);
         renderEngine->SetInt(tBindings.TBNRange, terrain.config.tessellationRange);
         renderEngine->SetInt(tBindings.tessellationFactor, terrain.config.tessellationFactor);

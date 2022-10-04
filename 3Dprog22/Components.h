@@ -275,6 +275,11 @@ struct PhysicsComponent
 	RigidBody body;
 };
 
+struct PhysicsBall
+{
+	int ball;
+};
+
 struct VegetationComponent
 {
 	Vegetation veg;

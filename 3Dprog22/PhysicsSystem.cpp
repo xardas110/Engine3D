@@ -164,30 +164,33 @@ void PhysicsSystem::DrawBoundingBoxes() const
 
 void PhysicsSystem::Update(float deltatime)
 {
-	ImGui::Begin("PhysicSystem debug");
-	ImGui::Checkbox("Enable Step simulation(press q to simulate next step)", &bEnableStepMode);
-	ImGui::SliderFloat("Step Value: ", &stepValue, 0.00001f, 0.016f, "ratio = %f", 1.f);
-	ImGui::SliderFloat("Debug render timer: ", &debugRenderTimer, 0.f, 1.f, "ratio = %f", 1.f);
-	ImGui::Checkbox("Show heightmap collision triangles", &bShowHeightmapCollisionTriangles);
-	ImGui::Checkbox("Show CollisionNormal", &bShowCollisionNormal);
-	ImGui::ColorEdit3("Collision Normal Color", collisonNormalColor);
-	ImGui::Checkbox("Show aCollisionPoints", &bShowACollisionPoints);
-	ImGui::ColorEdit3("aCollisionPoints color", aCollisionPointsColor);
-	ImGui::Checkbox("Show bCollisionPoints", &bShowBCollisionPoints);
-	ImGui::ColorEdit3("bCollisionPoints color", bCollisionPointsColor);
-	ImGui::Checkbox("Show aVelocity", &bShowAVelocity);
-	ImGui::ColorEdit3("aVel color", colorAVel);
-	ImGui::Checkbox("Show bVelocity", &bShowBVelocity);
-	ImGui::ColorEdit3("bVel color", colorBVel);
-	ImGui::Checkbox("Show aImpulse", &bShowAImpulse);
-	ImGui::ColorEdit3("aImpulse color", colorAImpulse);
-	ImGui::Checkbox("Show bImpulse", &bShowBImpulse);
-	ImGui::ColorEdit3("bImpulse color", colorBImpulse);
-	ImGui::Checkbox("Show aTangentImpulse", &bShowATangentImpulse);
-	ImGui::ColorEdit3("aTangentImpulse color", colorATangentImpulse);
-	ImGui::Checkbox("Show bTangentImpulse", &bShowBTangentImpulse);
-	ImGui::ColorEdit3("bTangentImpulse color", colorBTangentImpulse);
-	ImGui::End();
+	if (!bSimulateThreaded)
+	{
+		ImGui::Begin("PhysicSystem debug");
+		ImGui::Checkbox("Enable Step simulation(press q to simulate next step)", &bEnableStepMode);
+		ImGui::SliderFloat("Step Value: ", &stepValue, 0.00001f, 0.016f, "ratio = %f", 1.f);
+		ImGui::SliderFloat("Debug render timer: ", &debugRenderTimer, 0.f, 1.f, "ratio = %f", 1.f);
+		ImGui::Checkbox("Show heightmap collision triangles", &bShowHeightmapCollisionTriangles);
+		ImGui::Checkbox("Show CollisionNormal", &bShowCollisionNormal);
+		ImGui::ColorEdit3("Collision Normal Color", collisonNormalColor);
+		ImGui::Checkbox("Show aCollisionPoints", &bShowACollisionPoints);
+		ImGui::ColorEdit3("aCollisionPoints color", aCollisionPointsColor);
+		ImGui::Checkbox("Show bCollisionPoints", &bShowBCollisionPoints);
+		ImGui::ColorEdit3("bCollisionPoints color", bCollisionPointsColor);
+		ImGui::Checkbox("Show aVelocity", &bShowAVelocity);
+		ImGui::ColorEdit3("aVel color", colorAVel);
+		ImGui::Checkbox("Show bVelocity", &bShowBVelocity);
+		ImGui::ColorEdit3("bVel color", colorBVel);
+		ImGui::Checkbox("Show aImpulse", &bShowAImpulse);
+		ImGui::ColorEdit3("aImpulse color", colorAImpulse);
+		ImGui::Checkbox("Show bImpulse", &bShowBImpulse);
+		ImGui::ColorEdit3("bImpulse color", colorBImpulse);
+		ImGui::Checkbox("Show aTangentImpulse", &bShowATangentImpulse);
+		ImGui::ColorEdit3("aTangentImpulse color", colorATangentImpulse);
+		ImGui::Checkbox("Show bTangentImpulse", &bShowBTangentImpulse);
+		ImGui::ColorEdit3("bTangentImpulse color", colorBTangentImpulse);
+		ImGui::End();
+	}
 
 	if (bEnableStepMode)
 	{
@@ -242,36 +245,36 @@ void PhysicsSystem::ComputeContacts(std::vector<ContactManifold>& outContacts)
 {
 	auto* rd = RenderDebugger::Get();
 
-#ifdef SIMULATE_THREADED
-	th->StartWork();
-	thOctInsertion->StartWork();
+	if (bSimulateThreaded)
+	{ 
+		th->StartWork();
+		thOctInsertion->StartWork();
 
-	th->WaitWork();
-	thOctInsertion->WaitWork();
+		th->WaitWork();
+		thOctInsertion->WaitWork();
 
-	octree->GetOctreeLeafs(octLeafsCache);
+		octree->GetOctreeLeafs(octLeafsCache);
 
-	thResolveNarrowCollision->StartWork();
-	thResolveNarrowCollision->WaitWork();
-#else
-	
-	auto view = registry->view<CollisionComponent>();
-
-	for (auto entity : view)
-	{
-		auto& collidable = view.get<CollisionComponent>(entity).col;
-		InsertOctree(collidable, entity);
-		ResolveHeightmapCollisions(collidable, entity);
+		thResolveNarrowCollision->StartWork();
+		thResolveNarrowCollision->WaitWork();
 	}
-
-	std::vector<CollisionPair> collisionPairs;
-	octree->FindCollisionPairs(collisionPairs);
-	for (auto& pair : collisionPairs)
+	else
 	{
-		ResolveNarrowCollisions(pair);
-	}
+		auto view = registry->view<CollisionComponent>();
+		for (auto entity : view)
+		{
+			auto& collidable = view.get<CollisionComponent>(entity).col;
+			InsertOctree(collidable, entity);
+			ResolveHeightmapCollisions(collidable, entity);
+		}
 
-#endif // SIMULATE_THREADED	
+		std::vector<CollisionPair> collisionPairs;
+		octree->FindCollisionPairs(collisionPairs);
+		for (auto& pair : collisionPairs)
+		{
+			ResolveNarrowCollisions(pair);
+		}
+	}
 }
 
 void PhysicsSystem::InsertOctree(Collideable& collidable, entt::entity entity)
@@ -308,6 +311,8 @@ void PhysicsSystem::THInsertOctree(int thIndex)
 
 void PhysicsSystem::ResolveHeightmapCollisions(Collideable& collideable, entt::entity entity)
 {
+	if (!mNp.heightmap.heightMap) return;
+
 	auto* rd = RenderDebugger::Get();
 
 	Entity entA(entity, world);

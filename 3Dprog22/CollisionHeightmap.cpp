@@ -33,7 +33,7 @@ glm::vec2 TransformToWSSpace(int x, int z, float scaleXZ, int width)
 	return pos;
 }
 
-bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTriangles& cht) const
+bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTriangles& cht, bool bShow) const
 {
 	float scaleXZ = scale.x;
 
@@ -74,7 +74,9 @@ bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTria
 			cht.faces.emplace_back(tri1);
 		}
 	}
-	rd->AddDebugBoundingBox(0.f, tempBox.min, tempBox.max);
+
+	if (bShow) rd->AddDebugBoundingBox(0.f, tempBox.min, tempBox.max);
+	
 	if (tempBox.Intersect(bb))
 	{	
 		return true;

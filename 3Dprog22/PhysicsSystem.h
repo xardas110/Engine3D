@@ -13,7 +13,6 @@ class ThreadPoolx;
 struct CollisionComponent;
 
 #define NUM_THREADS 32
-//#define SIMULATE_THREADED
 
 struct BroadPhase
 {
@@ -74,6 +73,8 @@ public:
 	void DrawBoundingBoxes() const;
 
 	static PhysicsSystem* Get();
+
+	bool bSimulateThreaded{ false };
 private:
 	glm::vec3 gravity = glm::vec3(0.f, -9.81f, 0.f);
 

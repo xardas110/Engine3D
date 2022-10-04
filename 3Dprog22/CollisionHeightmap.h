@@ -16,10 +16,10 @@ class CollisionHeightmap
 
 	glm::vec3 scale{0.f};
 	int width{ 0 }; int height{ 0 };
-	std::vector<float>* heightMap;
+	std::vector<float>* heightMap = nullptr;
 
 public:
 	void SetHeightmap(int width, int height, const glm::vec3& scale, std::vector<float>* heightmap);
-	bool Intersect(const BoundingBox& bb, CollisionHeightmapTriangles& cht) const;
+	bool Intersect(const BoundingBox& bb, CollisionHeightmapTriangles& cht, bool bShow = false) const;
 };
 
