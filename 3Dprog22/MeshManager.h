@@ -37,8 +37,6 @@ class MeshManager : protected QOpenGLFunctions_4_5_Core
 
 	void CreatePoint();
 	
-	void CreateOctahedronBall(int n);
-	
 	void CreateSkybox();
 
 	void CreateSegment();
@@ -87,7 +85,6 @@ public:
 	~MeshManager() override;
 	
 	Mesh GetSegmentMesh();
-	Mesh GetOctahedronBallMesh();
 	Mesh GetTriangleMesh();
 	Mesh GetBoxMesh();
 	Mesh GetPlaneMesh();
@@ -95,6 +92,8 @@ public:
 	Mesh GetTerrainPatchMesh();
 	Mesh GetQuadMesh();
 	Mesh GetUnitQuad();
+
+	Mesh CreateOctahedronBall(int n);
 
 	bool GetSkyboxMesh(Mesh& outMesh);
 };

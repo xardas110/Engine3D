@@ -192,6 +192,12 @@ void StaticMeshInstancedSystem::ShadowPass(World* world, entt::registry& registr
 			}*/
 
 			auto& staticMeshInstanced = smi.LOD[i];
+
+			if (!staticMeshInstanced.bCastShadow)
+			{
+				instanceOffset += size; continue;
+			}
+
 			renderEngine->SetInt(spb.instanceOffset, instanceOffset);
 
 			for (auto& mesh : staticMeshInstanced.GetMeshes())
@@ -254,7 +260,7 @@ void StaticMeshInstancedSystem::MainPass(World* world, entt::registry& registry,
 		{
 			auto& staticMeshInstanced = smi.LOD[i];
 			auto size = smi.size[i];
-
+			renderEngine->SetCullFace(staticMeshInstanced.cullFace);
 			renderEngine->SetInt(mpb.instanceOffset, instanceOffset);
 
 			for (auto& mesh : staticMeshInstanced.GetMeshes())
@@ -270,6 +276,7 @@ void StaticMeshInstancedSystem::MainPass(World* world, entt::registry& registry,
 	}
 
 	renderEngine->EnableCulling();
+	renderEngine->SetCullFace(GL_FRONT);
 	renderEngine->SetDepthMask(GL_TRUE);
 }
 

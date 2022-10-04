@@ -58,6 +58,34 @@ PhysicsSystem::~PhysicsSystem()
 
 void PhysicsSystem::Init()
 {
+	auto entity = world->CreateEntity("Instanced Physics Balls");
+	instancedPhysicsBalls = entity.GetEntityId();
+	auto& mesh = entity.AddComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
+
+	glm::vec3 color = glm::vec3(0.1f, 0.1f, 0.7f);
+
+	mesh.LOD[0].AddMesh(world->GetMeshManager()->CreateOctahedronBall(4));
+	mesh.LOD[1].AddMesh(world->GetMeshManager()->CreateOctahedronBall(3));
+	mesh.LOD[2].AddMesh(world->GetMeshManager()->CreateOctahedronBall(2));
+	mesh.LOD[3].AddMesh(world->GetMeshManager()->CreateOctahedronBall(1));
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		mesh.LOD[i].cullFace = GL_BACK;
+		mesh.LOD[i].SetColor(color);
+		mesh.LOD[i].bCastShadow = false;
+	}
+}
+
+void PhysicsSystem::SetCastShadowOnPhysicBalls(bool bCast)
+{
+	Entity ent(instancedPhysicsBalls, world);
+	auto& mesh = ent.GetComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		mesh.LOD[i].bCastShadow = bCast;
+	}
 }
 
 void PhysicsSystem::OnConstructCollider(entt::registry& registry, entt::entity entity)
@@ -227,6 +255,7 @@ void PhysicsSystem::ApplyForces(float deltatime)
 
 		glm::vec3 gravityImpulse = gravity * body.GetMass() * deltatime;
 		body.ApplyLinearImpulse(gravityImpulse);
+		body.ApplyLinearImpulse(windImpulse);
 	}
 }
 
@@ -551,12 +580,24 @@ void PhysicsSystem::PreSyncTransforms()
 
 void PhysicsSystem::PostSyncTransforms()
 {
+	auto ent = Entity(instancedPhysicsBalls, world);
+	auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
+	smm.staticMeshInstanced.transforms.clear();
+	
 	auto view = registry->view<TransformComponent, PhysicsComponent>();
 	for (auto entity : view)
 	{
 		auto [transform, body] = view.get<TransformComponent, PhysicsComponent>(entity);	
 		transform.SetPosition(body.body.GetPos());
 		transform.SetRotation(body.body.GetRotation());		
+
+		Entity otherEnt(entity, world);
+
+		if (otherEnt.HasComponent<PhysicsBall>())
+		{
+			auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
+			smm.staticMeshInstanced.transforms.emplace_back(transform.GetTransform());
+		}
 	}
 }
 

@@ -13,7 +13,7 @@ MeshManager::MeshManager()
     CreateSkybox();
     CreateDebugBoundingBox();
     CreateTriangle();
-    CreateOctahedronBall(3);
+    CreateOctahedronBall(1);
     CreateSegment();
     CreatePlane();
     CreatePoint();
@@ -266,8 +266,15 @@ void MeshManager::CreatePoint()
     meshContainer[MeshType::Mesh][pointString] = mesh;
 }
 
-void MeshManager::CreateOctahedronBall(int n)
+Mesh MeshManager::CreateOctahedronBall(int n)
 {
+    
+    std::string name = sphereString + std::to_string(n);
+    if (meshContainer[MeshType::Mesh].find(name) != meshContainer[MeshType::Mesh].end())
+    {
+        return meshContainer[MeshType::Mesh][name];
+    }
+
     unsigned int VAO, VBO, EBO;
 
     std::vector<Vertex> vertices;
@@ -347,8 +354,10 @@ void MeshManager::CreateOctahedronBall(int n)
     Mesh mesh;
     mesh.vao = VAO;
     mesh.indices = indices.size();
-
-    meshContainer[MeshType::Mesh][sphereString] = mesh;
+    
+    meshContainer[MeshType::Mesh][name] = mesh;
+    
+    return mesh;
 }
 
 void MeshManager::CreateSkybox()
@@ -700,11 +709,6 @@ MeshManager::~MeshManager()
 Mesh MeshManager::GetSegmentMesh()
 {
     return meshContainer[MeshType::Mesh][segmentString];
-}
-
-Mesh MeshManager::GetOctahedronBallMesh()
-{
-    return meshContainer[MeshType::Mesh][sphereString];
 }
 
 Mesh MeshManager::GetTriangleMesh()

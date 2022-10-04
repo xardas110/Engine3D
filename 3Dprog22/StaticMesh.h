@@ -30,6 +30,8 @@ struct StaticMesh
 
 	bool IsValid() const;
 
+	unsigned cullFace = 0x0404;
+
 	bool bCastShadow = true;
 
 private:

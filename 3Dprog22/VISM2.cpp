@@ -59,14 +59,17 @@ void VISM2::UpdateEditor(World* world, float deltatime)
 
     ImGui::Text("\nTask 3.1 - Spawn Ball (Press R)");
     ImGui::Text("Task 3.2 - Spawn Balls");
-    if (ImGui::Button("Spawn Balls"))
+    ImGui::Checkbox("Cast Shadow on rain", &bCastShadowOnRain);
+    world->physicsSystem->SetCastShadowOnPhysicBalls(bCastShadowOnRain);
+    if (ImGui::Button("Spawn Rain"))
     {
         ClearBalls();
         SpawnBalls();
     }
-    ImGui::SliderInt("Num Balls X", &numBallsX, 10, 100);
-    ImGui::SliderInt("Num Balls Y", &numBallsZ, 10, 100);
+    ImGui::SliderInt("Num Balls X", &numBallsX, 10, 200);
+    ImGui::SliderInt("Num Balls Y", &numBallsZ, 10, 200);
     ImGui::SliderInt("Ball Spacing", &ballSpacing, 10, 100);
+    ImGui::SliderFloat3("Wind Impulse", &world->physicsSystem->windImpulse.x, -100.f, 100.f);
     ImGui::Checkbox("Enable Multithreading(32 threads)", &world->physicsSystem->bSimulateThreaded);
 
     ImGui::Checkbox("Draw Octree", &bDrawOctreeLeafs);
@@ -121,13 +124,11 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres)
     else
     {
         auto& sphereBody = e.AddComponent<PhysicsBall>();
-       // sphereMesh.AddMesh(world->GetMeshManager()->GetOctahedronBallMesh());
-       // sphereMesh.SetColor(glm::vec3(0.1f, 0.1f, 0.7f));
     }
     sphereBody.SetMass(1000.f);
     sphereBody.SetFriction(0.5f);
 
-    collider.SetExtents(glm::vec3(4.8f, 4.8f, 4.8f)); 
+    collider.SetExtents(glm::vec3(5.2f)); 
    
     e.SetPosition(pos);
     e.SetScale({ 5.f, 5.f, 5.f }); 

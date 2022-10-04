@@ -75,6 +75,10 @@ public:
 	static PhysicsSystem* Get();
 
 	bool bSimulateThreaded{ false };
+
+	void SetCastShadowOnPhysicBalls(bool bCast);
+
+	glm::vec3 windImpulse{ 0.f, 0.f, 0.f };
 private:
 	glm::vec3 gravity = glm::vec3(0.f, -9.81f, 0.f);
 
@@ -83,6 +87,8 @@ private:
 
 	Octree* octree; //Raskere å reloade octreet med bare dynamiske objekter
 	BoundingBox octreeSize{ glm::vec3(-2000.f), glm::vec3(2000.f) };
+
+	entt::entity instancedPhysicsBalls;
 
 	//std::vector<ConstraintPenetration> penetrationConstrains;
 	//ConstraintManifoldCollector mManifolds;

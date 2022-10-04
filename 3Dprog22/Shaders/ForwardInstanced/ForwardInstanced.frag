@@ -102,9 +102,9 @@ vec3 GetDiffuseColor() // returns either a texture diffuse color or vec3(1)
 {
 	if (material.numDiffusemaps != 0)
 	{
-		return vec3(texture(material.diffusemap, TexCoords));
+		return vec3(texture(material.diffusemap, TexCoords)) * material.color;
 	}
-	return vec3(1.f, 1.f, 1.f);
+	return material.color;
 }
 vec3 GetSpecularColor()// returns either a texture specular color or vec3(1)
 {

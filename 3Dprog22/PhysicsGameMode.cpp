@@ -113,7 +113,7 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
             collider.SetExtents(glm::vec3(1000.f, 1000.f, 1000.f));
             collider.SetPosition(glm::vec3(0.f, 0.f, 0.f));
 
-            sphereMesh.AddMesh(world->GetMeshManager()->GetOctahedronBallMesh());
+            sphereMesh.AddMesh(world->GetMeshManager()->CreateOctahedronBall(4));
             sphereMesh.bCastShadow = false;
             sphereMesh.SetColor(glm::vec3(0.5f, 0.5f, 0.2f));
 
