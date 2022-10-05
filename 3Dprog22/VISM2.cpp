@@ -184,12 +184,13 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres, bool bAddSpline)
     { 
         auto& sphereMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
         sm->LoadStaticMesh("../3Dprog22/Assets/Models/Sphere/Sphere_LOD4.obj", sphereMesh);
-        sphereBody.SetMass(1000.f);
+        sphereBody.SetMass(1000.f);      
     }
     else
     {
         e.AddComponent<PhysicsBall>();
         sphereBody.SetMass(1.f);
+        sphereBody.SetElasticity(0.f);
     }
     
     sphereBody.SetFriction(0.5f);
@@ -202,7 +203,7 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres, bool bAddSpline)
 
 void VISM2::SpawnBalls(bool bAddSpline)
 {
-    int height = 1000;
+    int height = 3000;
     int iterations = 1;
     int nrRows = numBallsX;
     int nrColumns = numBallsZ;
@@ -216,7 +217,7 @@ void VISM2::SpawnBalls(bool bAddSpline)
                 int randomY = rand() % height;
                 int randomZ = rand() % nrColumns;
 
-                SpawnBall({ randomX * spacing - (nrRows * spacing * 0.5f), 1000.f + randomY, randomZ * spacing - (nrColumns * spacing * 0.5f) }, false, bAddSpline);
+                SpawnBall({ randomX * spacing - (nrRows * spacing * 0.5f), 1200.f + randomY, randomZ * spacing - (nrColumns * spacing * 0.5f) }, false, bAddSpline);
             }
         };
 }

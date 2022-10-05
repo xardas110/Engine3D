@@ -44,6 +44,9 @@ public:
 
 	void SetFriction(const float newFriction);
 	float GetFriction() const;
+	
+	void SetElasticity(float val);
+	float GetElasticity() const;
 
 	entt::entity GetEntityId() const;
 

@@ -108,6 +108,16 @@ float RigidBody::GetFriction() const
 	return friction;
 }
 
+void RigidBody::SetElasticity(float val)
+{
+	elasticity = val;
+}
+
+float RigidBody::GetElasticity() const
+{
+	return elasticity;
+}
+
 entt::entity RigidBody::GetEntityId() const
 {
 	return entityId;
