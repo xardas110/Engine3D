@@ -74,6 +74,11 @@ void VISM2::UpdateEditor(World* world, float deltatime)
     ImGui::Checkbox("Display heightlines", &world->terrainSystem.bShowHeightlines);
 
     ImGui::Text("\nTask 3.1 - Spawn Ball (Press R)");
+    if (ImGui::Button("Spawn Ball at camera(Can Press R too)"))
+    {
+        auto* cam = world->GetRenderCamera();
+        SpawnBall(cam->GetPosition() + cam->GetDirection() * 10.f);
+    }
     ImGui::Text("Task 3.2 - Spawn Balls");
     ImGui::Checkbox("Cast Shadow on rain", &bCastShadowOnRain);
     world->physicsSystem->SetCastShadowOnPhysicBalls(bCastShadowOnRain);
@@ -197,6 +202,7 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres, bool bAddSpline)
 
 void VISM2::SpawnBalls(bool bAddSpline)
 {
+    int height = 1000;
     int iterations = 1;
     int nrRows = numBallsX;
     int nrColumns = numBallsZ;
@@ -206,7 +212,11 @@ void VISM2::SpawnBalls(bool bAddSpline)
         {
             for (auto j = 0; j < nrColumns; j++)
             {
-                SpawnBall({ i * spacing - (nrRows * spacing * 0.5f), 1500.f * (f + 1), j * spacing - (nrColumns * spacing * 0.5f) }, false, bAddSpline);
+                int randomX = rand() % nrRows;
+                int randomY = rand() % height;
+                int randomZ = rand() % nrColumns;
+
+                SpawnBall({ randomX * spacing - (nrRows * spacing * 0.5f), 1000.f + randomY, randomZ * spacing - (nrColumns * spacing * 0.5f) }, false, bAddSpline);
             }
         };
 }

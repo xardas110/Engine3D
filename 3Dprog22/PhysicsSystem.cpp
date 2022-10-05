@@ -359,7 +359,7 @@ void PhysicsSystem::ResolveHeightmapCollisions(Collideable& collideable, entt::e
 	ContactManifold contact; CollisionHeightmapTriangles cht; RigidBody staticBody; Collideable temp; temp.type = CollideableType::Invalid;
 	staticBody.SetFriction(0.5f); staticBody.SetMass(0.f); staticBody.collider = temp;
 
-	if (mNp.heightmap.Intersect(collideable.GetLocalBounds(), cht))
+	if (mNp.heightmap.Intersect(collideable.GetLocalBounds(), cht, bShowHeightmapCollisionTriangles))
 	{
 		std::vector<Triangle> tets = cht.GetAsTriangles(mNp.heightmap.heightMap, mNp.heightmap.scale.x, mNp.heightmap.scale.y, mNp.heightmap.width, bShowHeightmapCollisionTriangles);
 		

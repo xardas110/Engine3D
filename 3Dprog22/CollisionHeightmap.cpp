@@ -40,7 +40,9 @@ bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTria
 	glm::ivec2 posMin = TransformToHMSpace(bb.min.x, bb.min.z, scale.x, width);
 	glm::ivec2 posMax = TransformToHMSpace(bb.max.x, bb.max.z, scale.x, width);
 
-	glm::ivec2 delta = posMax - posMin + 4;
+	posMax += glm::ivec2(2);
+
+	glm::ivec2 delta = posMax - posMin;
 
 	auto* rd = RenderDebugger::Get();
 
@@ -49,7 +51,7 @@ bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTria
 	{
 		for (int x = 0; x < delta.x; x++)
 		{
-			glm::ivec2 currentPos = posMin + glm::ivec2(x, z) - 2;
+			glm::ivec2 currentPos = posMin + glm::ivec2(x, z);
 
 			if (currentPos.y * width + currentPos.x >= heightMap->size()-1) continue;
 

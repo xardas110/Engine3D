@@ -38,7 +38,7 @@
   },
   "fog": {
     "enabled": true,
-    "sight": 0.8
+    "sight": 1.0
   },
   "shadows": {
     "enabled": true,
