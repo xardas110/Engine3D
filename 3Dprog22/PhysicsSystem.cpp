@@ -88,6 +88,17 @@ void PhysicsSystem::SetCastShadowOnPhysicBalls(bool bCast)
 	}
 }
 
+void PhysicsSystem::SetShaderModelOnPhysicsBalls(int shaderModel)
+{
+	Entity ent(instancedPhysicsBalls, world);
+	auto& mesh = ent.GetComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
+
+	for (size_t i = 0; i < 4; i++)
+	{
+		mesh.LOD[i].shaderModel = shaderModel;
+	}
+}
+
 void PhysicsSystem::OnConstructCollider(entt::registry& registry, entt::entity entity)
 {
 	Entity ent(entity, world);

@@ -36,7 +36,7 @@ struct Material {
 };
 
 uniform Material material;
-
+uniform int shaderModel;
 uniform sampler2D depthmap;
 
 in vec3 FragPos;
@@ -90,7 +90,7 @@ void main()
 			GetDiffuseColor(), 
 			material.shininess,
 			GetSpecularColor(),
-			SHADERMODEL_BRDF,
+			shaderModel,
 			GetNormal(),
 			GetAO(),
 			GetRoughness(),

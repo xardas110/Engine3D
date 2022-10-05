@@ -77,6 +77,7 @@ public:
 	bool bSimulateThreaded{ false };
 
 	void SetCastShadowOnPhysicBalls(bool bCast);
+	void SetShaderModelOnPhysicsBalls(int shaderModel);
 
 	glm::vec3 externalImpulse{ 0.f, 0.f, 0.f };
 private:

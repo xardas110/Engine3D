@@ -49,6 +49,7 @@ void StaticMeshInstancedSystem::InitShaderBindings()
 	mpb.instanceOffset = re->GetUniformLocation("instanceOffset");
 	mpb.color = re->GetUniformLocation("material.color");
 	mpb.shininess = re->GetUniformLocation("material.shininess");
+	mpb.shaderModel = re->GetUniformLocation("shaderModel");
 
 	mpb.meshSettingsbHasTransparency = re->GetUniformLocation("meshSettings.bHasTransparency");
 
@@ -262,6 +263,7 @@ void StaticMeshInstancedSystem::MainPass(World* world, entt::registry& registry,
 			auto size = smi.size[i];
 			renderEngine->SetCullFace(staticMeshInstanced.cullFace);
 			renderEngine->SetInt(mpb.instanceOffset, instanceOffset);
+			renderEngine->SetInt(mpb.shaderModel, staticMeshInstanced.shaderModel);
 
 			for (auto& mesh : staticMeshInstanced.GetMeshes())
 			{

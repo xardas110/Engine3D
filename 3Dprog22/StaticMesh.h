@@ -15,6 +15,8 @@ struct StaticMesh
 	aiMatrix4x4 globalInverseTransform{};
 	std::string pathDirectory{};
 
+	int shaderModel = 0;
+
 	bool bHasTransparency{ false };//This flag turns true if any of the child meshes contains any opacity textures.
 
 	void AddMesh(const Mesh& mesh);

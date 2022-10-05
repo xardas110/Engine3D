@@ -81,6 +81,13 @@ void VISM2::UpdateEditor(World* world, float deltatime)
     }
     ImGui::Text("Task 3.2 - Spawn Balls");
     ImGui::Checkbox("Cast Shadow on rain", &bCastShadowOnRain);
+    ImGui::Checkbox("Shaded rain", &bRainShaded);
+
+    if (bRainShaded)
+        world->physicsSystem->SetShaderModelOnPhysicsBalls(0);
+    else
+        world->physicsSystem->SetShaderModelOnPhysicsBalls(6);
+
     world->physicsSystem->SetCastShadowOnPhysicBalls(bCastShadowOnRain);
     if (ImGui::Button("Spawn Rain"))
     {

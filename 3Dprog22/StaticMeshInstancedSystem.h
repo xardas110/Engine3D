@@ -23,7 +23,7 @@ struct MainPassBindings
 {
 	int color;
 	int shininess;
-
+	int shaderModel;
 	int gBufferDepth;
 
 	int sms;

@@ -114,6 +114,11 @@ void main()
 			colorOut = SM_Sun(fi.albedo);
 		}
 		break;
+		case SHADERMODEL_UNLIT:
+		{
+			colorOut = vec4(fi.albedo, 1.f);
+		}
+		break;
 		case SHADERMODEL_DEBUG:
 		{
 			colorOut = vec4(fi.albedo, 1.f);
