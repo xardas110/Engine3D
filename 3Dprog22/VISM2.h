@@ -45,7 +45,7 @@ private:
 	bool bDrawBoundingBoxes = false;
 	bool bDrawConvexHulls = false;
 	bool bCastShadowOnRain = false;
-	bool bRainShaded = false;
+	bool bRainShaded = true;
 
 	entt::entity CreateTerrain(class World* world, const std::string& jsonPath);
 };

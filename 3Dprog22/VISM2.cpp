@@ -197,7 +197,7 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres, bool bAddSpline)
     {
         e.AddComponent<PhysicsBall>();
         sphereBody.SetMass(1.f);
-        sphereBody.SetElasticity(0.f);
+        sphereBody.SetElasticity(0.2f);
     }
     
     sphereBody.SetFriction(0.5f);
