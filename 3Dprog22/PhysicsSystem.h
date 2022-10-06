@@ -6,7 +6,6 @@
 #include <vector>
 #include "boundingvolumes.h"
 #include "Octree.h"
-#include "ConstraintManifold.h"
 #include "CollisionHeightmap.h"
 
 class ThreadPoolx;

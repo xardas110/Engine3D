@@ -1,5 +1,7 @@
 #version 460
 
+//https://www.youtube.com/watch?v=z03vg2QTA8k&t=2053s&ab_channel=OREONENGINE
+
 layout(vertices = 16) out;
 
 #include "../common/camera.frag"

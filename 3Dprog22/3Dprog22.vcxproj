@@ -216,8 +216,6 @@
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CollisionHeightmap.cpp" />
     <ClCompile Include="CollisionUtility.cpp" />
-    <ClCompile Include="Constraint.cpp" />
-    <ClCompile Include="ConstraintManifold.cpp" />
     <ClCompile Include="ConvexHull.cpp" />
     <ClCompile Include="DeferredRenderer.cpp" />
     <ClCompile Include="DeferredRendererConfig.cpp" />
@@ -244,7 +242,6 @@
     <ClCompile Include="Json.cpp" />
     <ClCompile Include="LightPassSystem.cpp" />
     <ClCompile Include="MaterialManager.cpp" />
-    <ClCompile Include="MathSolvers.cpp" />
     <ClCompile Include="MeshManager.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="NodeEdge.cpp" />
@@ -342,8 +339,6 @@
     <ClInclude Include="CollisionHeightmap.h" />
     <ClInclude Include="CollisionUtility.h" />
     <ClInclude Include="Components.h" />
-    <ClInclude Include="Constraint.h" />
-    <ClInclude Include="ConstraintManifold.h" />
     <ClInclude Include="ContactManifold.h" />
     <ClInclude Include="ConvexHull.h" />
     <ClInclude Include="CpuProfiler.h" />
@@ -388,7 +383,6 @@
     <ClInclude Include="LightPassSystem.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="MaterialManager.h" />
-    <ClInclude Include="MathSolvers.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="MeshManager.h" />
     <ClInclude Include="Modules.h" />

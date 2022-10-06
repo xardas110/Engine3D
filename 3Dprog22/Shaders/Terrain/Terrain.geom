@@ -1,5 +1,7 @@
 #version 460
 
+//https://www.youtube.com/watch?v=z03vg2QTA8k&t=2053s&ab_channel=OREONENGINE
+
 layout(triangles) in;
 layout(triangle_strip, max_vertices = 3) out;
 

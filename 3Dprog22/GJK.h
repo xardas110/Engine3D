@@ -52,6 +52,7 @@ template <typename shapeA_t, typename shapeB_t>
 static bool IntersectGJK(const shapeA_t& shapeA, const shapeB_t& shapeB, GJKSimplex& outSimplex)
 {
 	// http://www.dyn4j.org/2010/04/gjk-gilbert-johnson-keerthi/
+	// https://github.com/pkurth/D3D12Renderer
 
 	GJKStatus updateGJKSimplex(GJKSimplex& s, const GJKSupportPoint& a, glm::vec3& dir);
 

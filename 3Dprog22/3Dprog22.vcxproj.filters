@@ -398,9 +398,6 @@
     <Filter Include="External\ImGui">
       <UniqueIdentifier>{79819963-a558-4870-bd0b-4cd498d1701d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\Physics Engine\Math">
-      <UniqueIdentifier>{c1471061-b387-4d9c-bf46-bcf9bde3bdd3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\Curves">
       <UniqueIdentifier>{6ee88e22-1c07-40b8-80a9-14941fac6b27}</UniqueIdentifier>
     </Filter>
@@ -738,15 +735,6 @@
     </ClCompile>
     <ClCompile Include="Include\ImGui\imgui_widgets.cpp">
       <Filter>External\ImGui</Filter>
-    </ClCompile>
-    <ClCompile Include="MathSolvers.cpp">
-      <Filter>src\Physics Engine\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Constraint.cpp">
-      <Filter>src\Physics Engine\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="ConstraintManifold.cpp">
-      <Filter>src\Physics Engine\Collision</Filter>
     </ClCompile>
     <ClCompile Include="CollisionHeightmap.cpp">
       <Filter>src\Physics Engine\Collision</Filter>
@@ -2471,15 +2459,6 @@
     </ClInclude>
     <ClInclude Include="Include\ImGui\QtImGui.h">
       <Filter>External\ImGui</Filter>
-    </ClInclude>
-    <ClInclude Include="MathSolvers.h">
-      <Filter>src\Physics Engine\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Constraint.h">
-      <Filter>src\Physics Engine\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="ConstraintManifold.h">
-      <Filter>src\Physics Engine\Collision</Filter>
     </ClInclude>
     <ClInclude Include="CollisionHeightmap.h">
       <Filter>src\Physics Engine\Collision</Filter>

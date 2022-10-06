@@ -2,6 +2,8 @@
 
 layout (location = 0) in vec2 position0;
 
+//https://www.youtube.com/watch?v=z03vg2QTA8k&t=2053s&ab_channel=OREONENGINE
+
 #include "../common/Camera.frag"
 
 out vec2 mapCoord_TC;

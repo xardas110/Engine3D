@@ -1,5 +1,7 @@
 #version 460
 
+//https://www.youtube.com/watch?v=z03vg2QTA8k&t=2053s&ab_channel=OREONENGINE
+
 #define MAX_CASCADES 4
 #define SHADOW_DEPTH_BIAS 0.00003
 

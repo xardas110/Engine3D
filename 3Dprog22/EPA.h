@@ -88,6 +88,7 @@ static epa_status IntersectEPA(const GJKSimplex& gjkSimplex, const shapeA_t& sha
 {
 	// http://www.dyn4j.org/2010/05/epa-expanding-polytope-algorithm/
 	// http://uu.diva-portal.org/smash/get/diva2:343820/FULLTEXT01 page 23+
+	// https://github.com/pkurth/D3D12Renderer
 
 	assert(gjkSimplex.numPoints == 4);
 
