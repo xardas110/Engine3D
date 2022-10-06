@@ -1,5 +1,7 @@
 #version 460 core
 
+//https://github.com/jose-villegas/VCTRenderer with some modifications
+
 #define MAX_CASCADES 4
 
 #include "../../common/Camera.frag"
