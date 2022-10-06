@@ -26,6 +26,8 @@ PhysicsSystem::PhysicsSystem(World* world, entt::registry& registry)
 	th = new ThreadPoolx([this](int threadindex) {this->THResolveHeightmapCollisions(threadindex); }, NUM_THREADS);
 	thOctInsertion = new ThreadPoolx([this](int threadindex) {this->THInsertOctree(threadindex); }, NUM_THREADS);
 	thResolveNarrowCollision = new ThreadPoolx([this](int threadindex) {this->THResolveNarrowCollisions(threadindex); }, NUM_THREADS);
+	thMoveBodies = new ThreadPoolx([this](int threadindex) {this->THMoveBodies(threadindex); }, NUM_THREADS);
+	thPostSyncBodies = new ThreadPoolx([this](int threadindex) {this->THPostSyncBodies(threadindex); }, NUM_THREADS);
 
 	registry.on_construct<CollisionComponent>().connect<&PhysicsSystem::OnConstructCollider>(this);
 	registry.on_construct<PhysicsComponent>().connect<&PhysicsSystem::OnConstructBody>(this);
@@ -42,6 +44,12 @@ PhysicsSystem::~PhysicsSystem()
 
 	delete octree;
 	octree = nullptr;
+
+	delete thMoveBodies;
+	thMoveBodies = nullptr;
+
+	delete thPostSyncBodies;
+	thPostSyncBodies = nullptr;
 
 	delete th;
 	th = nullptr;
@@ -203,6 +211,8 @@ void PhysicsSystem::DrawBoundingBoxes() const
 
 void PhysicsSystem::Update(float deltatime)
 {
+	auto* rd = RenderDebugger::Get();
+
 	if (!bSimulateThreaded)
 	{
 		ImGui::Begin("PhysicSystem debug");
@@ -236,24 +246,59 @@ void PhysicsSystem::Update(float deltatime)
 		deltatime = stepValue;
 	}
 
-	//penetrationConstrains.clear();
-	//mManifolds.Clear();
+	this->deltatime = deltatime;
+
 	octLeafsCache.clear();
+
 	//Reloading octree
 	delete octree; octree = new Octree(octreeSize);
 
-	PreSyncTransforms();
+	if (bSimulateThreaded)
+	{
+		thMoveBodies->StartWork();
+		thMoveBodies->WaitWork();
 
-	ApplyForces(deltatime);
-	MoveBodies(deltatime);
+		th->StartWork();
+		thOctInsertion->StartWork();
 
-	std::vector<ContactManifold> contacts; contacts.reserve(2000);
-	
-	ComputeContacts(contacts);
+		th->WaitWork();
+		thOctInsertion->WaitWork();
 
-	ResolveContacts(contacts);
+		octree->GetOctreeLeafs(octLeafsCache);
 
-	PostSyncTransforms();
+		thResolveNarrowCollision->StartWork();
+		thResolveNarrowCollision->WaitWork();
+
+		auto ent = Entity(instancedPhysicsBalls, world);
+		auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
+		smm.staticMeshInstanced.transforms.clear();
+		smm.staticMeshInstanced.transforms.resize(registry->view<PhysicsBall>().size());
+
+		thPostSyncBodies->StartWork();
+		thPostSyncBodies->WaitWork();
+	}
+	else
+	{
+		PreSyncTransforms();
+		ApplyForces(deltatime);
+		MoveBodies(deltatime);
+
+		auto view = registry->view<CollisionComponent>();
+		for (auto entity : view)
+		{
+			auto& collidable = view.get<CollisionComponent>(entity).col;
+			InsertOctree(collidable, entity);
+			ResolveHeightmapCollisions(collidable, entity);
+		}
+
+		std::vector<CollisionPair> collisionPairs;
+		octree->FindCollisionPairs(collisionPairs);
+		for (auto& pair : collisionPairs)
+		{
+			ResolveNarrowCollisions(pair);
+		}
+		PostSyncTransforms();
+	}	
 }
 
 void PhysicsSystem::ApplyForces(float deltatime)
@@ -283,37 +328,26 @@ void PhysicsSystem::MoveBodies(float deltatime)
 
 void PhysicsSystem::ComputeContacts(std::vector<ContactManifold>& outContacts)
 {
-	auto* rd = RenderDebugger::Get();
+	
+}
 
-	if (bSimulateThreaded)
-	{ 
-		th->StartWork();
-		thOctInsertion->StartWork();
-
-		th->WaitWork();
-		thOctInsertion->WaitWork();
-
-		octree->GetOctreeLeafs(octLeafsCache);
-
-		thResolveNarrowCollision->StartWork();
-		thResolveNarrowCollision->WaitWork();
-	}
-	else
+void PhysicsSystem::THMoveBodies(int thIndex)
+{
+	auto view = registry->view<PhysicsComponent>();
+	for (int i = thIndex; i < view.size(); i += NUM_THREADS)
 	{
-		auto view = registry->view<CollisionComponent>();
-		for (auto entity : view)
-		{
-			auto& collidable = view.get<CollisionComponent>(entity).col;
-			InsertOctree(collidable, entity);
-			ResolveHeightmapCollisions(collidable, entity);
-		}
+		Entity ent(view[i], world);
+		auto& body = view.get<PhysicsComponent>(view[i]).body;
+		auto& transform = ent.GetComponent<TransformComponent>();
 
-		std::vector<CollisionPair> collisionPairs;
-		octree->FindCollisionPairs(collisionPairs);
-		for (auto& pair : collisionPairs)
-		{
-			ResolveNarrowCollisions(pair);
-		}
+		body.SetPos(transform.GetPosition());
+		body.SetRotation(transform.GetRotation());
+
+		glm::vec3 gravityImpulse = gravity * body.GetMass() * deltatime;
+		body.ApplyLinearImpulse(gravityImpulse);
+		body.ApplyLinearImpulse(externalImpulse * deltatime);
+
+		body.Update(deltatime);
 	}
 }
 
@@ -427,6 +461,30 @@ void PhysicsSystem::THResolveNarrowCollisions(int thIndex)
 		{				
 			auto& pair = collisionPairs[j];
 			ResolveNarrowCollisions(pair);
+		}
+	}
+}
+
+void PhysicsSystem::THPostSyncBodies(int thIndex)
+{
+	auto ent = Entity(instancedPhysicsBalls, world);
+	auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
+
+	auto view = registry->view<PhysicsComponent>();
+	for (int i = thIndex; i < view.size(); i += NUM_THREADS)
+	{
+		auto& body = view.get<PhysicsComponent>(view[i]);
+		auto& transform = registry->get<TransformComponent>(view[i]);
+
+		transform.SetPosition(body.body.GetPos());
+		transform.SetRotation(body.body.GetRotation());
+
+		Entity otherEnt(view[i], world);
+
+		if (otherEnt.HasComponent<PhysicsBall>())
+		{
+			auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
+			smm.staticMeshInstanced.transforms[i] = transform.GetTransform();
 		}
 	}
 }
@@ -599,7 +657,7 @@ void PhysicsSystem::PostSyncTransforms()
 	auto ent = Entity(instancedPhysicsBalls, world);
 	auto& smm = ent.GetComponent<StaticMeshInstancedComponent>();
 	smm.staticMeshInstanced.transforms.clear();
-	
+
 	auto view = registry->view<TransformComponent, PhysicsComponent>();
 	for (auto entity : view)
 	{

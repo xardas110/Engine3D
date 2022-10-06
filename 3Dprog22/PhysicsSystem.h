@@ -52,12 +52,14 @@ class PhysicsSystem
 
 	void RegisterCollider(Collideable& inOutCollider);
 public:
+	void THMoveBodies(int thIndex);
 	void InsertOctree(Collideable& collidable, entt::entity);
 	void THInsertOctree(int thIndex);
 	void ResolveHeightmapCollisions(Collideable& collidable, entt::entity entity);
 	void THResolveHeightmapCollisions(int thIndex);
 	void ResolveNarrowCollisions(CollisionPair& pair);
 	void THResolveNarrowCollisions(int thIndex);
+	void THPostSyncBodies(int thIndex);
 
 	void OnConstructCollider(entt::registry& registry, entt::entity entity);
 	void OnConstructBody(entt::registry& registry, entt::entity entity);	
@@ -127,8 +129,12 @@ private:
 	bool bEnableStepMode{ false };
 	float stepValue = 0.01f;
 	
+	float deltatime = 0;
+
 	ThreadPoolx* th{nullptr};
 	ThreadPoolx* thOctInsertion{ nullptr };
 	ThreadPoolx* thResolveNarrowCollision{ nullptr };
+	ThreadPoolx* thMoveBodies{ nullptr };
+	ThreadPoolx* thPostSyncBodies{ nullptr };
 };
 

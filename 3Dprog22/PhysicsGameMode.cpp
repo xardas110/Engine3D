@@ -85,7 +85,7 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
             collider.SetExtents(glm::vec3(1000.f, 1000.f, 1000.f));
             collider.SetPosition(glm::vec3(0.f, 0.f, 0.f));
 
-            sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh);
+            sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh, true, true);
             const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Box/Box.obj");
 
             std::cout << "meshdata verts " << temp->verts.size() << std::endl;
@@ -212,7 +212,7 @@ void PhysicsGameMode::SpawnBox(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh);
+    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh, true ,true);
     const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Box/Box.obj");
 
     collider.BuildKDOP(temp->verts.data(), temp->verts.size(), KDOP::DOP26, KDOP_AXIS::Y);
@@ -256,7 +256,7 @@ void PhysicsGameMode::SpawnSphere(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Statue/statue.obj", boxMesh);
+    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Statue/statue.obj", boxMesh, true, true);
     const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Statue/statue.obj");
 
     collider.BuildKDOP(temp->verts.data(), temp->verts.size(), KDOP::DOP26, KDOP_AXIS::Y);

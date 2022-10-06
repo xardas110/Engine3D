@@ -77,7 +77,7 @@ bool CollisionHeightmap::Intersect(const BoundingBox& bb, CollisionHeightmapTria
 		}
 	}
 
-	if (bShow) rd->AddDebugBoundingBox(0.f, tempBox.min, tempBox.max);
+	if (bShow) rd->AddDebugBoundingBox(0.f, tempBox.min, tempBox.max, glm::vec3(0.f, 0.f, 1.f));
 	
 	if (tempBox.Intersect(bb))
 	{	

@@ -190,17 +190,18 @@ void VISM2::SpawnBall(const glm::vec3& pos, bool bHighres, bool bAddSpline)
     if (bHighres)
     { 
         auto& sphereMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-        sm->LoadStaticMesh("../3Dprog22/Assets/Models/Sphere/Sphere_LOD4.obj", sphereMesh);
-        sphereBody.SetMass(1000.f);      
+        sm->LoadStaticMesh("../3Dprog22/Assets/Models/Sphere/Sphere.obj", sphereMesh);
+        sphereBody.SetMass(1000.f);    
+        sphereBody.SetFriction(0.5f);
     }
     else
     {
         e.AddComponent<PhysicsBall>();
-        sphereBody.SetMass(1.f);
+        sphereBody.SetMass(5.f);
         sphereBody.SetElasticity(0.2f);
+        sphereBody.SetFriction(0.5f);
     }
     
-    sphereBody.SetFriction(0.5f);
 
     collider.SetExtents(glm::vec3(5.2f)); 
    
