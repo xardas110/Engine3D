@@ -94,8 +94,8 @@ void VISM2::UpdateEditor(World* world, float deltatime)
         ClearBalls();
         SpawnBalls();
     }
-    ImGui::SliderInt("Num Balls X", &numBallsX, 10, 320);
-    ImGui::SliderInt("Num Balls Y", &numBallsZ, 10, 320);
+    ImGui::SliderInt("Num Balls X", &numBallsX, 10, 500);
+    ImGui::SliderInt("Num Balls Y", &numBallsZ, 10, 500);
     ImGui::SliderInt("Ball Spacing", &ballSpacing, 10, 100);
     ImGui::SliderFloat3("External Impulse", &world->physicsSystem->externalImpulse.x, -100.f, 100.f);
 
