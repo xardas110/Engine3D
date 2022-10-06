@@ -93,9 +93,6 @@ private:
 
 	entt::entity instancedPhysicsBalls;
 
-	//std::vector<ConstraintPenetration> penetrationConstrains;
-	//ConstraintManifoldCollector mManifolds;
-
 	BroadPhase mBp; //Broadphase data
 	NarrowPhase mNp; //Narrowphase data
 
