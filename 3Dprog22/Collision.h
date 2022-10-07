@@ -28,7 +28,6 @@ bool IntersectConvexPoly(const T& A, RigidBody& aBody, const Y& B, RigidBody& bB
 
 bool IntersectSphereTriangle(const BoundingSphere& s, const Triangle& t, ContactManifold& outContact);
 
-
 namespace Collision
 {
 	bool Intersect(

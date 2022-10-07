@@ -7,7 +7,6 @@ struct CollisionHeightmapTriangles
 {
 	std::vector<IndexedTriangle32> faces;
 	std::vector<Triangle> GetAsTriangles(std::vector<float>* heightmap, float scaleXZ, float scaleY, int width, bool bShow = false);
-	std::vector<BoundingTetrahedron> GetAsTetrahedrons(std::vector<float>* heightmap, float scaleXZ,float scaleY, int width, bool bShow = false);
 };
 
 class CollisionHeightmap

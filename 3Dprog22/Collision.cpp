@@ -48,7 +48,6 @@ bool Collision::Intersect(
 		return Intersect(data.mSpheres[aCol.type], aBody, data.mSpheres[bCol.type], bBody, outContact);
 	}
 
-
 	return IntersectConvexPoly(aCol, aBody, bCol, bBody, outContact);
 }
 

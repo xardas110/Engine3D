@@ -142,7 +142,7 @@ BoundingBox Collideable::GetLocalBounds()
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetLocalBounds();
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetLocalBounds();
 	}
@@ -157,7 +157,7 @@ BoundingBox Collideable::GetWorldBounds(const glm::vec3& pos)
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetWorldBounds(pos);
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetWorldBounds(pos);
 	}
@@ -181,7 +181,7 @@ glm::vec3 Collideable::operator()(glm::vec3 dir) const
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex](dir);
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex](dir);
 	}
