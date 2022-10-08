@@ -82,11 +82,7 @@ void MainWindow::init()
 
     //feed in MainWindow to the logger - have to be done, else logger will crash program
     Logger::getInstance()->setMainWindow(this);
-
-    mUpdateTimer = new QTimer();
-	
-    connect(mUpdateTimer, SIGNAL(timeout()), this, SLOT(GameLoop()));
-    
+  
     editor = new Editor(mRenderWindow, this, world);
     
     mRenderWindow->InitGame(world, editor);
@@ -97,38 +93,6 @@ void MainWindow::init()
     world->OnInit(&editor->EditorCamera);
 
     editor->PostWorldInit();
-
-    mTimeStart.start();
-    mUpdateTimer->start(0);
-}
-
-void MainWindow::GameLoop()
-{
-    mTimeStart.restart();
-    mRenderWindow->Update(deltaTime);
-    //RenderDebugger::Get()->Update(deltaTime);
-    mRenderWindow->Render(deltaTime);
-    //RenderDebugger::Get()->Render();
-    calculateFramerate(deltaTime);  
-}
-
-void MainWindow::calculateFramerate(float& deltaTime)
-{
-    long nsecElapsed = mTimeStart.nsecsElapsed();
-
-    deltaTime = nsecElapsed / 1000000000.f;
-
-    static int frameCount{ 0 };                       //counting actual frames for a quick "timer" for the statusbar
-
-    ++frameCount;
-    if (frameCount > 30)    //once pr 30 frames = update the message == twice pr second (on a 60Hz monitor)
-    {
-        //showing some statistics in status bar
-        this->statusBar()->showMessage(" Time pr FrameDraw: " +
-            QString::number(nsecElapsed / 1000000.f, 'g', 4) + " ms  |  " +
-            "FPS (approximated): " + QString::number(1E9 / nsecElapsed, 'g', 7));
-        frameCount = 0;     //reset to show a new message in 30 frames
-    }   
 }
 
 //File menu Exit closes the program

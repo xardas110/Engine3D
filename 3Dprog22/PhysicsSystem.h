@@ -75,7 +75,7 @@ public:
 
 	static PhysicsSystem* Get();
 
-	bool bSimulateThreaded{ false };
+	bool bSimulateThreaded{ true };
 
 	void SetCastShadowOnPhysicBalls(bool bCast);
 	void SetShaderModelOnPhysicsBalls(int shaderModel);

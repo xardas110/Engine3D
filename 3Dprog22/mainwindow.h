@@ -26,15 +26,10 @@ public:
     ~MainWindow();
 
 private slots:
-
-    void GameLoop();
-
     ///Slot called from the File->Exit menu in the mainwindow.ui file
     void on_fileExit_triggered();
 
     void on_worldHierList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
-
-    void calculateFramerate(float& deltaTime);
 
 private:
     ///called from the constructor. Initializes different parts of the program.
@@ -46,8 +41,6 @@ private:
     QWidget *mRenderWindowContainer{nullptr};   //Qt container for the RenderWindow
     RenderWindow *mRenderWindow{nullptr};       //The class that actually renders OpenGL
 
-    QTimer* mUpdateTimer{nullptr};
-    QElapsedTimer mTimeStart;               //time variable that reads the calculated FPS
     //
     //Logger class uses private ui pointer from this class
     friend class Logger;

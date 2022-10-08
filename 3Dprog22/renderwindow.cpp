@@ -65,13 +65,39 @@ void RenderWindow::InitGame(World* world, Editor* editor)
     QtImGui::initialize(this);
 
     bInitialized = true; 
+
+    mUpdateTimer = new QTimer();
+
+    connect(mUpdateTimer, SIGNAL(timeout()), this, SLOT(GameLoop()));
+
+    mTimeStart.start();
+    mUpdateTimer->start(0);
+}
+
+
+void RenderWindow::GameLoop()
+{
+    long nsecElapsed = mTimeStart.nsecsElapsed();
+    mTimeStart.restart();
+
+    float deltaTime = nsecElapsed / 1000000000.f;
+    this->deltatime = deltaTime;
+
+    UpdateMouse();
+    Update(deltaTime);
+    Render(deltaTime);
+}
+
+void RenderWindow::UpdateMouse()
+{
+    editor->OnUpdateFromRenderWindow(deltatime, mKeysHeld, mMouseButtonsHeld, mX, mY, lastMX, lastMY);
 }
 
 void RenderWindow::Update(float deltaTime)
 {
     QtImGui::newFrame();
     world->OnUpdate(deltaTime);
-    editor->OnUpdateFromRenderWindow(deltaTime, mKeysHeld, mMouseButtonsHeld, mX, mY, lastMX, lastMY);
+   
     world->OnMouseButtonHeldFromRenderWindow(&mMouseButtonsHeld, deltaTime);
     world->OnKeysHeld(&mKeysHeld, deltaTime);
 }
@@ -96,6 +122,7 @@ void RenderWindow::exposeEvent(QExposeEvent * e)
 
     //Set viewport width and height to the size of the QWindow we have set up for OpenGL
     glViewport(0, 0, static_cast<GLint>(width() * retinaScale), static_cast<GLint>(height() * retinaScale));
+    editor->EditorCamera.SetAspect(float((float)width() * retinaScale) / float((float)height() * retinaScale));
 
     world->OnExposeEvent(e);
 }
@@ -234,5 +261,5 @@ void RenderWindow::keyReleaseEvent(QKeyEvent *event)
 
 RenderWindow::~RenderWindow()
 {
-	//No object ownership for now
+    delete mUpdateTimer; mUpdateTimer = nullptr;
 }

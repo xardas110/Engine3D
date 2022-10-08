@@ -7,6 +7,7 @@
 #include <QElapsedTimer>
 #include "World.h"
 #include "editor.h"
+#include <thread>
 
 class QOpenGLContext;
 class Shader;
@@ -31,8 +32,12 @@ public:
     int GetWidth();
     int GetHeight();
 
+    void UpdateMouse();
+
 private slots:
 
+    void GameLoop();
+  
 private:
     void InitGame(World* world, Editor* editor);
 	
@@ -65,6 +70,10 @@ protected:
 	
     double mX{}, mY{};
     double lastMX{}, lastMY{};
+    float deltatime = 0.f;
+
+    QTimer* mUpdateTimer{ nullptr };
+    QElapsedTimer mTimeStart;               //time variable that reads the calculated FPS
 
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;

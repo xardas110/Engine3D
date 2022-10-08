@@ -1070,7 +1070,7 @@ void Editor::OnUpdateFromRenderWindow(float deltaTime, std::map<int, bool> keyPr
     mx = mouseX;
     my = mouseY;
 
-    float forward{}, right{}, up{};//Oppgave 5a;
+    float forward{}, right{}, up{};
     if (keyPressed[Qt::Key_W])
     {
         forward += 1.f;
@@ -1109,7 +1109,7 @@ void Editor::OnUpdateFromRenderWindow(float deltaTime, std::map<int, bool> keyPr
 
     EditorCamera.MoveForward(forward, deltaTime);
     EditorCamera.MoveRight(right, deltaTime);
-    //Oppgave 5a
+
     EditorCamera.MoveUp(up, deltaTime);
 
     EditorCamera.UpdateCamera(deltaTime);
