@@ -32,7 +32,7 @@ public:
     int GetWidth();
     int GetHeight();
 
-    void UpdateMouse();
+    void UpdateInput();
 
 private slots:
 

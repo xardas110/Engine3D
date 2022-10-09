@@ -83,12 +83,12 @@ void RenderWindow::GameLoop()
     float deltaTime = nsecElapsed / 1000000000.f;
     this->deltatime = deltaTime;
 
-    UpdateMouse();
+    UpdateInput();
     Update(deltaTime);
     Render(deltaTime);
 }
 
-void RenderWindow::UpdateMouse()
+void RenderWindow::UpdateInput()
 {
     editor->OnUpdateFromRenderWindow(deltatime, mKeysHeld, mMouseButtonsHeld, mX, mY, lastMX, lastMY);
 }
@@ -246,8 +246,9 @@ void RenderWindow::keyPressEvent(QKeyEvent *event)
     {
         mMainWindow->close(); 
     }
+    editor->OnKeyPressedInRenderWindow(event);
     world->OnKeyPressedFromRenderWindow(event);
-	
+    
     mKeysHeld[event->key()] = true;
     QWindow::keyPressEvent(event);
 }

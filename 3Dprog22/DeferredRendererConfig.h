@@ -47,7 +47,7 @@ struct DeferredRendererConfig
 	struct VolumetricClouds {
 		bool enabled{ false };
 
-		int numCloudRaySteps{ 128 };
+		int numCloudRaySteps{ 64 };
 		int numShadowRaySteps{ 16 };
 		int numVolumetricLightRaySteps{ 64 };
 

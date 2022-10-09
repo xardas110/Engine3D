@@ -36,6 +36,7 @@ public:
     void OnUpdateFromRenderWindow(float deltaTime, std::map<int, bool> keyPressed, std::map<int, bool> mousePressed, double mouseX, double mouseY, double lastX, double lastY);
     void OnMousePressedInRenderWindow(QMouseEvent* event);
     void OnMouseReleasedInRenderWindow(QMouseEvent* event);
+    void OnKeyPressedInRenderWindow(QKeyEvent* event);
     void OnUpdateGUIFromRenderWindow(float deltaTime);
 	
     Camera EditorCamera;
@@ -94,6 +95,8 @@ private:
     void OnEntityCreated(entt::registry& registry, entt::entity entity);
     void OnEntityDestroyed(entt::registry& registry, entt::entity entity);
 	
+    bool bHideEditor = false;
+
     //callbacks from main window
     void on_worldHierList_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous);    
 };

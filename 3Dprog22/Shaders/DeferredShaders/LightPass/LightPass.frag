@@ -103,10 +103,6 @@ void main()
 		{
 			vec4 cloudColor = texture(cloudColorTex, TexCoords);
 			colorOut = SM_Sky(cloudColor, volumetricLight);
-			
-			vec3 toView = viewPos - fragPos;
-			float dist = length(toView) * 0.5;
-			colorOut = CalculateDistanceFog(colorOut, renderSettings.fogColor, dist, renderSettings.fogSight, cameraZFar);
 		}
 		break;
 		case SHADERMODEL_SUN:

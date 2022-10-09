@@ -31,7 +31,7 @@ void CascadedShadowMaps::CalculateCascades(const FrustumCorners::FrustumArray& f
 
 	glm::vec3 offset = cam->GetDirection() * zOffset;
 
-	constexpr float delta = 1.f / MAX_CASCADES;
+	float delta = 0.05f;
 	for (auto i = 0; i < MAX_CASCADES; i++)
 	{
 		FrustumCorners::FrustumArray cascadeCorners;

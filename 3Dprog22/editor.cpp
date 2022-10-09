@@ -1131,3 +1131,14 @@ void Editor::OnMouseReleasedInRenderWindow(QMouseEvent* event)
 {
     if (EditorState::Editor != state) return;
 }
+
+void Editor::OnKeyPressedInRenderWindow(QKeyEvent* event)
+{
+    if (event->key() == Qt::Key_F11)
+    {
+        bHideEditor = !bHideEditor;
+        ui->splitter_6->setHidden(bHideEditor);
+        ui->tabWidget->setHidden(bHideEditor);
+        ui->frame->setHidden(bHideEditor);
+    }
+}

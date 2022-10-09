@@ -584,7 +584,7 @@ vec4 GetCloudColor(
 
 	if (!bResult) return vec4(bg, 1.);
 
-	float fogAmount = ComputeFogAmount(startPos, 0.00006, cameraPos, atomospherePos, 0.1);
+	float fogAmount = ComputeFogAmount(startPos, 0.00006, cameraPos, atomospherePos, 0.05);
 	if (fogAmount > 0.97) return vec4(bg, 1.);
 
 	vec4 v = MarchToHeaven(
