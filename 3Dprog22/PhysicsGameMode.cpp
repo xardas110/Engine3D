@@ -7,17 +7,18 @@
 #include "BSpline.h"
 #include "water.h"
 #include <random>
+#include "PhysX.h"
 
 PhysicsGameMode::~PhysicsGameMode()
 {
 }
 
 void PhysicsGameMode::Create(World* world, entt::registry& registry)
-
 {
     world->LoadRenderConfig("../3Dprog22/PhysicsWorldConfig.json");
-    CreateScene(world);
-    CreateBSpline();
+    //CreateScene(world);
+    //CreateBSpline();
+    CreatePhysXStuff(world, registry);
    // CreateTree(world);
     //CreateRocks(world);
 }
@@ -408,6 +409,30 @@ void PhysicsGameMode::CreateRocks(World* world)
 void PhysicsGameMode::CreateBSpline()
 {
     BSpline bSpline;
+}
+
+void PhysicsGameMode::CreatePhysXStuff(World* world, entt::registry& registry)
+{
+    auto& physX = PhysicsSystem::Get()->physX;
+    auto sm = world->GetStaticMeshManager();
+    Entity e = world->CreateEntity("BoXGround");
+    auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
+    sm->LoadStaticMesh("../3dprog22/assets/models/box/box.obj", boxMesh);
+    boxMesh.SetColor({ 1.f, 0.f, 0.f });
+    boxMesh.bCastShadow = false;
+
+    
+    auto& body = e.AddComponent<PhysXBody>().body;
+
+    auto mat = physX.mPhysics->createMaterial(1.f, 0.f, 0.f);
+    /*
+    physx::PxShape* shape = physX.mPhysics->createShape(physx::PxBoxGeometry(500.f, 500.f, 500.f), *mat);
+    body = physX.mPhysics->createRigidDynamic(physx::PxTransform());
+    body->attachShape(*shape);
+    physX.mScene->addActor(*body);
+    */
+    e.SetScale({ 1000.0f, 1000.0f, 1000.0f });
+    e.SetPosition({ 0.f, -1000.f, 0.f });
 }
 
 void PhysicsGameMode::CreateScene(World* world)

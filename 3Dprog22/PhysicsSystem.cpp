@@ -31,7 +31,7 @@ PhysicsSystem::PhysicsSystem(World* world, entt::registry& registry)
 
 	registry.on_construct<CollisionComponent>().connect<&PhysicsSystem::OnConstructCollider>(this);
 	registry.on_construct<PhysicsComponent>().connect<&PhysicsSystem::OnConstructBody>(this);
-	
+
 	BoundingBox box;
 	box.min = glm::vec3(-2000.f);
 	box.max = glm::vec3(2000.f);
@@ -62,6 +62,8 @@ PhysicsSystem::~PhysicsSystem()
 
 	registry->on_construct<CollisionComponent>().disconnect<&PhysicsSystem::OnConstructCollider>(this);
 	registry->on_construct<PhysicsComponent>().disconnect<&PhysicsSystem::OnConstructBody>(this);
+
+	physX.Clean();
 }
 
 void PhysicsSystem::Init()
@@ -83,6 +85,8 @@ void PhysicsSystem::Init()
 		mesh.LOD[i].SetColor(color);
 		mesh.LOD[i].bCastShadow = false;
 	}
+
+	physX.Init(registry);
 }
 
 void PhysicsSystem::SetCastShadowOnPhysicBalls(bool bCast)
@@ -239,6 +243,11 @@ void PhysicsSystem::Update(float deltatime)
 		ImGui::Checkbox("Show bTangentImpulse", &bShowBTangentImpulse);
 		ImGui::ColorEdit3("bTangentImpulse color", colorBTangentImpulse);
 		ImGui::End();
+	}
+
+	if (bUsePhysX)
+	{
+		physX.Update(deltatime);
 	}
 
 	if (bEnableStepMode)

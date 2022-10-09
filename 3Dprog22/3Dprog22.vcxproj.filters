@@ -410,6 +410,9 @@
     <Filter Include="Resources\Water">
       <UniqueIdentifier>{20a1343c-e879-48d0-b720-b9448acb888d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Physics Engine\PhysX">
+      <UniqueIdentifier>{64853fe0-fd01-4ad0-8cb8-60b37a39f542}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="World.cpp">
@@ -750,6 +753,9 @@
     </ClCompile>
     <ClCompile Include="WaterSystem.cpp">
       <Filter>src\Water</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysX.cpp">
+      <Filter>src\Physics Engine\PhysX</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -2477,6 +2483,9 @@
     </ClInclude>
     <ClInclude Include="WaterSystem.h">
       <Filter>src\Water</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysX.h">
+      <Filter>src\Physics Engine\PhysX</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

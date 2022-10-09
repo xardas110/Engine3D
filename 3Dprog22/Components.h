@@ -21,6 +21,8 @@
 #include "RigidBody.h"
 #include "qevent.h"
 #include "HelperMath.h"
+#include "Include/PhysX/PxPhysics.h"
+
 /// <summary>
 /// All the components below are wrappers for the ECS
 /// </summary>
@@ -273,6 +275,11 @@ struct CollisionComponent
 struct PhysicsComponent
 {
 	RigidBody body;
+};
+
+struct PhysXBody
+{
+	physx::PxRigidDynamic* body; 
 };
 
 struct PhysicsBall

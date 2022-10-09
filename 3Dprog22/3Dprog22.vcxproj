@@ -78,7 +78,7 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;release;/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;release;/include;Include/PhysX;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -permissive- -Zc:__cplusplus -Zc:externConstexpr -utf-8 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -102,7 +102,7 @@
       <FloatingPointModel>Fast</FloatingPointModel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>assimp-vc140-mt.lib;freetype.lib;$(QTDIR)\lib\Qt6Widgetsd.lib;$(QTDIR)\lib\Qt6OpenGLd.lib;$(QTDIR)\lib\Qt6Guid.lib;$(QTDIR)\lib\Qt6Cored.lib;$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;OpenAL32.lib;sndfile.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>assimp-vc140-mt.lib;freetype.lib;$(QTDIR)\lib\Qt6Widgetsd.lib;$(QTDIR)\lib\Qt6OpenGLd.lib;$(QTDIR)\lib\Qt6Guid.lib;$(QTDIR)\lib\Qt6Cored.lib;$(QTDIR)\lib\Qt6EntryPointd.lib;shell32.lib;OpenAL32.lib;sndfile.lib;PhysX_64.lib;PhysXCommon_64.lib;PhysXFoundation_64.lib;PhysXPvdSDK_64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(SolutionDir)libs;$(SolutionDir)Release</AdditionalLibraryDirectories>
       <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
       <DataExecutionPrevention>true</DataExecutionPrevention>
@@ -194,7 +194,9 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AiCharacter.cpp" />
+    <ClCompile Include="AiCharacter.cpp">
+      <RuntimeLibrary Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
     <ClCompile Include="AlphaPassSystem.cpp" />
     <ClCompile Include="AnimationHelper.cpp" />
     <ClCompile Include="AudioData.cpp" />
@@ -256,6 +258,7 @@
     <ClCompile Include="PerlinWorley3D.cpp" />
     <ClCompile Include="PhysicsGameMode.cpp" />
     <ClCompile Include="PhysicsSystem.cpp" />
+    <ClCompile Include="PhysX.cpp" />
     <ClCompile Include="PointGenerator.cpp" />
     <ClCompile Include="RenderDebugger.cpp" />
     <ClCompile Include="RenderEngine.cpp" />
@@ -402,6 +405,7 @@
     <ClInclude Include="PerlinWorley3D.h" />
     <ClInclude Include="PhysicsGameMode.h" />
     <ClInclude Include="PhysicsSystem.h" />
+    <ClInclude Include="PhysX.h" />
     <ClInclude Include="PUBO.h" />
     <ClInclude Include="PointGenerator.h" />
     <ClInclude Include="RenderDebugger.h" />

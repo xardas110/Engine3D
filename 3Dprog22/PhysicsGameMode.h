@@ -34,6 +34,8 @@ class PhysicsGameMode : public GameMode
 	void CreateRocks(class World* world);
 	void CreateBSpline();
 
+	void CreatePhysXStuff(class World* world, entt::registry& registry);
+
 	bool bDrawOctreeLeafs = false;
 	bool bDrawBoundingBoxes = false;
 	bool bDrawConvexHulls = false;

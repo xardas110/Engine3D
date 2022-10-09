@@ -7,6 +7,7 @@
 #include "boundingvolumes.h"
 #include "Octree.h"
 #include "CollisionHeightmap.h"
+#include "PhysX.h"
 
 class ThreadPoolx;
 struct CollisionComponent;
@@ -76,10 +77,11 @@ public:
 	static PhysicsSystem* Get();
 
 	bool bSimulateThreaded{ true };
-
+	bool bUsePhysX = true;
 	void SetCastShadowOnPhysicBalls(bool bCast);
 	void SetShaderModelOnPhysicsBalls(int shaderModel);
-
+	
+	PhysX physX;
 	glm::vec3 externalImpulse{ 0.f, 0.f, 0.f };
 private:
 	glm::vec3 gravity = glm::vec3(0.f, -9.81f, 0.f);
