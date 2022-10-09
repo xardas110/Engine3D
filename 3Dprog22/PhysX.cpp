@@ -38,9 +38,9 @@ void PhysX::Init(entt::registry* registry)
 	PxSceneDesc sceneDesc(mPhysics->getTolerancesScale());	
 	sceneDesc.gravity = PxVec3(0.f, -9.81f, 0.f);
 	
-	//mDispatcher = PxDefaultCpuDispatcherCreate(32);
-	//sceneDesc.cpuDispatcher = mDispatcher;
-	//sceneDesc.filterShader = PxDefaultSimulationFilterShader;
+	mDispatcher = PxDefaultCpuDispatcherCreate(32);
+	sceneDesc.cpuDispatcher = mDispatcher;
+	sceneDesc.filterShader = PxDefaultSimulationFilterShader;
 	
 	mScene = mPhysics->createScene(sceneDesc);
 
@@ -74,39 +74,45 @@ void PhysX::Test()
 		boxMesh.SetColor({ 1.f, 0.f, 0.f });
 		boxMesh.bCastShadow = false;
 
-		auto& body = e.AddComponent<PhysXBody>().body;
-
 		auto mat = mPhysics->createMaterial(1.f, 0.f, 0.f);
 	
 		physx::PxShape* shape = mPhysics->createShape(physx::PxBoxGeometry(500.f, 500.f, 500.f), *mat);
-		body = mPhysics->createRigidDynamic(physx::PxTransform());
-		body->attachShape(*shape);
-		mScene->addActor(*body);
+		auto staticBody = mPhysics->createRigidStatic(physx::PxTransform());
+		staticBody->attachShape(*shape);
+		staticBody->setGlobalPose(PxTransform(physx::PxVec3(0.f, -200.f, 0.f)));
+		mScene->addActor(*staticBody);
 	
 		e.SetScale({ 1000.0f, 1000.0f, 1000.0f });
-		e.SetPosition({ 0.f, -1000.f, 0.f });
+		e.SetPosition({ 0.f, -200.f, 0.f });
 	}
+	for (size_t y = 0; y < 10; y++)
 	{
-		Entity e = world->CreateEntity("box2");
-		auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-		sm->LoadStaticMesh("../3dprog22/assets/models/box/box.obj", boxMesh);
-		boxMesh.SetColor({ 1.f, 0.f, 0.f });
-		boxMesh.bCastShadow = false;
+		for (size_t x = 0; x < 10; x++)
+		{
+			{
+				Entity e = world->CreateEntity("box2");
+				auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
+				sm->LoadStaticMesh("../3dprog22/assets/models/box/box.obj", boxMesh);
+				boxMesh.SetColor({ 1.f, 1.f, 1.f });
+				boxMesh.bCastShadow = false;
 
-		auto& body = e.AddComponent<PhysXBody>().body;
+				auto& body = e.AddComponent<PhysXBody>().body;
 
-		auto mat = mPhysics->createMaterial(1.f, 0.f, 0.f);
+				auto mat = mPhysics->createMaterial(1.f, 0.f, 0.f);
 
-		physx::PxShape* shape = mPhysics->createShape(physx::PxBoxGeometry(5.f, 5.f, 5.f), *mat);
-		body = mPhysics->createRigidDynamic(physx::PxTransform());
-		body->attachShape(*shape);
-		body->setMass(10.f);
-		mScene->addActor(*body);
+				physx::PxShape* shape = mPhysics->createShape(physx::PxBoxGeometry(5.f, 5.f, 5.f), *mat);
+				body = mPhysics->createRigidDynamic(physx::PxTransform());
+				body->attachShape(*shape);
+				body->setMass(10.f);
+				mScene->addActor(*body);
 
-		e.SetScale({ 5.0f, 5.0f, 5.0f });
-		e.SetPosition({ 0.f, 500.f, 0.f });
+				e.SetScale({ 5.0f, 5.0f, 5.0f });
+				e.SetPosition({ x, 500.f, y });
 
-		shape->release();
+				shape->release();
+			}
+		}
+
 	}
 }
 
@@ -118,7 +124,7 @@ void PhysX::Update(float deltatime)
 	{
 		auto [trans, body] = view.get<TransformComponent, PhysXBody>(entity);
 		PxTransform transform; transform.p = PxVec3( trans.GetPosition().x, trans.GetPosition().y, trans.GetPosition().z);
-		transform.q = PxQuat(trans.GetRotation().x, trans.GetRotation().y, trans.GetRotation().z, trans.GetRotation().w);
+		//transform.q = PxQuat(trans.GetRotation().w, trans.GetRotation().z, trans.GetRotation().y, trans.GetRotation().x);
 		body.body->setGlobalPose(transform);
 	}
 
@@ -130,7 +136,7 @@ void PhysX::Update(float deltatime)
 		auto [trans, body] = view.get<TransformComponent, PhysXBody>(entity);
 		PxTransform transform = body.body->getGlobalPose();
 		trans.SetPosition(glm::vec3(transform.p.x, transform.p.y, transform.p.z));
-		trans.SetRotation(glm::quat(transform.q.x, transform.q.y, transform.q.z, transform.q.w));
+		//trans.SetRotation(glm::quat(transform.q.x, transform.q.y, transform.q.z, transform.q.w));
 	}
 }
 
