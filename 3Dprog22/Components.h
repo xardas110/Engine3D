@@ -287,6 +287,10 @@ struct PhysicsBall
 	int ball;
 };
 
+struct PhysicsBox
+{
+	int box;
+};
 struct VegetationComponent
 {
 	Vegetation veg;

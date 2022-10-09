@@ -8,7 +8,7 @@ struct DeferredRendererConfig
 	{
 		PBR,
 		Phong
-	}lightModel{ LightModel::Phong };
+	}lightModel{ LightModel::PBR };
 
 	struct VoxelConeTracing
 	{

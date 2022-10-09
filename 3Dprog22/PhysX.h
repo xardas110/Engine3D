@@ -5,6 +5,8 @@
 #include "foundation/PxErrors.h"
 #include "Include/entt/entt.hpp"
 #include <iostream>
+#include "Components.h"
+#include "ThreadPoolx.h"
 
 class UserErrorCallback : public physx::PxErrorCallback
 {
@@ -25,7 +27,7 @@ class PhysX
 
 	void Test();
 
-	void Update(float deltatime);
+	void Update(float deltatime);	
 
 	void Clean();
 
@@ -37,10 +39,17 @@ class PhysX
 	physx::PxTolerancesScale mToleranceScale;
 	physx::PxPvd* mPvd{ nullptr };
 	physx::PxPvdTransport* transport{ nullptr };
+
+	entt::entity instancedBoxes;
 public:
+	void THPreSync(int thId);
+	void THPostSync(int thId);
 	physx::PxPhysics* mPhysics{ nullptr };
 	physx::PxScene* mScene{ nullptr };
 
 	entt::registry* registry;
+
+	ThreadPoolx* thPreSync{ nullptr };
+	ThreadPoolx* thPostSync{ nullptr };
 };
 
