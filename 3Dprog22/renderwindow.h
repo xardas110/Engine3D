@@ -31,8 +31,11 @@ public:
     int GetWidth();
     int GetHeight();
 
-private slots:
+    QTimer* mUpdateTimer{ nullptr };
+    QElapsedTimer mTimeStart;               //time variable that reads the calculated FPS
 
+private slots:
+    void GameLoop();
 private:
     void InitGame(World* world, Editor* editor);
 	
@@ -65,6 +68,7 @@ protected:
 	
     double mX{}, mY{};
     double lastMX{}, lastMY{};
+    float deltatime{ 0.f };
 
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;

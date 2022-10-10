@@ -65,6 +65,24 @@ void RenderWindow::InitGame(World* world, Editor* editor)
     QtImGui::initialize(this);
 
     bInitialized = true; 
+
+    mUpdateTimer = new QTimer();
+
+    connect(mUpdateTimer, SIGNAL(timeout()), this, SLOT(GameLoop()));
+
+    mTimeStart.start();
+    mUpdateTimer->start(0);
+}
+
+void RenderWindow::GameLoop()
+{
+    long nsecElapsed = mTimeStart.nsecsElapsed();
+    mTimeStart.restart();
+    deltatime = (float)nsecElapsed / 1000000000.f;
+
+
+    Update(deltatime);
+    Render(deltatime);
 }
 
 void RenderWindow::Update(float deltaTime)
