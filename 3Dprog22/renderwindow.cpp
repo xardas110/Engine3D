@@ -239,7 +239,8 @@ void RenderWindow::keyPressEvent(QKeyEvent *event)
     }
     
     if (editor)
-        editor->OnKeyPressedRenderWindow(event);
+        editor->OnKeyPressedInRenderWindow(event);
+
     world->OnKeyPressedFromRenderWindow(event);
 	
     mKeysHeld[event->key()] = true;

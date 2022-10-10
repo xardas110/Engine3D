@@ -351,11 +351,6 @@ void Editor::OnUpdateGUIFromRenderWindow(float deltaTime)
         return;
 }
 
-void Editor::OnKeyPressedRenderWindow(QKeyEvent* event)
-{
-
-}
-
 void Editor::InitRenderSettings()
 {
     if (!world) return;
@@ -1075,7 +1070,7 @@ void Editor::OnUpdateFromRenderWindow(float deltaTime, std::map<int, bool> keyPr
     mx = mouseX;
     my = mouseY;
 
-    float forward{}, right{}, up{};//Oppgave 5a;
+    float forward{}, right{}, up{};
     if (keyPressed[Qt::Key_W])
     {
         forward += 1.f;
@@ -1114,7 +1109,7 @@ void Editor::OnUpdateFromRenderWindow(float deltaTime, std::map<int, bool> keyPr
 
     EditorCamera.MoveForward(forward, deltaTime);
     EditorCamera.MoveRight(right, deltaTime);
-    //Oppgave 5a
+
     EditorCamera.MoveUp(up, deltaTime);
 
     EditorCamera.UpdateCamera(deltaTime);
@@ -1135,4 +1130,15 @@ void Editor::OnMousePressedInRenderWindow(QMouseEvent* event)
 void Editor::OnMouseReleasedInRenderWindow(QMouseEvent* event)
 {
     if (EditorState::Editor != state) return;
+}
+
+void Editor::OnKeyPressedInRenderWindow(QKeyEvent* event)
+{
+    if (event->key() == Qt::Key_F11)
+    {
+        bHideEditor = !bHideEditor;
+        ui->splitter_6->setHidden(bHideEditor);
+        ui->tabWidget->setHidden(bHideEditor);
+        ui->frame->setHidden(bHideEditor);
+    }
 }

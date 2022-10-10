@@ -18,16 +18,17 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-    
+
+        
 public:
     friend class Editor;
     explicit MainWindow(QWidget *parent = nullptr, World* world = nullptr);
     ~MainWindow();
 
 private slots:
-
     ///Slot called from the File->Exit menu in the mainwindow.ui file
     void on_fileExit_triggered();
+
     void on_worldHierList_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
 private:
