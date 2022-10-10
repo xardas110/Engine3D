@@ -4,7 +4,7 @@
 #include "Include/entt/entt.hpp"
 #include "BoundingVolumes.h"
 #include "ConvexHull.h"
-
+#include <functional>
 namespace CollideableType
 {
 	enum Type
@@ -20,6 +20,8 @@ struct Collideable
 {
 	CollideableType::Type type{ CollideableType::Invalid }; //4byte
 	std::uint32_t shapeIndex{ UINT_MAX }; //4 byte
+
+	std::function<void(entt::entity)> onHit{nullptr};
 
 	bool IsValid() const;
 

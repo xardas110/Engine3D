@@ -36,8 +36,6 @@ class Character : public ScriptableEntity
 	void OnMouseHeld(std::map<int, bool>* mHeld, float deltaTime);
 	void OnKeyHeld(std::map<int, bool>* mHeld, float deltaTime);
 
-	virtual void OnHit(entt::entity otherEnt) override;
-
 	/*z is inverted, z is forward.*/
 	void GetCamera2DAxises(glm::vec3& forward, glm::vec3& right);
 
@@ -72,5 +70,7 @@ class Character : public ScriptableEntity
 public:
 	Character();
 	~Character();
+
+	virtual void OnHit(entt::entity otherEnt) override;
 };
 

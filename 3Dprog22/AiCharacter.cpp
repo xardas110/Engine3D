@@ -13,6 +13,13 @@ void AiCharacter::OnCreate()
     auto* sm = world->GetSkeletalMeshManager();
 
     auto& skeletalMesh = AddComponent<SkeletalMeshComponent>().skeletalMesh;
+    auto& body = AddComponent<PhysicsComponent>().body;
+    auto& collider = AddComponent<CollisionComponent>(CollideableType::Capsule).col;
+
+    collider.SetExtents(glm::vec3(8.f));
+    collider.onHit = [this](entt::entity other) {this->OnHit(other); };
+
+    body.bLinearOnly = true;
 
     if (sm->LoadSkeletalMesh("../3Dprog22/Assets/Models/nightshade/nightshade.dae", skeletalMesh))
     {
@@ -263,7 +270,6 @@ void AiCharacter::UpdateFollow(float deltaTime)
 
 void AiCharacter::UpdateMovement(float deltaTime)
 {
-    /*
     if (currentStunTimer > 0.f) return;
 
     if (!IsMoveState(AiMoveState::Moving)) return;
@@ -274,8 +280,7 @@ void AiCharacter::UpdateMovement(float deltaTime)
         return;
     }
 
-    auto& rigidBody = GetComponent<PhysicsComponent>().rigidBody;
-    auto& col = GetComponent<OBBCollisionComponent>().collisionVolume;
+    auto& rigidBody = GetComponent<PhysicsComponent>().body;
 
     auto currentPos2D = GetPosition(); currentPos2D.y = 0.f;
     auto targetPos2D = targetPosition; targetPos2D.y = 0.f;
@@ -284,13 +289,12 @@ void AiCharacter::UpdateMovement(float deltaTime)
 
     RotateTo2DDirection(dir2D);
     
-    const float lastVelY = rigidBody.velocity.y;
+    const float lastVelY = rigidBody.GetVelocity().y;
 
     glm::vec3 newVelocity = dir2D * movementSpeed;
     newVelocity.y = lastVelY;
 
-    rigidBody.velocity = newVelocity;
-    */
+    rigidBody.SetVelocity(newVelocity);
 }
 
 void AiCharacter::RotateTo2DDirection(const glm::vec3& dir2D)
@@ -307,7 +311,15 @@ void AiCharacter::RotateTo2DDirection(const glm::vec3& dir2D)
         {0.f, 0.f, 0.f, 1.f}
     };
 
-    sm.transform.SetRotation(lookAt);
+    const glm::mat4 lookAt2 =
+    {
+        {right, 0.f},
+        {cachedWorldUp, 0.f},
+        {-dir2D, 0.f},
+        {0.f, 0.f, 0.f, 1.f}
+    };
+
+    sm.transform.SetRotation(lookAt2);
     SetRotation(lookAt);
 }
 

@@ -28,6 +28,7 @@ EksamenGameMode::~EksamenGameMode()
 void EksamenGameMode::Create(World* world, entt::registry& registry)
 {
 	world->PreLoadAssets("./Assets/Paths.json");
+	world->LoadRenderConfig("./Config/Renderer/ConfigSponza.json");
 
 	CreateTerrain(world, registry);
 	CreateHouse(world);
@@ -98,11 +99,10 @@ void EksamenGameMode::CreatePlayer(World* world, entt::registry& registry)
 
 void EksamenGameMode::UpdatePlayer(World* world, float deltatime)
 {
-	//Oppgave 4 oppdaterer spiller over heightmappet
-	//Entity playerEntity(playerEnt, world);
-	//auto pos = playerEntity.GetPosition();
-	//pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 11.f;
-	//playerEntity.SetPosition(pos);
+	Entity playerEntity(playerEnt, world);
+	auto pos = playerEntity.GetPosition();
+	pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 13.f;
+	playerEntity.SetPosition(pos);
 }
 
 void EksamenGameMode::CreateBomber(World* world, entt::registry& registry)
@@ -1006,32 +1006,31 @@ void EksamenGameMode::CreateParticles(World* world)
 
 void EksamenGameMode::CreateHouse(World* world)
 {
-	/*
+
 	{//creating a house   
 		Entity modelEnt = world->CreateEntity("house");
 		auto& model = modelEnt.AddComponent<StaticMeshComponent>().staticMeshInstanced;
 		auto& transform = modelEnt.GetComponent<TransformComponent>();
-		auto& collision = modelEnt.AddComponent<OBBCollisionComponent>((std::uint32_t)modelEnt.GetEntityId()).collisionVolume;
+		auto& body = modelEnt.AddComponent<PhysicsComponent>().body;
+		auto& collider = modelEnt.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
 
-		glm::vec3 housePos = glm::vec3(-350.f, 0.f, 30.f);
+		body.SetMass(0.f);
+
+		glm::vec3 housePos = glm::vec3(-350.f, 100.f, 30.f);
+		float y = world->GetTerrainHeightAt(housePos.x, housePos.z);
+
+		housePos.y = y;
 
 		modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));
 		modelEnt.SetPosition(housePos);
-		collision.SetExtents({ 60.f, 100.f, 35.f });
-		collision.bStatic = true;
 
-		world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model);
+		world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
 
-		Entity houseWall = world->CreateEntity("houseWall");
-		auto& wallTransform1 = houseWall.GetComponent<TransformComponent>();
-		auto& wallCollision1 = houseWall.AddComponent<OBBCollisionComponent>((std::uint32_t)houseWall.GetEntityId()).collisionVolume;
-		wallCollision1.bStatic = true;
+		collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
 
-		const glm::vec3 wallOffset1 = { 70.f, 0.f, 40.f };
-		houseWall.SetPosition(housePos + wallOffset1);
-		wallCollision1.SetExtents({ 40.f, 20.f, 80.f });
+		collider.SetExtents(glm::vec3(0.5f));
+
 	}
-	*/
 }
 
 void EksamenGameMode::LoadAmbientSound(World* world)

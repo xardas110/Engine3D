@@ -70,8 +70,6 @@ class AiCharacter : public ScriptableEntity
 
 	void UpdateStunTimer(float deltatime);
 
-	virtual void OnHit(entt::entity otherEnt) override;
-
 	void DrawPatrolFunction() const;
 	void DrawWayPoints() const;
 	
@@ -133,5 +131,6 @@ public:
 	/*AStar*/
 	void MoveTo(const glm::vec3& target);
 
+	virtual void OnHit(entt::entity otherEnt) override;
 };
 

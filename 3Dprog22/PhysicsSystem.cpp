@@ -479,6 +479,15 @@ void PhysicsSystem::ResolveNarrowCollisions(CollisionPair& pair)
 	ContactManifold contact;
 	if (Collision::Intersect(aCol.col, aBody.body, bCol.col, bBody.body, mNp, contact))
 	{
+		if (bCol.col.onHit)
+		{
+			bCol.col.onHit(pair.a);
+		}
+		if (aCol.col.onHit)
+		{
+			aCol.col.onHit(pair.b);
+		}
+
 		ResolveCollision(contact);
 	}
 }

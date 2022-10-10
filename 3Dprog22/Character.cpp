@@ -27,6 +27,8 @@ void Character::OnCreate()
 	auto& body =				AddComponent<PhysicsComponent>().body;
 
 	collider.SetExtents(glm::vec3(8.f));
+	collider.onHit = [this](entt::entity other) {this->OnHit(other); };
+
 	body.SetMass(100.f);
 	body.SetElasticity(0.f);
 	body.SetFriction(1.f);

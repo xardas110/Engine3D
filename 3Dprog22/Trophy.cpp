@@ -12,10 +12,14 @@ void Trophy::OnCreate()
 	auto* world = GetWorld();
 	auto* smm = world->GetStaticMeshManager();
 
-	//auto& collision = AddComponent<OBBCollisionComponent>((std::uint32_t)GetEntityId()).collisionVolume;
+	auto& collision = AddComponent<CollisionComponent>(CollideableType::Sphere).col;
 	auto& mesh = AddComponent<StaticMeshComponent>().staticMeshInstanced;
+	auto& body = AddComponent<PhysicsComponent>().body;
 	auto& tag = GetComponent<TagComponent>().tag;
 
+	body.SetMass(0.f);
+	collision.SetExtents(glm::vec3(2.f));
+	
 	if (tag.find("EnemyTrophy") != std::string::npos)
 	{
 		SetIgnorePathFinding(true);
