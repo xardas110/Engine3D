@@ -76,13 +76,10 @@ private:
     void InititalizeResetButton();
     void InitializeContentBrowser();
     void InitializeSaveButton();
-    void InitializeAddComponent();
     void InitializeWorldSettings();
     void InitializeTransformComponent();
     void InitializeDirlightSettings();
     void InitializePathfindingButtons();
-    void InitRenderSettings();
-    void InitRenderConfigGUI();
     void InitGameModeUI();
     void InitGameModes();
 
