@@ -75,7 +75,6 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
 
     if (ImGui::Button("Spawn Box ground(BIG)"))
     {
-        world->GetRenderCamera()->SetCameraDirection(glm::vec3(0.1f, 0.99f, 0.1f));
         {           
             Entity e = world->CreateEntity("BoxGround");
             auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;

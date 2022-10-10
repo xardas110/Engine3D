@@ -229,6 +229,8 @@ bool EPASimplex::AddNewPointAndUpdate(const GJKSupportPoint& newPoint)
 		uint32 triangleIndex = i + triangleOffset;
 		EPIATri& tri = triangles[triangleIndex];
 
+		if (otherEdge.triangleA != UINT32_MAX) return false;
+
 		assert(tri.edgeOppositeB == UINT32_MAX);
 		assert(otherEdge.triangleA == UINT32_MAX);
 
