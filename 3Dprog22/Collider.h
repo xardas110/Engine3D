@@ -32,6 +32,8 @@ struct Collideable
 	void SetRotation(const glm::quat& newRot);
 	glm::quat GetRotation() const;
 
+	void SetTransform(const glm::mat4& transform);
+
 	void Expand(const glm::vec3* pts, const int num);
 	void ExpandToFitAABB();
 

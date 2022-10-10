@@ -31,7 +31,7 @@ PhysicsSystem::PhysicsSystem(World* world, entt::registry& registry)
 
 	registry.on_construct<CollisionComponent>().connect<&PhysicsSystem::OnConstructCollider>(this);
 	registry.on_construct<PhysicsComponent>().connect<&PhysicsSystem::OnConstructBody>(this);
-	
+
 	BoundingBox box;
 	box.min = glm::vec3(-2000.f);
 	box.max = glm::vec3(2000.f);
@@ -221,6 +221,15 @@ void PhysicsSystem::Update(float deltatime)
 	auto* rd = RenderDebugger::Get();
 	ImGui::Begin("PhysicSystem debug");
 	ImGui::Checkbox("Enable threading(32threads)", &bSimulateThreaded);
+
+	ImGui::Checkbox("Draw Octree", &bDrawOctreeLeafs);
+	ImGui::Checkbox("Draw bounding boxes", &bDrawBoundingBoxes);
+	ImGui::Checkbox("Draw Convex Hulls", &bDrawConvexHulls);
+
+	if (bDrawOctreeLeafs) world->physicsSystem->GetOctree()->DrawLeafBounds();
+	if (bDrawBoundingBoxes) world->physicsSystem->DrawBoundingBoxes();
+	if (bDrawConvexHulls) world->physicsSystem->DrawConvexHulls();
+
 	if (!bSimulateThreaded)
 	{		
 		ImGui::Checkbox("Enable Step simulation(press q to simulate next step)", &bEnableStepMode);
@@ -322,6 +331,7 @@ void PhysicsSystem::ApplyForces(float deltatime)
 		glm::vec3 gravityImpulse = gravity * body.GetMass() * deltatime;
 		body.ApplyLinearImpulse(gravityImpulse);
 		body.ApplyLinearImpulse(externalImpulse * deltatime);
+		body.ApplyLinearImpulse(body.force * body.GetMass() * deltatime);
 	}
 }
 

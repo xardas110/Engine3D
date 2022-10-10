@@ -112,6 +112,16 @@ glm::quat Collideable::GetRotation() const
 	return glm::identity<glm::quat>();
 }
 
+void Collideable::SetTransform(const glm::mat4& transform)
+{
+	auto* ps = PhysicsSystem::Get();
+	if (type == CollideableType::ConvexHull)
+	{
+		Transform trans; trans.SetTransform(transform);
+		ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].SetTransform(trans);
+	}
+}
+
 void Collideable::Expand(const glm::vec3* pts, const int num)
 {
 	auto* ps = PhysicsSystem::Get();

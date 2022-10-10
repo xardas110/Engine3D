@@ -126,6 +126,10 @@ private:
 	bool bEnableStepMode{ false };
 	float stepValue = 0.01f;
 	
+	bool bDrawOctreeLeafs = false;
+	bool bDrawBoundingBoxes = false;
+	bool bDrawConvexHulls = false;
+
 	float deltatime = 0;
 
 	ThreadPoolx* th{nullptr};

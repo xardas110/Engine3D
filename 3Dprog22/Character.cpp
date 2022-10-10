@@ -23,8 +23,14 @@ void Character::OnCreate()
 	auto& skeletalMesh =		AddComponent<SkeletalMeshComponent>().skeletalMesh;
 	auto& springArmComponent =	AddComponent<SpringArmComponent>();
 	auto& audios =				AddComponent<AudioComponent>().audios;
+	auto& collider =			AddComponent<CollisionComponent>(CollideableType::Capsule).col;
+	auto& body =				AddComponent<PhysicsComponent>().body;
 
-	camera.SetFar(2000.f);
+	collider.SetExtents(glm::vec3(8.f));
+	body.SetMass(100.f);
+	body.SetElasticity(0.f);
+	body.SetFriction(1.f);
+	body.bLinearOnly = true;
 
 	inputComponent.BindMousePressed([this](QMouseEvent* e) {this->OnMousePressed(e); });
 	inputComponent.BindMouseReleased([this](QMouseEvent* e) {this->OnMouseReleased(e); });
@@ -49,7 +55,6 @@ void Character::OnCreate()
 	
 	skeletalMesh.transform.SetScale({ 0.12f, 0.12f, 0.12f });
 	skeletalMesh.transform.SetPosition({ 0.f, -10.f, 0.f });
-
 	springArmComponent.SetRootOffset({ 0.f, 15.f, 0.f });
 	springArmComponent.SetLength(80.f);
 	springArmComponent.SetPitch(40.f);
@@ -76,61 +81,19 @@ void Character::UpdateStunTimer(float deltatime)
 	CurrentStunTimer -= deltatime;
 }
 
+void Character::UpdateAnimationState(float deltatime)
+{
+	if (!keyHeld) return;
+
+	auto& sm = GetComponent<SkeletalMeshComponent>().skeletalMesh;
+	if ((*keyHeld)[Qt::Key_W]) sm.PlayAnimation("Running", 1.f);
+	else if ((*keyHeld)[Qt::Key_S]) sm.PlayAnimation("RunningBack", 1.0f);
+	else sm.PlayAnimation("Idle", 1.0f);
+}
+
 void Character::UpdateSpringArm(float deltaTime)
 {
 	SyncCameraWithSpringArm();
-}
-
-void Character::UpdateAnimationState(float deltaTime)
-{
-	/*
-	auto& sm = GetComponent<SkeletalMeshComponent>().skeletalMesh;
-	auto& audios = GetComponent<AudioComponent>().audios;
-	
-	auto velocityDir = rigidBody.velocity; velocityDir.y = 0.f;
-
-
-	if (CurrentStunTimer > 0.f)
-	{
-		sm.PlayAnimation("Stunned", 1.2f);
-		if (audios[Audio::FootSteps].GetState() != AudioState::Stop)
-			audios[Audio::FootSteps].Stop();
-		return;
-	}
-
-	float speed = glm::length(velocityDir);
-
-	if (speed > FLT_EPSILON)
-	{
-		//Glemte at man må snu -z tidligere, opengl:)
-		//Forblir sånn fram til refaktoring
-		auto forward = GetForwardVector();
-		forward.z *= -1.f;
-		forward.y = 0.f;
-		forward *= -1.f;
-
-		if (glm::dot(forward, velocityDir) > 0.f)
-		{
-			sm.PlayAnimation("Running", 1.0f);
-		}
-		else
-		{
-			sm.PlayAnimation("RunningBack", 1.0f);
-		}
-	
-		if (audios[Audio::FootSteps].GetState() != AudioState::Play)
-		{ 
-			audios[Audio::FootSteps].Play();			
-		}
-	}
-	else
-	{
-		sm.PlayAnimation("Idle", 1.f);
-
-		if (audios[Audio::FootSteps].GetState() != AudioState::Stop)
-			audios[Audio::FootSteps].Stop();
-	}
-	*/
 }
 
 void Character::OnHit(entt::entity otherEnt)
@@ -183,10 +146,9 @@ void Character::SyncCameraWithSpringArm()
 
 bool Character::RotateTo2DVelocity()
 {
-	/*
-	auto& rigidBody = GetComponent<PhysicsComponent>().rigidBody;
+	auto& rigidBody = GetComponent<PhysicsComponent>().body;
 	
-	auto velocityDir = rigidBody.velocity; velocityDir.y = 0.f;
+	auto velocityDir = rigidBody.GetVelocity(); velocityDir.y = 0.f;
 	velocityDir = glm::normalize(velocityDir);
 
 	if (glm::any(glm::isnan(velocityDir))) return false;
@@ -205,7 +167,7 @@ bool Character::RotateTo2DVelocity()
 
 	lastRotation = lookAt;
 	SetRotation(lookAt);
-	*/
+
 	return true;
 	
 }
@@ -264,9 +226,9 @@ void Character::OnMouseHeld(std::map<int, bool>* mHeld, float deltaTime)
 
 void Character::OnKeyHeld(std::map<int, bool>* keyHeld, float deltaTime)
 {
-	/*
+	this->keyHeld = keyHeld;
 	//Oppgave 4
-	auto& rigidBody = GetComponent<PhysicsComponent>().rigidBody;
+	auto& rigidBody = GetComponent<PhysicsComponent>().body;
 	auto& sm = GetComponent<SkeletalMeshComponent>().skeletalMesh;
 
 	if (CurrentStunTimer > 0.f)
@@ -275,12 +237,12 @@ void Character::OnKeyHeld(std::map<int, bool>* keyHeld, float deltaTime)
 		newRot = glm::rotate(newRot, -currentRot, { 0.f, 1.f, 0.f });
 		SetRotation(newRot);
 
-		rigidBody.rotation = glm::vec3(0.f, currentRot, 0.f);
+		rigidBody.SetRotation(glm::vec3(0.f, -currentRot, 0.f));
 		return;
 	}
 
 	glm::vec3 fwd;
-	glm::vec3 runDirection{ 0.f, rigidBody.velocity.y, 0.f };
+	glm::vec3 runDirection{ 0.f, rigidBody.GetVelocity().y, 0.f };
 
 	fwd = GetForwardVector();
 
@@ -299,11 +261,11 @@ void Character::OnKeyHeld(std::map<int, bool>* keyHeld, float deltaTime)
 	}	
 	if ((*keyHeld)[Qt::Key_D])
 	{
-		currentRot += glm::radians(rotSpeed * deltaTime) * iSign;
+		currentRot -= glm::radians(rotSpeed * deltaTime) * iSign;
 	}
 	if ((*keyHeld)[Qt::Key_A])
 	{
-		currentRot -= glm::radians(rotSpeed * deltaTime) * iSign;
+		currentRot += glm::radians(rotSpeed * deltaTime) * iSign;
 	}
 	
 	//Rigid body-en bruker euler angles akkurat nå, har ikke hadd nok til å skrive refaktoringa av fysikk motoren
@@ -313,16 +275,15 @@ void Character::OnKeyHeld(std::map<int, bool>* keyHeld, float deltaTime)
 
 	glm::quat newRot = glm::identity<glm::quat>();
 	newRot = glm::rotate(newRot, -currentRot, { 0.f, 1.f, 0.f });
+	glm::quat otherRot = glm::identity<glm::quat>();
+	otherRot = glm::rotate(otherRot, currentRot * 2.f, { 0.f, 1.f, 0.f });
+	sm.transform.SetRotation(otherRot);
 	SetRotation(newRot);
-
-	rigidBody.rotation = glm::vec3(0.f, currentRot, 0.f);
 
 	if (glm::length2(runDirection) < 1.f) return;
 
 	glm::vec3 newVelocity = glm::normalize(runDirection) * speed * speedReductionRatio;
-
-	newVelocity.y = rigidBody.velocity.y;
-	rigidBody.velocity = newVelocity;
-	*/
+	newVelocity.y = 0.f;
+	rigidBody.SetVelocity(newVelocity);
 }
 

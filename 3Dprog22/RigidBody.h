@@ -21,9 +21,9 @@ private:
 	Collideable collider; // self init
 	float friction{ 0.5f };
 	void Update(float deltatime);
-
 public:
-
+	bool bLinearOnly{ false };
+	glm::vec3 force{ 0.f };
 	bool HasCollider() const;
 
 	Collideable GetCollider() const;

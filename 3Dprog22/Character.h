@@ -10,6 +10,16 @@ namespace Audio
 	};
 }
 
+namespace CharacterAnimationState
+{
+	enum State
+	{
+		Idle,
+		Forward,
+		Back
+	};
+}
+
 class Character : public ScriptableEntity
 {
 	void OnCreate() override;
@@ -17,9 +27,8 @@ class Character : public ScriptableEntity
 	void OnUpdate(float deltaTime) override;
 
 	void UpdateStunTimer(float deltatime);
-
+	void UpdateAnimationState(float deltatime);
 	void UpdateSpringArm(float deltaTime);
-	void UpdateAnimationState(float deltaTime);
 
 	void OnMousePressed(QMouseEvent* event);
 	void OnMouseReleased(QMouseEvent* event);
@@ -41,7 +50,7 @@ class Character : public ScriptableEntity
 	glm::mat4 lastRotation{ 1.f };
 	
 	/*Character speed*/
-	const float speed = 2000.f;
+	const float speed = 50.f;
 	const float rotSpeed = 100.f;
 	float currentRot = 0.f;
 	int iSign = 1; //which way to rotate
@@ -56,8 +65,10 @@ class Character : public ScriptableEntity
 
 	float backwardSpeedRatio{ 0.5f };
 
-	std::map<int, bool>* mouseHeld{nullptr};
+	CharacterAnimationState::State animState = CharacterAnimationState::Idle;
 
+	std::map<int, bool>* mouseHeld{nullptr};
+	std::map<int, bool>* keyHeld{ nullptr };
 public:
 	Character();
 	~Character();

@@ -41,7 +41,20 @@ void GrassGameMode::Reset(World* world, entt::registry& registry)
 
 void GrassGameMode::CreateTerrain(World* world)
 {
-    world->CreateTerrain("../3Dprog22/Config/Terrain/Terrain1.json");
+    entt::entity terrainId = world->CreateTerrain("../3Dprog22/Config/Terrain/Terrain1.json");
+
+    Entity terrainEnt(terrainId, world);
+
+    auto& terrain = terrainEnt.GetComponent<TerrainComponent>().terrain;
+
+    auto& config = terrain.config;
+    CollisionHeightmap heightmap;
+
+    glm::vec3 scale(config.scaleXZ, config.scaleY, config.scaleXZ);
+
+    heightmap.SetHeightmap(config.N, config.N, scale, &terrain.heightmapBuffer);
+
+    world->physicsSystem->RegisterHeightmap(heightmap);
 }
 
 void GrassGameMode::CreateScene(World* world)
@@ -311,7 +324,7 @@ void GrassGameMode::CreateScene(World* world)
         glm::vec3 pPos = player.GetPosition();
 
         float y = world->GetTerrainHeightAt(pPos.x, pPos.z);
-        pPos.y = y + 10.f;
+        pPos.y = y + 50.f;
 
         player.SetPosition(pPos);
     }
@@ -320,29 +333,25 @@ void GrassGameMode::CreateScene(World* world)
         Entity modelEnt = world->CreateEntity("house");
         auto& model = modelEnt.AddComponent<StaticMeshComponent>().staticMeshInstanced;
         auto& transform = modelEnt.GetComponent<TransformComponent>();
-        //auto& collision = modelEnt.AddComponent<OBBCollisionComponent>((std::uint32_t)modelEnt.GetEntityId()).collisionVolume;
+        auto& body = modelEnt.AddComponent<PhysicsComponent>().body;
+        auto& collider = modelEnt.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
+
+        body.SetMass(0.f);
 
         glm::vec3 housePos = glm::vec3(-350.f, 100.f, 30.f);
-
         float y = world->GetTerrainHeightAt(housePos.x, housePos.z);
 
         housePos.y = y;
 
-        modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));
+        modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));       
         modelEnt.SetPosition(housePos);
-        //collision.SetExtents({ 60.f, 100.f, 35.f });
-        //collision.bStatic = true;
 
-        world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model);
+        world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
 
-        Entity houseWall = world->CreateEntity("houseWall");
-        auto& wallTransform1 = houseWall.GetComponent<TransformComponent>();
-        //auto& wallCollision1 = houseWall.AddComponent<OBBCollisionComponent>((std::uint32_t)houseWall.GetEntityId()).collisionVolume;
-        //wallCollision1.bStatic = true;
+        collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
 
-        const glm::vec3 wallOffset1 = { 70.f, 0.f, 40.f };
-        houseWall.SetPosition(housePos + wallOffset1);
-        //wallCollision1.SetExtents({ 40.f, 20.f, 80.f });
+        collider.SetExtents(glm::vec3(0.5f));
+
     }
 }
 
@@ -395,10 +404,12 @@ void GrassGameMode::CreateTrees(World* world)
         Entity tree = world->CreateEntity("TreeInstanced1");
         auto& instance = tree.AddComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
 
-        sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD0.obj", instance.LOD[0]);
+        sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD0.obj", instance.LOD[0], true);
         sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD1.obj", instance.LOD[1]);
         sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD2.obj", instance.LOD[2]);
         sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD3.obj", instance.LOD[3]);
+
+        auto ch = sm->GetConvexHull("../3Dprog22/Assets/Models/Tree2/LOD0.obj");
 
         for (size_t i = 0; i < 300; i++)
         {
@@ -422,14 +433,22 @@ void GrassGameMode::CreateTrees(World* world)
             model = translate * rot * scale;
 
             instance.transforms.emplace_back(model);
+
+            Entity ent = world->CreateEntity("TreeCol" + std::to_string(i));
+            auto& body = ent.AddComponent<PhysicsComponent>().body;
+            auto& col = ent.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
+            body.SetMass(0.f);
+            col.SetConvexHull(ch);
+            ent.SetTransform(model);
+            col.SetExtents({ 5.f, 20.f, 5.f });
         }
     }
 }
 
 void GrassGameMode::UpdatePlayer(World* world, float deltatime)
-{
+{   
     Entity playerEntity(playerEnt, world);
     auto pos = playerEntity.GetPosition();
-    pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 11.f;
+    pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 13.f;
     playerEntity.SetPosition(pos);
 }

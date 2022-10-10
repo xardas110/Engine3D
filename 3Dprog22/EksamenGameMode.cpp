@@ -99,10 +99,10 @@ void EksamenGameMode::CreatePlayer(World* world, entt::registry& registry)
 void EksamenGameMode::UpdatePlayer(World* world, float deltatime)
 {
 	//Oppgave 4 oppdaterer spiller over heightmappet
-	Entity playerEntity(playerEnt, world);
-	auto pos = playerEntity.GetPosition();
-	pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 11.f;
-	playerEntity.SetPosition(pos);
+	//Entity playerEntity(playerEnt, world);
+	//auto pos = playerEntity.GetPosition();
+	//pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 11.f;
+	//playerEntity.SetPosition(pos);
 }
 
 void EksamenGameMode::CreateBomber(World* world, entt::registry& registry)

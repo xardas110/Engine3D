@@ -115,6 +115,11 @@ void RenderWindow::exposeEvent(QExposeEvent * e)
     //Set viewport width and height to the size of the QWindow we have set up for OpenGL
     glViewport(0, 0, static_cast<GLint>(width() * retinaScale), static_cast<GLint>(height() * retinaScale));
 
+    if (editor)
+    {
+        editor->EditorCamera.SetAspect((float)width() / (float)height());
+    }
+
     world->OnExposeEvent(e);
 }
 

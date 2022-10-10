@@ -115,7 +115,8 @@ void RigidBody::Update(float deltatime)
 		return;
 	}
 #endif
-	SetRotation(newRot);
+	if (!bLinearOnly)
+		SetRotation(newRot);
 #if DEBUG_NAN
 	if (glm::any(glm::isnan(cm)))
 	{
@@ -284,6 +285,8 @@ void RigidBody::ApplyImpulse(const glm::vec3& impulsePt, const glm::vec3& impuls
 	if (Cmp(GetInvMass(), 0.f)) return;
 
 	ApplyLinearImpulse(impulse);
+
+	if (bLinearOnly) return;
 
 	glm::vec3 position = GetCenterOfMassWorld();
 

@@ -279,6 +279,7 @@ void PhysicsGameMode::SpawnCapsule(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Capsule).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
+    body.bLinearOnly = true;
     sm->LoadStaticMesh("../3Dprog22/Assets/Models/Capsule/Capsule.obj", boxMesh);
     boxMesh.SetColor({ 0.7f, 0.5f, 0.f });
     body.SetMass(50.f);
