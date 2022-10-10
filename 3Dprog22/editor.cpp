@@ -351,6 +351,11 @@ void Editor::OnUpdateGUIFromRenderWindow(float deltaTime)
         return;
 }
 
+void Editor::OnKeyPressedRenderWindow(QKeyEvent* event)
+{
+
+}
+
 void Editor::InitRenderSettings()
 {
     if (!world) return;

@@ -37,7 +37,8 @@ public:
     void OnMousePressedInRenderWindow(QMouseEvent* event);
     void OnMouseReleasedInRenderWindow(QMouseEvent* event);
     void OnUpdateGUIFromRenderWindow(float deltaTime);
-	
+    void OnKeyPressedRenderWindow(QKeyEvent* event);
+
     Camera EditorCamera;
 private slots:
     void on_treeView_clicked(const QModelIndex &index);
