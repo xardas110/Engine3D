@@ -409,7 +409,6 @@ void PhysicsSystem::ResolveHeightmapCollisions(Collideable& collideable, entt::e
 	}
 
 	if (Cmp(bodyComp->body.GetMass(), 0.f)) return;
-	if (collideable.type != CollideableType::Sphere) return;
 
 	ContactManifold contact; CollisionHeightmapTriangles cht; RigidBody staticBody; Collideable temp; temp.type = CollideableType::Invalid;
 	staticBody.SetFriction(0.5f); staticBody.SetMass(0.f); staticBody.collider = temp;
@@ -421,16 +420,30 @@ void PhysicsSystem::ResolveHeightmapCollisions(Collideable& collideable, entt::e
 		for (auto& tri : tets)
 		{
 			ContactManifold contact;
-
-			staticBody.SetPos((tri.a + tri.b + tri.c) * 0.33f);
-			if (IntersectSphereTriangle(mNp.mSpheres[collideable.shapeIndex], tri, contact))
-			{
-				if (entA.HasComponent<BSplines>())
+			if (collideable.type == CollideableType::Sphere)
+			{ 
+				staticBody.SetPos((tri.a + tri.b + tri.c) * 0.33f);
+				if (IntersectSphereTriangle(mNp.mSpheres[collideable.shapeIndex], tri, contact))
 				{
-					entA.GetComponent<BSplines>().bSimulate = true;
-				}
+					if (entA.HasComponent<BSplines>())
+					{
+						entA.GetComponent<BSplines>().bSimulate = true;
+					}
 
-				ResolveCollision(bodyComp->body, staticBody, contact);
+					ResolveCollision(bodyComp->body, staticBody, contact);
+				}
+			}
+			else
+			{
+				glm::vec3 d = tri.a - glm::vec3(0.f, 1.f, 0.f);
+
+				BoundingTetrahedron btet(tri.a, tri.b, tri.c, d);
+				staticBody.SetPos((btet.pts[0] + btet.pts[1] + btet.pts[2] + btet.pts[3]) * 0.25f);
+
+				if (IntersectConvexPoly(collideable, bodyComp->body, btet, staticBody, contact))
+				{
+					ResolveCollision(bodyComp->body, staticBody, contact);
+				}
 			}
 		}
 	}

@@ -101,28 +101,6 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
         }
     }
 
-    if (ImGui::Button("Spawn Sphere Ground(BIG)"))
-    {
-        {
-            Entity e = world->CreateEntity("SphereGround");
-            auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Sphere).col;
-            auto& sphereBody = e.AddComponent<PhysicsComponent>();
-            auto& sphereMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-
-            collider.SetExtents(glm::vec3(1000.f, 1000.f, 1000.f));
-            collider.SetPosition(glm::vec3(0.f, 0.f, 0.f));
-
-            sphereMesh.AddMesh(world->GetMeshManager()->CreateOctahedronBall(4));
-            sphereMesh.bCastShadow = false;
-            sphereMesh.SetColor(glm::vec3(0.5f, 0.5f, 0.2f));
-
-            e.SetScale({ 1000.0f, 1000.0f, 1000.0f });
-            e.SetPosition({ 0.f, -800.f, 0.f });
-
-            sphereBody.body.SetMass(0.f);
-        }
-    }
-
     if (ImGui::Button("Spawn balls 2500"))
     {
         int iterations = 1;
@@ -329,7 +307,7 @@ void PhysicsGameMode::SpawnActualSphere(const glm::vec3& pos)
 
 void PhysicsGameMode::CreateTerrain(World* world)
 {
-    entt::entity terrainId = world->CreateTerrain("../3Dprog22/VISM2Terrain.json");
+    entt::entity terrainId = world->CreateTerrain("../3Dprog22/VISM2TerrainHighRes.json");
 
     Entity ent(terrainId, world);
     auto& terrain = ent.GetComponent<TerrainComponent>().terrain;
