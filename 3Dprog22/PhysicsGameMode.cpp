@@ -48,14 +48,14 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
     if (bDrawBoundingBoxes) world->physicsSystem->DrawBoundingBoxes();
     if (bDrawConvexHulls) world->physicsSystem->DrawConvexHulls();
         
-    if (ImGui::Button("Spawn boxes"))
+    if (ImGui::Button("Spawn boxes 1000"))
     {
         {
-            constexpr int iterations = 1;
-            constexpr int nrRows = 5;
-            constexpr int nrColumns = 5;
+            constexpr int iterations = 10;
+            constexpr int nrRows = 10;
+            constexpr int nrColumns = 10;
 
-            float spacing = 20.f;
+            float spacing = 10.f;
 
             for (auto f = 0; f < iterations; f++)
                 for (auto i = 0; i < nrRows; i++)
@@ -129,7 +129,7 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
         int iterations = 1;
         int nrRows = 50;
         int nrColumns = 50;
-        constexpr float spacing = 50.f;
+        constexpr float spacing = 10.f;
         for (auto f = 0; f < iterations; f++)
             for (auto i = 0; i < nrRows; i++)
             {
@@ -146,6 +146,37 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
                     sphereBody.body.SetMass(1000.f);
                     e.SetPosition({ i * spacing - (nrRows * spacing * 0.5f), 500.f * (f + 1), j * spacing - (nrColumns * spacing * 0.5f) });
                     e.SetScale({ 5.f, 5.f, 5.f });
+                }
+            };
+    }
+    if (ImGui::Button("Spawn capsules 1000"))
+    {
+        int iterations = 10;
+        int nrRows = 10;
+        int nrColumns = 10;
+        constexpr float spacing = 50.f;
+        for (auto f = 0; f < iterations; f++)
+            for (auto i = 0; i < nrRows; i++)
+            {
+                for (auto j = 0; j < nrColumns; j++)
+                {
+                    SpawnCapsule({ i * spacing - (nrRows * spacing * 0.5f), 500.f * (f + 1), j * spacing - (nrColumns * spacing * 0.5f) });
+                }
+            };
+    }
+
+    if (ImGui::Button("Spawn Statues 100"))
+    {
+        int iterations = 1;
+        int nrRows = 10;
+        int nrColumns = 10;
+        constexpr float spacing = 50.f;
+        for (auto f = 0; f < iterations; f++)
+            for (auto i = 0; i < nrRows; i++)
+            {
+                for (auto j = 0; j < nrColumns; j++)
+                {
+                    SpawnStatue({ i * spacing - (nrRows * spacing * 0.5f), 500.f * (f + 1), j * spacing - (nrColumns * spacing * 0.5f) });
                 }
             };
     }
@@ -185,13 +216,12 @@ void PhysicsGameMode::OnKeyPress(QKeyEvent* event)
 
     if (Qt::Key_E == event->key())
     {    
-        SpawnTriangle(World::Get()->GetRenderCamera()->GetPosition());
-       // SpawnConvexHull();
+        SpawnCapsule(World::Get()->GetRenderCamera()->GetPosition());
     }
 
     if (Qt::Key_T == event->key())
     {
-        SpawnSphere(World::Get()->GetRenderCamera()->GetPosition());
+        SpawnStatue(World::Get()->GetRenderCamera()->GetPosition());
         // SpawnConvexHull();
     }
 
@@ -212,14 +242,11 @@ void PhysicsGameMode::SpawnBox(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh, true ,true);
-    const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Box/Box.obj");
+    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Box/Box.obj", boxMesh, true, false);
 
-    collider.BuildKDOP(temp->verts.data(), temp->verts.size(), KDOP::DOP26, KDOP_AXIS::Y);
+    collider.SetConvexHull(sm->GetConvexHull("../3Dprog22/Assets/Models/Box/Box.obj"));
 
-    //collider.Build(temp->verts, temp->indices);
     collider.SetExtents(glm::vec3(5.f));
-    //collider.SetPosition(glm::vec3(0.f, 2.f, 0.f));
     boxMesh.SetColor(glm::vec3(float(rand() % 10) / 10.f, float(rand() % 10) / 10.f, float(rand() % 10) / 10.f));
 
     body.SetMass(1000.f);
@@ -247,7 +274,7 @@ void PhysicsGameMode::SpawnTriangle(const glm::vec3& pos)
     e.SetScale({ 5.f, 5.f, 5.f });
 }
 
-void PhysicsGameMode::SpawnSphere(const glm::vec3& pos)
+void PhysicsGameMode::SpawnStatue(const glm::vec3& pos)
 {
     auto* world = World::Get();
     auto* sm = world->GetStaticMeshManager();
@@ -256,16 +283,32 @@ void PhysicsGameMode::SpawnSphere(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Statue/statue.obj", boxMesh, true, true);
-    const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Statue/statue.obj");
-
-    collider.BuildKDOP(temp->verts.data(), temp->verts.size(), KDOP::DOP26, KDOP_AXIS::Y);
+    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Statue/statue.obj", boxMesh, true, false);
+    collider.SetConvexHull(sm->GetConvexHull("../3Dprog22/Assets/Models/Statue/statue.obj"));
     collider.SetExtents(glm::vec3(1.f));
     
     body.SetMass(1000.f);
 
     e.SetPosition(pos);
     e.SetScale({ 1.f, 1.f, 1.f });
+}
+
+void PhysicsGameMode::SpawnCapsule(const glm::vec3& pos)
+{
+    auto* world = World::Get();
+    auto* sm = world->GetStaticMeshManager();
+    static int numCapsules{ 0 };
+    Entity e = world->CreateEntity("Capsule" + std::to_string(numCapsules++));
+    auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Capsule).col;
+    auto& body = e.AddComponent<PhysicsComponent>().body;
+    auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
+    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Capsule/Capsule.obj", boxMesh);
+    boxMesh.SetColor({ 0.7f, 0.5f, 0.f });
+    body.SetMass(50.f);
+    body.SetElasticity(0.5f);
+    collider.SetExtents(glm::vec3(5.0f));
+    e.SetPosition(pos);
+    e.SetScale({ 5.f, 5.f, 5.f });
 }
 
 void PhysicsGameMode::SpawnActualSphere(const glm::vec3& pos)
@@ -308,7 +351,7 @@ void PhysicsGameMode::CreateWater(World* world)
    auto& water = waterEntity.AddComponent<Water>();
    auto& trans = waterEntity.GetComponent<TransformComponent>();
    trans.SetScale(glm::vec3(10.f));
-   trans.SetPosition(glm::vec3(0.f, 200.f, 0.f));
+   trans.SetPosition(glm::vec3(0.f, 0.f, 0.f));
    tm->LoadTexture("../3Dprog22/Assets/Textures/Water/normalmap.png", water.normalmap);
    tm->LoadTexture("../3Dprog22/Assets/Textures/Water/waterDUDV.png", water.waterDUDV);
 }

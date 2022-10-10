@@ -1,4 +1,5 @@
 #include "CollisionUtility.h"
+#include "RenderDebugger.h"
 
 glm::vec3 ColUtil::Barycentric(glm::vec3 a, glm::vec3 b, glm::vec3 c, glm::vec3 p)
 {
@@ -62,4 +63,70 @@ glm::vec3 ColUtil::ClosestPoint(const Triangle& t, const glm::vec3& p)
 	float v = vb / (va + vb + vc);
 	float w = 1.0f - u - v; // = vc / (va + vb + vc)
 	return u * t.a + v * t.b + w * t.c;
+}
+
+glm::vec3 ColUtil::ClosestPtPointSegment(const glm::vec3& c, const glm::vec3& a, const glm::vec3& b)
+{
+	glm::vec3 ab = b - a;
+	float t = glm::dot(c - a, ab) / glm::dot(ab, ab);
+
+	if (t < 0.0f) t = 0.0f;
+	if (t > 1.0f) t = 1.0f;
+
+	return a + t * ab;
+}
+
+bool ColUtil::IntersectPtCapsule(const glm::vec3& pt, const BoundingCapsule& caps)
+{
+	glm::vec3 closestPt = ClosestPtPointSegment(pt, caps.GetCenter() + caps.GetA(), caps.GetCenter() + caps.GetB());
+
+	glm::vec3 dir = pt - closestPt;
+	float dist2 = glm::dot(dir, dir);
+	
+	if (dist2 > caps.GetRadius() * caps.GetRadius()) return false;
+
+	return true;
+}
+
+glm::mat3 ColUtil::CalculateCapsInertia(const BoundingCapsule& caps, int numSamples)
+{
+	BoundingBox bounds;
+	bounds.min = caps.GetA() - caps.GetRadius();
+	bounds.max = caps.GetB() + caps.GetRadius();
+
+	glm::mat3 tensor(0.f);
+
+	const float dx = bounds.WidthX() / (float)numSamples;
+	const float dy = bounds.WidthY() / (float)numSamples;
+	const float dz = bounds.WidthZ() / (float)numSamples;
+
+	int sampleCount = 0;
+	for (float x = bounds.min.x; x < bounds.max.x; x += dx) {
+		for (float y = bounds.min.y; y < bounds.max.y; y += dy) {
+			for (float z = bounds.min.z; z < bounds.max.z; z += dz) {
+				glm::vec3 pt(x, y, z);
+
+				if (!IntersectPtCapsule(pt, caps)) {
+					continue;
+				}
+
+				tensor[0][0] += pt.y * pt.y + pt.z * pt.z;
+				tensor[1][1] += pt.z * pt.z + pt.x * pt.x;
+				tensor[2][2] += pt.x * pt.x + pt.y * pt.y;
+
+				tensor[0][1] += -1.0f * pt.x * pt.y;
+				tensor[0][2] += -1.0f * pt.x * pt.z;
+				tensor[1][2] += -1.0f * pt.y * pt.z;
+
+				tensor[1][0] += -1.0f * pt.x * pt.y;
+				tensor[2][0] += -1.0f * pt.x * pt.z;
+				tensor[2][1] += -1.0f * pt.y * pt.z;
+
+				sampleCount++;
+			}
+		}
+	}
+
+	tensor *= 1.0f / (float)sampleCount;
+	return tensor;
 }

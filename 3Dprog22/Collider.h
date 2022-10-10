@@ -11,7 +11,8 @@ namespace CollideableType
 	{
 		Invalid = -1,
 		Sphere = 0,
-		ConvexHull = 1
+		ConvexHull = 1,
+		Capsule
 	};
 }
 

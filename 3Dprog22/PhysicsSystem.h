@@ -22,6 +22,7 @@ struct NarrowPhase
 {
 	CollisionHeightmap heightmap;
 	std::vector<BoundingSphere> mSpheres;
+	std::vector<BoundingCapsule> mCapsules;
 	std::vector<ConvexHull> mConvexHulls;
 };
 

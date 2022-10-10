@@ -151,10 +151,17 @@ void PhysicsSystem::RegisterCollider(Collideable& inOutCollider)
 	if (inOutCollider.type == CollideableType::ConvexHull)
 	{
 		ConvexHull ch;
-
 		np.mConvexHulls.emplace_back(ch);
-
 		inOutCollider.shapeIndex = np.mConvexHulls.size() - 1;
+	};
+	if (inOutCollider.type == CollideableType::Capsule)
+	{
+		BoundingCapsule caps;
+		caps.SetCenter(glm::vec3(0.f, 1.f, 0.f));
+		caps.SetRadius(1.f);
+
+		np.mCapsules.emplace_back(caps);
+		inOutCollider.shapeIndex = np.mCapsules.size() - 1;
 	};
 }
 
@@ -212,10 +219,10 @@ void PhysicsSystem::DrawBoundingBoxes() const
 void PhysicsSystem::Update(float deltatime)
 {
 	auto* rd = RenderDebugger::Get();
-
+	ImGui::Begin("PhysicSystem debug");
+	ImGui::Checkbox("Enable threading(32threads)", &bSimulateThreaded);
 	if (!bSimulateThreaded)
-	{
-		ImGui::Begin("PhysicSystem debug");
+	{		
 		ImGui::Checkbox("Enable Step simulation(press q to simulate next step)", &bEnableStepMode);
 		ImGui::SliderFloat("Step Value: ", &stepValue, 0.00001f, 0.016f, "ratio = %f", 1.f);
 		ImGui::SliderFloat("Debug render timer: ", &debugRenderTimer, 0.f, 1.f, "ratio = %f", 1.f);
@@ -238,9 +245,9 @@ void PhysicsSystem::Update(float deltatime)
 		ImGui::ColorEdit3("aTangentImpulse color", colorATangentImpulse);
 		ImGui::Checkbox("Show bTangentImpulse", &bShowBTangentImpulse);
 		ImGui::ColorEdit3("bTangentImpulse color", colorBTangentImpulse);
-		ImGui::End();
+		
 	}
-
+	ImGui::End();
 	if (bEnableStepMode)
 	{
 		deltatime = stepValue;
@@ -280,7 +287,9 @@ void PhysicsSystem::Update(float deltatime)
 	else
 	{
 		PreSyncTransforms();
+		
 		ApplyForces(deltatime);
+		
 		MoveBodies(deltatime);
 
 		auto view = registry->view<CollisionComponent>();
@@ -297,6 +306,7 @@ void PhysicsSystem::Update(float deltatime)
 		{
 			ResolveNarrowCollisions(pair);
 		}
+
 		PostSyncTransforms();
 	}	
 }

@@ -59,11 +59,12 @@ void BSplineSystem::PreUpdate(float deltatime)
 {
 	currentTimer += deltatime;	
 	thPool->StartWork();
+	thPool->WaitWork();
 }
 
 void BSplineSystem::PostUpdate(float deltatime)
 {
-	thPool->WaitWork();
+	
 }
 
 void BSplineSystem::RenderSegments(std::vector<BSplineSegment>& inSegments)
@@ -97,6 +98,9 @@ void BSplineSystem::Render()
 
 void BSplineSystem::THUpdate(int thIndex)
 {
+	if (!registry) return;
+
+	/*
 	if (currentTimer >= waitTime && !bDrawn[thIndex])
 	{
 		lines[thIndex].clear();
@@ -105,11 +109,14 @@ void BSplineSystem::THUpdate(int thIndex)
 		{
 			auto& bSpline = view.get<BSplines>(view[i]);
 			auto& trans = registry->get<TransformComponent>(view[i]);
+			
 			auto pos = trans.GetPosition();
 			if (!bSpline.bSimulate) continue;
 			bSpline.AddPoint(pos);
 			bSpline.GetSegments(lines[thIndex]);
+			
 		}	
 		bDrawn[thIndex] = true;
 	}
+	*/
 }

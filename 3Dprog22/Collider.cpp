@@ -22,9 +22,16 @@ void Collideable::SetExtents(const glm::vec3& extent)
 		float max = glm::compMax(extent);
 		ps->GetNarrowPhaseData().mSpheres[shapeIndex].SetRadius(max);
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].SetScale(extent);
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		float max = glm::max(extent.z, extent.x);
+		ps->GetNarrowPhaseData().mCapsules[shapeIndex].SetRadius(max * 0.5f);
+		ps->GetNarrowPhaseData().mCapsules[shapeIndex].SetA(glm::vec3(0.f, -extent.y, 0.f));
+		ps->GetNarrowPhaseData().mCapsules[shapeIndex].SetB(glm::vec3(0.f, extent.y, 0.f));
 	}
 }
 
@@ -36,9 +43,13 @@ const glm::vec3& Collideable::GetExtents() const
 	{
 		return glm::vec3(ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetRadius());
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetScale();
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return glm::vec3(ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetRadius());
 	}
 	return glm::vec3(0.f);
 }
@@ -50,9 +61,13 @@ void Collideable::SetPosition(const glm::vec3& pos)
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].SetCenter(pos);
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].SetPosition(pos);
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		ps->GetNarrowPhaseData().mCapsules[shapeIndex].SetCenter(pos);
 	}
 }
 
@@ -63,9 +78,13 @@ const glm::vec3& Collideable::GetPosition() const
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetCenter();
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetPosition();
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetCenter();
 	}
 	return glm::vec3(0.f);
 }
@@ -76,6 +95,10 @@ void Collideable::SetRotation(const glm::quat& newRot)
 	if (type == CollideableType::ConvexHull)
 	{
 		ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].SetRotation(newRot);
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		ps->GetNarrowPhaseData().mCapsules[shapeIndex].SetRotation(newRot);
 	}
 }
 
@@ -114,9 +137,13 @@ glm::mat3 Collideable::GetInertiaTensor() const
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetInertiaTensor();
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetInertiaTensor();
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetInertiaTensor();
 	}
 	return glm::identity<glm::mat3>();
 }
@@ -128,9 +155,13 @@ glm::vec3 Collideable::GetCenterOfMass() const
 	{
 		return ps->GetNarrowPhaseData().mSpheres[shapeIndex].GetCenterOfMass();
 	}
-	if (type == CollideableType::ConvexHull)
+	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetCenterOfMass();
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetCenterOfMass();
 	}
 	return glm::vec3(0.f);
 }
@@ -146,6 +177,10 @@ BoundingBox Collideable::GetLocalBounds()
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetLocalBounds();
 	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetLocalBounds();
+	}
 	std::cout << "Get local bounds for collider failed " << std::endl;
 	return BoundingBox(glm::vec3(0.f), glm::vec3(0.f));
 }
@@ -160,6 +195,10 @@ BoundingBox Collideable::GetWorldBounds(const glm::vec3& pos)
 	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex].GetWorldBounds(pos);
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex].GetWorldBounds(pos);
 	}
 	std::cout << "Get world bounds for collider failed " << std::endl;
 	return BoundingBox(glm::vec3(0.f), glm::vec3(0.f));
@@ -184,6 +223,10 @@ glm::vec3 Collideable::operator()(glm::vec3 dir) const
 	else if (type == CollideableType::ConvexHull)
 	{
 		return ps->GetNarrowPhaseData().mConvexHulls[shapeIndex](dir);
+	}
+	else if (type == CollideableType::Capsule)
+	{
+		return ps->GetNarrowPhaseData().mCapsules[shapeIndex](dir);
 	}
 
 	std::cout << "Collidable support function not found " << shapeIndex << std::endl;

@@ -15,6 +15,8 @@ bool IntersectConvexPoly(const T& A, RigidBody& aBody, const Y& B, RigidBody& bB
 	GJKSimplex simplex;
 	if (IntersectGJK(A, B, simplex))
 	{
+		if (simplex.numPoints < 4) return false;
+
 		if (IntersectEPA(simplex, A, B, outContact) == epa_status::epa_success)
 		{ 
 			outContact.ptLsOnA = aBody.WsToLs(outContact.ptOnA);

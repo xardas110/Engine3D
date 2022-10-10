@@ -1,6 +1,8 @@
 #include "RigidBody.h"
 #include "helpermath.h"
 
+#define DEBUG_NAN false
+
 void RigidBody::SetMass(float newMass)
 {
 	mass = newMass;
@@ -49,12 +51,56 @@ void RigidBody::Update(float deltatime)
 	SetPos(GetPos() + (linearVelocity * deltatime));
 
 	glm::vec3 cm = GetCenterOfMassWorld();
+
 	glm::vec3 cmToPos = pos - cm;
 
 	glm::mat3 orient(rotation);
 	glm::mat3 inertiaTensor = orient * collider.GetInertiaTensor() * glm::transpose(orient);
+
+#if DEBUG_NAN
+	for (size_t i = 0; i < 3; i++)
+	{
+		if (glm::any(glm::isnan(inertiaTensor[i])))
+		{
+			printf("inertiaTensor is nan!\n");
+			return;
+		}
+		auto invInertia = glm::inverse(inertiaTensor);
+		if (glm::any(glm::isnan(invInertia[i])))
+		{
+			printf("invInertia is nan!\n");
+			return;
+		}
+	}
+
+	if (glm::any(glm::isnan(rotation)))
+	{
+		printf("rotation is nan!\n");
+		return;
+	}
+
+	if (glm::any(glm::isnan(angularVelocity)))
+	{
+		printf("angularVelocity is nan!\n");
+		return;
+	}
+#endif // DEBUG_NAN == 1
+
 	glm::vec3 a = glm::inverse(inertiaTensor) * (glm::cross(angularVelocity, inertiaTensor * angularVelocity));
 
+#if DEBUG_NAN
+	if (glm::any(glm::isnan((glm::cross(angularVelocity, inertiaTensor * angularVelocity)))))
+	{
+		printf("glm::cross(angularVelocity is nan!\n");
+		return;
+	}
+
+	if (glm::any(glm::isnan(a)))
+	{
+		printf("a is nan!\n");
+		return;
+	}
+#endif
 	angularVelocity += a * deltatime;
 
 	glm::vec3 dAngle = angularVelocity * deltatime;
@@ -62,9 +108,35 @@ void RigidBody::Update(float deltatime)
 
 	glm::quat newRot = dq * rotation;
 	SafeNormal(newRot);
+#if DEBUG_NAN
+	if (glm::any(glm::isnan(newRot)))
+	{
+		printf("nan found!!\n");
+		return;
+	}
+#endif
 	SetRotation(newRot);
+#if DEBUG_NAN
+	if (glm::any(glm::isnan(cm)))
+	{
+		printf("cm is nan\n");
+		return;
+	}
 
+	if (glm::any(glm::isnan(cmToPos)))
+	{
+		printf("cmToPos is nan\n");
+		return;
+	}
+#endif
 	glm::vec3 newPos = cm + dq * cmToPos;
+#if DEBUG_NAN
+	if (glm::any(glm::isnan(newPos)))
+	{
+		printf("nan pos!! \n");
+		return;
+	}
+#endif
 	SetPos(newPos);
 }
 
@@ -86,11 +158,12 @@ const glm::vec3& RigidBody::GetPos() const
 void RigidBody::SetRotation(const glm::quat& newRot)
 {
 	rotation = newRot;
-
+	
 	if (HasCollider())
 	{
 		collider.SetRotation(newRot);
 	}
+	
 }
 
 const glm::quat& RigidBody::GetRotation() const

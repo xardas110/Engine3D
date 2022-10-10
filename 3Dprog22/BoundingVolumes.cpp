@@ -2,6 +2,8 @@
 #include "GJK.h"
 #include <iostream>
 #include <unordered_map>
+#include "CollisionUtility.h"
+#include "RenderDebugger.h"
 
 static bool isZero(float x) 
 {
@@ -229,4 +231,93 @@ BoundingBox BoundingSphere::GetLocalBounds() const
 BoundingBox BoundingSphere::GetWorldBounds(const glm::vec3& pos) const
 {
 	return BoundingBox(glm::vec3(pos + c - r), glm::vec3(pos + c + r));
+}
+
+void BoundingCapsule::SetCenter(const glm::vec3& newCenter)
+{
+	c = newCenter;
+}
+
+const glm::vec3& BoundingCapsule::GetCenter() const
+{
+	return c;
+}
+
+void BoundingCapsule::SetRadius(float newRadius)
+{
+	radius = newRadius;
+	inertiaTensor = ColUtil::CalculateCapsInertia(*this, 20);
+}
+
+float BoundingCapsule::GetRadius() const
+{
+	return radius;
+}
+
+void BoundingCapsule::SetA(const glm::vec3& newA)
+{
+	a = newA;
+	inertiaTensor = ColUtil::CalculateCapsInertia(*this, 20);
+}
+
+const glm::vec3& BoundingCapsule::GetA() const
+{
+	return a;
+}
+
+void BoundingCapsule::SetB(const glm::vec3& newB)
+{
+	b = newB;
+	inertiaTensor = ColUtil::CalculateCapsInertia(*this, 20);
+}
+
+const glm::vec3& BoundingCapsule::GetB() const
+{
+	return b;
+}
+
+void BoundingCapsule::SetRotation(const glm::quat& newRot)
+{
+	float hh = glm::length(b - a) * 0.5f;
+	glm::vec3 dir = newRot * glm::vec3(0.f, 1.f, 0.f);
+
+	a = -dir * hh;
+	b = dir * hh;
+}
+
+glm::vec3 BoundingCapsule::operator()(glm::vec3 dir) const
+{
+	dir = glm::normalize(dir);
+	auto wsA =  a + c;
+	auto wsB =  b + c;
+	float distA = glm::dot(dir, wsA);
+	float distB = glm::dot(dir, wsB);
+	glm::vec3 fartherPoint = distA > distB ? wsA : wsB;
+	return normalize(dir) * radius + fartherPoint;
+}
+
+glm::mat3 BoundingCapsule::GetInertiaTensor() const
+{
+	return inertiaTensor;
+}
+
+glm::vec3 BoundingCapsule::GetCenterOfMass() const
+{
+	return glm::vec3(0.f);
+}
+
+BoundingBox BoundingCapsule::GetLocalBounds() const
+{
+	BoundingBox bb;
+	bb.min = c - (glm::abs(a) + radius);
+	bb.max = c + glm::abs(b) + radius;
+	return bb;
+}
+
+BoundingBox BoundingCapsule::GetWorldBounds(const glm::vec3& pos) const
+{
+	BoundingBox bb;
+	bb.min = c - a - radius + pos;
+	bb.max = c + b + radius + pos;
+	return bb;
 }

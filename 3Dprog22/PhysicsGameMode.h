@@ -24,7 +24,8 @@ class PhysicsGameMode : public GameMode
 
 	void SpawnBox(const glm::vec3& pos);
 	void SpawnTriangle(const glm::vec3& pos);
-	void SpawnSphere(const glm::vec3& pos);
+	void SpawnStatue(const glm::vec3& pos);
+	void SpawnCapsule(const glm::vec3& pos);
 
 	void SpawnActualSphere(const glm::vec3& pos);
 

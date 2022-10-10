@@ -53,7 +53,7 @@ void Editor::PostWorldInit()
 {
     InitGameModeUI();
 
-    ui->gmCB->setCurrentIndex(5);
+    ui->gmCB->setCurrentIndex(3);
     world->StartGameMode(ui->gmCB->currentIndex());
 }
 

@@ -72,6 +72,37 @@ struct BoundingBox
 	}
 };
 
+struct BoundingCapsule
+{
+private:
+	glm::vec3 a{0.f, -0.5f, 0.f};
+	float radius{1.f};
+	glm::vec3 b{ 0.f, 0.5f, 0.f };
+	glm::vec3 c{ 0.f, 0.f, 0.f };
+	glm::mat3 inertiaTensor{ 1.f };
+public:
+	void SetCenter(const glm::vec3& newCenter);
+	const glm::vec3& GetCenter() const;
+
+	void SetRadius(float newRadius);
+	float GetRadius() const;
+
+	void SetA(const glm::vec3& newA);
+	const glm::vec3& GetA() const;
+	void SetB(const glm::vec3& newB);
+	const glm::vec3& GetB() const;
+
+	void SetRotation(const glm::quat& newRot);
+
+	glm::vec3 operator()(glm::vec3 dir) const;
+
+	glm::mat3 GetInertiaTensor() const;
+	glm::vec3 GetCenterOfMass() const;
+
+	BoundingBox GetLocalBounds() const;
+	BoundingBox GetWorldBounds(const glm::vec3& pos) const;
+};
+
 struct BoundingSphere
 {
 private:
@@ -95,11 +126,11 @@ public:
 
 struct BoundingTetrahedron
 {
-	glm::vec3 pts[6];
+	glm::vec3 pts[4];
 
-	BoundingTetrahedron(glm::vec3& a, glm::vec3& b, glm::vec3& c, glm::vec3& d, glm::vec3& e, glm::vec3& f)
+	BoundingTetrahedron(glm::vec3& a, glm::vec3& b, glm::vec3& c, glm::vec3& d)
 	{
-		pts[0] = a; pts[1] = b; pts[2] = c; pts[3] = d; pts[4] = e; pts[5] = f;
+		pts[0] = a; pts[1] = b; pts[2] = c; pts[3] = d;
 	}
 
 	glm::vec3 operator()(glm::vec3 dir) const
