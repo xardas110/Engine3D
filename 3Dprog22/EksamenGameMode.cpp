@@ -32,7 +32,6 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 
 	CreateTerrain(world, registry);
 	CreatePlants(world);
-	
 	LoadAmbientSound(world);
 	LoadSoundFiles();
 
@@ -41,7 +40,6 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 	CreateBomber(world, registry);
 	CreateBomber2(world, registry);
 	CreateStatusBillboard(world);
-	CreateBaricades(world);
 	CreateTrees(world);
 
 	CreatePlayer(world, registry);
@@ -53,6 +51,7 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 void EksamenGameMode::Update(World* world, entt::registry& registry, float deltatime)
 {	
 	//Oppgave 13 -> alt annet kjørte ikke i editor modus fra før
+	UpdateEntForDeletion(world);
 	UpdateSun(world, deltatime);
 	UpdateBomber(world, registry, deltatime);
 	UpdateBomber2(world, registry, deltatime);
@@ -62,6 +61,14 @@ void EksamenGameMode::Update(World* world, entt::registry& registry, float delta
 	UpdateStatusBillboard(world, deltatime);	
 
 	timeSinceLastExp += deltatime;	
+}
+
+void EksamenGameMode::UpdateEntForDeletion(World* world)
+{
+	for (auto entity : entForDeletion)
+	{
+		world->DeleteEntity(entity);
+	}
 }
 
 void EksamenGameMode::UpdateEditor(World* world, entt::registry& registry, float deltatime)
@@ -237,6 +244,7 @@ void EksamenGameMode::UpdateBomber2(World* world, entt::registry& registry, floa
 void EksamenGameMode::DropBomb(World* world, const glm::vec3& bomberPos)
 {
 	auto* smm = world->GetStaticMeshManager();
+	auto* tm = world->GetTextureManager();
 
 	static size_t nextNameVal{ 0 };
 	Entity bomb = world->CreateEntity("Bomb" + std::to_string(nextNameVal));
@@ -330,9 +338,11 @@ void EksamenGameMode::ExplodeBomb(World* world, Entity& bomb, float deltatime)
 {
 	static float waitTime{ 2.f };
 
+	CreateExplosionParticles(world, bomb.GetPosition());
+
 	if (timeSinceLastExp < waitTime)
 	{ 
-		world->DeleteEntity(bomb.GetEntityId());
+		entForDeletion.emplace_back(bomb.GetEntityId());
 		return;
 	}
 
@@ -344,7 +354,7 @@ void EksamenGameMode::ExplodeBomb(World* world, Entity& bomb, float deltatime)
 	explosion.SetGain(1.f);
 	explosion.Play();
 
-	world->DeleteEntity(bomb.GetEntityId());
+	entForDeletion.emplace_back(bomb.GetEntityId());
 }
 
 void EksamenGameMode::CreateAiCharacter(World* world, entt::registry& registry)
@@ -540,68 +550,13 @@ void EksamenGameMode::FreeTrophy(World* world)
 	*/
 }
 
-void EksamenGameMode::CreateBaricades(World* world)
-{
-	/*
-	//Oppgave 10
-	//vfvndg3cb_LOD0
-	auto* sm = world->GetStaticMeshManager();
-	auto* rd = RenderDebugger::Get();
-
-	int mapArea = 1000;
-
-	for (size_t i = 0; i < 10; i++)
-	{
-		Entity wall = world->CreateEntity("Wall"+std::to_string(i));
-		auto& smm = wall.AddComponent<StaticMeshComponent>();
-		auto& col = wall.AddComponent<OBBCollisionComponent>((std::uint32_t)wall.GetEntityId());
-		// will be untextured
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/StoneWall/StoneWall.obj", smm);
-
-		wall.SetScale({ 1.0f, 1.f, 1.f });
-		col.collisionVolume.SetExtents({ 75.f, 35.f, 15.f });
-		col.collisionVolume.SetLocalPos({ 0.f, 30.f, 0.f });
-		
-
-		while (world->collisionSystem.Intersect(&col.collisionVolume))
-		{
-			float x = rand() % mapArea - 500;
-			float z = rand() % mapArea - 500;
-			float y = world->GetTerrainHeightAt(x, z);
-			float slope = world->GetTerrainSlopeAt(x, z);
-
-			if (slope < 0.6f) continue;
-
-			glm::quat rot = glm::identity<glm::quat>();
-			rot = glm::rotate(rot, glm::radians(float(rand() % 90)), { 0.f, 1.f, 0.f });
-
-			wall.SetRotation(rot);
-			wall.SetPosition({ x, y - 20.f, z });
-		}
-
-		barricades.emplace_back(wall);
-	}
-	*/
-}
-
 void EksamenGameMode::CreateStatusBillboard(World* world)
 {
-	{
-		Entity billEnt = world->CreateEntity("Billboard Text");
-		billEnt.SetScale({ 50.f, 50.f, 50.f });
-		statusBillboardEnt = billEnt.GetEntityId();
-		auto& text = billEnt.AddComponent<TextComponent>().text;
-		text.SetFontType(FontType::Segoe);
-		text.SetCoordinateSpace(CoordinateSpace::BillboardSpace);
-		text.SetText("");
-		text.SetHidden(true);
-		text.SetTextOffset({ 0.45f, 0.5f });
-	}
 	{
 		Entity pse = world->CreateEntity("Player Score");
 		playerScoreEnt = pse.GetEntityId();
 		auto& text = pse.AddComponent<TextComponent>().text;
-		text.SetFontType(FontType::Segoe);
+		text.SetFontType(FontType::Arial);
 		text.SetCoordinateSpace(CoordinateSpace::LocalSpace);
 		text.SetText("PScore: 0");
 		text.SetColor({ 1.f, 0.f, 0.f });
@@ -611,7 +566,7 @@ void EksamenGameMode::CreateStatusBillboard(World* world)
 		Entity ese = world->CreateEntity("Enemy Score");
 		enemyScoreEnt = ese.GetEntityId();
 		auto& text = ese.AddComponent<TextComponent>().text;
-		text.SetFontType(FontType::Segoe);
+		text.SetFontType(FontType::Arial);
 		text.SetCoordinateSpace(CoordinateSpace::LocalSpace);
 		text.SetText("EScore: 0");
 		text.SetColor({0.f, 0.f, 1.f});
@@ -621,43 +576,6 @@ void EksamenGameMode::CreateStatusBillboard(World* world)
 
 void EksamenGameMode::UpdateStatusBillboard(World* world, float deltatime)
 {
-	Entity billboard(statusBillboardEnt, world);
-
-	if (!billboard.IsValid()) return;
-
-	Entity pe(playerEnt, world);
-
-	billboard.SetPosition(pe.GetPosition() + glm::vec3(0.f, 20.f, 0.f));
-
-	auto& text = billboard.GetComponent<TextComponent>().text;
-
-	switch (gameStatus)
-	{
-	case PlayerWin:
-	{
-		text.SetColor({ 0.f, 1.f, 0.f });
-		text.SetText("PLAYER WINS!");
-		text.SetHidden(false);
-	}
-	break;
-	case AiWin:
-	{
-		text.SetColor({ 1.f, 0.f, 0.f });
-		text.SetText("AI WINS!");
-		text.SetHidden(false);
-	}
-	break;
-	case Draw:
-	{
-		text.SetColor({ 1.f, 0.f, 1.f });
-		text.SetText("DRAW!");
-		text.SetHidden(false);
-	}
-	break;
-	default:
-		break;
-	}
-
 	{
 		Entity ps(playerScoreEnt, world);
 		auto& text = ps.GetComponent<TextComponent>().text;
@@ -858,7 +776,7 @@ void EksamenGameMode::CreateTrees(World* world)
 			col.SetConvexHull(ch);
 			ent.SetTransform(model);
 			col.SetTransform(model);
-			col.SetExtents({ 20.f, 20.f, 20.f });
+			col.SetExtents({ 5.f, 20.f, 5.f });
 		}
 	}
 }
@@ -996,19 +914,37 @@ void EksamenGameMode::CreatePlants(World* world)
 	}
 }
 
-void EksamenGameMode::CreateParticles(World* world)
+void EksamenGameMode::CreateExplosionParticles(World* world, const glm::vec3& pos)
 {
 	auto* tm = world->GetTextureManager();
 
 	Entity emitterEnt = world->CreateEntity("Particle Emitter");
 	auto& emitter = emitterEnt.AddComponent<ParticleEmitterComponent>().emitter;
 
-	tm->LoadTexture("../3Dprog22/Assets/Textures/Fire/effect_023_c_0003.jpg", emitter.particleTexture);
+	tm->LoadTexture("../3Dprog22/Assets/Textures/Particle/Black smoke/blackSmoke00.png", emitter.particleTexture);
 
-	emitter.lifeTime = 6.f;
-	emitter.numParticles = 2000;
-	emitter.pos = { 0.f, 0.f, 0.f };
-	emitterEnt.SetPosition({ 0.f, 100.f, 0.f });
+	emitter.lifeTime = 2.9f;
+	emitter.numParticles = 5000;
+
+	emitter.forceFunc = [this](Particle& particle)
+	{
+		particle.pos = glm::vec3(0.f);
+		particle.lifetime = 3.f;
+
+		float yaw = rand() % 360;
+		float pitch = rand() % 89;
+
+		float length = rand() % 50;
+
+		particle.vel.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+		particle.vel.y = sin(glm::radians(pitch));
+		particle.vel.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+
+		particle.vel *= length;
+	};
+
+	emitterEnt.SetPosition(pos);
+	emitter.SetActivated(true);
 }
 
 void EksamenGameMode::LoadAmbientSound(World* world)

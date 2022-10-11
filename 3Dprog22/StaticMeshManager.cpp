@@ -416,12 +416,9 @@ bool StaticMeshManager::LoadStaticMesh(const std::string& path, StaticMesh& outS
    
     if (bCreateConvexHull)
     { 
-        if (!HullExists(path))
-        {
-            ConvexHull hull;
-            hull.BuildKDOP(meshData.verts.data(), meshData.verts.size(), KDOP::DOP10, KDOP_AXIS::Y);
-            InsertHullMap(path, hull);
-        }
+        ConvexHull hull;
+        hull.BuildKDOP(meshData.verts.data(), meshData.verts.size(), KDOP::DOP26, KDOP_AXIS::Y);
+        InsertHullMap(path, hull);       
     }
 
     return true;

@@ -23,7 +23,6 @@ class PhysicsGameMode : public GameMode
 	virtual void OnKeyPress(QKeyEvent* event) override;
 
 	void SpawnBox(const glm::vec3& pos);
-	void SpawnTriangle(const glm::vec3& pos);
 	void SpawnStatue(const glm::vec3& pos);
 	void SpawnCapsule(const glm::vec3& pos);
 

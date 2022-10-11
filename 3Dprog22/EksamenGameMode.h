@@ -30,6 +30,9 @@ class EksamenGameMode : public GameMode
 	//Funksjon som kun oppdateres i play modus
 	virtual void Update(class World* world, entt::registry& registry, float deltatime) override;
 
+	/*Deferred deletion*/
+	void UpdateEntForDeletion(class World* world);
+
 	//Funksjon som updater during editor
 	virtual void UpdateEditor(class World* world, entt::registry& registry, float deltatime) override;
 
@@ -86,10 +89,6 @@ private:
 
 	void FreeTrophy(class World* world);
 
-	//Oppgave 10
-	//Hinder til spilleren, kan legges inn med A*, velger uten.
-	void CreateBaricades(class World* world);
-
 	//Oppgave 11
 	void CreateStatusBillboard(class World* world);
 	//Oppgave 11
@@ -102,7 +101,7 @@ private:
 	//Pynt
 	void CreateTrees(class World* world);
 	void CreatePlants(class World* world);
-	void CreateParticles(class World* world);
+	void CreateExplosionParticles(class World* world, const glm::vec3& pos);
 	void LoadAmbientSound(class World* world);
 
 	entt::entity sunEnt;
@@ -116,6 +115,8 @@ private:
 
 	std::vector<Entity> playerTrophies;
 	std::vector<Entity> enemyTrophies;
+
+	std::vector<entt::entity> entForDeletion;
 
 	AudioData explosion;
 

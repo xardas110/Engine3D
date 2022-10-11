@@ -87,11 +87,11 @@ void World::OnInit(Camera* renderCamera)
     skeletalMeshSystem.Init(this, entRegistry);
     staticMeshInstancedSystem.Init(this, entRegistry);
     vegetationSystem.Init(this, entRegistry);
-    particleSystem.Init(this, entRegistry);
     billboardSystem.Init(this, entRegistry);
 
     InitScripts();
 
+    particleSystem.Init(this, entRegistry);
     bSplineSystem.Init(this, entRegistry);
 }
 

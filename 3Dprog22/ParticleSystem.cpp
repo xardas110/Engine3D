@@ -54,60 +54,13 @@ void ParticleSystem::InitQuadMesh(class World* world)
 
 void ParticleSystem::Update(World* world, entt::registry& registry, float deltaTime)
 {
-	auto* re = RenderEngine::Get();
-	auto* cam = world->GetRenderCamera();
 	auto view = registry.view<ParticleEmitterComponent>();
 	auto dataSize = sizeof(Particle);
 
 	for (auto entity : view)
 	{
 		auto& emitter = view.get<ParticleEmitterComponent>(entity).emitter;
-		auto& particles = emitter.particles;
-
-		for (auto it = particles.begin(); it != particles.end();)
-		{
-			auto& particle = *it;
-
-			if (particle.lifetime <= 0)
-			{
-				particles.erase(it);
-				continue;
-			}
-			else { ++it; }
-
-			UpdateParticle(particle, deltaTime);
-		}
-		SpawnDeadParticles(emitter);
-	}
-}
-
-void ParticleSystem::UpdateParticle(Particle& particle, float deltatime)
-{
-	particle.lifetime -= deltatime;
-	
-	glm::vec3 gravityImpulse = gravity * deltatime;
-	particle.vel += gravityImpulse;
-	particle.pos += particle.vel * deltatime;
-}
-
-void ParticleSystem::SpawnDeadParticles(ParticleEmitter& emitter)
-{
-	int delta = emitter.numParticles - emitter.particles.size();
-
-	for (size_t i = 0; i < delta; i++)
-	{
-		Particle particle;
-		float randX = ((rand() % 100) - 50) / 10.0f;
-		float randY = ((rand() % 100) - 50) / 10.0f;
-		float randZ = ((rand() % 100) - 50) / 10.0f;
-		float velocity = rand() % 10 - 5;
-		glm::vec3 random = glm::vec3(randX, randY, randZ);
-		float rColor = 0.5f + ((rand() % 100) / 100.0f);
-		particle.pos = emitter.pos + random;
-		particle.color = glm::vec4(rColor, rColor, rColor, 1.0f);
-		particle.lifetime = rand() % 3;
-		particle.vel = { 0.0f, 5.1f + velocity, 0.f};
-		emitter.particles.emplace_back(particle);
+		emitter.Update(deltaTime);
 	}
 }
 
@@ -138,7 +91,6 @@ void ParticleSystem::Render(class World* world, entt::registry& registry, const 
 
 		glm::mat4 model = trans.GetTransform();
 
-		/*
 		model[0][0] = viewMat[0][0];
 		model[0][1] = viewMat[1][0];
 		model[0][2] = viewMat[2][0];
@@ -150,7 +102,6 @@ void ParticleSystem::Render(class World* world, entt::registry& registry, const 
 		model[2][0] = viewMat[0][2];
 		model[2][1] = viewMat[1][2];
 		model[2][2] = viewMat[2][2];
-		*/
 
 		re->BindSSBO(ssbo);
 		re->BindSSBOData(0, sizeof(Particle) * emitter.particles.size(), emitter.particles.data());

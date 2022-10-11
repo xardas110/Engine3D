@@ -32,6 +32,7 @@ void Character::OnCreate()
 	body.SetMass(100.f);
 	body.SetElasticity(0.f);
 	body.SetFriction(1.f);
+	camera.SetFar(3000.f);
 	body.bLinearOnly = true;
 
 	inputComponent.BindMousePressed([this](QMouseEvent* e) {this->OnMousePressed(e); });

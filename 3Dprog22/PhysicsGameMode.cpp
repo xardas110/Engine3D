@@ -141,7 +141,6 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
                 }
             };
     }
-
     if (ImGui::Button("Spawn Statues 100"))
     {
         int iterations = 1;
@@ -226,27 +225,7 @@ void PhysicsGameMode::SpawnBox(const glm::vec3& pos)
     collider.SetExtents(glm::vec3(5.f));
     boxMesh.SetColor(glm::vec3(float(rand() % 10) / 10.f, float(rand() % 10) / 10.f, float(rand() % 10) / 10.f));
 
-    body.SetMass(1000.f);
-    e.SetPosition(pos);
-    e.SetScale({ 5.f, 5.f, 5.f });
-}
-
-void PhysicsGameMode::SpawnTriangle(const glm::vec3& pos)
-{
-    auto* world = World::Get();
-    auto* sm = world->GetStaticMeshManager();
-
-    Entity e = world->CreateEntity("Box");
-    auto& collider = e.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
-    auto& body = e.AddComponent<PhysicsComponent>().body;
-    auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    sm->LoadStaticMesh("../3Dprog22/Assets/Models/Rock1/Rock1.obj", boxMesh);
-    const MeshData* temp = sm->GetMeshData("../3Dprog22/Assets/Models/Rock1/Rock1.obj");
-
-    collider.BuildKDOP(temp->verts.data(), temp->verts.size(), KDOP::DOP26, KDOP_AXIS::Y);
-    collider.SetExtents(glm::vec3(5.f));
-
-    body.SetMass(50.f);
+    body.SetMass(100.f);
     e.SetPosition(pos);
     e.SetScale({ 5.f, 5.f, 5.f });
 }
@@ -279,10 +258,9 @@ void PhysicsGameMode::SpawnCapsule(const glm::vec3& pos)
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Capsule).col;
     auto& body = e.AddComponent<PhysicsComponent>().body;
     auto& boxMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-    body.bLinearOnly = true;
     sm->LoadStaticMesh("../3Dprog22/Assets/Models/Capsule/Capsule.obj", boxMesh);
     boxMesh.SetColor({ 0.7f, 0.5f, 0.f });
-    body.SetMass(50.f);
+    body.SetMass(1000.f);
     body.SetElasticity(0.5f);
     collider.SetExtents(glm::vec3(5.0f));
     e.SetPosition(pos);
