@@ -31,7 +31,6 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 	world->LoadRenderConfig("./Config/Renderer/ConfigSponza.json");
 
 	CreateTerrain(world, registry);
-	CreateHouse(world);
 	CreatePlants(world);
 	
 	LoadAmbientSound(world);
@@ -41,16 +40,14 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 	CreateSun(world);	
 	CreateBomber(world, registry);
 	CreateBomber2(world, registry);
-	CreateTophies(world);
 	CreateStatusBillboard(world);
 	CreateBaricades(world);
 	CreateTrees(world);
-		
-	//CreateParticles(world);
 
 	CreatePlayer(world, registry);
 	CreateAiCharacter(world, registry);
-	
+
+	CreateTophies(world);
 }
 
 void EksamenGameMode::Update(World* world, entt::registry& registry, float deltatime)
@@ -239,7 +236,6 @@ void EksamenGameMode::UpdateBomber2(World* world, entt::registry& registry, floa
 
 void EksamenGameMode::DropBomb(World* world, const glm::vec3& bomberPos)
 {
-	/*
 	auto* smm = world->GetStaticMeshManager();
 
 	static size_t nextNameVal{ 0 };
@@ -247,30 +243,16 @@ void EksamenGameMode::DropBomb(World* world, const glm::vec3& bomberPos)
 	nextNameVal++;
 
 	auto& sm = bomb.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-	auto& collision = bomb.AddComponent<OBBCollisionComponent>((std::uint32_t)bomb.GetEntityId()).collisionVolume;
+	auto& collision = bomb.AddComponent<CollisionComponent>(CollideableType::Sphere).col;
+	auto& rigidBody = bomb.AddComponent<PhysicsComponent>().body;
+
 	collision.SetExtents({ 10.f, 10.f, 10.f });
-	auto& rigidBody = bomb.AddComponent<PhysicsComponent>().rigidBody;
-
 	rigidBody.SetMass(100.f);
-	rigidBody.friction = 0.f;
-	rigidBody.bFixedRotation = true;
-	//Will refactor this later
-	rigidBody.inverseInertiaTensor = PhysicsHelper::GetInertiaTensor(&collision, &rigidBody);
-
-	int x = rand() % 2;
-	int z = rand() % 2;
-
-	glm::vec3 dir = { x, 1.f, z };
-	dir = glm::normalize(dir);
-	float force = rand() % 2000 + 100;
-
-	rigidBody.velocity += dir * force;
 
 	smm->LoadStaticMesh("../3Dprog22/Assets/Models/Sphere/Sphere.obj", sm);
 	bomb.SetPosition(bomberPos);
 	bomb.SetScale({ 5.f, 5.f, 5.f });
 	bombs.push_back({0.f,  bomb });
-	*/
 }
 
 void EksamenGameMode::UpdateDroppedBombs(World* world, float deltatime)
@@ -293,14 +275,6 @@ void EksamenGameMode::UpdateDroppedBombs(World* world, float deltatime)
 			BombStage1(b, deltatime);
 		}
 		t += deltatime;
-		
-		glm::vec3 newPos = b.GetPosition();
-		float y = world->GetTerrainHeightAt(newPos.x, newPos.z) + b.GetScale().y;
-
-		if (newPos.y < y)
-			newPos.y = y;
-
-		b.SetPosition(newPos);
 	}
 }
 
@@ -394,7 +368,7 @@ void EksamenGameMode::UpdateAiCharacter(World* world, float deltatime)
 	// oppgave 9
 	Entity ai(aiEnt, world);
 	auto pos = ai.GetPosition();
-	pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 11.f;
+	pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 13.f;
 	ai.SetPosition(pos);
 
 	float closestTrophy{ FLT_MAX };
@@ -433,17 +407,27 @@ void EksamenGameMode::UpdateAiCharacter(World* world, float deltatime)
 
 void EksamenGameMode::CreateTophies(World* world)
 {
+	auto ps = world->pathFindingSystem;
+	ps.UpdatePaths();
 	{//trophies
 		for (auto i = 0; i < 10; i++)
 		{
 			Entity trophyEnt = world->CreateEntity("PlayerTrophy" + std::to_string(i));
 			trophyEnt.AddComponent<ScriptComponent>().Bind<Trophy>();
 
-			float x = rand() % 1000 - 500;
-			float z = rand() % 1000 - 500;
-			float y = world->GetTerrainHeightAt(x, z) + 10.f;
+			glm::vec3 pos{ 0.f };
+			do
+			{
+				pos.x = rand() % 1000 - 500;
+				pos.z = rand() % 1000 - 500;
+				pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 15.f;
 
-			trophyEnt.SetPosition({x,y,z});	
+				if (ps.IsOccupied(pos))
+					std::cout << "Cell occupied " << std::endl;
+
+			} while (ps.IsOccupied(pos));
+
+			trophyEnt.SetPosition(pos);
 
 			playerTrophies.emplace_back(trophyEnt);
 		}
@@ -453,12 +437,19 @@ void EksamenGameMode::CreateTophies(World* world)
 			Entity trophyEnt = world->CreateEntity("EnemyTrophy" + std::to_string(i));
 			trophyEnt.AddComponent<ScriptComponent>().Bind<Trophy>();
 
+			glm::vec3 pos{ 0.f };
+			do
+			{		
+				pos.x = rand() % 1000 - 500;
+				pos.z = rand() % 1000 - 500;
+				pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 15.f;
 
-			float x = rand() % 1000 - 500;
-			float z = rand() % 1000 - 500;
-			float y = world->GetTerrainHeightAt(x, z) + 10.f;
+				if (ps.IsOccupied(pos))
+					std::cout << "Cell occupied " << std::endl;
 
-			trophyEnt.SetPosition({ x,y,z });
+			} while (ps.IsOccupied(pos));
+
+			trophyEnt.SetPosition(pos);
 
 			enemyTrophies.emplace_back(trophyEnt);
 		}	
@@ -782,9 +773,22 @@ void EksamenGameMode::DeleteSoundFiles()
 
 void EksamenGameMode::CreateTerrain(World* world, entt::registry& registry)
 {
-	world->terrainSystem.CreateTerrain(world, 
+	auto terrainId = world->terrainSystem.CreateTerrain(world, 
 		registry, 
 		"../3Dprog22/Config/Terrain/Terrain1.json");
+
+	Entity terrainEnt(terrainId, world);
+
+	auto& terrain = terrainEnt.GetComponent<TerrainComponent>().terrain;
+
+	auto& config = terrain.config;
+	CollisionHeightmap heightmap;
+
+	glm::vec3 scale(config.scaleXZ, config.scaleY, config.scaleXZ);
+
+	heightmap.SetHeightmap(config.N, config.N, scale, &terrain.heightmapBuffer);
+
+	world->physicsSystem->RegisterHeightmap(heightmap);
 }
 
 void EksamenGameMode::UpdateSun(World* world, float deltatime)
@@ -1005,34 +1009,6 @@ void EksamenGameMode::CreateParticles(World* world)
 	emitter.numParticles = 2000;
 	emitter.pos = { 0.f, 0.f, 0.f };
 	emitterEnt.SetPosition({ 0.f, 100.f, 0.f });
-}
-
-void EksamenGameMode::CreateHouse(World* world)
-{
-
-	{//creating a house   
-		Entity modelEnt = world->CreateEntity("house");
-		auto& model = modelEnt.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-		auto& transform = modelEnt.GetComponent<TransformComponent>();
-		auto& body = modelEnt.AddComponent<PhysicsComponent>().body;
-		auto& collider = modelEnt.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
-
-		body.SetMass(0.f);
-
-		glm::vec3 housePos = glm::vec3(-350.f, 100.f, 30.f);
-		float y = world->GetTerrainHeightAt(housePos.x, housePos.z);
-
-		housePos.y = y;
-
-		modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));
-		modelEnt.SetPosition(housePos);
-
-		world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
-
-		collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
-
-		collider.SetExtents(glm::vec3(0.5f));
-	}
 }
 
 void EksamenGameMode::LoadAmbientSound(World* world)

@@ -75,6 +75,7 @@ void Character::OnUpdate(float deltaTime)
 {
 	UpdateSpringArm(deltaTime);
 	UpdateAnimationState(deltaTime);
+	UpdateAudioState(deltaTime);
 	UpdateStunTimer(deltaTime);
 }
 
@@ -88,9 +89,54 @@ void Character::UpdateAnimationState(float deltatime)
 	if (!keyHeld) return;
 
 	auto& sm = GetComponent<SkeletalMeshComponent>().skeletalMesh;
-	if ((*keyHeld)[Qt::Key_W]) sm.PlayAnimation("Running", 1.f);
-	else if ((*keyHeld)[Qt::Key_S]) sm.PlayAnimation("RunningBack", 1.0f);
-	else sm.PlayAnimation("Idle", 1.0f);
+	auto& body = GetComponent<PhysicsComponent>().body;
+
+	if (CurrentStunTimer > 0.f) 
+	{ 
+		sm.PlayAnimation("Stunned", 1.f);
+		auto newVel = body.GetVelocity(); newVel.x = 0; newVel.z = 0.f;
+		body.SetVelocity(newVel);
+		animState = CharacterAnimationState::Stunned;
+		return;
+	}
+	else
+	{
+		sm.ResetAnimation("Stunned");
+		
+	}
+
+	if ((*keyHeld)[Qt::Key_W]) 
+	{
+		sm.PlayAnimation("Running", 1.f);
+		animState = CharacterAnimationState::Forward;
+		
+	}
+	else if ((*keyHeld)[Qt::Key_S])
+	{
+		sm.PlayAnimation("RunningBack", 1.0f);
+		animState = CharacterAnimationState::Back;
+	}
+	else
+	{
+		sm.PlayAnimation("Idle", 1.0f);
+		animState = CharacterAnimationState::Idle;
+	}
+}
+
+void Character::UpdateAudioState(float deltatime)
+{
+	auto& audios = GetComponent<AudioComponent>().audios;
+	
+	if (animState == CharacterAnimationState::Forward || animState == CharacterAnimationState::Back)
+	{
+		if (audios[Audio::FootSteps].GetState() != AudioState::Play)
+			audios[Audio::FootSteps].Play();
+		
+	}
+	else
+	{
+		audios[Audio::FootSteps].Stop();
+	}
 }
 
 void Character::UpdateSpringArm(float deltaTime)

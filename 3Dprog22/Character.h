@@ -16,7 +16,8 @@ namespace CharacterAnimationState
 	{
 		Idle,
 		Forward,
-		Back
+		Back,
+		Stunned
 	};
 }
 
@@ -28,6 +29,7 @@ class Character : public ScriptableEntity
 
 	void UpdateStunTimer(float deltatime);
 	void UpdateAnimationState(float deltatime);
+	void UpdateAudioState(float deltatime);
 	void UpdateSpringArm(float deltaTime);
 
 	void OnMousePressed(QMouseEvent* event);
@@ -48,7 +50,7 @@ class Character : public ScriptableEntity
 	glm::mat4 lastRotation{ 1.f };
 	
 	/*Character speed*/
-	const float speed = 50.f;
+	const float speed = 60.f;
 	const float rotSpeed = 100.f;
 	float currentRot = 0.f;
 	int iSign = 1; //which way to rotate
@@ -64,7 +66,6 @@ class Character : public ScriptableEntity
 	float backwardSpeedRatio{ 0.5f };
 
 	CharacterAnimationState::State animState = CharacterAnimationState::Idle;
-
 	std::map<int, bool>* mouseHeld{nullptr};
 	std::map<int, bool>* keyHeld{ nullptr };
 public:

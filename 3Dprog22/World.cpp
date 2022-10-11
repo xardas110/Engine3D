@@ -68,10 +68,11 @@ void World::OnInit(Camera* renderCamera)
     deferedRenderer = new DeferredRenderer;
     physicsSystem = new PhysicsSystem(this, entRegistry);
 
+    physicsSystem->Init();
+    pathFindingSystem.Init(this, entRegistry);
+
     SetRenderCamera(renderCamera);
  
-    auto* renderEngine = RenderEngine::Get();
-
     deferedRenderer->Init(this);
     cameraSystem.Init(this, entRegistry);
     audioSystem.Init(this, entRegistry);
@@ -91,8 +92,6 @@ void World::OnInit(Camera* renderCamera)
 
     InitScripts();
 
-    physicsSystem->Init();
-    pathFindingSystem.Init(this, entRegistry);
     bSplineSystem.Init(this, entRegistry);
 }
 

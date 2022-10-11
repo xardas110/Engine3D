@@ -55,7 +55,7 @@ class AiCharacter : public ScriptableEntity
 	
 	glm::vec3 targetPosition{ 0.f };
 
-	float movementSpeed{ 40.f };
+	float movementSpeed{ 20.f };
 	
 	const float stunTimer{ 2.f };
 	float currentStunTimer{ 0.f };

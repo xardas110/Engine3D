@@ -103,7 +103,6 @@ private:
 	void CreateTrees(class World* world);
 	void CreatePlants(class World* world);
 	void CreateParticles(class World* world);
-	void CreateHouse(class World* world);
 	void LoadAmbientSound(class World* world);
 
 	entt::entity sunEnt;

@@ -5,6 +5,7 @@
 
 void PathFindingSystem::Init(World* world, entt::registry& registry)
 {
+	this->registry = &registry;
 	nodeGrid = NodeGrid::Create({ -1500.f, 0.f, -1500.f }, 200, 200, 20.f, 20.f);
 
 	auto view = registry.view<CollisionComponent>();
@@ -82,4 +83,19 @@ bool PathFindingSystem::IsOccupied(const glm::vec3& ws)
 	if (!cell) return false;
 
 	return cell->bOccupied;
+}
+
+void PathFindingSystem::UpdatePaths()
+{
+	auto view = registry->view<CollisionComponent>();
+	for (auto entity : view)
+	{
+		auto& col = view.get<CollisionComponent>(entity).col;
+
+		if (col.bIgnorePathfinding) continue;
+
+		nodeGrid->CheckForBlockingAABB(col.GetLocalBounds());
+	}
+
+	nodeGrid->CalculateEdges();
 }

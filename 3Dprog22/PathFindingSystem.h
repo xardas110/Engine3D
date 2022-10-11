@@ -13,9 +13,12 @@ class PathFindingSystem
 	void DrawDebugPF2();
 public:
 	Node* GetNode(const glm::vec3& ws);
+	/*Run update path if information about current frame occupation is needed*/
 	bool IsOccupied(const glm::vec3& ws);
-
+	/*If new objects are added, update paths need to run*/
+	void UpdatePaths();
 private:
+	entt::registry* registry{ nullptr };
 	std::shared_ptr<NodeGrid> nodeGrid{ nullptr };
 };
 
