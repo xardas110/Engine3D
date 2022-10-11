@@ -5,20 +5,18 @@
 
 void PathFindingSystem::Init(World* world, entt::registry& registry)
 {
-	nodeGrid = NodeGrid::Create({ -1000.f, -1000.f, 0 }, 100, 100, 20.f, 20.f);
+	nodeGrid = NodeGrid::Create({ -1500.f, 0.f, -1500.f }, 200, 200, 20.f, 20.f);
 
-	/*
-	auto view = registry.view<OBBCollisionComponent>();
-
+	auto view = registry.view<CollisionComponent>();
 	for (auto entity : view)
 	{
-		auto& col = view.get<OBBCollisionComponent>(entity);
+		auto& col = view.get<CollisionComponent>(entity).col;
 
-		//if (col.collisionVolume.bIgnorePathFinding) continue;
+		if (col.bIgnorePathfinding) continue;
 
-		//nodeGrid->CheckForBlockingOBB(&col.collisionVolume);
+		nodeGrid->CheckForBlockingAABB(col.GetLocalBounds());	
 	}
-	*/
+	
 	nodeGrid->CalculateEdges();
 }
 
@@ -37,17 +35,9 @@ void PathFindingSystem::DrawDebugPF1()
 		{
 			auto& cell = cells[y][x];
 
-			auto tempPos = glm::vec3(0);// cell.bound->GetCenterOfMass();
-			tempPos.z = tempPos.y;
-			tempPos.y = 0.f;
-
-			auto tempScale = glm::vec3(1); // cell.bound->e;
-			tempScale.z = tempScale.y;
-			tempScale.y = 0.f;
-
 			if (cell.bOccupied)
 			{
-				rd->AddDebugBox(0.f, tempPos, tempScale, glm::identity<glm::quat>(), {1.f, 1.f, 0.f});
+				rd->AddDebugBoundingBox(0.f, cell.bound.min, cell.bound.max, {1.f, 1.f, 0.f});
 			}
 		}
 	}
@@ -64,21 +54,13 @@ void PathFindingSystem::DrawDebugPF2()
 		{
 			auto& cell = cells[y][x];
 
-			auto tempPos = glm::vec3(0.f);//cell.bound->GetCenterOfMass();
-			tempPos.z = tempPos.y;
-			tempPos.y = 0.f;
-
-			auto tempScale = glm::vec3(0.f);//cell.bound->e;
-			tempScale.z = tempScale.y;
-			tempScale.y = 0.f;
-
 			if (cell.bOccupied)
 			{
-				rd->AddDebugBox(FLT_MAX, tempPos, tempScale, glm::identity<glm::quat>());
+				rd->AddDebugBoundingBox(FLT_MAX, cell.bound.min, cell.bound.max, { 1.f, 0.f, 0.f });
 			}
 			else
 			{
-				rd->AddDebugBox(FLT_MAX, tempPos, tempScale, glm::identity<glm::quat>(), {1.f, 1.f, 1.f});
+				rd->AddDebugBoundingBox(FLT_MAX, cell.bound.min, cell.bound.max, { 1.f, 1.f, 1.f });
 			}
 		}
 	}

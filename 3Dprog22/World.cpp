@@ -90,10 +90,9 @@ void World::OnInit(Camera* renderCamera)
     billboardSystem.Init(this, entRegistry);
 
     InitScripts();
-    pathFindingSystem.Init(this, entRegistry);
 
     physicsSystem->Init();
-
+    pathFindingSystem.Init(this, entRegistry);
     bSplineSystem.Init(this, entRegistry);
 }
 
@@ -136,11 +135,11 @@ void World::OnUpdate(float deltaTime)
 
     billboardSystem.Update(this, entRegistry, deltaTime);
 
-    pathFindingSystem.Update(this, entRegistry);
-
     UpdateDeferredEntityDeletion();
 
     if (physicsSystem) physicsSystem->Update(deltatime);
+
+    pathFindingSystem.Update(this, entRegistry);
 
     bSplineSystem.PostUpdate(deltatime);
 }

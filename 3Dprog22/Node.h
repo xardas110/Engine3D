@@ -8,15 +8,13 @@ class Node
 {
 	friend class Graph;
 
-	std::string name;
 	std::list<NodeEdge> edges;
-
 	float pos[3]{};
 
 public:
 
 	Node() = delete;
-	Node(const _In_ std::string& name, const float _In_  pos[3]);
+	Node(const float _In_  pos[3]);
 
 	Node(const Node& other) = delete;
 	Node(Node&& other) = delete;
@@ -31,6 +29,5 @@ public:
 
 	void SetPosition(const float _In_ newPos[3]);
 	bool InsertEdge(const _In_opt_ std::shared_ptr<Node>& toNode);
-	const std::string& GetName() const;
 };
 

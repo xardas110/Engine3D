@@ -36,8 +36,6 @@ glm::vec3 NodeEdge::GetFromNodePos() const
 {
 	glm::vec3 result;
 	memcpy(&result, from_->GetPosition(), 12);
-	result.z = result.y;
-	result.y = 0.f;
 	return result;
 }
 
@@ -45,8 +43,6 @@ glm::vec3 NodeEdge::GetToNodePos() const
 {
 	glm::vec3 result;
 	memcpy(&result, to_->GetPosition(), 12);
-	result.z = result.y;
-	result.y = 0.f;
 	return result;
 }
 

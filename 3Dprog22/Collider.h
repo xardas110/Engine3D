@@ -22,6 +22,7 @@ struct Collideable
 	std::uint32_t shapeIndex{ UINT_MAX }; //4 byte
 
 	std::function<void(entt::entity)> onHit{nullptr};
+	bool bIgnorePathfinding = false;
 
 	bool IsValid() const;
 

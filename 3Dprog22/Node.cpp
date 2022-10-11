@@ -9,14 +9,8 @@ bool Node::InsertEdge(const _In_opt_ std::shared_ptr<Node>& toNode)
 	return true;
 }
 
-const std::string& Node::GetName() const
+Node::Node(const float _In_  pos[3])
 {
-	return name;
-}
-
-Node::Node(const _In_ std::string& name, const float _In_  pos[3])
-{
-	this->name = name;
 	memcpy(this->pos, pos, sizeof(pos[0]) * 3);
 }
 

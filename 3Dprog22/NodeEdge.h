@@ -21,7 +21,6 @@ public:
 	NodeEdge(NodeEdge&& other) noexcept = default;
 
 	NodeEdge& operator=(const NodeEdge& other) = default;
-
 	NodeEdge& operator=(NodeEdge&& other) noexcept = delete;
 
 	/// <summary>

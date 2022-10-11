@@ -251,7 +251,7 @@ void RenderDebugger::DrawDebugSegments(float deltatime)
     re->BindShader(shader);
     re->DisableCulling();
     re->DisableBlending();
-    re->EnableDepthTest();
+    re->DisableDepthTest();
     re->DrawElementsInstanced(segment, GL_LINES, gpuDataVec.size());
 }
 

@@ -19,15 +19,12 @@ void Trophy::OnCreate()
 
 	body.SetMass(0.f);
 	collision.SetExtents(glm::vec3(2.f));
-	
+	collision.bIgnorePathfinding = true;
+
 	if (tag.find("EnemyTrophy") != std::string::npos)
 	{
 		SetIgnorePathFinding(true);
 	}
-
-	//collision.BindOnHit([this](std::uint32_t otherEntity) {this->OnHit(otherEntity); });
-	//collision.SetExtents({4.f, 6.f, 4.f});
-	//collision.SetLocalPos({ 0.f, -2.f, 0.f });
 
 	if (!smm->LoadStaticMesh("../3Dprog22/Assets/Models/statue/statue.obj", mesh))
 	{

@@ -3,6 +3,7 @@
 #include "Node.h"
 #include "RenderDebugger.h"
 #include <iostream>
+#include "RenderDebugger.h"
 
 Cell::Cell()
 	:pos({ 0.f, 0.f, 0.f })
@@ -22,13 +23,11 @@ const glm::vec3* Cell::GetPos() const
 NodeGrid::NodeGrid(const glm::vec3& leftBotPos, const int xNum, const int yNum, const float xScale, const float yScale)
 	:xNum(xNum), yNum(yNum), xScale(xScale), yScale(yScale), leftBotPos(leftBotPos)
 {
-	bounds = std::make_shared<BoundingBox>();
-
-	//bounds->SetCenter(leftBotPos + glm::vec3((float)xNum * xScale * 0.5f, (float)yNum * yScale * 0.5f, 0.f));
-	//bounds->SetExtents({ (float)xNum * xScale * 0.5f, (float)yNum * yScale * 0.5f, 0.f });
+	bounds.min = leftBotPos;
+	bounds.max = leftBotPos + glm::vec3((float)xNum * xScale, 0.f, (float)yNum * yScale);
 
 	cells = new Cell * [yNum];
-
+	
 	for (int y = 0; y < yNum; y++)
 	{
 		cells[y] = new Cell[xNum];
@@ -37,14 +36,16 @@ NodeGrid::NodeGrid(const glm::vec3& leftBotPos, const int xNum, const int yNum, 
 		{
 			Cell cell;
 
-			auto boundPos = leftBotPos + glm::vec3(x * xScale + (xScale * 0.5f), y * yScale + (xScale * 0.5f), 0.f);
+			auto boundPos = leftBotPos + glm::vec3(x * xScale + (xScale * 0.5f), 0.f, y * yScale + (xScale * 0.5f));
 
 			const auto cellNr = y * xNum + x;
-			const std::string nodeName = std::to_string(cellNr);
 
-			cell.node = std::shared_ptr<Node>(new Node(nodeName, &boundPos.x));	
-			auto bb = BoundingBox();//AABBCollision(boundPos, { xScale * 0.5f, yScale * 0.5f, 0.f });
-			cell.bound = std::make_shared<BoundingBox>(bb);
+			cell.node = std::shared_ptr<Node>(new Node(&boundPos.x));
+
+			auto min = boundPos - glm::vec3(xScale * 0.5f, 0.f, yScale * 0.5f);
+			auto max = boundPos + glm::vec3(xScale * 0.5f, 0.f, yScale * 0.5f);
+
+			cell.bound = BoundingBox(min, max);
 
 			cells[y][x] = cell;
 		}
@@ -103,21 +104,9 @@ const glm::vec3& NodeGrid::GetLeftBotPos() const
 	return  leftBotPos;
 }
 
-const std::shared_ptr<BoundingBox> NodeGrid::GetBounds() const
+const BoundingBox NodeGrid::GetBounds() const
 {
 	return bounds;
-}
-
-_Ret_maybenull_ std::shared_ptr<Node> NodeGrid::FindNode(const _In_ std::string& name) const
-{
-	for (auto y = 0; y < yNum; y++)
-		for (auto x = 0; x < xNum; x++)
-		{
-			if (cells[y][x].node->GetName() == name)
-				return cells[y][x].node;
-		}
-
-	return nullptr;
 }
 
 const Cell* NodeGrid::FindCell(const int x, int y) const
@@ -137,10 +126,7 @@ const Cell* NodeGrid::FindCell(const glm::vec3& worldSpace) const
 
 const Cell* NodeGrid::FindCellYUp(const glm::vec3& ws) const
 {
-	auto tempPos = ws;
-	tempPos.y = tempPos.z;
-
-	return FindCell(tempPos);
+	return FindCell(ws);
 }
 
 Cell** NodeGrid::GetCells() const
@@ -166,7 +152,7 @@ int NodeGrid::GetY() const
 void NodeGrid::WorldToLocalGrid(const _In_ glm::vec3& pos, float _Inout_ posOut[2]) const
 {
 	posOut[0] = pos.x - leftBotPos.x;
-	posOut[1] = pos.y - leftBotPos.y;
+	posOut[1] = pos.z - leftBotPos.z;
 	
 	posOut[0] /= xScale;
 	posOut[1] /= yScale;
@@ -177,8 +163,6 @@ bool NodeGrid::InsertBlockingCell(int x, int y)
 	if (!CheckBounds(x, y)) return false;
 
 	auto& cell = cells[y][x];
-
-	//cells[y][x].bound = std::make_shared<Bounds>(AABBCollision(*cell.GetPos(), { xScale, yScale, 0.f }));
 	cells[y][x].bOccupied = true;
 
 	CalculateEdges();
@@ -199,9 +183,7 @@ bool NodeGrid::RemoveBlockingCell(int x, int y)
 	if (!CheckBounds(x, y)) return false;
 
 	auto& cell = cells[y][x];
-	const auto& bound = std::make_shared<BoundingBox>();// (AABBCollision(*cell.GetPos(), { xScale, yScale, 0.f }));
 
-	cell.bound = bound;
 	cell.bOccupied = false;
 
 	CalculateEdges();
@@ -225,6 +207,29 @@ void NodeGrid::SetCellColor(int x, int y, const _In_ glm::vec3& color) const
 std::unique_ptr<NodeGrid> NodeGrid::Create(const glm::vec3& leftBotPos, const int xNum, const int yNum, const float xScale, const float yScale)
 {
 	return std::unique_ptr<NodeGrid>(new NodeGrid(leftBotPos, xNum, yNum, xScale, yScale));
+}
+
+void NodeGrid::CheckForBlockingAABB(const BoundingBox& other)
+{
+	BoundingBox temp = other;
+	temp.min.y = 0.f;
+	temp.max.y = 0.f;
+
+	static bool bRan{ false };
+
+	for (size_t y = 0; y < yNum; y++)
+	{
+		for (size_t x = 0; x < xNum; x++)
+		{
+			auto& cell = cells[y][x];			
+			auto cellbb = cell.bound;
+
+			if (cell.bound.Intersect(temp))
+			{
+				cell.bOccupied = true;
+			}
+		}
+	}
 }
 
 NodeGrid::~NodeGrid()

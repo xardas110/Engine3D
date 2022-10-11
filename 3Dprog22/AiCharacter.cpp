@@ -199,14 +199,14 @@ int AiCharacter::CalculateAStarWayPts(const glm::vec3& current, const glm::vec3&
        
     auto targetNode = world->pathFindingSystem.GetNode(target);
 
+    if (!targetNode) return -2;
+
     glm::vec3 a;
 
     memcpy(&a, targetNode->GetPosition(), 12);
 
     VEC3(a)
 
-    if (!targetNode) return -2;
- 
     waypoints.clear();
 
     auto start = std::chrono::steady_clock::now();

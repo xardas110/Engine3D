@@ -115,7 +115,7 @@ bool PathFinding::AStar(_In_opt_ Node* from, _In_opt_ Node* to, _Out_opt_ Path& 
 				newPath.Add(endNodeEdge);
 
 				const auto* newPathTo = newPath.Back()->to_->GetPosition();
-				const float dirToEnd[2] = { to->GetPosition()[0] - newPathTo[0], to->GetPosition()[1] - newPathTo[1] };
+				const float dirToEnd[2] = { to->GetPosition()[0] - newPathTo[0], to->GetPosition()[2] - newPathTo[1] };
 				const float manhattanLength = abs(dirToEnd[0]) + abs(dirToEnd[1]) + hOff;
 
 				pq.push({ manhattanLength, newPath });

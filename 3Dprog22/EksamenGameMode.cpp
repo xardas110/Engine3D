@@ -453,6 +453,7 @@ void EksamenGameMode::CreateTophies(World* world)
 			Entity trophyEnt = world->CreateEntity("EnemyTrophy" + std::to_string(i));
 			trophyEnt.AddComponent<ScriptComponent>().Bind<Trophy>();
 
+
 			float x = rand() % 1000 - 500;
 			float z = rand() % 1000 - 500;
 			float y = world->GetTerrainHeightAt(x, z) + 10.f;
@@ -739,13 +740,13 @@ void EksamenGameMode::InitBezier()
 
 	bezier.SetPoints(pts);
 	glm::mat4 transform(1.f);
-	transform = glm::translate(transform, { -1000.f, 250.f, -500.f });
+	transform = glm::translate(transform, { -1000.f, 150.f, -500.f });
 	transform = glm::scale(transform, { 20.f, 1.f, 20.f });
 	bezier.SetTransform(transform);
 
 	bezier2.SetPoints(pts);
 	Transform trans;
-	trans.SetPosition({ -1000.f, 300.f, 1000.f });
+	trans.SetPosition({ -1000.f, 200.f, 1000.f });
 	trans.SetScale({ 20.f, 1.f, 20.f });
 	glm::mat4 model(1.f);
 	model = glm::rotate(model, glm::radians(90.f), { 0.f, 1.f, 0.f });
@@ -809,51 +810,53 @@ void EksamenGameMode::UpdateSun(World* world, float deltatime)
 
 void EksamenGameMode::CreateTrees(World* world)
 {
-	/*
 	auto* sm = world->GetStaticMeshManager();
-	std::uniform_real_distribution<float> rf(-500.f, 500.f);
+	std::uniform_real_distribution<float> rf(-1500.f, 1500.f);
 	std::default_random_engine engine;
 	{
-		Entity tree = world->CreateEntity("TreeInstanced");
+		Entity tree = world->CreateEntity("TreeInstanced1");
 		auto& instance = tree.AddComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
 
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/Lod0.obj", instance.LOD[0]);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/Lod1.obj", instance.LOD[1]);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/Lod2.obj", instance.LOD[2]);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/Lod3.obj", instance.LOD[3]);
+		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD0.obj", instance.LOD[0], true);
+		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD1.obj", instance.LOD[1]);
+		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD2.obj", instance.LOD[2]);
+		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD3.obj", instance.LOD[3]);
 
-		for (size_t i = 0; i < 30; i++)
+		auto ch = sm->GetConvexHull("../3Dprog22/Assets/Models/Tree2/LOD0.obj");
+
+		for (size_t i = 0; i < 200; i++)
 		{
-			Entity treeHitbox = world->CreateEntity("TreeHB" + std::to_string(i));
-			auto& treeCol = treeHitbox.AddComponent<OBBCollisionComponent>((std::uint32_t)treeHitbox.GetEntityId());
-			treeCol.collisionVolume.SetExtents({ 5.f, 40.f, 5.f });
-			treeCol.collisionVolume.SetLocalPos( { 0.f, 40.f, 0.f });
+			float x = rf(engine);
+			float z = rf(engine);
+			float y = world->GetTerrainHeightAt(x, z);
+			float ns = world->GetTerrainSlopeAt(x, z);
 
-			Transform trans;
-			while (world->collisionSystem.Intersect(&treeCol.collisionVolume))
-			{
-				float x = rf(engine);
-				float z = rf(engine);
-				float y = world->GetTerrainHeightAt(x, z);
-				float ns = world->GetTerrainSlopeAt(x, z);
-				if (ns < 0.4f) continue;
-			
-				trans.SetPosition({ x, y, z });
-				int randScale = rand() % 10;
-				trans.SetScale({ 20.f + randScale, 20.f + randScale, 20.f + randScale });
-				glm::mat4 rot(1.f);
-				rot = glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f));
-				trans.SetRotation(glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f)));
+			if (ns < 0.4f) continue;
 
-				treeHitbox.SetRotation(trans.GetRotation());
-				treeHitbox.SetPosition(trans.GetPosition());
-			}
+			glm::mat4 model(1.f);
+			glm::mat4 translate(1.f);
+			translate = glm::translate(translate, { x, y, z });
 
-			treeHitboxes.emplace_back(treeHitbox);
-			instance.transforms.emplace_back(trans.GetTransform());
+			glm::mat4 scale(1.f);
+			scale = glm::scale(scale, { 20.f, 20.f, 20.f });
+
+			glm::mat4 rot(1.f);
+			rot = glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f));
+
+			model = translate * rot * scale;
+
+			instance.transforms.emplace_back(model);
+
+			Entity ent = world->CreateEntity("TreeCol" + std::to_string(i));
+			auto& body = ent.AddComponent<PhysicsComponent>().body;
+			auto& col = ent.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
+			body.SetMass(0.f);
+			col.SetConvexHull(ch);
+			ent.SetTransform(model);
+			col.SetTransform(model);
+			col.SetExtents({ 20.f, 20.f, 20.f });
 		}
 	}
-	*/
 }
 
 void EksamenGameMode::CreatePlants(World* world)
@@ -1029,7 +1032,6 @@ void EksamenGameMode::CreateHouse(World* world)
 		collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
 
 		collider.SetExtents(glm::vec3(0.5f));
-
 	}
 }
 

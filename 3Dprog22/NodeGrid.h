@@ -16,7 +16,7 @@ struct Cell
 	~Cell() = default;
 
 	std::shared_ptr<Node>   node;
-	std::shared_ptr<BoundingBox>	bound;
+	BoundingBox	bound;
 
 	void SetPos(const glm::vec3&);
 	const glm::vec3* GetPos() const;
@@ -39,14 +39,15 @@ class NodeGrid
 	const float yScale;
 
 	const glm::vec3 leftBotPos;
-	std::shared_ptr<BoundingBox> bounds;
+
+	BoundingBox bounds;
 
 	Cell** cells;
 	void CalculateEdges();
 public:
 	
 	const _Ret_notnull_ glm::vec3& GetLeftBotPos() const;
-	const _Ret_notnull_ std::shared_ptr<BoundingBox> GetBounds() const;
+	const _Ret_notnull_ BoundingBox GetBounds() const;
 
 	NodeGrid() = delete;
 
@@ -56,7 +57,6 @@ public:
 	NodeGrid& operator= (const NodeGrid&) = delete;
 	NodeGrid& operator= (NodeGrid&&) = delete;
 
-	std::shared_ptr<Node> _Ret_maybenull_ FindNode(const _In_ std::string& name) const;
 	//localspace
 	const Cell* _Ret_maybenull_ FindCell(const _In_ int x, int y) const;
 	//worldspace
@@ -91,6 +91,8 @@ public:
 	void SetCellColor(int x, int y, const _In_ glm::vec3& color) const;
 
 	static std::unique_ptr<NodeGrid> Create(const _In_ glm::vec3& leftBotPos, const int xNum, const int yNum, const float xScale, const float yScale);
+
+	void CheckForBlockingAABB(const BoundingBox& other);
 
 	~NodeGrid();
 };
