@@ -30,9 +30,10 @@ void BSpline::AddPoint(glm::vec3& pt)
 	{
 		cp.emplace_back(pt);
 		t.emplace_back(t.back());
+		tMax++;
 		for (int i = 0; i < d+1; i++)
 		{
-			t[t.size() - (1 + i)] = ++tMax;
+			t[t.size() - (1 + i)] = tMax;
 		}
 	}
 }

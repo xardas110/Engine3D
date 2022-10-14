@@ -100,7 +100,6 @@ void BSplineSystem::THUpdate(int thIndex)
 {
 	if (!registry) return;
 
-	/*
 	if (currentTimer >= waitTime && !bDrawn[thIndex])
 	{
 		lines[thIndex].clear();
@@ -118,5 +117,4 @@ void BSplineSystem::THUpdate(int thIndex)
 		}	
 		bDrawn[thIndex] = true;
 	}
-	*/
 }

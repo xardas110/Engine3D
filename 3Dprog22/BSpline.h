@@ -2,10 +2,11 @@
 #include "Include/glm/glm.hpp"
 #include <vector>
 #include <array>
+#include <thread>
 
-#define BSPLINE_CONTEXTS 32
+#define BSPLINE_CONTEXTS 12
 
-#define BSPLINE_MAX_PTS 60
+#define BSPLINE_MAX_PTS 300
 #define MAX_BSPLINES 1
 
 #define MAX_SPLINE_SEGMENTS 100000
