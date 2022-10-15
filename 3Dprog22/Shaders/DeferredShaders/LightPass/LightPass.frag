@@ -86,11 +86,8 @@ void main()
 		break;
 		case SHADERMODEL_TERRAIN:
 		{
-			if (renderSettings.lightModel == 0)
-				colorOut = SM_PBR(dirlight, viewPos, fi.normal, fragPos, albedo, fi.metallic, fi.roughness, ssao, fi.ao, dlShadowFactor, 0.0);
 
-			if (renderSettings.lightModel == 1)
-				colorOut = SM_BRDF(dirlight, dlShadowFactor, fi.ao, ssao, viewPos, fi.normal, fragPos, albedo, vec4(fi.specular, fi.specPower));
+			colorOut = SM_BRDF(dirlight, dlShadowFactor, fi.ao, ssao, viewPos, fi.normal, fragPos, albedo, vec4(fi.specular, fi.specPower));
 
 		}
 		break;

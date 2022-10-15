@@ -32,7 +32,7 @@ private:
 	void ResetSpline();
 
 	int d{ 2 };	
-	float drawStep{ 0.8f };
+	float drawStep{ 0.4f };
 	bool bFirstUpdate{ true };
 	std::vector<int> t;
 	std::vector<glm::vec3> cp;

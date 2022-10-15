@@ -117,7 +117,7 @@ void RenderWindow::exposeEvent(QExposeEvent * e)
 
     if (editor)
     {
-        editor->EditorCamera.SetAspect((float)width() / (float)height());
+        editor->EditorCamera.SetAspect(float(width() * retinaScale) / float(height() * retinaScale));
     }
 
     world->OnExposeEvent(e);

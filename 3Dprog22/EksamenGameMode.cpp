@@ -788,6 +788,8 @@ void EksamenGameMode::CreatePlants(World* world)
 	auto* staticMeshManager = world->GetStaticMeshManager();
 	auto& materialManager = MaterialManager::Get();
 
+	float lightReduction = 1.f;
+
 	{ // for we are many grass
 		auto instancedEnt = world->CreateEntity("Instanced grass");
 		auto& veg = instancedEnt.AddComponent<VegetationComponent>().veg;
@@ -824,6 +826,12 @@ void EksamenGameMode::CreatePlants(World* world)
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Grass3/" + varString + '/' + varString + "_LOD2.fbx", variant.LOD[2]);
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Grass3/" + varString + '/' + varString + "_LOD3.fbx", variant.LOD[3]);
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Grass3/" + varString + '/' + varString + "_LOD4.fbx", variant.LOD[4]);
+
+			variant.LOD[0].SetColor(glm::vec3(lightReduction));
+			variant.LOD[1].SetColor(glm::vec3(lightReduction));
+			variant.LOD[2].SetColor(glm::vec3(lightReduction));
+			variant.LOD[3].SetColor(glm::vec3(lightReduction));
+			variant.LOD[4].SetColor(glm::vec3(lightReduction));
 
 			for (size_t i = 0; i < 1000; i++)
 			{
@@ -885,6 +893,12 @@ void EksamenGameMode::CreatePlants(World* world)
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Perennials/" + varString + '/' + varString + "_LOD2.fbx", variant.LOD[2]);
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Perennials/" + varString + '/' + varString + "_LOD3.fbx", variant.LOD[3]);
 			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Perennials/" + varString + '/' + varString + "_LOD4.fbx", variant.LOD[4]);
+
+			variant.LOD[0].SetColor(glm::vec3(lightReduction));
+			variant.LOD[1].SetColor(glm::vec3(lightReduction));
+			variant.LOD[2].SetColor(glm::vec3(lightReduction));
+			variant.LOD[3].SetColor(glm::vec3(lightReduction));
+			variant.LOD[4].SetColor(glm::vec3(lightReduction));
 
 			for (size_t i = 0; i < 1000; i++)
 			{
