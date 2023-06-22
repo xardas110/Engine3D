@@ -20,12 +20,13 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
  - Heightmap and Convex Hull collision
 
 ## Grass Scene
-<div style='float: center'>
-  <img style='width: 600px' src="/Images/Grass Scene.png"></img>
-</div>
 
 <div style='float: center'>
   <img style='width: 600px' src="/Images/vc1.png"></img>
+</div>
+
+<div style='float: center'>
+  <img style='width: 600px' src="/Images/Grass Scene.png"></img>
 </div>
 
 ## Sponza GI 0vs2 bounces
