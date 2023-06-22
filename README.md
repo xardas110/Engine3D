@@ -41,7 +41,7 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
   <img style='width: 600px' src="/Images/Sponza2Bounce.png"></img>
 </div>
 
-## Physics with terrain and B-Splines
+## Custom Physics with terrain and B-Splines
 <div style='float: center'>
   <img style='width: 600px' src="/Images/Convex.png"></img>
 </div>
