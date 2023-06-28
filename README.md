@@ -8,16 +8,34 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
  - SSAO
  - SMAA
  - Bloom
- - Global Illumination
+ - Global Illumination(VCT)
  - Depth of field
  - Volumetric Lighting
  - Volumetric Clouds
  - HDR + Tonemapping
  - GBuffer + ABuffer
+ - Instanced rendering
  
 ## Custom Physics engine
  - Rotational physics and friction for rigid bodies
- - Heightmap and Convex Hull collision
+ - Heightmap and Convex Hull collision GJK/EPA
+
+## AI
+- A* Pathfinding
+- Dijekstra Pathfinding
+- Finite state machine
+
+## Character
+- Character controller
+- Skeletal mesh
+- Animations
+
+## Audio
+- OpenAL
+
+## Curves
+- Bezier
+- B-Spline
 
 ## Volumetric Clouds
 
