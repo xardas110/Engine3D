@@ -20,22 +20,24 @@ Engine3D is an all purpose engine created for learning purposes during the 3D-Pr
  - Rotational physics and friction for rigid bodies
  - Heightmap and Convex Hull collision GJK/EPA
 
-## AI
-- A* Pathfinding
-- Dijekstra Pathfinding
-- Finite state machine
-
 ## Character
 - Character controller
 - Skeletal mesh
 - Animations
 
-## Audio
-- OpenAL
+## AI
+- A* Pathfinding
+- Dijekstra Pathfinding
+- Finite state machine
 
-## Curves
+## Curves / Datastructures
 - Bezier
 - B-Spline
+- Octree
+- Binarytree
+
+## Audio
+- OpenAL
 
 ## Volumetric Clouds
 
