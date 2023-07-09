@@ -27,8 +27,8 @@ EksamenGameMode::~EksamenGameMode()
 
 void EksamenGameMode::Create(World* world, entt::registry& registry)
 {
-	world->PreLoadAssets("./Assets/Paths.json");
-	world->LoadRenderConfig("./Config/Renderer/ConfigSponza.json");
+    world->PreLoadAssets("../3dprog22/Assets/Paths.json");
+    world->LoadRenderConfig("../3dprog22/Config/Renderer/ConfigSponza.json");
 
 	CreateTerrain(world, registry);
 	CreatePlants(world);

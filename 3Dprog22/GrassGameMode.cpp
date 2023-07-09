@@ -15,7 +15,7 @@ void GrassGameMode::Create(World* world, entt::registry& registry)
     CreateTerrain(world);
     CreateScene(world);
     CreateTrees(world);
-    world->LoadRenderConfig("./Config/Renderer/ConfigSponza.json");
+    world->LoadRenderConfig("../3dprog22/Config/Renderer/ConfigSponza.json");
 }
 
 void GrassGameMode::BeginPlay(World* world, entt::registry& registry)
@@ -346,9 +346,9 @@ void GrassGameMode::CreateScene(World* world)
         modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));       
         modelEnt.SetPosition(housePos);
 
-        world->GetStaticMeshManager()->LoadStaticMesh("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
+        world->GetStaticMeshManager()->LoadStaticMesh("../3dprog22/Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
 
-        collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("./Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
+        collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("../3dprog22/Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
 
         collider.SetExtents(glm::vec3(0.5f));
 

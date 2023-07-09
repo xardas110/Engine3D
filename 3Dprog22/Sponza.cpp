@@ -5,7 +5,7 @@
 void Sponza::Create(World* world, entt::registry& registry)
 {
 	CreateScene(world);
-	world->LoadRenderConfig("./Config/Renderer/ConfigSponza.json");
+    world->LoadRenderConfig("../3dprog22/Config/Renderer/ConfigSponza.json");
 }
 
 void Sponza::BeginPlay(World* world, entt::registry& registry)
@@ -35,7 +35,7 @@ void Sponza::CreateScene(World* world)
 	Entity sponza = world->CreateEntity("Crytek Sponza");
 	auto& transform = sponza.GetComponent<TransformComponent>();
 	auto& sm = sponza.AddComponent<StaticMeshComponent>();
-	smm->LoadStaticMesh("./Assets/crytek-sponza-noflag/sponza.obj", sm);
+    smm->LoadStaticMesh("../3dprog22/Assets/crytek-sponza-noflag/sponza.obj", sm);
 	transform.SetScale({0.10f, 0.10f, 0.10f});
 	transform.SetPosition({ 0.f, 0.f, 0.f });
 	

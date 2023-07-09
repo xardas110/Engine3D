@@ -5,35 +5,114 @@ CONFIG      += c++17
 
 TARGET      = 3D-programmering
 
-SOURCES += main.cpp \
+SOURCES += \
+    AiCharacter.cpp \
+    AlphaPassSystem.cpp \
     AnimationHelper.cpp \
+    AudioData.cpp \
+    AudioManager.cpp \
+    AudioSystem.cpp \
+    BSpline.cpp \
+    BSplineSystem.cpp \
+    BezierFunction.cpp \
+    BilateralSystem.cpp \
+    BillboardSystem.cpp \
+    BinaryNode.cpp \
+    BloomSystem.cpp \
+    BlurSystem.cpp \
+    BoundingVolumes.cpp \
     Camera.cpp \
+    CameraSystem.cpp \
     CascadedShadowMaps.cpp \
     Character.cpp \
-    CollisionHelper.cpp \
-    CollisionManager.cpp \
-    CollisionSystem.cpp \
-    CollisionVolume.cpp \
+    Collider.cpp \
+    Collision.cpp \
+    CollisionHeightmap.cpp \
+    CollisionUtility.cpp \
+    Composition.cpp \
+    ContactManifold.cpp \
+    ConvexHull.cpp \
+    DeferredRenderer.cpp \
+    DeferredRendererConfig.cpp \
+    DitheringSystem.cpp \
+    DoFSystem.cpp \
+    EPA.cpp \
+    EksamenGameMode.cpp \
     Entity.cpp \
+    FogSystem.cpp \
+    Font.cpp \
     FrameBufferManager.cpp \
+    GBufferSystem.cpp \
+    GJK.cpp \
+    GameMode.cpp \
+    GaussianBlurSystem.cpp \
+    GrassGameMode.cpp \
+    HDRSystem.cpp \
+    Include/ImGui/ImGuiRenderer.cpp \
+    Include/ImGui/QtImGui.cpp \
+    Include/ImGui/imgui.cpp \
+    Include/ImGui/imgui_draw.cpp \
+    Include/ImGui/imgui_tables.cpp \
+    Include/ImGui/imgui_widgets.cpp \
+    Include/glm/detail/glm.cpp \
     Json.cpp \
+    LightPassSystem.cpp \
+    MaterialManager.cpp \
     MeshManager.cpp \
+    Node.cpp \
+    NodeEdge.cpp \
+    NodeGrid.cpp \
+    OITSystem.cpp \
+    OITWB.cpp \
     Octree.cpp \
+    ParticleSystem.cpp \
+    Path.cpp \
+    PathFinding.cpp \
+    PathFindingSystem.cpp \
+    PerlinNoise.cpp \
+    PerlinWorley3D.cpp \
+    PhysicsGameMode.cpp \
     PhysicsSystem.cpp \
     PointGenerator.cpp \
-    Raycast.cpp \
-    RenderSystem.cpp \
+    RenderDebugger.cpp \
+    RenderEngine.cpp \
+    RigidBody.cpp \
+    SMAASystem.cpp \
+    SSAOSystem.cpp \
+    SSBOManager.cpp \
     ShaderManager.cpp \
     SkeletalMesh.cpp \
     SkeletalMeshManager.cpp \
+    SkeletalMeshSystem.cpp \
+    SkySystem.cpp \
+    Sponza.cpp \
     StaticMesh.cpp \
+    StaticMeshInstancedSystem.cpp \
     StaticMeshManager.cpp \
+    StaticMeshSystem.cpp \
+    Terrain.cpp \
+    TerrainConfig.cpp \
+    TerrainNode.cpp \
+    TerrainSystem.cpp \
+    Text.cpp \
+    ThreadPoolx.cpp \
+    Trophy.cpp \
     UBOManager.cpp \
+    VISM2.cpp \
+    VegetationSystem.cpp \
+    VolumetricClouds.cpp \
+    VolumetricLightSystem.cpp \
+    VoxelConeTracing.cpp \
+    WaterSystem.cpp \
+    WavFileReader.cpp \
+    Weather.cpp \
+    WeightedBlendSystem.cpp \
     World.cpp \
     WorldSerializer.cpp \
+    Worley3D.cpp \
     editor.cpp \
-    lissajous.cpp \
     logger.cpp \
+    main.cpp \
     mainwindow.cpp \
     renderwindow.cpp \
     shader.cpp \
@@ -45,24 +124,190 @@ SOURCES += main.cpp \
     visualobject.cpp
 
 HEADERS += \
+    ABuffer.h \
+    ACBO.h \
+    AiCharacter.h \
+    AlphaBuffer.h \
+    AlphaMesh.h \
+    AlphaPassSystem.h \
     AnimationHelper.h \
+    AudioData.h \
+    AudioManager.h \
+    AudioSystem.h \
+    BSpline.h \
+    BSplineSystem.h \
+    BezierFunction.h \
+    BilateralSystem.h \
+    Bilatreral.h \
+    BillboardSystem.h \
+    BinaryNode.h \
+    Bloom.h \
+    BloomSystem.h \
+    Blur.h \
+    BlurSystem.h \
+    BoundingVolumes.h \
     CMD.h \
     Camera.h \
+    CameraSystem.h \
     CascadedShadowMaps.h \
     Character.h \
+    Collider.h \
+    Collision.h \
+    CollisionHeightmap.h \
     CollisionHelper.h \
     CollisionManager.h \
     CollisionSystem.h \
+    CollisionUtility.h \
     CollisionVolume.h \
     Components.h \
+    Composition.h \
+    ContactManifold.h \
+    ConvexHull.h \
     CpuProfiler.h \
     Debug.h \
+    DeferredRenderer.h \
+    DeferredRendererConfig.h \
     DirectionalLight.h \
+    Dithering.h \
+    DitheringSystem.h \
+    DoF.h \
+    DoFSystem.h \
+    EPA.h \
+    EksamenGameMode.h \
     Entity.h \
+    Fog.h \
+    FogSystem.h \
+    Font.h \
     FrameBuffer.h \
     FrameBufferManager.h \
+    GBuffer.h \
+    GBufferSystem.h \
+    GJK.h \
+    GameMode.h \
+    GaussianBlur.h \
+    GaussianBlurSystem.h \
     GlobalTypeDefs.h \
+    GrassGameMode.h \
+    HDR.h \
+    HDRSystem.h \
     HelperMath.h \
+    Include/AL/al.h \
+    Include/AL/alc.h \
+    Include/AL/alext.h \
+    Include/AL/efx-creative.h \
+    Include/AL/efx-presets.h \
+    Include/AL/efx.h \
+    Include/Assimp/Compiler/poppack1.h \
+    Include/Assimp/Compiler/pstdint.h \
+    Include/Assimp/Compiler/pushpack1.h \
+    Include/Assimp/DefaultIOStream.h \
+    Include/Assimp/DefaultIOSystem.h \
+    Include/Assimp/DefaultLogger.hpp \
+    Include/Assimp/Defines.h \
+    Include/Assimp/Exporter.hpp \
+    Include/Assimp/IOStream.hpp \
+    Include/Assimp/IOSystem.hpp \
+    Include/Assimp/Importer.hpp \
+    Include/Assimp/LogStream.hpp \
+    Include/Assimp/Logger.hpp \
+    Include/Assimp/NullLogger.hpp \
+    Include/Assimp/ProgressHandler.hpp \
+    Include/Assimp/SceneCombiner.h \
+    Include/Assimp/ai_assert.h \
+    Include/Assimp/anim.h \
+    Include/Assimp/camera.h \
+    Include/Assimp/cexport.h \
+    Include/Assimp/cfileio.h \
+    Include/Assimp/cimport.h \
+    Include/Assimp/color4.h \
+    Include/Assimp/color4.inl \
+    Include/Assimp/config.h \
+    Include/Assimp/defs.h \
+    Include/Assimp/importerdesc.h \
+    Include/Assimp/light.h \
+    Include/Assimp/material.h \
+    Include/Assimp/material.inl \
+    Include/Assimp/matrix3x3.h \
+    Include/Assimp/matrix3x3.inl \
+    Include/Assimp/matrix4x4.h \
+    Include/Assimp/matrix4x4.inl \
+    Include/Assimp/mesh.h \
+    Include/Assimp/metadata.h \
+    Include/Assimp/port/AndroidJNI/AndroidJNIIOSystem.h \
+    Include/Assimp/postprocess.h \
+    Include/Assimp/quaternion.h \
+    Include/Assimp/quaternion.inl \
+    Include/Assimp/scene.h \
+    Include/Assimp/texture.h \
+    Include/Assimp/types.h \
+    Include/Assimp/vector2.h \
+    Include/Assimp/vector2.inl \
+    Include/Assimp/vector3.h \
+    Include/Assimp/vector3.inl \
+    Include/Assimp/version.h \
+    Include/FreeType/freetype.h \
+    Include/FreeType/ft2build.h \
+    Include/FreeType/ftadvanc.h \
+    Include/FreeType/ftbbox.h \
+    Include/FreeType/ftbdf.h \
+    Include/FreeType/ftbitmap.h \
+    Include/FreeType/ftbzip2.h \
+    Include/FreeType/ftcache.h \
+    Include/FreeType/ftchapters.h \
+    Include/FreeType/ftcid.h \
+    Include/FreeType/ftcolor.h \
+    Include/FreeType/ftconfig.h \
+    Include/FreeType/ftdriver.h \
+    Include/FreeType/fterrdef.h \
+    Include/FreeType/fterrors.h \
+    Include/FreeType/ftfntfmt.h \
+    Include/FreeType/ftgasp.h \
+    Include/FreeType/ftglyph.h \
+    Include/FreeType/ftgxval.h \
+    Include/FreeType/ftgzip.h \
+    Include/FreeType/ftheader.h \
+    Include/FreeType/ftimage.h \
+    Include/FreeType/ftincrem.h \
+    Include/FreeType/ftlcdfil.h \
+    Include/FreeType/ftlist.h \
+    Include/FreeType/ftlogging.h \
+    Include/FreeType/ftlzw.h \
+    Include/FreeType/ftmac.h \
+    Include/FreeType/ftmm.h \
+    Include/FreeType/ftmodapi.h \
+    Include/FreeType/ftmoderr.h \
+    Include/FreeType/ftmodule.h \
+    Include/FreeType/ftoption.h \
+    Include/FreeType/ftotval.h \
+    Include/FreeType/ftoutln.h \
+    Include/FreeType/ftparams.h \
+    Include/FreeType/ftpfr.h \
+    Include/FreeType/ftrender.h \
+    Include/FreeType/ftsizes.h \
+    Include/FreeType/ftsnames.h \
+    Include/FreeType/ftstdlib.h \
+    Include/FreeType/ftstroke.h \
+    Include/FreeType/ftsynth.h \
+    Include/FreeType/ftsystem.h \
+    Include/FreeType/fttrigon.h \
+    Include/FreeType/fttypes.h \
+    Include/FreeType/ftwinfnt.h \
+    Include/FreeType/integer-types.h \
+    Include/FreeType/mac-support.h \
+    Include/FreeType/public-macros.h \
+    Include/FreeType/t1tables.h \
+    Include/FreeType/ttnameid.h \
+    Include/FreeType/tttables.h \
+    Include/FreeType/tttags.h \
+    Include/ImGui/ImGuiRenderer.h \
+    Include/ImGui/QtImGui.h \
+    Include/ImGui/imconfig.h \
+    Include/ImGui/imgui.h \
+    Include/ImGui/imgui_internal.h \
+    Include/ImGui/imstb_rectpack.h \
+    Include/ImGui/imstb_textedit.h \
+    Include/ImGui/imstb_truetype.h \
+    Include/entt/entt.hpp \
     Include/glm/common.hpp \
     Include/glm/detail/_features.hpp \
     Include/glm/detail/_fixes.hpp \
@@ -125,6 +370,7 @@ HEADERS += \
     Include/glm/detail/type_vec4.inl \
     Include/glm/detail/type_vec4_simd.inl \
     Include/glm/exponential.hpp \
+    Include/glm/ext.hpp \
     Include/glm/ext/matrix_clip_space.hpp \
     Include/glm/ext/matrix_clip_space.inl \
     Include/glm/ext/matrix_common.hpp \
@@ -465,6 +711,8 @@ HEADERS += \
     Include/glm/mat4x4.hpp \
     Include/glm/matrix.hpp \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/foo.h \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/foo.h \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/ShowIncludes/foo.h \
     Include/glm/packing.hpp \
     Include/glm/simd/common.h \
     Include/glm/simd/exponential.h \
@@ -481,29 +729,87 @@ HEADERS += \
     Include/glm/vec3.hpp \
     Include/glm/vec4.hpp \
     Include/glm/vector_relational.hpp \
+    Include/snd/sndfile.h \
+    Include/snd/sndfile.hh \
     Json.h \
+    LensFlare.h \
+    LightPass.h \
+    LightPassSystem.h \
     Material.h \
+    MaterialManager.h \
     Mesh.h \
     MeshManager.h \
     Model.h \
+    Modules.h \
+    Node.h \
+    NodeEdge.h \
+    NodeGrid.h \
+    OITSystem.h \
+    OITWB.h \
     Octree.h \
+    PUBO.h \
+    ParticleSystem.h \
+    Path.h \
+    PathFinding.h \
+    PathFindingSystem.h \
+    PerlinNoise.h \
+    PerlinWorley3D.h \
+    PhysicsGameMode.h \
     PhysicsHelper.h \
     PhysicsSystem.h \
     PointGenerator.h \
     Raycast.h \
+    RenderDebugger.h \
+    RenderEngine.h \
     RenderSystem.h \
     RigidBody.h \
+    SMAA.h \
+    SMAASystem.h \
+    SSAO.h \
+    SSAOSystem.h \
+    SSBO.h \
+    SSBOManager.h \
+    Segment.h \
     ShaderManager.h \
     ShaderParameters.h \
     SkeletalMesh.h \
     SkeletalMeshManager.h \
+    SkeletalMeshSystem.h \
+    SkySystem.h \
+    Skydome.h \
+    Sponza.h \
     StaticMesh.h \
+    StaticMeshInstanced.h \
+    StaticMeshInstancedSystem.h \
     StaticMeshManager.h \
+    StaticMeshSystem.h \
+    Sun.h \
+    Terrain.h \
+    TerrainConfig.h \
+    TerrainNode.h \
+    TerrainSystem.h \
+    Text.h \
     Texture.h \
+    ThreadPoolx.h \
+    Transform.h \
+    Trophy.h \
     UBO.h \
     UBOManager.h \
+    VISM2.h \
+    Vegetation.h \
+    VegetationSystem.h \
+    VolumetricClouds.h \
+    VolumetricLightSystem.h \
+    VolumetricLighting.h \
+    VoxelConeTracing.h \
+    Water.h \
+    WaterSystem.h \
+    WavFileReader.h \
+    Weather.h \
+    WeightedBlendSystem.h \
     World.h \
     WorldSerializer.h \
+    Worley3D.h \
     editor.h \
     lissajous.h \
     logger.h \
@@ -519,8 +825,7 @@ HEADERS += \
     visualcube.h \
     visualobject.h
 
-FORMS += \
-    mainwindow.ui
+FORMS +=
 
 DISTFILES += \
     Assets/Maps/HeightFields/HM.RAW \
@@ -943,35 +1248,88 @@ DISTFILES += \
     Assets/Textures/skybox/top.jpg \
     Assets/Textures/skybox2.png \
     Assets/Textures/wall.jpg \
+    Include/Assimp/.editorconfig \
+    Include/Assimp/config.h.in \
+    Include/FreeType/Fonts/ARIALN.TTF \
+    Include/FreeType/Fonts/ARIALNB.TTF \
+    Include/FreeType/Fonts/ARIALNBI.TTF \
+    Include/FreeType/Fonts/ARIALNI.TTF \
+    Include/FreeType/Fonts/arial.ttf \
+    Include/FreeType/Fonts/arialbd.ttf \
+    Include/FreeType/Fonts/arialbi.ttf \
+    Include/FreeType/Fonts/ariali.ttf \
+    Include/FreeType/Fonts/ariblk.ttf \
+    Include/entt/LICENSE.txt \
+    Include/glm/CMakeLists.txt \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/query/client-MicrosoftVS/query.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/query/client-MicrosoftVS/query.json \
     Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/query/client-MicrosoftVS/query.json \
     Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cache-v2-d553a5b5a87bb58ae14d.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cache-v2-d553a5b5a87bb58ae14d.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cache-v2-d553a5b5a87bb58ae14d.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cmakeFiles-v1-a227c4214d890b83c525.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cmakeFiles-v1-a227c4214d890b83c525.json \
     Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/cmakeFiles-v1-a227c4214d890b83c525.json \
     Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/codemodel-v2-98c925ab97f0409fa339.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/codemodel-v2-98c925ab97f0409fa339.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/codemodel-v2-98c925ab97f0409fa339.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/index-2021-09-29T17-28-54-0754.json \
+    Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/index-2021-09-29T17-28-54-0754.json \
     Include/glm/out/build/x64-Debug (default)/.cmake/api/v1/reply/index-2021-09-29T17-28-54-0754.json \
     Include/glm/out/build/x64-Debug (default)/CMakeCache.txt \
+    Include/glm/out/build/x64-Debug (default)/CMakeCache.txt \
+    Include/glm/out/build/x64-Debug (default)/CMakeCache.txt \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCCompiler.cmake \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCCompiler.cmake \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCXXCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCXXCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeCXXCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_C.bin \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_C.bin \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_C.bin \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_CXX.bin \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_CXX.bin \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeDetermineCompilerABI_CXX.bin \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeRCCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeRCCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeRCCompiler.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeSystem.cmake \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeSystem.cmake \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CMakeSystem.cmake \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CompilerIdC/CMakeCCompilerId.exe \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/3.18.20081302-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/CMakeOutput.log \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/CMakeOutput.log \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/CMakeOutput.log \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/TargetDirectories.txt \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/TargetDirectories.txt \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/TargetDirectories.txt \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/cmake.check_cache \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/cmake.check_cache \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/cmake.check_cache \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/rules.ninja \
+    Include/glm/out/build/x64-Debug (default)/CMakeFiles/rules.ninja \
     Include/glm/out/build/x64-Debug (default)/CMakeFiles/rules.ninja \
     Include/glm/out/build/x64-Debug (default)/Testing/Temporary/LastTest.log \
+    Include/glm/out/build/x64-Debug (default)/Testing/Temporary/LastTest.log \
+    Include/glm/out/build/x64-Debug (default)/Testing/Temporary/LastTest.log \
+    Include/glm/out/build/x64-Debug (default)/VSInheritEnvironments.txt \
+    Include/glm/out/build/x64-Debug (default)/VSInheritEnvironments.txt \
     Include/glm/out/build/x64-Debug (default)/VSInheritEnvironments.txt \
     Include/glm/out/build/x64-Debug (default)/build.ninja \
+    Include/glm/out/build/x64-Debug (default)/build.ninja \
+    Include/glm/out/build/x64-Debug (default)/build.ninja \
     Include/glm/out/build/x64-Debug (default)/cmake_install.cmake \
+    Include/glm/out/build/x64-Debug (default)/cmake_install.cmake \
+    Include/glm/out/build/x64-Debug (default)/cmake_install.cmake \
+    Include/glm/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdC/CMakeCCompilerId.exe \
+    Include/glm/out/build/x64-Debug/CMakeFiles/3.21.21080301-MSVC_2/CompilerIdCXX/CMakeCXXCompilerId.exe \
     plainshader.frag \
     plainshader.vert
 
-
 INCLUDEPATH += $$PWD/Libs
 DEPENDPATH += $$PWD/Libs
-
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Libs/ -lassimp-vc140-mt
 else:unix: LIBS += -L$$PWD/Libs/ -lassimp-vc140-mt
@@ -987,3 +1345,25 @@ unix|win32: LIBS += -L$$PWD/Libs/ -lassimp-vc140-mt
 
 INCLUDEPATH += $$PWD/Libs
 DEPENDPATH += $$PWD/Libs
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/Libs/ -lOpenAL32
+else:unix: LIBS += -L$$PWD/Libs/ -lOpenAL32
+
+INCLUDEPATH += $$PWD/Libs
+DEPENDPATH += $$PWD/Libs
+
+unix|win32: LIBS += -L$$PWD/Libs/ -lOpenAL32
+
+INCLUDEPATH += $$PWD/Include/AL
+DEPENDPATH += $$PWD/Include/AL
+
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/Libs/OpenAL32.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/Libs/libOpenAL32.a
+
+unix|win32: LIBS += -L$$PWD/Libs/ -lsndfile
+
+INCLUDEPATH += $$PWD/Include/snd
+DEPENDPATH += $$PWD/Include/snd
+
+win32:!win32-g++: PRE_TARGETDEPS += $$PWD/Libs/sndfile.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$PWD/Libs/libsndfile.a
