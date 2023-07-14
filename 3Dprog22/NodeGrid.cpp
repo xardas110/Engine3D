@@ -3,12 +3,10 @@
 #include "Node.h"
 #include "RenderDebugger.h"
 #include <iostream>
-#include "RenderDebugger.h"
 
 Cell::Cell()
 	:pos({ 0.f, 0.f, 0.f })
-{
-}
+{}
 
 void Cell::SetPos(const glm::vec3& pos)
 {

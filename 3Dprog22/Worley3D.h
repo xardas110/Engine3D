@@ -9,7 +9,6 @@ struct Worley3DBindings
 	int outWorley;
 };
 
-
 struct Worley3D : protected QOpenGLFunctions_4_5_Core
 {
 	void Init(class World* world);

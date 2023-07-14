@@ -21,7 +21,7 @@ class EksamenGameMode : public GameMode
 {
 	~EksamenGameMode();
 
-	virtual void Create(class World* world, entt::registry& registry);
+    virtual void Create(class World* world, entt::registry& registry) override;
 
 	virtual void BeginPlay(class World* world, entt::registry& registry) override;
 
@@ -90,7 +90,7 @@ private:
 	void FreeTrophy(class World* world);
 
 	//Oppgave 11
-	void CreateStatusBillboard(class World* world);
+    void CreateStatusBillboard(class World* world);
 	//Oppgave 11
 	void UpdateStatusBillboard(class World* world, float deltatime);
 	//Oppgave 3 

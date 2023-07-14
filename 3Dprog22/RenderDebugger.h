@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "Mesh.h"
-#include "components.h"
 #include "shader.h"
 #include "SSBO.h"
 #include <QOpenGLFunctions_4_5_Core>

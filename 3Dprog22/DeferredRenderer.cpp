@@ -421,6 +421,26 @@ int DeferredRenderer::GetWindowHeight()
     return renderWindow->GetHeight();
 }
 
+void DeferredRenderer::ReloadVoxels(World *world)
+{
+    voxelConeTracing.ClearVoxel();
+    voxelConeTracing.BindVoxelStructure();
+    world->staticMeshSystem.Voxelize(world, world->entRegistry, &voxelConeTracing.voxelStructure);
+
+    glFinish();
+    voxelConeTracing.InjectDirectLight();
+    //glMemoryBarrier(GL_SHADER_IMAGE_ACCESS_BARRIER_BIT);
+    // glMemoryBarrier(GL_TEXTURE_FETCH_BARRIER_BIT);
+    glFinish();
+    voxelConeTracing.UnbindVoxelStructure();
+    voxelConeTracing.GenerateMipMap();
+    glFinish();
+    glMemoryBarrier(GL_SHADER_IMAGE_ACCESS_BARRIER_BIT);
+    glMemoryBarrier(GL_TEXTURE_FETCH_BARRIER_BIT);
+    voxelConeTracing.InjectFirstBounce();
+    glFinish();
+}
+
 void DeferredRenderer::LoadRenderConfig(const std::string& jsonPath)
 {
     config.Load(jsonPath);

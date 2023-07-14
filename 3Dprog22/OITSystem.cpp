@@ -15,11 +15,6 @@ void OITSystem::Init()
 void OITSystem::InitIndexBuffer()
 {
 	auto* re = RenderEngine::Get();
-	auto* rw = RenderWindow::Get();
-	auto* tm = re->GetTextureManager();
-
-	auto width = rw->GetWidth();
-	auto height = rw->GetHeight();
 
 	re->GenerateTexture("OITIndexBuffer", aBuffer.indexBuffer);
 	re->Bind2DTexture(aBuffer.indexBuffer);
@@ -30,8 +25,6 @@ void OITSystem::InitIndexBuffer()
 
 void OITSystem::InitAtomicBuffer()
 {
-	auto* re = RenderEngine::Get();
-	
 	unsigned cb;
 	glGenBuffers(1, &cb);
 	glBindBufferBase(GL_ATOMIC_COUNTER_BUFFER, 0, cb);
@@ -53,7 +46,6 @@ void OITSystem::InitSSBO()
 
 void OITSystem::InitClearTexture()
 {
-	auto* re = RenderEngine::Get();
 	auto* rw = RenderWindow::Get();
 
 	auto width = rw->GetWidth();
@@ -103,7 +95,6 @@ void OITSystem::Clear()
 void OITSystem::OnResize(unsigned width, unsigned height)
 {
 	auto* re = RenderEngine::Get();
-	auto* tm = re->GetTextureManager();
 
 	//index buffer
 	re->Bind2DTexture(aBuffer.indexBuffer);

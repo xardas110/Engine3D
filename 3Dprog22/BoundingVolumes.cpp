@@ -100,8 +100,7 @@ BoundingHullGeometry BoundingHullGeometry::BuildConvexHull(const glm::vec3* vert
 }
 
 BoundingBox::BoundingBox()
-{
-}
+{}
 
 BoundingBox::BoundingBox(const glm::vec3& min, const glm::vec3& max)
 	:min(min), max(max) {}

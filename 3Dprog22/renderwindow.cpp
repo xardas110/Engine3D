@@ -80,7 +80,6 @@ void RenderWindow::GameLoop()
     mTimeStart.restart();
     deltatime = (float)nsecElapsed / 1000000000.f;
 
-
     Update(deltatime);
     Render(deltatime);
 }

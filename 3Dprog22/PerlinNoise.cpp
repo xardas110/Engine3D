@@ -11,7 +11,6 @@ void PerlinNoise::Init(World* world)
 {
 	initializeOpenGLFunctions();
 
-	
 	float* data = new float[width * height * 4];
 
 	float xFactor = 1.f / (width - 1);

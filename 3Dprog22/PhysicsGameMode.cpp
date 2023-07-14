@@ -2,18 +2,14 @@
 #include "World.h"
 #include "Entity.h"
 #include "Components.h"
-#include "Debug.h"
-#include "RenderDebugger.h"
 #include "BSpline.h"
 #include "water.h"
 #include <random>
 
 PhysicsGameMode::~PhysicsGameMode()
-{
-}
+{}
 
 void PhysicsGameMode::Create(World* world, entt::registry& registry)
-
 {
     world->LoadRenderConfig("../3Dprog22/PhysicsWorldConfig.json");
     CreateScene(world);
@@ -23,18 +19,13 @@ void PhysicsGameMode::Create(World* world, entt::registry& registry)
 }
 
 void PhysicsGameMode::BeginPlay(World* world, entt::registry& registry)
-{
-   
-}
+{}
 
 void PhysicsGameMode::EndPlay(World* world, entt::registry& registry)
-{
-}
+{}
 
 void PhysicsGameMode::Update(World* world, entt::registry& registry, float deltatime)
-{
-  
-}
+{}
 
 void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float deltatime)
 {
@@ -115,7 +106,6 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
                     Entity e = world->CreateEntity("Sphere" + std::to_string(i * nrColumns + j));
                     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Sphere).col;
                     auto& sphereBody = e.AddComponent<PhysicsComponent>();
-                    auto& bSpline = e.AddComponent<BSplines>();
                     auto& sphereMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
                     collider.SetExtents(glm::vec3(4.8f, 4.8f, 4.8f));
                     collider.SetPosition(glm::vec3(0.f, 0.f, 0.f));
@@ -179,8 +169,7 @@ void PhysicsGameMode::UpdateEditor(World* world, entt::registry& registry, float
 }
 
 void PhysicsGameMode::Reset(World* world, entt::registry& registry)
-{
-}
+{}
 
 void PhysicsGameMode::OnKeyPress(QKeyEvent* event)
 {
@@ -274,7 +263,6 @@ void PhysicsGameMode::SpawnActualSphere(const glm::vec3& pos)
     auto sm = world->GetStaticMeshManager();
     auto& collider = e.AddComponent<CollisionComponent>(CollideableType::Sphere).col;
     auto& sphereBody = e.AddComponent<PhysicsComponent>();
-    auto& bSpline = e.AddComponent<BSplines>();
     auto& sphereMesh = e.AddComponent<StaticMeshComponent>().staticMeshInstanced;
     collider.SetExtents(glm::vec3(4.8f, 4.8f, 4.8f));
     collider.SetPosition(glm::vec3(0.f, 0.f, 0.f));
@@ -412,9 +400,6 @@ void PhysicsGameMode::CreateBSpline()
 void PhysicsGameMode::CreateScene(World* world)
 {
     CreateWater(world);
-    auto sm = world->GetStaticMeshManager();
-    auto tm = world->GetTextureManager();
-    float elasity = 0.2f;
 
     /*
     {

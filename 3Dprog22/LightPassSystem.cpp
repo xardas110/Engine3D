@@ -100,8 +100,6 @@ void LightPassSystem::Render(
 	auto* re = RenderEngine::Get();
 	auto* rw = RenderWindow::Get();
 
-	auto camFar = world->GetRenderCamera()->GetFar();
-
 	DirLight dirlight;
 	world->GetDirectionalLight(dirlight);
 

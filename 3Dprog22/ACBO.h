@@ -1,15 +1,17 @@
 #pragma once
 
+#define ACBO_INVALID 0xffffffff
+
 /// <summary>
 /// Atomic Counter Buffer Object
 /// </summary>
 struct ACBO
 {
-	unsigned id{0xffffffff};
+    unsigned id{ACBO_INVALID};
 
 	bool IsValid() const
 	{
-		return id != 0xffffffff;
+        return id != ACBO_INVALID;
 	}
 };
 

@@ -53,7 +53,6 @@ bool BSpline::CanReset()
 
 void BSpline::GetSegments(std::vector<BSplineSegment>& outSegments)
 {
-	auto* rd = RenderDebugger::Get();
 	for (float i = 0.f; i <= tMax; i += drawStep)
 	{
 		if (i + drawStep > tMax) break;
@@ -105,7 +104,6 @@ glm::vec3 BSpline::EvaluateBSplineSimple(float x)
 
 void BSpline::ResetSpline()
 {
-	glm::vec3 lastCP = EvaluateBSplineSimple(tMax - drawStep);
 	cp.clear();
 	t.clear();
 	bFirstUpdate = true;

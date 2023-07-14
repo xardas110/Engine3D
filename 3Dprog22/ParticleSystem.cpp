@@ -5,8 +5,6 @@
 #include "Particle.h"
 #include "Components.h"
 #include "Components.h"
-#include "debug.h"
-
 
 void ParticleSystem::Init(World* world, entt::registry& registry)
 {
@@ -55,8 +53,6 @@ void ParticleSystem::InitQuadMesh(class World* world)
 void ParticleSystem::Update(World* world, entt::registry& registry, float deltaTime)
 {
 	auto view = registry.view<ParticleEmitterComponent>();
-	auto dataSize = sizeof(Particle);
-
 	for (auto entity : view)
 	{
 		auto& emitter = view.get<ParticleEmitterComponent>(entity).emitter;

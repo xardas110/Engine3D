@@ -5,12 +5,10 @@
 #include "RenderDebugger.h"
 
 Character::Character()
-{
-}
+{}
 
 Character::~Character()
-{
-}
+{}
 
 void Character::OnCreate()
 {

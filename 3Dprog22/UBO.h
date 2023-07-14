@@ -1,15 +1,16 @@
 #pragma once
 
+#define UBO_INVALID 0xffffffff
+
 /// <summary>
 /// No ownership of UBOs, contains only data.
 /// </summary>
 struct UBO
 {
-	unsigned UBOId{0u};
+    unsigned UBOId{UBO_INVALID};
 
-	[[nodiscard]]
 	bool IsValid() const
 	{
-		return UBOId != 0;
+        return UBOId != UBO_INVALID;
 	}
 };

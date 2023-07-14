@@ -1,11 +1,14 @@
 #pragma once
+
+#define SSBO_INVALID 0xffffffff
+
 struct SSBO
 {
-	unsigned id;
+    unsigned id = SSBO_INVALID;
 
-	[[nodiscard]] bool IsValid() const
+    bool IsValid() const
 	{
-		return id != 0U;
+        return id != SSBO_INVALID;
 	}
 };
 

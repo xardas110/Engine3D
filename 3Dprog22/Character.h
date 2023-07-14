@@ -50,7 +50,7 @@ class Character : public ScriptableEntity
 	glm::mat4 lastRotation{ 1.f };
 	
 	/*Character speed*/
-	const float speed = 60.f;
+    const float speed = 80.f;
 	const float rotSpeed = 100.f;
 	float currentRot = 0.f;
 	int iSign = 1; //which way to rotate

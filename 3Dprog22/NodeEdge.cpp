@@ -8,9 +8,7 @@ NodeEdge::NodeEdge(Node* from, Node* to)
 }
 
 NodeEdge::~NodeEdge()
-{
-
-}
+{}
 
 float NodeEdge::GetPreCalculatedDistance() const
 {

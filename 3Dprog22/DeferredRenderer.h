@@ -91,6 +91,8 @@ private:
 	RenderSettings renderSettings;
 	UBO renderSettingsUBO;
 public:
+    void ReloadVoxels(class World* world);
+
 	void LoadRenderConfig(const std::string& jsonPath);
 };
 

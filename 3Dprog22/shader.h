@@ -5,8 +5,6 @@
 struct Shader
 {
     unsigned shaderId{0};
-	
-	[[nodiscard]]
 	bool IsValid() const;
 };
 

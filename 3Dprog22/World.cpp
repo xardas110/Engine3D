@@ -695,6 +695,8 @@ void World::SetGameMode(GameMode* gm)
     pathFindingSystem.Init(this, entRegistry);
 
     if (IsState(WorldState::Play)) OnBeginPlay();
+
+    deferedRenderer->ReloadVoxels(this);
 }
 
 void World::StartGameMode(int index)

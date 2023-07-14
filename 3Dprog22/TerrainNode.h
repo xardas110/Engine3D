@@ -4,8 +4,6 @@
 #include "Transform.h"
 #include <vector>
 
-//https://www.youtube.com/watch?v=z03vg2QTA8k&t=2053s&ab_channel=OREONENGINE
-
 //TODO: Add bounding boxes and culling
 class TerrainNode
 {

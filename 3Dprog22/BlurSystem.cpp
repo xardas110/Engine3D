@@ -12,14 +12,12 @@ void BlurSystem::Init()
 void BlurSystem::InitShader()
 {
 	auto* re = RenderEngine::Get();
-
 	re->GetShader(ShaderManager::Blur, blur.shader);
 }
 
 void BlurSystem::InitShaderBindings()
 {
 	auto* re = RenderEngine::Get();
-
 	re->BindShader(blur.shader);
 	bb.source = re->GetUniformLocation("source");
     bb.targetDim = re->GetUniformLocation("targetDim");
@@ -28,7 +26,6 @@ void BlurSystem::InitShaderBindings()
 void BlurSystem::InitFBO()
 {
 	auto* re = RenderEngine::Get();
-
 	re->GenerateFBO("Blur", blur.fbo);
 }
 
@@ -55,6 +52,5 @@ void BlurSystem::Filter(const Texture& source, const Texture& target, const Mesh
 void BlurSystem::Clean()
 {
     auto* re = RenderEngine::Get();
-
     re->DeleteFBO("Blur");
 }

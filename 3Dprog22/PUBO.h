@@ -1,14 +1,17 @@
 #pragma once
+
+#define PUBO_INVALID 0xffffffff
+
 /// <summary>
 /// Pixel unpack buffer object
 /// </summary>
 struct PUBO
 {
-	unsigned id{0xffffffff};
+    unsigned id{PUBO_INVALID};
 
 	bool IsValid() const
 	{
-		return id != 0xffffffff;
+        return id != PUBO_INVALID;
 	}
 };
 

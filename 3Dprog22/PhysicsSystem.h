@@ -30,7 +30,7 @@ class PhysicsSystem
 {
 	friend class World;
 	friend class Entity;
-	friend class Collideable;
+    friend struct Collideable;
 
 	PhysicsSystem(class World* world, entt::registry& registry);
 	~PhysicsSystem();
@@ -41,7 +41,6 @@ class PhysicsSystem
 	void Update(float deltatime);
 	void ApplyForces(float deltatime);
 	void MoveBodies(float deltatime);
-	void ComputeContacts(std::vector<ContactManifold>& outContacts);
 	void ResolveCollision(ContactManifold& contact);
 	void ResolveCollision(RigidBody& bodyA, RigidBody& bodyB, ContactManifold& contact);
 	void ResolveContacts(std::vector<ContactManifold>& inContacts);

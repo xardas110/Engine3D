@@ -18,9 +18,7 @@ void CameraSystem::InitBuffer(World* world)
 
 void CameraSystem::InitCameraMesh(World* world)
 {
-	auto* re = RenderEngine::Get();
 	auto* sm = world->GetStaticMeshManager();
-
 	sm->LoadStaticMesh("../3Dprog22/Assets/Models/Camera/Camera.obj", cameraMesh);
 }
 

@@ -5,9 +5,7 @@
 #include "Entity.h"
 #include "Collision.h"
 #include <iostream>
-#include "Debug.h"
 #include "RenderDebugger.h"
-#include "EPA.h"
 #include "ThreadPoolx.h"
 
 PhysicsSystem* gPhysicsSystem = nullptr;
@@ -218,7 +216,6 @@ void PhysicsSystem::DrawBoundingBoxes() const
 
 void PhysicsSystem::Update(float deltatime)
 {
-	auto* rd = RenderDebugger::Get();
 	ImGui::Begin("PhysicSystem debug");
 	ImGui::Checkbox("Enable threading(32threads)", &bSimulateThreaded);
 
@@ -344,11 +341,6 @@ void PhysicsSystem::MoveBodies(float deltatime)
 		auto& body = view.get<PhysicsComponent>(entity).body;
 		body.Update(deltatime);
 	}
-}
-
-void PhysicsSystem::ComputeContacts(std::vector<ContactManifold>& outContacts)
-{
-	
 }
 
 void PhysicsSystem::THMoveBodies(int thIndex)

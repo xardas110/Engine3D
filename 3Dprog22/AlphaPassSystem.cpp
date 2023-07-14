@@ -1,21 +1,21 @@
 #include "AlphaPassSystem.h"
 #include "RenderEngine.h"
 
-AlphaPassSystem* singleton;
+AlphaPassSystem* gs_singleton;
 
 AlphaPassSystem::AlphaPassSystem()
 {
-	singleton = this;
+    gs_singleton = this;
 }
 
 AlphaPassSystem::~AlphaPassSystem()
 {
-	singleton = nullptr;
+    gs_singleton = nullptr;
 }
 
 AlphaPassSystem* AlphaPassSystem::Get()
 {
-	return singleton;
+    return gs_singleton;
 }
 
 void AlphaPassSystem::AddAlphaMesh(const AlphaPassInformation& alphaPassInfo)

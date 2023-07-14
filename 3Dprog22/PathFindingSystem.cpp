@@ -1,7 +1,6 @@
 #include "PathFindingSystem.h"
 #include "World.h"
 #include "RenderDebugger.h"
-#include "Debug.h"
 
 void PathFindingSystem::Init(World* world, entt::registry& registry)
 {
@@ -22,8 +21,7 @@ void PathFindingSystem::Init(World* world, entt::registry& registry)
 }
 
 void PathFindingSystem::Update(World* world, entt::registry& registry)
-{
-}
+{}
 
 void PathFindingSystem::DrawDebugPF1()
 {

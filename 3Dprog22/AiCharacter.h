@@ -35,33 +35,6 @@ namespace AiPatrolState
 
 class AiCharacter : public ScriptableEntity
 {
-	glm::vec3 cachedWorldUp{ 0.f, 1.f, 0.f };
-	
-	entt::entity entityToFollow{entt::null};
-	float stopFollowDist2{ 1000.f };
-	float stopFollowThreshold{ 250.f };
-	
-	float (*PatrolFunction)(float x) { nullptr };
-
-	std::function<glm::vec2(float)> bezierFunc{nullptr};
-
-	float startX{ 0.f }, endX{ 0.f };
-	float currentX{ 0.f }, step{ 0.25f };
-	int sign{ 1 };
-
-	std::vector<glm::vec3> waypoints;
-
-	glm::mat4 patrolFunctionTransform{ 1.f };
-	
-	glm::vec3 targetPosition{ 0.f };
-
-	float movementSpeed{ 20.f };
-	
-	const float stunTimer{ 2.f };
-	float currentStunTimer{ 0.f };
-
-	bool bShowPath{ true };
-
 	void OnCreate() override;
 	
 	void OnBeginPlay() override;
@@ -71,14 +44,19 @@ class AiCharacter : public ScriptableEntity
 	void UpdateStunTimer(float deltatime);
 
 	void DrawPatrolFunction() const;
+
 	void DrawWayPoints() const;
 	
-	AiState::AiState aiState{ AiState::None };	
+    AiState::AiState aiState{ AiState::None };
+
 	AiMoveState::AiMoveState aiMoveState{ AiMoveState::None };
+
 	AiPatrolState::AiPatrolState aiPatrolState{ AiPatrolState::None };
 	
 	void SetAiState(AiState::AiState state);
+
 	[[nodiscard]] AiState::AiState GetAiState() const;
+
 	[[nodiscard]] bool IsAiState(AiState::AiState state) const;
 
 	void SetMoveState(AiMoveState::AiMoveState state);
@@ -86,17 +64,23 @@ class AiCharacter : public ScriptableEntity
 	[[nodiscard]] bool IsMoveState(AiMoveState::AiMoveState state) const;
 
 	void SetPatrolState(AiPatrolState::AiPatrolState state);
+
 	[[nodiscard]] AiPatrolState::AiPatrolState GetPatrolState() const;
+
 	[[nodiscard]] bool IsPatrolState(AiPatrolState::AiPatrolState state) const;
 
 	void UpdateAiState(float deltaTime);
+
 	void UpdateMovement(float deltaTime);
 	
 	void MoveToIn2D(const glm::vec3& pos2D);
+
 	void RotateTo2DDirection(const glm::vec3& dir2D);
+
 	bool HasReachedDestination();
 	
 	void UpdatePatrolState(float deltaTime);
+
 	void UpdatePatrolFunction(float deltaTime);
 
 	void UpdateFollow(float deltaTime);
@@ -114,23 +98,63 @@ class AiCharacter : public ScriptableEntity
 
 public:
 	void SetPatrolFunctionTransform(const glm::mat4& newTransform);
+
 	void SetPatrolFunction(float (*func)(float x), float startX, float endX, float step);
+
 	void ResetPatrolFunction();
 
 	void SetPatrolBezierTransform(const glm::mat4& newTransform);
+
 	void SetPatrolBezier(std::function<glm::vec2(float)> func, float startX, float endX, float step);
+
 	void ResetPatrolBezier();
 
 	void SetEntityToFollow(entt::entity entity);
+
 	void SetStopFollowDist2(float dist2);
+
 	void SetStopFollowThreshold(float val);
 
 	void SetMovementSpeed(const float newSpeed);
+
 	float GetMovementSpeed() const;
 
 	/*AStar*/
 	void MoveTo(const glm::vec3& target);
 
 	virtual void OnHit(entt::entity otherEnt) override;
+
+private:
+    entt::entity entityToFollow{entt::null};
+
+    glm::vec3 cachedWorldUp{ 0.f, 1.f, 0.f };
+
+    float stopFollowDist2{ 1000.f };
+
+    float stopFollowThreshold{ 250.f };
+
+    float (*PatrolFunction)(float x) { nullptr };
+
+    std::function<glm::vec2(float)> bezierFunc{nullptr};
+
+    float startX{ 0.f }, endX{ 0.f };
+
+    float currentX{ 0.f }, step{ 0.25f };
+
+    int sign{ 1 };
+
+    std::vector<glm::vec3> waypoints;
+
+    glm::mat4 patrolFunctionTransform{ 1.f };
+
+    glm::vec3 targetPosition{ 0.f };
+
+    float movementSpeed{ 20.f };
+
+    const float stunTimer{ 2.f };
+
+    float currentStunTimer{ 0.f };
+
+    bool bShowPath{ true };
 };
 

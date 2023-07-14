@@ -328,31 +328,6 @@ void GrassGameMode::CreateScene(World* world)
 
         player.SetPosition(pPos);
     }
-
-    {//creating a house   
-        Entity modelEnt = world->CreateEntity("house");
-        auto& model = modelEnt.AddComponent<StaticMeshComponent>().staticMeshInstanced;
-        auto& transform = modelEnt.GetComponent<TransformComponent>();
-        auto& body = modelEnt.AddComponent<PhysicsComponent>().body;
-        auto& collider = modelEnt.AddComponent<CollisionComponent>(CollideableType::ConvexHull).col;
-
-        body.SetMass(0.f);
-
-        glm::vec3 housePos = glm::vec3(-350.f, 100.f, 30.f);
-        float y = world->GetTerrainHeightAt(housePos.x, housePos.z);
-
-        housePos.y = y;
-
-        modelEnt.SetScale(glm::vec3(0.5, 0.5, 0.5));       
-        modelEnt.SetPosition(housePos);
-
-        world->GetStaticMeshManager()->LoadStaticMesh("../3dprog22/Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj", model, true);
-
-        collider.SetConvexHull(world->GetStaticMeshManager()->GetConvexHull("../3dprog22/Assets/Models/Old House 2/Old House Files/Old House 2 3D Models.obj"));
-
-        collider.SetExtents(glm::vec3(0.5f));
-
-    }
 }
 
 void GrassGameMode::CreateTrees(World* world)

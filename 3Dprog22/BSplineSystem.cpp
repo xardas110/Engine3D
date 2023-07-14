@@ -63,9 +63,7 @@ void BSplineSystem::PreUpdate(float deltatime)
 }
 
 void BSplineSystem::PostUpdate(float deltatime)
-{
-	
-}
+{}
 
 void BSplineSystem::RenderSegments(std::vector<BSplineSegment>& inSegments)
 {
@@ -82,7 +80,6 @@ void BSplineSystem::RenderSegments(std::vector<BSplineSegment>& inSegments)
 
 void BSplineSystem::Render()
 {
-	auto* rd = RenderDebugger::Get();
 	if (currentTimer >= waitTime)
 	{
 		currentTimer = 0.f;

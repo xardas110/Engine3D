@@ -118,6 +118,7 @@ void EksamenGameMode::CreateBomber(World* world, entt::registry& registry)
 	auto& bomberSM = bomber.AddComponent<StaticMeshComponent>().staticMeshInstanced;
 	smm->LoadStaticMesh("../3Dprog22/Assets/Models/SpaceCraft/E 45 Aircraft_obj.obj", bomberSM);
 	bomber.SetScale({10.f, 10.f, 10.f});
+    bomber.SetPosition({0.f, 100.f, 0.f});
 
 	//cache bombs
 	StaticMesh sm;
@@ -133,6 +134,7 @@ void EksamenGameMode::CreateBomber2(World* world, entt::registry& registry)
 	auto& bomberSM = bomber.AddComponent<StaticMeshComponent>().staticMeshInstanced;
 	smm->LoadStaticMesh("../3Dprog22/Assets/Models/SpaceCraft/E 45 Aircraft_obj.obj", bomberSM);
 	bomber.SetScale({ 25.f, 25.f, 25.f });
+    bomber.SetPosition({100.f, 100.f, 0.f});
 }
 
 void EksamenGameMode::UpdateBomber(World* world, entt::registry& registry, float deltatime)
@@ -244,7 +246,6 @@ void EksamenGameMode::UpdateBomber2(World* world, entt::registry& registry, floa
 void EksamenGameMode::DropBomb(World* world, const glm::vec3& bomberPos)
 {
 	auto* smm = world->GetStaticMeshManager();
-	auto* tm = world->GetTextureManager();
 
 	static size_t nextNameVal{ 0 };
 	Entity bomb = world->CreateEntity("Bomb" + std::to_string(nextNameVal));
@@ -352,7 +353,7 @@ void EksamenGameMode::ExplodeBomb(World* world, Entity& bomb, float deltatime)
 	explosion.SetPosition(bomb.GetPosition());
 	explosion.SetPitch(1.f);
 	explosion.SetGain(1.f);
-	explosion.Play();
+    //explosion.Play();
 
 	entForDeletion.emplace_back(bomb.GetEntityId());
 }
@@ -551,7 +552,8 @@ void EksamenGameMode::FreeTrophy(World* world)
 }
 
 void EksamenGameMode::CreateStatusBillboard(World* world)
-{
+{   
+    return;
 	{
 		Entity pse = world->CreateEntity("Player Score");
 		playerScoreEnt = pse.GetEntityId();
@@ -576,6 +578,7 @@ void EksamenGameMode::CreateStatusBillboard(World* world)
 
 void EksamenGameMode::UpdateStatusBillboard(World* world, float deltatime)
 {
+    return;
 	{
 		Entity ps(playerScoreEnt, world);
 		auto& text = ps.GetComponent<TextComponent>().text;

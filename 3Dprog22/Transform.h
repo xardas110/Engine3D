@@ -10,7 +10,6 @@
 /// </summary>
 struct Transform
 {
-	[[nodiscard]]
 	glm::mat4 GetTransform() const
 	{
 		glm::mat4 posMat(1.f);
@@ -51,7 +50,6 @@ struct Transform
 		rotation = newRot;
 	}
 	
-	[[nodiscard]]
 	const glm::vec3& GetPosition() const
 	{
 		return position;
@@ -62,13 +60,11 @@ struct Transform
 		position += addPos;
 	}
 
-	[[nodiscard]]
 	const glm::vec3& GetScale() const
 	{
 		return scale;
 	}
 
-	[[nodiscard]]
 	const glm::quat& GetRotation() const
 	{
 		return rotation;
