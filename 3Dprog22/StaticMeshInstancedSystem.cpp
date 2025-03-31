@@ -243,6 +243,7 @@ void StaticMeshInstancedSystem::MainPass(World* world, entt::registry& registry,
 	renderEngine->DisableBlending();
 	renderEngine->EnableDepthTest();
 	renderEngine->SetDepthMask(GL_TRUE);
+	renderEngine->SetDepthFunc(GL_LESS);
 
 	renderEngine->SetTexture(cloudShadowVL, GL_TEXTURE_2D, mpb.cloudShadowVL, 16);
 	renderEngine->SetTexture(shadowMaps, GL_TEXTURE_2D_ARRAY, mpb.sms, 17);
@@ -329,6 +330,10 @@ void StaticMeshInstancedSystem::BindMaterial(const MaterialTextured& material)
 		re->SetTexture(material.ambientmap, GL_TEXTURE_2D, mpb.mib.ambientmap.texLoc, 0);
 		re->SetInt(mpb.mib.ambientmap.numTex, 1);
 	}
+	else
+	{
+		re->SetInt(mpb.mib.ambientmap.numTex, 0);
+	}
 	if (material.HasEmissivemap()) // emissive will also count as AO
 	{
 		re->SetTexture(material.emissivemap, GL_TEXTURE_2D, mpb.mib.ambientmap.texLoc, 0);
@@ -339,40 +344,63 @@ void StaticMeshInstancedSystem::BindMaterial(const MaterialTextured& material)
 		re->SetTexture(material.diffusemap, GL_TEXTURE_2D, mpb.mib.diffusemap.texLoc, 1);
 		re->SetInt(mpb.mib.diffusemap.numTex, 1);
 	}
+	else
+	{
+		re->SetInt(mpb.mib.diffusemap.numTex, 0);
+	}
 	if (material.HasSpecularmap())
 	{
 		re->SetTexture(material.specularmap, GL_TEXTURE_2D, mpb.mib.specularmap.texLoc, 2);
 		re->SetInt(mpb.mib.specularmap.numTex, 1);
+	}
+	else
+	{
+		re->SetInt(mpb.mib.specularmap.numTex, 0);
 	}
 	if (material.HasNormalmap())
 	{
 		re->SetTexture(material.normalmap, GL_TEXTURE_2D, mpb.mib.normalmap.texLoc, 3);
 		re->SetInt(mpb.mib.normalmap.numTex, 1);
 	}
+	else
+	{
+		re->SetInt(mpb.mib.normalmap.numTex, 0);
+	}
 	if (material.HasHeightmap())
 	{
 		re->SetTexture(material.heightmap, GL_TEXTURE_2D, mpb.mib.normalmap.texLoc, 3);
 		re->SetInt(mpb.mib.normalmap.numTex, 1);
+	}
+	else
+	{
+		re->SetInt(mpb.mib.normalmap.numTex, 0);
 	}
 	if (material.HasOpacitymap())
 	{
 		re->SetTexture(material.opacitymap, GL_TEXTURE_2D, mpb.mib.opacitymap.texLoc, 4);
 		re->SetInt(mpb.mib.opacitymap.numTex, 1);
 	}
+	else
+	{
+		re->SetInt(mpb.mib.opacitymap.numTex, 0);
+	}
 	if (material.HasMetallicmap())
 	{
 		re->SetTexture(material.metallicmap, GL_TEXTURE_2D, mpb.mib.metallicmap.texLoc, 5);
 		re->SetInt(mpb.mib.metallicmap.numTex, 1);
+	}
+	else
+	{
+		re->SetInt(mpb.mib.metallicmap.numTex, 0);
 	}
 	if (material.HasRoughnessmap())
 	{
 		re->SetTexture(material.roughnessmap, GL_TEXTURE_2D, mpb.mib.roughnessmap.texLoc, 6);
 		re->SetInt(mpb.mib.roughnessmap.numTex, 1);
 	}
-	if (material.HasHeightmap())
+	else
 	{
-		re->SetTexture(material.heightmap, GL_TEXTURE_2D, mpb.mib.heightmap.texLoc, 7);
-		re->SetInt(mpb.mib.heightmap.numTex, 1);
+		re->SetInt(mpb.mib.roughnessmap.numTex, 0);
 	}
 
 	re->SetVec3(mpb.color, material.color);

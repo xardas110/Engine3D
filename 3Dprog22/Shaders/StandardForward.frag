@@ -52,6 +52,7 @@ float GetAlphaValue();
 vec3 GetDiffuseColor();
 vec3 GetSpecularColor();
 vec3 GetNormal();
+vec3 GetEmissiveColor();
 float GetMetallic();
 float GetRoughness();
 
@@ -64,10 +65,9 @@ void main()
 
 	if (meshSettings.bHasTransparency == 1)
 	{
-		vec3 albedo = GetDiffuseColor();//pow(GetDiffuseColor(), vec3(2.2f));
-
 		float shadowFactor = CalcDirLightShadow(dirlight, FragPos, norm, view);
-		vec4 shadedColor = SM_BRDF(dirlight, shadowFactor, viewPos, norm, FragPos, albedo, vec4(GetSpecularColor(), 0.f));
+		vec3 viewDir = normalize(viewPos - FragPos);
+		vec4 shadedColor = vec4(PHONG(dirlight, viewDir, norm, GetDiffuseColor() + GetEmissiveColor(), GetSpecularColor(), material.shininess, 1, GetAO(), shadowFactor), 1);
 		vec4 color = vec4(shadedColor.rgb, alpha);
 
 		vec3 toView = viewPos - FragPos;
@@ -82,7 +82,7 @@ void main()
 	}
 
 	b0Out = PackGBuffer(
-		GetDiffuseColor(), 
+		GetDiffuseColor() + GetEmissiveColor(), 
 		material.shininess,
 		GetSpecularColor().rgb,
 		0,
@@ -108,6 +108,15 @@ vec3 GetSpecularColor()// returns either a texture specular color or vec3(1)
 		return texture(material.specularmap, TexCoords).rgb;
 	}
 	return vec3(0.);
+}
+
+vec3 GetEmissiveColor()
+{
+	if (material.numEmissivemaps != 0)
+	{
+		return vec3(texture(material.emissivemap, TexCoords));
+	}
+	return vec3(0,0,0);
 }
 
 vec3 GetNormal2(sampler2D normalMap)

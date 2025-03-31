@@ -13,7 +13,7 @@ void CameraSystem::InitBuffer(World* world)
 {
 	auto* re = RenderEngine::Get();
 	auto* uboManager = re->GetUBOManager();
-	ubo = uboManager->CreateUBO("CameraUBO", 208, 2);
+	ubo = uboManager->CreateUBO("CameraUBO", 212, 2);
 }
 
 void CameraSystem::InitCameraMesh(World* world)
@@ -90,6 +90,10 @@ void CameraSystem::Update(World* world, entt::registry& registry, float deltaTim
 	renderEngine->BindUBOData(0, matricesTotalSize, matrices.data());
 	renderEngine->BindUBOData(matricesTotalSize, 16, &cameraPos);
 	renderEngine->BindUBOData(204, 4, &zFar);
+
+	static int time = 0.f;
+	time += 1;
+	renderEngine->BindUBOData(208, 4, &time);
 }
 
 void CameraSystem::Render(World* world, entt::registry& registry)

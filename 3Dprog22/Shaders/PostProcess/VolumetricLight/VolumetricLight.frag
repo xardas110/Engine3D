@@ -4,6 +4,7 @@ layout(location = 0) out vec4 ScatterColor;
 
 #include "../../Common/GBuffer.frag"
 #include "../../Common/Camera.frag"
+#include "../../Common/ABuffer.frag"
 
 #define MAX_CASCADES 4
 #define SHADOW_DEPTH_BIAS 0.0005
@@ -82,9 +83,27 @@ float ComputeScattering(float LdV)
 	return result;
 }
 
+vec3 WorldPosFromDepth2(in vec2 texCoords, in mat4 iProj, in mat4 iView, in float depth) {
+	
+	float z = depth * 2.0 - 1.0;
+
+	vec4 clipSpacePosition = vec4(texCoords * 2.0 - 1.0, z, 1.0);
+	vec4 viewSpacePosition = iProj * clipSpacePosition;
+
+	// Perspective division
+	viewSpacePosition /= viewSpacePosition.w;
+
+	vec4 worldSpacePosition = iView * viewSpacePosition;
+
+	return worldSpacePosition.xyz;
+}
+
 vec3 ComputeScatteringColor()
 {
-	vec3 fragPos = WorldPosFromDepth(TexCoords, inverse(proj), inverse(view));
+	float fragDepth = texture(gBuffer.depth, TexCoords).r;
+    GetClosestABufferDepth(TexCoords, fragDepth);
+	
+	vec3 fragPos = WorldPosFromDepth2(TexCoords, inverse(proj), inverse(view), fragDepth);
 
 	vec3 cameraPos = viewPos;
 	vec3 pixelPos = fragPos;

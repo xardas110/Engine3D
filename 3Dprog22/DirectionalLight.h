@@ -9,7 +9,7 @@ struct DirLight
 	glm::vec3 ambient = glm::vec3(0.4f, 0.4f, 0.4f);
 	glm::vec3 diffuse = glm::vec3(1.0f, 1.f, 1.f);;
 	glm::vec3 specular = glm::vec3(1.f, 1.f, 1.f);;
-	float itensity{ 2.f };
+	float itensity{ 2.0f };
 
 	bool bCastShadow{ true };
 	

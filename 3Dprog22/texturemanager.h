@@ -49,7 +49,7 @@ public:
 
     bool LoadCubemapTextures(CubemapDescriptor& descriptor, Texture &outTexture);
 
-	bool LoadTexture(const std::string& texturePath, Texture &outTexture, Texture::Types type = Texture::Types::Diffuse, int minFilter = GL_LINEAR_MIPMAP_LINEAR, int magFilter = GL_LINEAR, bool bFlip = false);
+	bool LoadTexture(const std::string& texturePath, Texture &outTexture, Texture::Types type = Texture::Types::Diffuse, int minFilter = GL_LINEAR_MIPMAP_LINEAR, int magFilter = GL_LINEAR, bool bFlip = false, bool* hasAlpha = nullptr);
 
 	bool LoadTextureTerrain(const std::string& texturePath, Texture& outTexture, Texture::Types type = Texture::Types::Diffuse, int minFilter = GL_LINEAR_MIPMAP_LINEAR, int magFilter = GL_LINEAR, bool bFlip = false);
 

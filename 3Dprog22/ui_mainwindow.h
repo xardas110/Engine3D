@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 6.2.3
+** Created by: Qt User Interface Compiler version 6.5.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -131,7 +131,7 @@ public:
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
-            MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
+            MainWindow->setObjectName("MainWindow");
         MainWindow->resize(1702, 1306);
         MainWindow->setMinimumSize(QSize(200, 200));
         QPalette palette;
@@ -1195,35 +1195,35 @@ public:
 "\n"
 ""));
         fileExit = new QAction(MainWindow);
-        fileExit->setObjectName(QString::fromUtf8("fileExit"));
+        fileExit->setObjectName("fileExit");
         centralWidget = new QWidget(MainWindow);
-        centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
+        centralWidget->setObjectName("centralWidget");
         gridLayout = new QGridLayout(centralWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
-        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setObjectName("gridLayout");
         splitter_9 = new QSplitter(centralWidget);
-        splitter_9->setObjectName(QString::fromUtf8("splitter_9"));
+        splitter_9->setObjectName("splitter_9");
         splitter_9->setOrientation(Qt::Horizontal);
         splitter_3 = new QSplitter(splitter_9);
-        splitter_3->setObjectName(QString::fromUtf8("splitter_3"));
+        splitter_3->setObjectName("splitter_3");
         splitter_3->setOrientation(Qt::Horizontal);
         tabWidget_3 = new QTabWidget(splitter_3);
-        tabWidget_3->setObjectName(QString::fromUtf8("tabWidget_3"));
+        tabWidget_3->setObjectName("tabWidget_3");
         tabWidget_3->setEnabled(false);
         tabWidget_3->setMaximumSize(QSize(0, 16777215));
         tab_6 = new QWidget();
-        tab_6->setObjectName(QString::fromUtf8("tab_6"));
+        tab_6->setObjectName("tab_6");
         tabWidget_3->addTab(tab_6, QString());
         tab_7 = new QWidget();
-        tab_7->setObjectName(QString::fromUtf8("tab_7"));
+        tab_7->setObjectName("tab_7");
         tabWidget_3->addTab(tab_7, QString());
         splitter_3->addWidget(tabWidget_3);
         splitter_2 = new QSplitter(splitter_3);
-        splitter_2->setObjectName(QString::fromUtf8("splitter_2"));
+        splitter_2->setObjectName("splitter_2");
         splitter_2->setOrientation(Qt::Vertical);
         frame = new QFrame(splitter_2);
-        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setObjectName("frame");
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Minimum);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -1235,12 +1235,12 @@ public:
         horizontalLayout_4 = new QHBoxLayout(frame);
         horizontalLayout_4->setSpacing(6);
         horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QString::fromUtf8("horizontalLayout_4"));
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
         splitter_10 = new QSplitter(frame);
-        splitter_10->setObjectName(QString::fromUtf8("splitter_10"));
+        splitter_10->setObjectName("splitter_10");
         splitter_10->setOrientation(Qt::Horizontal);
         saveButton = new QPushButton(splitter_10);
-        saveButton->setObjectName(QString::fromUtf8("saveButton"));
+        saveButton->setObjectName("saveButton");
         QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
@@ -1248,31 +1248,31 @@ public:
         saveButton->setSizePolicy(sizePolicy1);
         splitter_10->addWidget(saveButton);
         playButton = new QPushButton(splitter_10);
-        playButton->setObjectName(QString::fromUtf8("playButton"));
+        playButton->setObjectName("playButton");
         sizePolicy1.setHeightForWidth(playButton->sizePolicy().hasHeightForWidth());
         playButton->setSizePolicy(sizePolicy1);
         splitter_10->addWidget(playButton);
         resetButton = new QPushButton(splitter_10);
-        resetButton->setObjectName(QString::fromUtf8("resetButton"));
+        resetButton->setObjectName("resetButton");
         splitter_10->addWidget(resetButton);
 
         horizontalLayout_4->addWidget(splitter_10);
 
         splitter_2->addWidget(frame);
         splitter = new QSplitter(splitter_2);
-        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setObjectName("splitter");
         splitter->setOrientation(Qt::Vertical);
         layoutWidget = new QWidget(splitter);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setObjectName("layoutWidget");
         OpenGLLayout = new QVBoxLayout(layoutWidget);
         OpenGLLayout->setSpacing(6);
         OpenGLLayout->setContentsMargins(11, 11, 11, 11);
-        OpenGLLayout->setObjectName(QString::fromUtf8("OpenGLLayout"));
+        OpenGLLayout->setObjectName("OpenGLLayout");
         OpenGLLayout->setSizeConstraint(QLayout::SetMaximumSize);
         OpenGLLayout->setContentsMargins(0, 0, 0, 0);
         splitter->addWidget(layoutWidget);
         tabWidget = new QTabWidget(splitter);
-        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setObjectName("tabWidget");
         QSizePolicy sizePolicy2(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
         sizePolicy2.setHorizontalStretch(0);
         sizePolicy2.setVerticalStretch(0);
@@ -1330,22 +1330,22 @@ public:
 #endif
         tabWidget->setPalette(palette1);
         ContentBrowser = new QWidget();
-        ContentBrowser->setObjectName(QString::fromUtf8("ContentBrowser"));
+        ContentBrowser->setObjectName("ContentBrowser");
         horizontalLayout_6 = new QHBoxLayout(ContentBrowser);
         horizontalLayout_6->setSpacing(6);
         horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QString::fromUtf8("horizontalLayout_6"));
+        horizontalLayout_6->setObjectName("horizontalLayout_6");
         splitter_8 = new QSplitter(ContentBrowser);
-        splitter_8->setObjectName(QString::fromUtf8("splitter_8"));
+        splitter_8->setObjectName("splitter_8");
         splitter_8->setOrientation(Qt::Horizontal);
         treeView = new QTreeView(splitter_8);
-        treeView->setObjectName(QString::fromUtf8("treeView"));
+        treeView->setObjectName("treeView");
         splitter_8->addWidget(treeView);
         splitter_7 = new QSplitter(splitter_8);
-        splitter_7->setObjectName(QString::fromUtf8("splitter_7"));
+        splitter_7->setObjectName("splitter_7");
         splitter_7->setOrientation(Qt::Horizontal);
         listView = new QListView(splitter_7);
-        listView->setObjectName(QString::fromUtf8("listView"));
+        listView->setObjectName("listView");
         splitter_7->addWidget(listView);
         splitter_8->addWidget(splitter_7);
 
@@ -1353,13 +1353,13 @@ public:
 
         tabWidget->addTab(ContentBrowser, QString());
         tab_4 = new QWidget();
-        tab_4->setObjectName(QString::fromUtf8("tab_4"));
+        tab_4->setObjectName("tab_4");
         horizontalLayout_5 = new QHBoxLayout(tab_4);
         horizontalLayout_5->setSpacing(6);
         horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_5->setObjectName(QString::fromUtf8("horizontalLayout_5"));
+        horizontalLayout_5->setObjectName("horizontalLayout_5");
         outputLog = new QPlainTextEdit(tab_4);
-        outputLog->setObjectName(QString::fromUtf8("outputLog"));
+        outputLog->setObjectName("outputLog");
         QPalette palette2;
         QBrush brush7(QColor(238, 238, 238, 255));
         brush7.setStyle(Qt::SolidPattern);
@@ -1436,7 +1436,7 @@ public:
         splitter_3->addWidget(splitter_2);
         splitter_9->addWidget(splitter_3);
         splitter_6 = new QSplitter(splitter_9);
-        splitter_6->setObjectName(QString::fromUtf8("splitter_6"));
+        splitter_6->setObjectName("splitter_6");
         QSizePolicy sizePolicy3(QSizePolicy::Maximum, QSizePolicy::Preferred);
         sizePolicy3.setHorizontalStretch(0);
         sizePolicy3.setVerticalStretch(0);
@@ -1446,7 +1446,7 @@ public:
         splitter_6->setMaximumSize(QSize(500, 16777215));
         splitter_6->setOrientation(Qt::Vertical);
         splitter_5 = new QSplitter(splitter_6);
-        splitter_5->setObjectName(QString::fromUtf8("splitter_5"));
+        splitter_5->setObjectName("splitter_5");
         QSizePolicy sizePolicy4(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy4.setHorizontalStretch(0);
         sizePolicy4.setVerticalStretch(0);
@@ -1454,28 +1454,28 @@ public:
         splitter_5->setSizePolicy(sizePolicy4);
         splitter_5->setOrientation(Qt::Vertical);
         groupBox = new QGroupBox(splitter_5);
-        groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        groupBox->setObjectName("groupBox");
         sizePolicy4.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
         groupBox->setSizePolicy(sizePolicy4);
         groupBox->setMaximumSize(QSize(500, 16777215));
         verticalLayout_2 = new QVBoxLayout(groupBox);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
+        verticalLayout_2->setObjectName("verticalLayout_2");
         scrollArea = new QScrollArea(groupBox);
-        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
+        scrollArea->setObjectName("scrollArea");
         sizePolicy4.setHeightForWidth(scrollArea->sizePolicy().hasHeightForWidth());
         scrollArea->setSizePolicy(sizePolicy4);
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName(QString::fromUtf8("scrollAreaWidgetContents"));
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
         scrollAreaWidgetContents->setGeometry(QRect(0, 0, 484, 567));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setObjectName("verticalLayout");
         worldHierList = new QListWidget(scrollAreaWidgetContents);
-        worldHierList->setObjectName(QString::fromUtf8("worldHierList"));
+        worldHierList->setObjectName("worldHierList");
         QPalette palette3;
         palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
         QLinearGradient gradient(1, 0, 1, 1);
@@ -1579,27 +1579,27 @@ public:
 
         splitter_5->addWidget(groupBox);
         splitter_4 = new QSplitter(splitter_5);
-        splitter_4->setObjectName(QString::fromUtf8("splitter_4"));
+        splitter_4->setObjectName("splitter_4");
         splitter_4->setOrientation(Qt::Horizontal);
         splitter_5->addWidget(splitter_4);
         splitter_6->addWidget(splitter_5);
         stackedWidget = new QStackedWidget(splitter_6);
-        stackedWidget->setObjectName(QString::fromUtf8("stackedWidget"));
+        stackedWidget->setObjectName("stackedWidget");
         sizePolicy4.setHeightForWidth(stackedWidget->sizePolicy().hasHeightForWidth());
         stackedWidget->setSizePolicy(sizePolicy4);
         stackedWidget->setMinimumSize(QSize(0, 0));
         stackedWidget->setMaximumSize(QSize(16777215, 663));
         page = new QWidget();
-        page->setObjectName(QString::fromUtf8("page"));
+        page->setObjectName("page");
         sizePolicy4.setHeightForWidth(page->sizePolicy().hasHeightForWidth());
         page->setSizePolicy(sizePolicy4);
         page->setMinimumSize(QSize(0, 0));
         verticalLayout_3 = new QVBoxLayout(page);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        verticalLayout_3->setObjectName("verticalLayout_3");
         tabWidget_2 = new QTabWidget(page);
-        tabWidget_2->setObjectName(QString::fromUtf8("tabWidget_2"));
+        tabWidget_2->setObjectName("tabWidget_2");
         tabWidget_2->setEnabled(true);
         QSizePolicy sizePolicy5(QSizePolicy::Preferred, QSizePolicy::Maximum);
         sizePolicy5.setHorizontalStretch(0);
@@ -1608,34 +1608,34 @@ public:
         tabWidget_2->setSizePolicy(sizePolicy5);
         tabWidget_2->setMinimumSize(QSize(200, 650));
         tab = new QWidget();
-        tab->setObjectName(QString::fromUtf8("tab"));
+        tab->setObjectName("tab");
         sizePolicy5.setHeightForWidth(tab->sizePolicy().hasHeightForWidth());
         tab->setSizePolicy(sizePolicy5);
         verticalLayout_4 = new QVBoxLayout(tab);
         verticalLayout_4->setSpacing(6);
         verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QString::fromUtf8("verticalLayout_4"));
+        verticalLayout_4->setObjectName("verticalLayout_4");
         entityName = new QGroupBox(tab);
-        entityName->setObjectName(QString::fromUtf8("entityName"));
+        entityName->setObjectName("entityName");
         verticalLayout_5 = new QVBoxLayout(entityName);
         verticalLayout_5->setSpacing(6);
         verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QString::fromUtf8("verticalLayout_5"));
+        verticalLayout_5->setObjectName("verticalLayout_5");
         componentContainer = new QScrollArea(entityName);
-        componentContainer->setObjectName(QString::fromUtf8("componentContainer"));
+        componentContainer->setObjectName("componentContainer");
         componentContainer->setMinimumSize(QSize(0, 200));
         componentContainer->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         componentContainer->setWidgetResizable(true);
         componentContainer->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         scrollAreaWidgetContents_2 = new QWidget();
-        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setObjectName("scrollAreaWidgetContents_2");
         scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 458, 206));
         verticalLayout_6 = new QVBoxLayout(scrollAreaWidgetContents_2);
         verticalLayout_6->setSpacing(6);
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
+        verticalLayout_6->setObjectName("verticalLayout_6");
         transformComponent = new QGroupBox(scrollAreaWidgetContents_2);
-        transformComponent->setObjectName(QString::fromUtf8("transformComponent"));
+        transformComponent->setObjectName("transformComponent");
         sizePolicy4.setHeightForWidth(transformComponent->sizePolicy().hasHeightForWidth());
         transformComponent->setSizePolicy(sizePolicy4);
         transformComponent->setMinimumSize(QSize(0, 150));
@@ -1643,35 +1643,35 @@ public:
         verticalLayout_11 = new QVBoxLayout(transformComponent);
         verticalLayout_11->setSpacing(6);
         verticalLayout_11->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_11->setObjectName(QString::fromUtf8("verticalLayout_11"));
+        verticalLayout_11->setObjectName("verticalLayout_11");
         verticalLayout_7 = new QVBoxLayout();
         verticalLayout_7->setSpacing(6);
-        verticalLayout_7->setObjectName(QString::fromUtf8("verticalLayout_7"));
+        verticalLayout_7->setObjectName("verticalLayout_7");
         verticalLayout_8 = new QVBoxLayout();
         verticalLayout_8->setSpacing(6);
-        verticalLayout_8->setObjectName(QString::fromUtf8("verticalLayout_8"));
+        verticalLayout_8->setObjectName("verticalLayout_8");
         label = new QLabel(transformComponent);
-        label->setObjectName(QString::fromUtf8("label"));
+        label->setObjectName("label");
 
         verticalLayout_8->addWidget(label);
 
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setObjectName("horizontalLayout");
         posXEdit = new QLineEdit(transformComponent);
-        posXEdit->setObjectName(QString::fromUtf8("posXEdit"));
+        posXEdit->setObjectName("posXEdit");
         posXEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(posXEdit);
 
         posYEdit = new QLineEdit(transformComponent);
-        posYEdit->setObjectName(QString::fromUtf8("posYEdit"));
+        posYEdit->setObjectName("posYEdit");
         posYEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(posYEdit);
 
         posZEdit = new QLineEdit(transformComponent);
-        posZEdit->setObjectName(QString::fromUtf8("posZEdit"));
+        posZEdit->setObjectName("posZEdit");
         posZEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout->addWidget(posZEdit);
@@ -1684,29 +1684,29 @@ public:
 
         verticalLayout_9 = new QVBoxLayout();
         verticalLayout_9->setSpacing(6);
-        verticalLayout_9->setObjectName(QString::fromUtf8("verticalLayout_9"));
+        verticalLayout_9->setObjectName("verticalLayout_9");
         label_3 = new QLabel(transformComponent);
-        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setObjectName("label_3");
 
         verticalLayout_9->addWidget(label_3);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
         scaleXEdit = new QLineEdit(transformComponent);
-        scaleXEdit->setObjectName(QString::fromUtf8("scaleXEdit"));
+        scaleXEdit->setObjectName("scaleXEdit");
         scaleXEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_2->addWidget(scaleXEdit);
 
         scaleYEdit = new QLineEdit(transformComponent);
-        scaleYEdit->setObjectName(QString::fromUtf8("scaleYEdit"));
+        scaleYEdit->setObjectName("scaleYEdit");
         scaleYEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_2->addWidget(scaleYEdit);
 
         scaleZEdit = new QLineEdit(transformComponent);
-        scaleZEdit->setObjectName(QString::fromUtf8("scaleZEdit"));
+        scaleZEdit->setObjectName("scaleZEdit");
         scaleZEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_2->addWidget(scaleZEdit);
@@ -1719,29 +1719,29 @@ public:
 
         verticalLayout_10 = new QVBoxLayout();
         verticalLayout_10->setSpacing(6);
-        verticalLayout_10->setObjectName(QString::fromUtf8("verticalLayout_10"));
+        verticalLayout_10->setObjectName("verticalLayout_10");
         label_4 = new QLabel(transformComponent);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setObjectName("label_4");
 
         verticalLayout_10->addWidget(label_4);
 
         horizontalLayout_3 = new QHBoxLayout();
         horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
         rotXEdit = new QLineEdit(transformComponent);
-        rotXEdit->setObjectName(QString::fromUtf8("rotXEdit"));
+        rotXEdit->setObjectName("rotXEdit");
         rotXEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_3->addWidget(rotXEdit);
 
         rotYEdit = new QLineEdit(transformComponent);
-        rotYEdit->setObjectName(QString::fromUtf8("rotYEdit"));
+        rotYEdit->setObjectName("rotYEdit");
         rotYEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_3->addWidget(rotYEdit);
 
         rotZEdit = new QLineEdit(transformComponent);
-        rotZEdit->setObjectName(QString::fromUtf8("rotZEdit"));
+        rotZEdit->setObjectName("rotZEdit");
         rotZEdit->setMinimumSize(QSize(0, 30));
 
         horizontalLayout_3->addWidget(rotZEdit);
@@ -1767,56 +1767,56 @@ public:
 
         tabWidget_2->addTab(tab, QString());
         tab_2 = new QWidget();
-        tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        tab_2->setObjectName("tab_2");
         sizePolicy5.setHeightForWidth(tab_2->sizePolicy().hasHeightForWidth());
         tab_2->setSizePolicy(sizePolicy5);
         verticalLayout_12 = new QVBoxLayout(tab_2);
         verticalLayout_12->setSpacing(6);
         verticalLayout_12->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_12->setObjectName(QString::fromUtf8("verticalLayout_12"));
+        verticalLayout_12->setObjectName("verticalLayout_12");
         scrollArea_4 = new QScrollArea(tab_2);
-        scrollArea_4->setObjectName(QString::fromUtf8("scrollArea_4"));
+        scrollArea_4->setObjectName("scrollArea_4");
         scrollArea_4->setMinimumSize(QSize(0, 0));
         scrollArea_4->setWidgetResizable(true);
         scrollAreaWidgetContents_5 = new QWidget();
-        scrollAreaWidgetContents_5->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_5"));
+        scrollAreaWidgetContents_5->setObjectName("scrollAreaWidgetContents_5");
         scrollAreaWidgetContents_5->setGeometry(QRect(0, 0, 472, 234));
         verticalLayout_25 = new QVBoxLayout(scrollAreaWidgetContents_5);
         verticalLayout_25->setSpacing(6);
         verticalLayout_25->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_25->setObjectName(QString::fromUtf8("verticalLayout_25"));
+        verticalLayout_25->setObjectName("verticalLayout_25");
         groupBox_2 = new QGroupBox(scrollAreaWidgetContents_5);
-        groupBox_2->setObjectName(QString::fromUtf8("groupBox_2"));
+        groupBox_2->setObjectName("groupBox_2");
         groupBox_2->setMaximumSize(QSize(16777215, 200));
         groupBox_2->setSizeIncrement(QSize(0, 0));
         verticalLayout_13 = new QVBoxLayout(groupBox_2);
         verticalLayout_13->setSpacing(6);
         verticalLayout_13->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_13->setObjectName(QString::fromUtf8("verticalLayout_13"));
+        verticalLayout_13->setObjectName("verticalLayout_13");
         DrawDebugBoxes = new QCheckBox(groupBox_2);
-        DrawDebugBoxes->setObjectName(QString::fromUtf8("DrawDebugBoxes"));
+        DrawDebugBoxes->setObjectName("DrawDebugBoxes");
 
         verticalLayout_13->addWidget(DrawDebugBoxes);
 
         pf1 = new QCheckBox(groupBox_2);
-        pf1->setObjectName(QString::fromUtf8("pf1"));
+        pf1->setObjectName("pf1");
 
         verticalLayout_13->addWidget(pf1);
 
         pf2 = new QCheckBox(groupBox_2);
-        pf2->setObjectName(QString::fromUtf8("pf2"));
+        pf2->setObjectName("pf2");
 
         verticalLayout_13->addWidget(pf2);
 
         DrawDynamicOctree = new QCheckBox(groupBox_2);
-        DrawDynamicOctree->setObjectName(QString::fromUtf8("DrawDynamicOctree"));
+        DrawDynamicOctree->setObjectName("DrawDynamicOctree");
         sizePolicy1.setHeightForWidth(DrawDynamicOctree->sizePolicy().hasHeightForWidth());
         DrawDynamicOctree->setSizePolicy(sizePolicy1);
 
         verticalLayout_13->addWidget(DrawDynamicOctree);
 
         worldAxises = new QCheckBox(groupBox_2);
-        worldAxises->setObjectName(QString::fromUtf8("worldAxises"));
+        worldAxises->setObjectName("worldAxises");
 
         verticalLayout_13->addWidget(worldAxises);
 
@@ -1824,24 +1824,24 @@ public:
         verticalLayout_25->addWidget(groupBox_2);
 
         groupBox_5 = new QGroupBox(scrollAreaWidgetContents_5);
-        groupBox_5->setObjectName(QString::fromUtf8("groupBox_5"));
+        groupBox_5->setObjectName("groupBox_5");
         verticalLayout_24 = new QVBoxLayout(groupBox_5);
         verticalLayout_24->setSpacing(6);
         verticalLayout_24->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_24->setObjectName(QString::fromUtf8("verticalLayout_24"));
+        verticalLayout_24->setObjectName("verticalLayout_24");
         gmCB = new QComboBox(groupBox_5);
         gmCB->addItem(QString());
         gmCB->addItem(QString());
         gmCB->addItem(QString());
         gmCB->addItem(QString());
         gmCB->addItem(QString());
-        gmCB->setObjectName(QString::fromUtf8("gmCB"));
+        gmCB->setObjectName("gmCB");
         gmCB->setMinimumSize(QSize(0, 30));
 
         verticalLayout_24->addWidget(gmCB);
 
         gmStart = new QPushButton(groupBox_5);
-        gmStart->setObjectName(QString::fromUtf8("gmStart"));
+        gmStart->setObjectName("gmStart");
         gmStart->setMinimumSize(QSize(92, 30));
 
         verticalLayout_24->addWidget(gmStart);
@@ -1859,7 +1859,7 @@ public:
 
         stackedWidget->addWidget(page);
         page_2 = new QWidget();
-        page_2->setObjectName(QString::fromUtf8("page_2"));
+        page_2->setObjectName("page_2");
         stackedWidget->addWidget(page_2);
         splitter_6->addWidget(stackedWidget);
         splitter_9->addWidget(splitter_6);
@@ -1868,7 +1868,7 @@ public:
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
-        statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        statusBar->setObjectName("statusBar");
         MainWindow->setStatusBar(statusBar);
 
         retranslateUi(MainWindow);

@@ -17,8 +17,6 @@ struct StaticMesh
 
 	int shaderModel = 0;
 
-	bool bHasTransparency{ false };//This flag turns true if any of the child meshes contains any opacity textures.
-
 	void AddMesh(const Mesh& mesh);
 	bool RemoveMesh(Mesh& mesh); // for caching I have to manually delete
 

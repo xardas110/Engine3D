@@ -75,6 +75,49 @@ void BlendABuffer(in ivec2 fragCoord, inout vec3 color, in float depth)
 	}
 }
 
+void GetClosestABufferDepth(in vec2 texCoords, inout float depth)
+{
+	ABuffer frags[MAX_FRAGMENTS];
+
+	int count = 0;
+
+	ivec2 imgSize = imageSize(indexPtrs);
+	ivec2 fragCoord = ivec2(texCoords * vec2(imgSize));
+	uint n = imageLoad(indexPtrs, fragCoord).r;
+
+	if (n == 0xffffffff) return;
+
+	while (n != 0xffffffff && count < MAX_FRAGMENTS)
+	{
+		frags[count] = nodes[n];
+		n = frags[count].next;
+		count++;
+	}
+
+	for (uint i = 1; i < count; i++) //insert sort
+	{
+		ABuffer toInsert = frags[i];
+		uint j = i;
+		while (j > 0 && toInsert.depth > frags[j - 1].depth) {
+			frags[j] = frags[j - 1];
+			j--;
+		}
+		frags[j] = toInsert;
+	}
+
+	for (int i = 0; i < count; i++)
+	{
+		if (frags[i].depth < depth)
+		{
+			vec4 aBuffColor = UnpackColor(frags[i].color);
+			if (aBuffColor.a > 0.0)
+			{
+				depth = frags[i].depth;
+			}
+		}
+	}
+}
+
 /*
 vec3 WorldPosFromDepth(float depth) {
 	float z = depth * 2.0 - 1.0;

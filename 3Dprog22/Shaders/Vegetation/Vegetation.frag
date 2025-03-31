@@ -54,20 +54,14 @@ void main()
 	float alpha = GetAlphaValue();
 	vec3 norm = GetNormal();
 
-	vec3 albedo = pow(GetDiffuseColor(), vec3(2.2f));
-
 	float shadowFactor = CalcDirLightShadow(dirlight, FragPos, norm, view);
 
-	vec4 shadedColor = vec4(1.f, 0.f, 0.f, 1.f);
-	
-	if (renderSettings.lightModel == 0)
-		shadedColor = SM_PBR(dirlight, viewPos, norm, FragPos, albedo, GetMetallic(), GetRoughness(), 1.f, GetAO(), shadowFactor);
+	vec3 viewDir = viewPos - FragPos;
+	viewDir = normalize(viewDir);
 
-	if (renderSettings.lightModel == 1)
-		shadedColor = SM_BRDF(dirlight, shadowFactor, viewPos, norm, FragPos, albedo, vec4(GetSpecularColor(), 0.f));
+	vec4 shadedColor = vec4(PHONG(dirlight, viewDir, norm, GetDiffuseColor(), GetSpecularColor(), material.shininess, 1.f, GetAO(), shadowFactor), 1) * 0.5;
 
 	vec4 color = vec4(shadedColor.rgb, alpha);
-
 	vec3 toView = viewPos - FragPos;
 	float dist = length(toView);
 
@@ -75,8 +69,8 @@ void main()
 		color = CalculateDistanceFog(color, renderSettings.fogColor, dist, renderSettings.fogSight, cameraZFar);
 	
 	InsertABufferFragment(ivec2(gl_FragCoord.xy), color, gl_FragCoord.z);
-
 	discard;
+	
 }
 
 vec3 GetDiffuseColor() // returns either a texture diffuse color or vec3(1)
@@ -95,13 +89,29 @@ vec3 GetSpecularColor()// returns either a texture specular color or vec3(1)
 	}
 	return vec3(0.f);
 }
+vec3 GetNormal2(sampler2D normalMap)
+{
+	vec3 tangentNormal = texture(normalMap, TexCoords).xyz * 2.0 - 1.0;
+
+    vec3 Q1  = dFdx(FragPos);
+    vec3 Q2  = dFdy(FragPos);
+    vec2 st1 = dFdx(TexCoords);
+    vec2 st2 = dFdy(TexCoords);
+
+    vec3 N   = normalize(Normal);
+    vec3 T  = normalize(Q1*st2.t - Q2*st1.t);
+    vec3 B  = -normalize(cross(N, T));
+    mat3 TBN = mat3(T, B, N);
+
+    return normalize(TBN * tangentNormal);
+};
+
+
 vec3 GetNormal()
 {
 	if (material.numNormalmaps != 0)
 	{
-		vec3 normalMap = texture(material.normalmap, TexCoords).rbg;
-		vec3 norm = normalMap * 2.f - 1.f;
-		return normalize(TBN * norm);
+		return GetNormal2(material.normalmap);
 	}
 
 	return normalize(Normal);

@@ -459,7 +459,6 @@ const bool ShaderManager::LoadInclude(const std::string& relativePath, std::stri
         fixedRelativePath = fixedRelativePath + fixedInc;
     }
 
-    std::cout << "loading includes for a included file" << std::endl;
     LoadIncludes(fixedRelativePath, includeCode, pragmaOnce);
 
     code.replace(firstIt, endIt, includeCode);

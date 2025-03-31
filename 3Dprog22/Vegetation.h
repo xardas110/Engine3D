@@ -11,11 +11,11 @@
 
 constexpr float VEG_LOD_RANGES[VEG_MAX_LODS] =
 {
-	256,
-	386,
-	512,
-	650,
-	3000
+	500,
+	1000,
+	2000,
+	4000,
+	8000
 };
 
 struct Variant

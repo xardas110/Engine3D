@@ -55,7 +55,6 @@ float GetRoughness();
 
 void main()
 {
-
 	if (meshSettings.bHasTransparency == 1)
 	{
 		float alpha = GetAlphaValue();
@@ -67,11 +66,8 @@ void main()
 
 		vec4 shadedColor = vec4(1.f, 0.f, 0.f, 1.f);
 	
-		if (renderSettings.lightModel == 0)
-			shadedColor = SM_PBR(dirlight, viewPos, norm, FragPos, albedo, GetMetallic(), GetRoughness(), 1.f, GetAO(), shadowFactor);
-
-		if (renderSettings.lightModel == 1)
-			shadedColor = SM_BRDF(dirlight, shadowFactor, viewPos, norm, FragPos, albedo, vec4(GetSpecularColor(), 0.f));
+		vec3 viewDir = normalize(viewPos - FragPos);
+		shadedColor = vec4(PHONG(dirlight, viewDir, norm, GetDiffuseColor(), GetSpecularColor(), material.shininess, 1, GetAO(), shadowFactor), 1) * 0.7;
 
 		vec4 color = vec4(shadedColor.rgb, alpha);
 
@@ -114,19 +110,33 @@ vec3 GetSpecularColor()// returns either a texture specular color or vec3(1)
 	}
 	return vec3(0.f);
 }
+vec3 GetNormal2(sampler2D normalMap)
+{
+	vec3 tangentNormal = texture(normalMap, TexCoords).xyz * 2.0 - 1.0;
+
+    vec3 Q1  = dFdx(FragPos);
+    vec3 Q2  = dFdy(FragPos);
+    vec2 st1 = dFdx(TexCoords);
+    vec2 st2 = dFdy(TexCoords);
+
+    vec3 N   = normalize(Normal);
+    vec3 T  = normalize(Q1*st2.t - Q2*st1.t);
+    vec3 B  = -normalize(cross(N, T));
+    mat3 TBN = mat3(T, B, N);
+
+    return normalize(TBN * tangentNormal);
+};
+
+
 vec3 GetNormal()
 {
 	if (material.numNormalmaps != 0)
 	{
-		vec3 normalMap = texture(material.normalmap, TexCoords).rgb;
-		vec3 norm = normalMap * 2.f - 1.f;
-		return normalize(TBN * norm);
+		return GetNormal2(material.normalmap);
 	}
 	if (material.numHeightmaps != 0)		
 	{
-		vec3 normalMap = texture(material.heightmap, TexCoords).rgb;
-		vec3 norm = normalMap * 2.f - 1.f;
-		return normalize(TBN * norm);		
+		return GetNormal2(material.heightmap);
 	}
 
 	return normalize(Normal);
@@ -134,8 +144,8 @@ vec3 GetNormal()
 
 float GetAlphaValue()
 {
-	//if (material.numOpacitymaps != 0)
-	//	return texture(material.opacitymap, TexCoords).r;	
+	if (material.numOpacitymaps != 0)
+		return texture(material.opacitymap, TexCoords).r;	
 
 	return texture(material.diffusemap, TexCoords).a;
 }
@@ -147,7 +157,7 @@ float GetAO()
 		return texture(material.AOmap, TexCoords).r;
 	}
 
-	return 1.f;
+	return 1.0;
 }
 
 float GetMetallic()

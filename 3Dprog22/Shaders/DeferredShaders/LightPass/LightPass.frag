@@ -67,6 +67,9 @@ void main()
 
 	float ssao = 1.f;
 
+	vec3 viewDir = viewPos - fragPos;
+	viewDir = normalize(viewDir);
+
 	if(renderSettings.ssaoEnabled == 1)
 	{
 		ssao = texture(SSAOmap, TexCoords).r;
@@ -76,21 +79,13 @@ void main()
 	{
 		case SHADERMODEL_BRDF:
 		{
-			if (renderSettings.lightModel == 0)
-				colorOut = SM_PBR(dirlight, viewPos, fi.normal, fragPos, albedo, fi.metallic, fi.roughness, ssao, fi.ao, dlShadowFactor);
-
-			if (renderSettings.lightModel == 1)
-				colorOut = SM_BRDF(dirlight, dlShadowFactor, fi.ao, ssao, viewPos, fi.normal, fragPos, albedo, vec4(fi.specular, fi.specPower));
+			colorOut = vec4(PHONG(dirlight, viewDir, fi.normal, albedo, fi.specular, fi.specPower, ssao, fi.ao, dlShadowFactor), 1);
 
 		}
 		break;
 		case SHADERMODEL_TERRAIN:
 		{
-			if (renderSettings.lightModel == 0)
-				colorOut = SM_PBR(dirlight, viewPos, fi.normal, fragPos, albedo, fi.metallic, fi.roughness, ssao, fi.ao, dlShadowFactor, 0.0);
-
-			if (renderSettings.lightModel == 1)
-				colorOut = SM_BRDF(dirlight, dlShadowFactor, fi.ao, ssao, viewPos, fi.normal, fragPos, albedo, vec4(fi.specular, fi.specPower));
+			colorOut = vec4(PHONG(dirlight, viewDir, fi.normal, albedo, vec3(0), fi.specPower, ssao, fi.ao, dlShadowFactor), 1);
 
 		}
 		break;

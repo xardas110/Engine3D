@@ -175,7 +175,7 @@ bool TextureManager::LoadCubemapTextures(CubemapDescriptor& descriptor, Texture&
     return InsertIntoCubeTextureMap(descriptor);
 }
 
-bool TextureManager::LoadTexture(const std::string& texturePath, Texture& outTexture, Texture::Types type, int minFilter, int magFilter, bool bFlip)
+bool TextureManager::LoadTexture(const std::string& texturePath, Texture& outTexture, Texture::Types type, int minFilter, int magFilter, bool bFlip, bool* hasAlpha)
 {
     if (GetTexture(texturePath, outTexture))
     {
@@ -211,7 +211,13 @@ bool TextureManager::LoadTexture(const std::string& texturePath, Texture& outTex
             format = GL_RGB;
             break;
 	    case 4:
+        {
 	        format = GL_RGBA;
+            if (hasAlpha)
+            {
+                *hasAlpha = true;
+            }
+        }
 	        break;
 	    default:
 	        format = GL_RGB;

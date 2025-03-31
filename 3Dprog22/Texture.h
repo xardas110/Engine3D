@@ -46,7 +46,7 @@ struct Texture
 		}
 	}
 	
-	unsigned textureID{0};
+	unsigned textureID{99999};
 	unsigned width{0}, height{0};
 	unsigned dimensions{0};
 	/*Internal format*/
@@ -63,7 +63,7 @@ struct Texture
 	bool IsValid() const
 	{
 		//TODO: enter right statement
-		return textureID != 0;
+		return textureID != 99999;
 	}
 };
 

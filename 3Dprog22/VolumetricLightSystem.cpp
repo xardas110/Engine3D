@@ -71,7 +71,7 @@ void VolumetricLightSystem::InitFBOAndTextures()
 }
 
 /**/
-void VolumetricLightSystem::Process(World* world, const Texture& posBuffer, const Mesh& quad, const DeferredRendererConfig& config)
+void VolumetricLightSystem::Process(World* world, const Texture& posBuffer, const Mesh& quad, const DeferredRendererConfig& config, const ABuffer* aBuffer)
 {
 	auto* re = RenderEngine::Get();
 	auto* rw = RenderWindow::Get();
@@ -82,6 +82,12 @@ void VolumetricLightSystem::Process(World* world, const Texture& posBuffer, cons
 	re->GLClear(GL_DEPTH_BUFFER_BIT);
 	re->DisableDepthTest();
 	re->DisableBlending();
+
+	if (aBuffer)
+	{
+		re->BindImageTexture(0, aBuffer->indexBuffer, 0, false, 0, GL_READ_WRITE, GL_R32UI);
+		re->BindACBO(aBuffer->acbo, 0);
+	}
 
 	DirLight dirlight;
 	world->GetDirectionalLight(dirlight);

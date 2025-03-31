@@ -3,6 +3,7 @@
 #include "BezierFunction.h"
 #include <utility>
 #include "AudioData.h"
+#include <string>
 
 class Entity;
 
@@ -99,7 +100,7 @@ private:
 	void UpdateSun(class World* world, float deltatime);
 
 	//Pynt
-	void CreateTrees(class World* world);
+	void CreateObjects(class World* world, std::array<std::string, 4> paths, int num = 200, float randBegin = 1.f, float randEnd = 1.f);
 	void CreatePlants(class World* world);
 	void CreateExplosionParticles(class World* world, const glm::vec3& pos);
 	void LoadAmbientSound(class World* world);

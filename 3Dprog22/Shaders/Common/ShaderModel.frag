@@ -80,24 +80,26 @@ vec3 BRDF(DirLight light, vec3 vp, vec3 N, vec3 X, vec3 ka, vec4 ks, float shado
 };
 
 vec3 PHONG(in DirLight light, 
-    in vec3 viewDir, 
-    in vec3 normal, 
-    in vec3 albedoCol, 
-    in vec3 specularCol, 
-    float shininess, float ssao, 
-    float ao, float shadowFactor)
+           in vec3 viewDir, 
+           in vec3 normal, 
+           in vec3 albedoCol, 
+           in vec3 specularCol, 
+           float shininess, float ssao, 
+           float ao, float shadowFactor)
 {
-	vec3 lightDir = normalize(-light.direction);
-	float diff = max(dot(normal, lightDir), 0.0);
+    vec3 lightDir = normalize(-light.direction);
+    float diff = max(dot(normal, lightDir), 0.0);
 
-	vec3 reflectDir = reflect(-lightDir, normal);
-	float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess);
+    vec3 reflectDir = reflect(-lightDir, normal); 
+    float spec = pow(max(dot(viewDir, reflectDir), 0.0), shininess); 
 
-	vec3 ambient = light.ambient * albedoCol * light.itensity * ao * ssao;
-	vec3 diffuse = light.diffuse * diff * albedoCol  * shadowFactor * light.itensity;
-	vec3 specular = light.specular * spec * specularCol * shadowFactor * light.itensity;
-	return (ambient + diffuse + specular);
-};
+    vec3 ambient = light.ambient * albedoCol * light.itensity * ao * ssao;
+    vec3 diffuse = light.diffuse * diff * albedoCol * shadowFactor * light.itensity;
+    vec3 specular = light.specular * spec * specularCol * shadowFactor * light.itensity;
+
+    return (ambient + diffuse + specular);
+}
+
 
 vec4 SM_PBR(
     in DirLight light,

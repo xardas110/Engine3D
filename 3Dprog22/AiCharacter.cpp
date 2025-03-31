@@ -21,7 +21,7 @@ void AiCharacter::OnCreate()
 
     body.bLinearOnly = true;
 
-    if (sm->LoadSkeletalMesh("../3Dprog22/Assets/Models/nightshade/nightshade.dae", skeletalMesh))
+    if (sm->LoadSkeletalMesh("../3Dprog22/Assets/Models/nightshade/nightshade.fbx", skeletalMesh))
     {
 	    skeletalMesh.LoadAnimation("Idle", "../3Dprog22/Assets/Models/nightshade/animations/Idle.dae");
 	    skeletalMesh.LoadAnimation("Running", "../3Dprog22/Assets/Models/nightshade/animations/Running.dae");
@@ -30,6 +30,7 @@ void AiCharacter::OnCreate()
 
     skeletalMesh.transform.SetPosition({ 0.f, -10.f, 0.f });
     skeletalMesh.transform.SetScale({ 0.1f, 0.1f, 0.1f });
+    skeletalMesh.transform.SetRotation(glm::angleAxis(glm::radians(180.0f), glm::vec3(0.f, 1.f, 0.f)));
 	
 }
 
@@ -301,26 +302,10 @@ void AiCharacter::RotateTo2DDirection(const glm::vec3& dir2D)
 {
     auto& sm = GetComponent<SkeletalMeshComponent>().skeletalMesh;
 
-    const auto right = glm::cross(cachedWorldUp, dir2D);
-
-    const glm::mat4 lookAt =
-    {
-        {right, 0.f},
-        {cachedWorldUp, 0.f},
-        {dir2D, 0.f},
-        {0.f, 0.f, 0.f, 1.f}
-    };
-
-    const glm::mat4 lookAt2 =
-    {
-        {right, 0.f},
-        {cachedWorldUp, 0.f},
-        {-dir2D, 0.f},
-        {0.f, 0.f, 0.f, 1.f}
-    };
-
-    sm.transform.SetRotation(lookAt2);
-    SetRotation(lookAt);
+    glm::vec3 normalizedDir2D = glm::normalize(dir2D);
+    glm::vec3 currentForward = glm::vec3(0.f, 0.f, -1.f);
+    glm::quat rotationQuat = glm::rotation(currentForward, normalizedDir2D);
+    SetRotation(rotationQuat);
 }
 
 void AiCharacter::MoveToIn2D(const glm::vec3& pos2D)

@@ -40,16 +40,24 @@ void EksamenGameMode::Create(World* world, entt::registry& registry)
 	CreateBomber(world, registry);
 	CreateBomber2(world, registry);
 	CreateStatusBillboard(world);
-	CreateTrees(world);
+	CreateObjects(world, { "../3Dprog22/Assets/Models/Tree2/LOD0.obj", "../3Dprog22/Assets/Models/Tree2/LOD1.obj", "../3Dprog22/Assets/Models/Tree2/LOD2.obj","../3Dprog22/Assets/Models/Tree2/LOD3.obj" });
+	CreateObjects(world, { "../3Dprog22/Assets/Models/Rock1/Rock1.obj", "../3Dprog22/Assets/Models/Rock1/Rock1.obj", "../3Dprog22/Assets/Models/Rock1/Rock1.obj","../3Dprog22/Assets/Models/Rock1/Rock1.obj" }, 30, 1.0f, 2.f);
+
+	CreateObjects(world, { "../3Dprog22/Assets/Models/Tree1/Tree.obj", "../3Dprog22/Assets/Models/Tree1/Tree.obj", "../3Dprog22/Assets/Models/Tree1/Tree.obj","../3Dprog22/Assets/Models/Tree1/Tree.obj" }, 100, 1.f, 1.2f);
 
 	CreatePlayer(world, registry);
 	CreateAiCharacter(world, registry);
 
 	CreateTophies(world);
+
+	Entity playerEntity(playerEnt, world);
+	auto pos = playerEntity.GetPosition();
+	pos.y = world->GetTerrainHeightAt(pos.x, pos.z) + 200.f;
+	playerEntity.SetPosition(pos);
 }
 
 void EksamenGameMode::Update(World* world, entt::registry& registry, float deltatime)
-{	
+{
 	//Oppgave 13 -> alt annet kjørte ikke i editor modus fra før
 	UpdateEntForDeletion(world);
 	UpdateSun(world, deltatime);
@@ -182,7 +190,7 @@ void EksamenGameMode::UpdateBomber(World* world, entt::registry& registry, float
 		bomber.SetRotation(view);
 
 	}
-	if (currentBombTimer >= 2.f)
+	if (currentBombTimer >= 10.f)
 	{
 		DropBomb(world, bomber.GetPosition());
 		currentBombTimer = 0.f;
@@ -337,7 +345,7 @@ void EksamenGameMode::BombStage3(Entity& bomb, float deltatime)
 
 void EksamenGameMode::ExplodeBomb(World* world, Entity& bomb, float deltatime)
 {
-	static float waitTime{ 2.f };
+	static float waitTime{ 10.f };
 
 	CreateExplosionParticles(world, bomb.GetPosition());
 
@@ -353,7 +361,7 @@ void EksamenGameMode::ExplodeBomb(World* world, Entity& bomb, float deltatime)
 	explosion.SetPosition(bomb.GetPosition());
 	explosion.SetPitch(1.f);
 	explosion.SetGain(1.f);
-    //explosion.Play();
+    explosion.Play();
 
 	entForDeletion.emplace_back(bomb.GetEntityId());
 }
@@ -477,11 +485,6 @@ void EksamenGameMode::ColorTrophies(World* world)
 
 		auto* instance = trophyEnt.GetComponent<ScriptComponent>().instance;
 		auto* trophy = reinterpret_cast<Trophy*>(instance);
-
-		if (trophy)
-		{
-			trophy->SetTrophyColor({ 1.f, 0.f, 0.f });
-		}
 	}
 
 	for (size_t i = 0; i < enemyTrophies.size(); i++)
@@ -495,7 +498,7 @@ void EksamenGameMode::ColorTrophies(World* world)
 
 		if (trophy)
 		{
-			trophy->SetTrophyColor({ 0.f, 0.f, 1.f });
+			trophy->SetTrophyColor({ 0.8f, 0.8f, 0.8f });
 		}
 	}
 }
@@ -715,12 +718,8 @@ void EksamenGameMode::CreateTerrain(World* world, entt::registry& registry)
 void EksamenGameMode::UpdateSun(World* world, float deltatime)
 {
 	//Oppgave 3 
-	auto* rd = RenderDebugger::Get();
-
 	DirLight dirlight;
 	world->GetDirectionalLight(dirlight);
-
-	auto& dir = dirlight.lightDir;
 
 	static float timer;
 	float speedFactor = 0.1;
@@ -733,23 +732,25 @@ void EksamenGameMode::UpdateSun(World* world, float deltatime)
 	world->skySystem.SetLightDirection(glm::normalize(glm::vec3( x, y, z )));
 }
 
-void EksamenGameMode::CreateTrees(World* world)
+void EksamenGameMode::CreateObjects(class World* world, std::array<std::string, 4> paths, int num, float randBegin, float randEnd)
 {
 	auto* sm = world->GetStaticMeshManager();
-	std::uniform_real_distribution<float> rf(-1500.f, 1500.f);
-	std::default_random_engine engine;
+	static std::default_random_engine engine;
+	static std::uniform_real_distribution<float> rf(-1500.f, 1500.f);
+	std::uniform_real_distribution<float> rfSize(randBegin, randEnd);
+
 	{
-		Entity tree = world->CreateEntity("TreeInstanced1");
+		Entity tree = world->CreateEntity(paths[0]); 
 		auto& instance = tree.AddComponent<StaticMeshInstancedComponent>().staticMeshInstanced;
 
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD0.obj", instance.LOD[0], true);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD1.obj", instance.LOD[1]);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD2.obj", instance.LOD[2]);
-		sm->LoadStaticMesh("../3Dprog22/Assets/Models/Tree2/LOD3.obj", instance.LOD[3]);
+		sm->LoadStaticMesh(paths[0], instance.LOD[0], true);
+		sm->LoadStaticMesh(paths[1], instance.LOD[1]);
+		sm->LoadStaticMesh(paths[2], instance.LOD[2]);
+		sm->LoadStaticMesh(paths[3], instance.LOD[3]);
 
-		auto ch = sm->GetConvexHull("../3Dprog22/Assets/Models/Tree2/LOD0.obj");
+		auto ch = sm->GetConvexHull(paths[0]);
 
-		for (size_t i = 0; i < 200; i++)
+		for (size_t i = 0; i < num; i++)
 		{
 			float x = rf(engine);
 			float z = rf(engine);
@@ -763,7 +764,7 @@ void EksamenGameMode::CreateTrees(World* world)
 			translate = glm::translate(translate, { x, y, z });
 
 			glm::mat4 scale(1.f);
-			scale = glm::scale(scale, { 20.f, 20.f, 20.f });
+			scale = glm::scale(scale, glm::vec3( 20.f, 20.f, 20.f ) * rfSize(engine));
 
 			glm::mat4 rot(1.f);
 			rot = glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f));
@@ -915,6 +916,133 @@ void EksamenGameMode::CreatePlants(World* world)
 			veg.variants.emplace_back(variant);
 		}
 	}
+	{ // for we are many grass
+		auto instancedEnt = world->CreateEntity("Instanced Field Poppy 14");
+		auto& veg = instancedEnt.AddComponent<VegetationComponent>().veg;
+
+		const std::string typeString = "vmcobd0ja";
+
+		materialManager.LoadInstancedMaterials(
+			{ { "../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Atlas/" + typeString + "_2K_Albedo.jpg", Texture::Diffuse},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Atlas/" + typeString + "_2K_AO.jpg", Texture::Ambient},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Atlas/" + typeString + "_2K_Normal.jpg", Texture::Normals},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Atlas/" + typeString + "_2K_Opacity.jpg", Texture::Opacity},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Atlas/" + typeString + "_2K_Specular.jpg", Texture::Specular},
+			},
+			veg.atlas);
+
+		materialManager.LoadInstancedMaterials(
+			{ { "../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Billboard/Billboard_2K_Albedo.jpg", Texture::Diffuse},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Billboard/Billboard_2K_AO.jpg", Texture::Ambient},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Billboard/Billboard_2K_Normal.jpg", Texture::Normals},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Billboard/Billboard_2K_Opacity.jpg", Texture::Opacity},
+				{"../3Dprog22/Assets/Vegetation/Field Poppy/Textures/Billboard/Billboard_2K_Specular.jpg", Texture::Specular},
+			},
+			veg.billboard);
+
+
+		for (size_t i = 0; i < 14; i++)
+		{
+			Variant variant;
+
+			const std::string varString = "Var" + std::to_string(i + 1);
+
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Field Poppy/" + varString + '/' + varString + "_LOD0.fbx", variant.LOD[0]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Field Poppy/" + varString + '/' + varString + "_LOD1.fbx", variant.LOD[1]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Field Poppy/" + varString + '/' + varString + "_LOD2.fbx", variant.LOD[2]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Field Poppy/" + varString + '/' + varString + "_LOD3.fbx", variant.LOD[3]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/Field Poppy/" + varString + '/' + varString + "_LOD4.fbx", variant.LOD[4]);
+
+			for (size_t i = 0; i < 1000; i++)
+			{
+				glm::mat4 translation(1.f);
+				float x = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / mapSize)) - mapSize * 0.5f;
+				float z = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / mapSize)) - mapSize * 0.5f;
+				float y = world->GetTerrainHeightAt(x, z);
+				float ns = world->GetTerrainSlopeAt(x, z);
+
+				if (ns < 0.4f) continue;
+
+				translation = glm::translate(translation, { x, y, z });
+
+				glm::mat4 scale(1.f);
+
+				scale = glm::scale(scale, { 0.15f, 0.15f, 0.15f });
+
+				glm::mat4 rot(1.f);
+				rot = glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f));
+
+				glm::mat4 finale = translation * rot * scale;
+				variant.transforms.emplace_back(finale);
+			}
+
+			veg.variants.emplace_back(variant);
+		}
+	}
+	{ // for we are many grass
+		auto instancedEnt = world->CreateEntity("Instanced annuals 7");
+		auto& veg = instancedEnt.AddComponent<VegetationComponent>().veg;
+
+		const std::string name = "Annuals";
+		const std::string typeString = "tjlnfikia";
+
+		materialManager.LoadInstancedMaterials(
+			{ { "../3Dprog22/Assets/Vegetation/" + name + "/Textures/Atlas/" + typeString + "_2K_Albedo.jpg", Texture::Diffuse},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Atlas/" + typeString + "_2K_AO.jpg", Texture::Ambient},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Atlas/" + typeString + "_2K_Normal.jpg", Texture::Normals},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Atlas/" + typeString + "_2K_Opacity.jpg", Texture::Opacity},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Atlas/" + typeString + "_2K_Specular.jpg", Texture::Specular},
+			},
+			veg.atlas);
+
+		materialManager.LoadInstancedMaterials(
+			{ { "../3Dprog22/Assets/Vegetation/" + name + "/Textures/Billboard/Billboard_2K_Albedo.jpg", Texture::Diffuse},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Billboard/Billboard_2K_AO.jpg", Texture::Ambient},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Billboard/Billboard_2K_Normal.jpg", Texture::Normals},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Billboard/Billboard_2K_Opacity.jpg", Texture::Opacity},
+				{"../3Dprog22/Assets/Vegetation/" + name + "/Textures/Billboard/Billboard_2K_Specular.jpg", Texture::Specular},
+			},
+			veg.billboard);
+
+
+		for (size_t i = 0; i < 7; i++)
+		{
+			Variant variant;
+
+			const std::string varString = "Var" + std::to_string(i + 1);
+
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/" + name + "/" + varString + '/' + varString + "_LOD0.fbx", variant.LOD[0]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/" + name + "/" + varString + '/' + varString + "_LOD1.fbx", variant.LOD[1]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/" + name + "/" + varString + '/' + varString + "_LOD2.fbx", variant.LOD[2]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/" + name + "/" + varString + '/' + varString + "_LOD3.fbx", variant.LOD[3]);
+			staticMeshManager->LoadStaticMesh("../3Dprog22/Assets/Vegetation/" + name + "/" + varString + '/' + varString + "_LOD4.fbx", variant.LOD[4]);
+
+			for (size_t i = 0; i < 1000; i++)
+			{
+				glm::mat4 translation(1.f);
+				float x = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / mapSize)) - mapSize * 0.5f;
+				float z = static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / mapSize)) - mapSize * 0.5f;
+				float y = world->GetTerrainHeightAt(x, z);
+				float ns = world->GetTerrainSlopeAt(x, z);
+
+				if (ns < 0.4f) continue;
+
+				translation = glm::translate(translation, { x, y, z });
+
+				glm::mat4 scale(1.f);
+
+				scale = glm::scale(scale, { 0.15f, 0.15f, 0.15f });
+
+				glm::mat4 rot(1.f);
+				rot = glm::rotate(rot, glm::radians((float)i), glm::vec3(0.f, 1.f, 0.f));
+
+				glm::mat4 finale = translation * rot * scale;
+				variant.transforms.emplace_back(finale);
+			}
+
+			veg.variants.emplace_back(variant);
+		}
+	}
 }
 
 void EksamenGameMode::CreateExplosionParticles(World* world, const glm::vec3& pos)
@@ -935,15 +1063,11 @@ void EksamenGameMode::CreateExplosionParticles(World* world, const glm::vec3& po
 		particle.lifetime = 3.f;
 
 		float yaw = rand() % 360;
-		float pitch = rand() % 89;
+		float pitch = rand() % 360;
 
-		float length = rand() % 50;
-
-		particle.vel.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
-		particle.vel.y = sin(glm::radians(pitch));
-		particle.vel.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
-
-		particle.vel *= length;
+		particle.vel.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch)) * (float(rand() % 1000) + 500);
+		particle.vel.y = sin(glm::radians(pitch)) * (float(rand() % 2000) + 500);
+		particle.vel.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch)) * (float(rand() % 1000) + 500);
 	};
 
 	emitterEnt.SetPosition(pos);

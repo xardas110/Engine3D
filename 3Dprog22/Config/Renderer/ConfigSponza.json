@@ -25,8 +25,8 @@
   "volumetricLight": {
     "enabled": true,
     "numRays": 50,
-    "scattering": 0.75,
-    "sunColor": [ 0.3, 0.3, 0.1 ]
+    "scattering": 0.45,
+    "sunColor": [ 1.4, 1.4, 1.1 ]
   },
   "volumetricClouds": {
     "enabled": true,
@@ -62,7 +62,7 @@
   },
   "vegetation": {
     "enabled": true,
-    "LODRanges": [ 100, 300, 500, 700, 800 ]
+    "LODRanges": [ 4000, 5000, 8000, 12000, 16000 ]
   },
   "instancedMesh": {
     "LODRanges": [ 100, 300, 500, 700 ]

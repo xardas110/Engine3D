@@ -234,7 +234,8 @@ void DeferredRenderer::PostProcessPass(World* world)
             world, 
             gBufferSystem.gBuffer.fbo.texture, 
             quadMesh, 
-            config);
+            config,
+            &oitSystem.aBuffer);
     
     
     if (config.ssao.enabled)

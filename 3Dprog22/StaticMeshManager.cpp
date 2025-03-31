@@ -168,13 +168,16 @@ bool StaticMeshManager::LoadMesh(aiMesh* mesh, const aiScene* scene, const std::
                 const std::string fullPath = (outStaticMesh.pathDirectory + '/' + p.filename().string());
                 std::cout << "full path " << fullPath << std::endl;
                 Texture texture;
+
+                if (type == aiTextureType_OPACITY)
+                {
+                    bIsTransparent = true;
+                }
+
                 if (textureManager.LoadTexture(fullPath, texture, (Texture::Types)i))
                 {
                     textures.push_back(texture);
-                	if (type == aiTextureType_OPACITY)
-                	{
-                        bIsTransparent = true;                        
-                	}
+
                 }
                 else
                 {
@@ -198,10 +201,6 @@ bool StaticMeshManager::LoadMesh(aiMesh* mesh, const aiScene* scene, const std::
         meshCenter /= (float)mesh->mNumVertices;
         inMesh.transform.SetPosition(meshCenter);
 
-        //Just a check if bHasTransparency was set before to true or not by other meshes
-    	if (!outStaticMesh.bHasTransparency)
-			outStaticMesh.bHasTransparency = bIsTransparent;
-    	
         outStaticMesh.AddMesh(inMesh);
     }
 
